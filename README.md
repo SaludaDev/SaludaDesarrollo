@@ -1,2 +1,0 @@
-# SaludaDesarrollo
-Desarollo de saluda
