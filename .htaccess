@@ -1,0 +1,17 @@
+RewriteBase /
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+	
+Options -Indexes
+
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^saludaclinicas\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.saludaclinicas\.com$
+RewriteRule ^/?$ "https\:\/\/www\.saludaclinicas\.com\/" [R=301,L]
