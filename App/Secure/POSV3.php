@@ -40,7 +40,7 @@ include("Cookies/Mensaje.php");
 
 
 </head>
-<body style="background-color: #2FDDEE;">
+<body style="background-color: #0057B8;">
    <style>
         .error {
   color: red;
@@ -150,7 +150,7 @@ include("Cookies/Mensaje.php");
 <!-- Modal hacia soporte -->
 
     
-    <footer class="page-footer font-small default-color">
+    <footer class="page-footer font-small default-color"  style="background-color: #c80096 !important;">
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">Copyright &copy; 2020 <a href="https://somosgrupoe.com/">Somos Grupo E</a> <br>
