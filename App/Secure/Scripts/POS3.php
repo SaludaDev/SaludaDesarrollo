@@ -18,41 +18,15 @@ if(isset($_POST['login_button'])) {
 
 
 	switch($row){
-	case $row['Password']==$Password and $row['Nombre_rol']=="Administrador" and $row['Estatus']=="Vigente" ;				
-		echo "ok";
+	case $row['Password']=$Password and $row['Nombre_rol']="Administrador" and $row['Estatus']="Vigente" ;				
+		echo "1";
 		$_SESSION['AdminPOS'] = $row['Pos_ID'];
 	break;
-	case $row['Password']==$Password and $row['Nombre_rol']=="Ventas" and $row['Estatus']=="Vigente"; 			
-		echo "ok";
+	case $row['Password']=$Password and $row['Nombre_rol']="Ventas" and $row['Estatus']="Vigente"; 			
+		echo "2";
 		$_SESSION['VentasPos'] = $row['Pos_ID'];	
 		break;	
-		case $row['Password']==$Password and $row['Nombre_rol']=="ADM Punto de venta" and $row['Estatus']=="Vigente";		
-			echo "ok";
-			$_SESSION['SuperAdmin'] = $row['Pos_ID'];		
-			break;
-		case $row['Password']==$Password and $row['Nombre_rol']=="Logística y compras" and $row['Estatus']=="Vigente";			
-			echo "ok";
-			$_SESSION['LogisticaPOS'] = $row['Pos_ID'];		
-		break;
-		case $row['Password']==$Password and $row['Nombre_rol']=="Administrador CEDIS" and $row['Estatus']=="Vigente";				
-			echo "ok";
-			$_SESSION['ResponsableCedis'] = $row['Pos_ID'];		
-		break;
-		case $row['Password']==$Password and $row['Nombre_rol']=="Encargado de inventarios" and $row['Estatus']=="Vigente";				
-			echo "ok";
-			$_SESSION['ResponsableInventarios'] = $row['Pos_ID'];	
-			break;	
-			case $row['Password']==$Password and $row['Nombre_rol']=="Responsable de farmacias" and $row['Estatus']=="Vigente";				
-			echo "ok";
-			$_SESSION['ResponsableDeFarmacias'] = $row['Pos_ID'];	
-			break;	
-			case $row['Password']==$Password and $row['Nombre_rol']=="Jefe de odontología" and $row['Estatus']=="Vigente";				
-			echo "ok";
-			$_SESSION['CoordinadorDental'] = $row['Pos_ID'];	
-			break;	
-			case $row['Password']==$Password and $row['Nombre_rol']=="Supervisor" and $row['Estatus']=="Vigente";				
-			echo "ok";
-			$_SESSION['Supervisor'] = $row['Pos_ID'];	 
-			break;	
+		
 		} 	
 	}
+?>
