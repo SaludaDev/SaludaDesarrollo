@@ -153,8 +153,8 @@ include("Cookies/Mensaje.php");
     <footer class="page-footer font-small default-color"  style="background-color: #c80096 !important;">
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">Copyright &copy; 2020 <a href="https://somosgrupoe.com/">Somos Grupo E</a> <br>
-  <b>PUNTO DE VENTA</b> | Version 2.0
+  <div class="footer-copyright text-center py-3">Copyright <br>
+  <b>PUNTO DE VENTA</b> | Version 3.0
   </div>
   <!-- Copyright -->
 
