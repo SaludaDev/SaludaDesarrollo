@@ -1,10 +1,10 @@
-<?include("db_connect.php");
+<?php
 include("Cookies/Mensaje.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>CONTROL DE CITAS | LOGIN</title>
+	<title>ATENCION A CLIENTES | LOGIN</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -66,7 +66,7 @@ include("Cookies/Mensaje.php");
 </div></div>
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color" style="background-color: #2E64FE !important;">
-  <a class="navbar-brand" href="#">CONTROL DE CITAS  <i  class="fas fa-book-open fa-2x fa-lgfa-2x fa-lg"></i> </a>
+  <a class="navbar-brand" href="#">ATENCION A CLIENTES  <i  class="fas fa-book-open fa-2x fa-lgfa-2x fa-lg"></i> </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
@@ -143,21 +143,11 @@ include("Cookies/Mensaje.php");
                  
                     </form>  <div id="error">
   </div>
-  <?include "Modales/ModalCitas.php";
+  <?php include "Modales/ModalCitas.php";
   include "Modales.php";?>
 
 						<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/608050d65eb20e09cf35417b/1f3qmkqn8';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
+
 <!--End of Tawk.to Script-->
 					
 			
