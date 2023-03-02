@@ -82,7 +82,7 @@ include "Header.php";
   <i onclick="Servicios()" class="fas fa-hand-holding-medical"></i>
   </span>
   <div class="details">
-  <h1>SERVICIOS ESPECIALIZADOS</h1>
+  <h1>ATENCION Y CALIDAD</h1>
    
   </div>
 </div>
