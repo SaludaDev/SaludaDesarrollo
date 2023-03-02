@@ -82,13 +82,13 @@ include("Cookies/Mensaje.php");
         <i onclick="Home()"class="fas fa-home fa-2x fa-lgfa-2x fa-lg" ></i>
         </a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link waves-effect waves-light">
        
         <i  data-toggle="modal" data-target="#centralModalInfo" class="fas fa-tools fa-2x fa-lgfa-2x fa-lg"></i>
       
         </a>
-      </li>
+      </li> -->
       <!-- <li class="nav-item">
         <a class="nav-link waves-effect waves-light">
         <i data-toggle="modal" data-target="" class="fas fa-info-circle fa-2x fa-lgfa-2x fa-lg"></i>
@@ -108,7 +108,7 @@ include("Cookies/Mensaje.php");
 				<form class="login100-form validate-form" method="post" id="login-form">
 
 					<span class="login100-form-title p-b-49">
-            <?echo $mensaje?>
+            <?php echo $mensaje?>
              
 					</span>
 
