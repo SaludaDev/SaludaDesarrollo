@@ -8,10 +8,6 @@ function POSV(){
   function AdministracionG(){
    location.href="https://saludaclinicas.com/App/Secure/Administracion"
  }
-  function controlconsulta(){
-     location.href="https://controlconsulta.com/App/"
-  }
-  
  
   function Servicios(){
     location.href="https://saludaclinicas.com/App/Secure/ServicioEspecial"
@@ -19,7 +15,7 @@ function POSV(){
  
  
   function Citas(){
-    location.href="hhttps://saludaclinicas.com/App/Secure/IngresoAgenda" 
+    location.href="https://saludaclinicas.com/App/Secure/IngresoAgenda" 
  }
  
   /*Redirecciones para volver a identificacion de perfiles, y soporte tecnico */
