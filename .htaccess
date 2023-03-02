@@ -15,3 +15,4 @@ RewriteCond %{HTTP:X-Forwarded-SSL} !on
 RewriteCond %{HTTP_HOST} ^saludaclinicas\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.saludaclinicas\.com$
 RewriteRule ^/?$ "https\:\/\/www\.saludaclinicas\.com\/" [R=301,L]
+php_value session.auto_start 1
