@@ -72,7 +72,7 @@ include "Header.php";
   <i onclick="Citas()" class="fas fa-calendar-day"></i>
   </span>
   <div class="details">
-  <h1>CONTROL DE CITAS</h1>
+  <h1>ATENCION A CLIENTES</h1>
    
   </div>
 
@@ -82,7 +82,7 @@ include "Header.php";
   <i onclick="Servicios()" class="fas fa-hand-holding-medical"></i>
   </span>
   <div class="details">
-  <h1>ATENCION Y CALIDAD</h1>
+  <h1>ULTRASONIDOS</h1>
    
   </div>
 </div>
