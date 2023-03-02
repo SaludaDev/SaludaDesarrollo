@@ -2,12 +2,7 @@
 function POSV(){
     location.href="https://saludaclinicas.com/App/Secure/POSV3"
  }
- function Administracion(){
-     location.href="https://saludaclinicas.com/App/Secure/Administrativo"
-  }
-  function AdministracionG(){
-   location.href="https://saludaclinicas.com/App/Secure/Administracion"
- }
+ 
  
   function Servicios(){
     location.href="https://saludaclinicas.com/App/Secure/ServicioEspecial"
