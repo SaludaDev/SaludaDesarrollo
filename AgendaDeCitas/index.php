@@ -1,7 +1,5 @@
-
 <?php
- 
-include "Consultas/Consultas.php";
+ include "Consultas/Consultas.php";
 include "Consultas/Sesion.php";
 include "Consultas/ConsultaEstadoConexion.php";
 include "Consultas/Mensaje.php";
@@ -15,13 +13,13 @@ include "Consultas/Mensaje.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>AGENDA DE CITAS | <?echo $row['ID_H_O_D']?> </title>
+  <title>AGENDA DE CITAS | <?php echo $row['ID_H_O_D']?> </title>
 
   <!-- Font Awesome Icons -->
-  <?include "Header.php"?>
+  <?php include "Header.php"?>
 
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item">
     <a class="nav-link " id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fas fa-user-md"></i> Revaloraciones </a>
@@ -79,7 +77,7 @@ include "Consultas/Mensaje.php";
   <!-- /.control-sidebar -->
  
   <!-- Main Footer -->
-  <?include ("Modales/Ingreso.php");
+  <?php include ("Modales/Ingreso.php");
    include ("Modales/Error.php");
    include ("Modales/Eliminar.php");
  include ("Modales/NuevoPaciente.php");
@@ -121,7 +119,7 @@ include "Consultas/Mensaje.php";
 </body>
 </html>
 
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);
