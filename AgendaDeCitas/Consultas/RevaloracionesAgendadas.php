@@ -8,7 +8,7 @@ tabla = $('#RevaloracionesIndex').DataTable({
  "stateSave":true,
  "bAutoWidth": false,
  "order": [[ 0, "desc" ]],
- "sAjaxSource": "https://controlfarmacia.com/AgendaDeCitas/Consultas/RevaloracionesInicioMes.php",
+ "sAjaxSource": "https://saludaclinicas.com/AgendaDeCitas/Consultas/RevaloracionesInicioMes.php",
  "aoColumns": [
     { mData: 'Folio' },
        { mData: 'Paciente' },
