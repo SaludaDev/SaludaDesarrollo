@@ -7,7 +7,7 @@ data-backdrop="static" data-keyboard="false" aria-hidden="true">
 
       <!--Header-->
       <div class="modal-header">
-        <img src="../Perfiles/<?php echo $row['file_name']?>" alt="Perfil" class="rounded-circle img-responsive">
+        <img src="https://saludaclinicas.com/Perfiles/<?php echo $row['file_name']?>" alt="Perfil" class="rounded-circle img-responsive">
       </div>
       <!--Body-->
       <div class="modal-body text-center mb-1">
