@@ -3,7 +3,7 @@
 /* Database connection start */
 $servername = "localhost";
 $username = "u155356178_CorpoSaluda";
-$password = "ZQr6HgEJNEk6#ug1&IoeXl44f3#45aIyP6pyJlrnZD8bqkYnt&";
+$password = "J1?Bht9d9+gK";
 $dbname = "u155356178_DesarrolloSalu";
 $conn = mysqli_connect($servername, $username, $password, $dbname) or die("No podemos conectar a la base de datos: " . mysqli_connect_error());
 if (mysqli_connect_errno()) {
