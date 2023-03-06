@@ -2,7 +2,7 @@
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-primary navbar-light" style="background-color: #2b73bb !important;">
+  <nav class="main-header navbar navbar-expand navbar-primary navbar-light" style="background-color: #c80096 !important;">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -109,7 +109,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index" class="brand-link" style="background-color: #2b73bb !important;">
+    <a href="index" class="brand-link" style="background-color: #c80096 !important;">
     
       <span class="brand-text font-weight-light" style="color: white;"><i class="fas fa-cash-register"></i> PUNTO DE VENTA</span>
     
@@ -123,9 +123,9 @@
           <img src="../Perfiles/<?echo $row['file_name']?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a  id="DatosGenerales" class="d-block"><?echo $row['Nombre_Apellidos']?></a>
-          <a  id="DatosGenerales" class="d-block"><small><?echo $row['Nombre_rol']?></small></a>
-          <a  id="DatosGenerales" class="d-block"><small>Sucursal actual: <strong><?echo $row['Nombre_Sucursal']?></strong></small></a>
+          <a  id="DatosGenerales" class="d-block"><?php echo $row['Nombre_Apellidos']?></a>
+          <a  id="DatosGenerales" class="d-block"><small><?php echo $row['Nombre_rol']?></small></a>
+          <a  id="DatosGenerales" class="d-block"><small>Sucursal actual: <strong><?php echo $row['Nombre_Sucursal']?></strong></small></a>
         </div>
       </div>
 
@@ -147,7 +147,7 @@
             <li class="nav-header">Punto de venta <i class="fas fa-store"></i></li>
 
             <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/RegistrosEnergiaElectrica" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/RegistrosEnergiaElectrica" class="nav-link">
             <i class="fas fa-lightbulb"></i>
               <p>
              Control de energia 
@@ -156,7 +156,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/RegistrosDeCombustibles" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/RegistrosDeCombustibles" class="nav-link">
             <i class="fas fa-gas-pump"></i>
               <p>
              Control de combustible 
@@ -371,7 +371,7 @@
           
           
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/EstadisticasFarmacias" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/EstadisticasFarmacias" class="nav-link">
             <i class="fas fa-chart-area"></i>
               <p>
               Estadisticas Farmacia
@@ -379,7 +379,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/SugerenciaFechas" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/SugerenciaFechas" class="nav-link">
             <i class="fa-solid fa-filter"></i>
               <p>
               Filtrar Ventas
@@ -437,7 +437,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/CreditoEnfermeriaGeneral" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/CreditoEnfermeriaGeneral" class="nav-link">
             <i class="fas fa-user-nurse"></i>
               <p>
             Créditos enfermería
@@ -445,7 +445,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/CreditoEnfermeriaGeneral" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/CreditoEnfermeriaGeneral" class="nav-link">
             <i class="fas fa-prescription-bottle-alt"></i>
               <p>
             Créditos Farmaceutico
@@ -453,7 +453,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/CreditoEnfermeriaGeneral" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/CreditoEnfermeriaGeneral" class="nav-link">
             <i class="fas fa-user-md"></i>
               <p>
             Créditos Medico
@@ -461,7 +461,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/CreditoEnfermeriaGeneral" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/CreditoEnfermeriaGeneral" class="nav-link">
             <i class="fas fa-broom"></i>
               <p>
             Créditos Limpieza
@@ -491,7 +491,7 @@
           </li>
         
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/ComponentesActivos" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/ComponentesActivos" class="nav-link">
             <i class="fas fa-dot-circle"></i>
               <p>
               Componente activo
@@ -500,7 +500,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/ProductosV2" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/ProductosV2" class="nav-link">
             <i class="fas fa-dot-circle"></i>
               <p>
             Productos general
@@ -602,7 +602,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a  href="https://controlfarmacia.com/AdminPOS/ControlTraspasos"  class="nav-link">
+            <a  href="https://saludaclinicas.com/AdminPOS/ControlTraspasos"  class="nav-link">
             <i class="fas fa-random"></i>
               <p>
             Control de traspasos           
@@ -723,7 +723,7 @@
           
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/InventarioRapidoResultado" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/InventarioRapidoResultado" class="nav-link">
             <i class="fas fa-boxes"></i>
               <p>
               Conteo diario
@@ -734,7 +734,7 @@
 
           <li class="nav-header">Reportes <i class="fas fa-dolly"></i>
           <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AdminPOS/ReportesLab" class="nav-link">
+                  <a href="https://saludaclinicas.com/AdminPOS/ReportesLab" class="nav-link">
                   <i class="fas fa-file-excel"></i>
                     <p>
                      Reportes laboratorios
@@ -743,7 +743,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AdminPOS/ReportesRx" class="nav-link">
+                  <a href="https://saludaclinicas.com/AdminPOS/ReportesRx" class="nav-link">
                   <i class="fas fa-file-excel"></i>
                     <p>
                      Reportes Rayos X
@@ -753,7 +753,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AdminPOS/ReportesUSG" class="nav-link">
+                  <a href="https://saludaclinicas.com/AdminPOS/ReportesUSG" class="nav-link">
                   <i class="fas fa-file-excel"></i>
                     <p>
                      Reportes USG
@@ -764,7 +764,7 @@
 
 
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AdminPOS/ReportesEkg" class="nav-link">
+                  <a href="https://saludaclinicas.com/AdminPOS/ReportesEkg" class="nav-link">
                   <i class="fas fa-file-excel"></i>
                     <p>
                      Reportes EKG
@@ -773,7 +773,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AdminPOS/ReportesSG" class="nav-link">
+                  <a href="https://saludaclinicas.com/AdminPOS/ReportesSG" class="nav-link">
                   <i class="fas fa-file-excel"></i>
                     <p>
                      Reportes Signos vitales
@@ -783,7 +783,7 @@
                 </li>
 
                 
-<div  style=<?switch($row){
+<div  style=<?php switch($row){
 	case $row['Permisos']==9 ;				
   echo "display:none;";
 
@@ -806,7 +806,7 @@
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/Enfermeros" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/Enfermeros" class="nav-link">
             <i class="fas fa-user-nurse"></i>
               <p>
               Enfermeros
@@ -815,7 +815,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/Farmaceuticos" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/Farmaceuticos" class="nav-link">
             <i class="fas fa-pills"></i>
               <p>
               Farmacéuticos
@@ -824,7 +824,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/Medicos" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/Medicos" class="nav-link">
             <i class="fas fa-user-md"></i>
               <p>
               Medicos
@@ -833,7 +833,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/PersonalLimpieza" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/PersonalLimpieza" class="nav-link">
             <i class="fas fa-air-freshener"></i>
               <p>
               Intendencia / Limpieza
@@ -842,7 +842,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/PersonalCallCenter" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/PersonalCallCenter" class="nav-link">
             <i class="fas fa-headset"></i>
               <p>
               Call Center
@@ -851,7 +851,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/Administrativos" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/Administrativos" class="nav-link">
             <i class="fas fa-users-cog"></i>
               <p>
               Administradores
@@ -872,7 +872,7 @@
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/RegistroPersonalDia" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/RegistroPersonalDia" class="nav-link">
             
             <i class="fas fa-calendar-day"></i>
               <p>
@@ -882,7 +882,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/RegistroPersonalLibre" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/RegistroPersonalLibre" class="nav-link">
             <i class="far fa-calendar-check"></i>
               <p>
               Registro general
@@ -904,7 +904,7 @@
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/ReportesDeIncidencias" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/ReportesDeIncidencias" class="nav-link">
             <i class="fas fa-dot-circle"></i>
               <p>
               Reportes
@@ -931,7 +931,7 @@
            
            
             <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/Roles" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/Roles" class="nav-link">
             <i class="fas fa-user-tag"></i>
               <p>
               Roles / Puestos
@@ -940,7 +940,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/Sucursales" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/Sucursales" class="nav-link">
             <i class="fas fa-clinic-medical"></i>
               <p>
             Sucursales
@@ -962,7 +962,7 @@
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/RegistroDiariosSignosVitales" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/RegistroDiariosSignosVitales" class="nav-link">
             <i class="fas fa-user-nurse"></i>
               <p>
               Registro por dia
@@ -971,7 +971,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/RegistroSignosVitalesGeneral" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/RegistroSignosVitalesGeneral" class="nav-link">
             <i class="fas fa-pills"></i>
               <p>
               Registro en general
@@ -993,7 +993,7 @@
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/RegistroDiariosSignosVitales" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/RegistroDiariosSignosVitales" class="nav-link">
             <i class="fas fa-user-nurse"></i>
               <p>
               Registro por dia
@@ -1002,7 +1002,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/RegistroSignosVitalesGeneral" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/RegistroSignosVitalesGeneral" class="nav-link">
             <i class="fas fa-pills"></i>
               <p>
               Registro en general
@@ -1011,7 +1011,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/RegistroSignosVitalesGeneral" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/RegistroSignosVitalesGeneral" class="nav-link">
             <i class="fas fa-user-nurse"></i>
               <p>
               Registro por enfermero
@@ -1020,7 +1020,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/RegistroSignosVitalesGeneral" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/RegistroSignosVitalesGeneral" class="nav-link">
             <i class="fab fa-searchengin"></i>
               <p>
               Registro personalizado
@@ -1044,7 +1044,7 @@
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/RegistroDiarioMotivoConsulta" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/RegistroDiarioMotivoConsulta" class="nav-link">
           <i class="fas fa-calendar-day"></i>
               <p>
               Registro por dia
@@ -1053,7 +1053,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/RegistrosMotivosConsultaGeneral" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/RegistrosMotivosConsultaGeneral" class="nav-link">
             <i class="fas fa-calendar-alt"></i>
               <p>
               Registro en general
@@ -1062,7 +1062,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AdminPOS/RegistrosMotivosConsultaGeneral" class="nav-link">
+            <a href="https://saludaclinicas.com/AdminPOS/RegistrosMotivosConsultaGeneral" class="nav-link">
             <i class="fab fa-searchengin"></i>
               <p>
               Registro personalizado
@@ -1140,7 +1140,7 @@ function cierre()
 function salir()
 {
     
-window.location.replace('https://controlfarmacia.com/AdminPOS/Cierre'); 
+window.location.replace('https://saludaclinicas.com/AdminPOS/Cierre'); 
 
 }
 $( document ).ready(function() {

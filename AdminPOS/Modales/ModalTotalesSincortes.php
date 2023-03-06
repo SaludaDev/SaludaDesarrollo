@@ -1,4 +1,4 @@
-<?$fcha = date("Y-m-d");?>
+<?php $fcha = date("Y-m-d");?>
 <script type="text/javascript">
 $(document).ready( function () {
     $('#TotalesSinCortes').DataTable({
@@ -28,7 +28,7 @@ $(document).ready( function () {
 				extend:    'excelHtml5',
 				text:      'Exportar a Excel  <i Exportar a Excel class="fas fa-file-excel"></i> ',
                 titleAttr: 'Exportar a Excel',
-                title: 'Totales descargado el  <?echo $fcha;?>  ',
+                title: 'Totales descargado el  <?php echo $fcha;?>  ',
 				className: 'btn btn-success'
 			},
 			
