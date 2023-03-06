@@ -29,24 +29,7 @@ if(isset($_POST['login_button'])) {
 		
 		case $row['Password']==$Password and $row['Nombre_rol']=="Logística y compras" and $row['Estatus']=="Vigente";			
 			echo "ok";
-			$_SESSION['LogisticaPOS'] = $row['Pos_ID'];		
-		break;
-		case $row['Password']==$Password and $row['Nombre_rol']=="Administrador CEDIS" and $row['Estatus']=="Vigente";				
-			echo "ok";
-			$_SESSION['ResponsableCedis'] = $row['Pos_ID'];		
-		break;
-		case $row['Password']==$Password and $row['Nombre_rol']=="Encargado de inventarios" and $row['Estatus']=="Vigente";				
-			echo "ok";
-			$_SESSION['ResponsableInventarios'] = $row['Pos_ID'];	
-			break;	
-			case $row['Password']==$Password and $row['Nombre_rol']=="Responsable de farmacias" and $row['Estatus']=="Vigente";				
-			echo "ok";
-			$_SESSION['ResponsableDeFarmacias'] = $row['Pos_ID'];	
-			break;	
-			case $row['Password']==$Password and $row['Nombre_rol']=="Jefe de odontología" and $row['Estatus']=="Vigente";				
-			echo "ok";
-			$_SESSION['CoordinadorDental'] = $row['Pos_ID'];	
-			break;	
+		
 			case $row['Password']==$Password and $row['Nombre_rol']=="Supervisor" and $row['Estatus']=="Vigente";				
 			echo "ok";
 			$_SESSION['Supervisor'] = $row['Pos_ID'];	 
