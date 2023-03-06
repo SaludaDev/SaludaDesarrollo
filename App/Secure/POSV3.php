@@ -1,7 +1,4 @@
 <?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 include("Cookies/Mensaje.php");
 ?>
 <!DOCTYPE html>
@@ -37,10 +34,10 @@ include("Cookies/Mensaje.php");
 <!--===============================================================================================-->
 <script type="text/javascript" src="Consultas/validation.min.js"></script>
 <script type="text/javascript" src="Consultas/POS3.js"></script>
-
+<script type="text/javascript" src="Scripts/Soporte.js"></script>
 
 </head>
-<body style="background-color: #0057B8;">
+<body style="background-color: #2FDDEE;">
    <style>
         .error {
   color: red;
@@ -66,7 +63,7 @@ include("Cookies/Mensaje.php");
     </div>
 </div></div>
 <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color" style="background-color: #c80096 !important;">
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
   <a class="navbar-brand" href="#">PUNTO DE VENTA  <i  class="fas fa-receipt fa-2x fa-lgfa-2x fa-lg"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,13 +79,13 @@ include("Cookies/Mensaje.php");
         <i onclick="Home()"class="fas fa-home fa-2x fa-lgfa-2x fa-lg" ></i>
         </a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link waves-effect waves-light">
        
         <i  data-toggle="modal" data-target="#centralModalInfo" class="fas fa-tools fa-2x fa-lgfa-2x fa-lg"></i>
       
         </a>
-      </li>
+      </li> -->
      
     </ul>
   </div>
@@ -103,7 +100,7 @@ include("Cookies/Mensaje.php");
 				<form class="login100-form validate-form" method="post" id="login-form" autocomplete="off">
 
 					<span class="login100-form-title p-b-49">
-						<?php echo $mensaje?>
+						<?echo $mensaje?>
 					</span>
 
 					<div class="wrap-input100 " >
@@ -141,7 +138,9 @@ include("Cookies/Mensaje.php");
   include "Modales.php";?>
 
 					
-		
+					<!--Start of Tawk.to Script-->
+
+<!--End of Tawk.to Script-->
 			
 			</div>
 		</div>
@@ -150,11 +149,11 @@ include("Cookies/Mensaje.php");
 <!-- Modal hacia soporte -->
 
     
-    <footer class="page-footer font-small default-color"  style="background-color: #c80096 !important;">
+    <footer class="page-footer font-small default-color">
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">Copyright <br>
-  <b>PUNTO DE VENTA</b> | Version 3.0
+  <div class="footer-copyright text-center py-3">Copyright &copy; 2020 <br>
+  <b>PUNTO DE VENTA</b> | Version 4.0
   </div>
   <!-- Copyright -->
 
