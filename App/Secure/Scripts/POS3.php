@@ -16,25 +16,18 @@ if(isset($_POST['login_button'])) {
 	$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
 	$row = mysqli_fetch_assoc($resultset);	
 
-
-	switch($row){
-		case $row['Password']==$Password and $row['Nombre_rol']=="ADM Punto de venta" and $row['Estatus']=="Vigente";		
+	if($row['Password']==$Password and $row['Nombre_rol']=="ADM Punto de venta" and $row['Estatus']=="Vigente"){				
 		echo "ok";
 		$_SESSION['SuperAdmin'] = $row['Pos_ID'];		
-		break;
-	case $row['Password']==$Password and $row['Nombre_rol']=="Ventas" and $row['Estatus']=="Vigente"; 			
+	} 
+	if($row['Password']==$Password and $row['Nombre_rol']=="Ventas" and $row['Estatus']=="Vigente" ){				
 		echo "ok";
-		$_SESSION['VentasPos'] = $row['Pos_ID'];	
-		break;	
-		
-		case $row['Password']==$Password and $row['Nombre_rol']=="Logística y compras" and $row['Estatus']=="Vigente";			
-			echo "ok";
-		
-			case $row['Password']==$Password and $row['Nombre_rol']=="Supervisor" and $row['Estatus']=="Vigente";				
-			echo "ok";
+		$_SESSION['VentasPos'] = $row['Pos_ID'];		
+	} 	
+	if($row['Password']==$Password and $row['Nombre_rol']=="Supervisor" and $row['Estatus']=="Vigente"){				
+		echo "ok";
 			$_SESSION['Supervisor'] = $row['Pos_ID'];	 
-			break;	
-		} 	
 	}
+}
 
 	?>
