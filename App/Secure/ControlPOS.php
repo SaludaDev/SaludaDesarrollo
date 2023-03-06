@@ -1,5 +1,8 @@
 <?php
 session_start();
+$_SESSION['nombre'] = 'Goku';
+$_SESSION['raza'] = 'Saiyan';
+echo $_SESSION['nombre'];
 if($_SESSION["SuperAdmin"])	//Condicion admin
 {
 	header("location:https://saludaclinicas.com/AdminPOS");	

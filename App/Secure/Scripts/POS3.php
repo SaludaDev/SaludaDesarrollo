@@ -18,18 +18,15 @@ if(isset($_POST['login_button'])) {
 
 
 	switch($row){
-	case $row['Password']==$Password and $row['Nombre_rol']=="Administrador" and $row['Estatus']=="Vigente" ;				
+		case $row['Password']==$Password and $row['Nombre_rol']=="ADM Punto de venta" and $row['Estatus']=="Vigente";		
 		echo "ok";
-		$_SESSION['AdminPOS'] = $row['Pos_ID'];
-	break;
+		$_SESSION['SuperAdmin'] = $row['Pos_ID'];		
+		break;
 	case $row['Password']==$Password and $row['Nombre_rol']=="Ventas" and $row['Estatus']=="Vigente"; 			
 		echo "ok";
 		$_SESSION['VentasPos'] = $row['Pos_ID'];	
 		break;	
-		case $row['Password']==$Password and $row['Nombre_rol']=="ADM Punto de venta" and $row['Estatus']=="Vigente";		
-			echo "ok";
-			$_SESSION['SuperAdmin'] = $row['Pos_ID'];		
-			break;
+		
 		case $row['Password']==$Password and $row['Nombre_rol']=="Logística y compras" and $row['Estatus']=="Vigente";			
 			echo "ok";
 			$_SESSION['LogisticaPOS'] = $row['Pos_ID'];		
