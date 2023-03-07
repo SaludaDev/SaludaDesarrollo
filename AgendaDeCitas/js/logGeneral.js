@@ -1,7 +1,7 @@
 function CargaChecadorGeneral(){
 
 
-    $.get("https://controlfarmacia.com/AgendaDeCitas/Consultas/logsGeneral","",function(data){
+    $.get("https://saludaclinicas.com/AgendaDeCitas/Consultas/logsGeneral","",function(data){
       $("#ChecadorGeneral").html(data);
     })
   

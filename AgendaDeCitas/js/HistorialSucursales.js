@@ -1,7 +1,7 @@
 function CargaSucursalesH(){
 
 
-    $.get("https://controlfarmacia.com/ControldecitasV2/Consultas/SucursalesH.php","",function(data){
+    $.get("https://saludaclinicas.com/ControldecitasV2/Consultas/SucursalesH.php","",function(data){
       $("#SucursalesH").html(data);
     })
   

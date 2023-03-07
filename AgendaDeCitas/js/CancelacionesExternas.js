@@ -1,7 +1,7 @@
 function CargaCancelacionesExternas(){
 
 
-    $.post("https://controlfarmacia.com/AgendaDeCitas/Consultas/CancelacionesExternas.php","",function(data){
+    $.post("https://saludaclinicas.com/AgendaDeCitas/Consultas/CancelacionesExternas.php","",function(data){
       $("#CitasCanceladasExt").html(data);
     })
   

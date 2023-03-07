@@ -1,7 +1,7 @@
 function CargaDataCampana(){
 
 
-    $.post("https://controlfarmacia.com/ControldecitasV2/Consultas/CampanasHorarios.php","",function(data){
+    $.post("https://saludaclinicas.com/ControldecitasV2/Consultas/CampanasHorarios.php","",function(data){
       $("#TablaCampanasHorarios").html(data);
     })
   
