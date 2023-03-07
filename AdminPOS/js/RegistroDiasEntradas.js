@@ -1,7 +1,7 @@
 function CargaSignosVitales(){
 
 
-    $.get("https://saludaclinicas.comAdminPOS/Consultas/RegistroDeEntradasPorDiasHuellas.php","",function(data){
+    $.get("https://saludaclinicas.com/AdminPOS/Consultas/RegistroDeEntradasPorDiasHuellas.php","",function(data){
       $("#RegistrosEntradas").html(data);
     })
   
