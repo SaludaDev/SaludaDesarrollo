@@ -1,6 +1,6 @@
 <?php
 
-/* Database connection start */
+
 $servername = "localhost";
 $username = "somosgr1_SHWEB";
 $password = "yH.0a-v?T*1R";
@@ -12,3 +12,5 @@ if (mysqli_connect_errno()) {
 }
 
 ?>
+
+

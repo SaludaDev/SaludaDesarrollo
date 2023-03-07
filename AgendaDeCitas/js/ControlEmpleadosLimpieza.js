@@ -1,5 +1,5 @@
 function CargaEmpleados(){
-    $.get("https://controlfarmacia.com/AgendaDeCitas/Consultas/Intendentes.php","",function(data){
+    $.get("https://saludaclinicas.com/AgendaDeCitas/Consultas/Intendentes.php","",function(data){
         $("#tablaEmpleados").html(data);
       })
       }

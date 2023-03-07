@@ -1,7 +1,7 @@
 function CargaHorariosH(){
 
 
-    $.get("https://controlfarmacia.com/Controldecitas/Consultas/HorariosH.php","",function(data){
+    $.get("https://saludaclinicas.com/Controldecitas/Consultas/HorariosH.php","",function(data){
       $("#HorariosCampanas").html(data);
     })
   
