@@ -130,7 +130,7 @@ $query = $conn->query($sql1);
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/ContactoEmpleado.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/ContactoEmpleado.php","id="+id,function(data){
   			$("#form-edit").html(data);
           $("#Titulo").html("Medios disponibles para contactar al empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -143,7 +143,7 @@ $query = $conn->query($sql1);
   	});
     $(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/EditaEmpleado.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/EditaEmpleado.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Editar datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -158,7 +158,7 @@ $query = $conn->query($sql1);
 
     $(".btn-HistorialEmpleados").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/HistorialEmpleados.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/HistorialEmpleados.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Historial datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -171,7 +171,7 @@ $query = $conn->query($sql1);
 
     $(".btn-baja").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/BajaEmpleados.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/BajaEmpleados.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Historial datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -182,7 +182,7 @@ $query = $conn->query($sql1);
     });
     $(".btn-baja").click(function(){
     id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/BajaFarma.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/BajaFarma.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Historial datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");

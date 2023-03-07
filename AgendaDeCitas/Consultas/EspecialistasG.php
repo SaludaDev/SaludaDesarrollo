@@ -110,7 +110,7 @@ $('.modal').on('hidden.bs.modal', function (e) {
 });	
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/EditaEspecialistaH.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/EditaEspecialistaH.php","id="+id,function(data){
 			  $("#form-edit").html(data);
 			  $("#Titulo").html("Cambio de vigencia en especialistas");
 			  $("#info-mensaje").show();
@@ -119,7 +119,7 @@ $('.modal').on('hidden.bs.modal', function (e) {
 	  });
 	  $(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/DetallesEspecialista.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/DetallesEspecialista.php","id="+id,function(data){
 			  $("#form-edit").html(data);
 			  $("#Titulo").html("Detalles");
 			  $("#info-mensaje").hide();

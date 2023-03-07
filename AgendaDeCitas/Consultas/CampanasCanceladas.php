@@ -71,7 +71,7 @@ $query = $conn->query($sql1);
 			event.preventDefault();//Esto es para cancelar el envio
 	
 			$("#Celimina").click(function() {
-				$.post("https://controlfarmacia.com/Servicios_Especializados/Consultas/Eliminaresultado.php","id="+<?php echo $Especialista["ID_Agenda_Especialista"];?>,function(data){
+				$.post("https://saludaclinicas.com/Servicios_Especializados/Consultas/Eliminaresultado.php","id="+<?php echo $Especialista["ID_Agenda_Especialista"];?>,function(data){
 					
   
           CargaHistorial();

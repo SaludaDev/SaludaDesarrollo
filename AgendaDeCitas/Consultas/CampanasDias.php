@@ -151,7 +151,7 @@ $query = $conn->query($sql1);
  <script>
   	$(".btn-edit1").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/ContactoPaciente.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/ContactoPaciente.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Medios disponibles para contacto a paciente");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -163,7 +163,7 @@ $query = $conn->query($sql1);
       });
       $(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/CambioEstatusPaciente.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/CambioEstatusPaciente.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Cambio de estatus en cita");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -174,7 +174,7 @@ $query = $conn->query($sql1);
     });
     $(".btn-edit3").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/Cancelaciones.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/Cancelaciones.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Cancelacion");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
