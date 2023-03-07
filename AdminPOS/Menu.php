@@ -120,7 +120,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../Perfiles/<?echo $row['file_name']?>" class="img-circle elevation-2" alt="User Image">
+          <img src="https://saludaclinicas.com/Perfiles/<?php echo $row['file_name']?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a  id="DatosGenerales" class="d-block"><?php echo $row['Nombre_Apellidos']?></a>
