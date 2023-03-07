@@ -116,7 +116,7 @@ $query = $conn->query($sql1);
   	
     $(".btn-DetallesExt").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/DetallesCitaSucursalExt.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/DetallesCitaSucursalExt.php","id="+id,function(data){
               $("#form-editExt").html(data);
               $("#TituloExt").html("Detalles de cita");
               $("#DiExt").removeClass("modal-dialog modal-notify modal-success");
@@ -128,7 +128,7 @@ $query = $conn->query($sql1);
 
     $(".btn-CancelaExt").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/CancelaCitaExt.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/CancelaCitaExt.php","id="+id,function(data){
               $("#form-editExt").html(data);
               $("#TituloExt").html("Cancelación");
               $("#DiExt").removeClass("modal-dialog modal-lg modal-notify modal-success");
@@ -138,7 +138,7 @@ $query = $conn->query($sql1);
     });
     $(".btn-WhatsExt").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/ContactaWhatsSucursalesExt.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/ContactaWhatsSucursalesExt.php","id="+id,function(data){
               $("#form-editExt").html(data);
               $("#TituloExt").html("Cancelación");
               $("#DiExt").removeClass("modal-dialog modal-lg modal-notify modal-success");

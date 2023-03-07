@@ -64,7 +64,7 @@ $query = $conn->query($sql1);
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/EditaFecha.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/EditaFecha.php","id="+id,function(data){
   			$("#form-edit").html(data);
   		});
   		$('#editModal').modal('show');

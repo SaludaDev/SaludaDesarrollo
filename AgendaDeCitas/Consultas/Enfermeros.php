@@ -96,7 +96,7 @@ $query = $conn->query($sql1);
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/ContactoEmpleadoeEnfermero.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/ContactoEmpleadoeEnfermero.php","id="+id,function(data){
   			$("#form-edit").html(data);
           $("#Titulo").html("Medios disponibles para contactar al empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -110,7 +110,7 @@ $query = $conn->query($sql1);
   	});
     $(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/EditaEmpleadoEnfermero.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/EditaEmpleadoEnfermero.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Editar datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -126,7 +126,7 @@ $query = $conn->query($sql1);
 
     $(".btn-HistorialEmpleados").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/HistorialEnfermeros.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/HistorialEnfermeros.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Historial datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -139,7 +139,7 @@ $query = $conn->query($sql1);
 
     $(".btn-baja").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/BajaEnfermero.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/BajaEnfermero.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Historial datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");

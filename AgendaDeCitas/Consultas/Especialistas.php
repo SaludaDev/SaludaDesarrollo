@@ -126,7 +126,7 @@ $('.modal').on('hidden.bs.modal', function (e) {
 });	
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/EditaEspecialista.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/EditaEspecialista.php","id="+id,function(data){
 			  $("#form-edit").html(data);
 			  $("#Titulo").html("Cambio de vigencia en especialistas");
 			  $("#info-mensaje").show();
@@ -135,7 +135,7 @@ $('.modal').on('hidden.bs.modal', function (e) {
 	  });
 	  $(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/DetallesEspecialista.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/DetallesEspecialista.php","id="+id,function(data){
 			  $("#form-edit").html(data);
 			  $("#Titulo").html("Detalles");
 			  $("#info-mensaje").hide();
@@ -145,7 +145,7 @@ $('.modal').on('hidden.bs.modal', function (e) {
 	  });
 	  $(".btn-edit3").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/ActualizarEspecialista.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/ActualizarEspecialista.php","id="+id,function(data){
 			  $("#form-edit").html(data);
 			  $("#Titulo").html("Actualizando datos de especialista");
 			  $("#info-mensaje").show();

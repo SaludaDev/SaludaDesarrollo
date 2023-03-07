@@ -83,7 +83,7 @@ $('.modal').on('hidden.bs.modal', function (e) {
 });			
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-		  $.post("https://controlfarmacia.com/ControldecitasV2/Modales/EditaEspecialidadH.php","id="+id,function(data){
+		  $.post("https://saludaclinicas.com/ControldecitasV2/Modales/EditaEspecialidadH.php","id="+id,function(data){
 			  $("#form-edit").html(data);
 			  $("#Titulo").html("Cambio de vigencia en especialidades");
 			  $("#info-mensaje").show();
@@ -92,7 +92,7 @@ $('.modal').on('hidden.bs.modal', function (e) {
 	  });
 	  $(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/DetallesEspecialidad.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/DetallesEspecialidad.php","id="+id,function(data){
 			  $("#form-edit").html(data);
 			  $("#Titulo").html("Detalles");
 			  $("#info-mensaje").hide();

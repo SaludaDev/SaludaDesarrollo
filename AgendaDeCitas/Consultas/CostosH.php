@@ -59,7 +59,7 @@ $query = $conn->query($sql1);
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/Controldecitas/Modales/EditaCostoH.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/Controldecitas/Modales/EditaCostoH.php","id="+id,function(data){
         $("#form-edit").html(data);
 			  $("#Titulo").html("Cambio de vigencia en especialistas");
 			  $("#info-mensaje").show();
@@ -68,7 +68,7 @@ $query = $conn->query($sql1);
       });
       $(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/DetallesCostos.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/DetallesCostos.php","id="+id,function(data){
 			  $("#form-edit").html(data);
 			  $("#Titulo").html("Detalles");
 			  $("#info-mensaje").hide();

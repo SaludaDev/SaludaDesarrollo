@@ -83,7 +83,7 @@ $query = $conn->query($sql1);
 			event.preventDefault();//Esto es para cancelar el envio
 	
 			$("#Celimina").click(function() {
-				$.post("https://controlfarmacia.com/Controldecitas/Consultas/CancelaCita.php","id="+<?php echo $Especialista["ID_Agenda_Especialista"];?>,function(data){
+				$.post("https://saludaclinicas.com/Controldecitas/Consultas/CancelaCita.php","id="+<?php echo $Especialista["ID_Agenda_Especialista"];?>,function(data){
 					
   
           CargaCampanas();
@@ -106,7 +106,7 @@ $query = $conn->query($sql1);
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/Controldecitas/Modales/DetallesCita.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/Controldecitas/Modales/DetallesCita.php","id="+id,function(data){
   			$("#form-edit").html(data);
   		});
   		$('#editModal').modal('show');

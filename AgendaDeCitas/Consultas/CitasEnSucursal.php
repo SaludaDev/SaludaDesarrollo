@@ -115,7 +115,7 @@ $query = $conn->query($sql1);
   	
     $(".btn-Detalles").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/DetallesCitaSucursal.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/DetallesCitaSucursal.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Detalles de cita");
               $("#Di").removeClass("modal-dialog modal-notify modal-success");
@@ -127,7 +127,7 @@ $query = $conn->query($sql1);
 
     $(".btn-Cancela").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/CancelaCita.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/CancelaCita.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Cancelación");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-success");
@@ -137,7 +137,7 @@ $query = $conn->query($sql1);
     });
     $(".btn-Whats").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/ContactaWhatsSucursales.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/ContactaWhatsSucursales.php","id="+id,function(data){
         $("#form-edit").html(data);
               $("#Titulo").html("Contacto por whatsapp");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-success");
