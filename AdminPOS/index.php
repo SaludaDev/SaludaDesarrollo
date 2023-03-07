@@ -18,7 +18,7 @@
   }
 include "Consultas/Consultas.php";
 include "Consultas/Sesion.php";
-
+include "Consultas/ContadorIndex.php";
 
 ?>
 
@@ -267,7 +267,7 @@ Productos mas vendidos  <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastell
 
 <!-- OPTIONAL SCRIPTS -->
 <script src="dist/js/demo.js"></script>
-<script src="js/Cookies.js"></script>
+
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
 <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>

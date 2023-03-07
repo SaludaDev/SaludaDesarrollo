@@ -107,7 +107,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4"  style="background-color: #c80096 !important;">
     <!-- Brand Logo -->
     <a href="index" class="brand-link" style="background-color: #c80096 !important;">
     
