@@ -287,8 +287,7 @@ $(document).ready(function()
 });
 </script>
 <?php endif; ?>
-<?
-
+<?php
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);
   $numeroDia = date('d', strtotime($fecha));
