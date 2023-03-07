@@ -58,7 +58,7 @@ $resultado_eventos = mysqli_query($conn, $consulta_eventos);
 						<?php
 							while($registros_eventos = mysqli_fetch_array($resultado_eventos)){
 								?>
-								{
+								,{
 								id: '<?php echo $registros_eventos['ID_Fecha_Esp']; ?>',
 								title: '<?php echo utf8_encode(utf8_decode($registros_eventos['Nombre_Especialidad'])); ?>',
 								description:' <?php echo $registros_eventos['Nombre_Apellidos']; ?> ',

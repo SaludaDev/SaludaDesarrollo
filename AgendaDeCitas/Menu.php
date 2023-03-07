@@ -162,7 +162,7 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/AgendamientoDeCitasV3" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/AgendamientoDeCitasV3" class="nav-link">
                   <i class="fas fa-calendar-check"></i>
                     <p>
                      Agendar citas
@@ -172,7 +172,7 @@
                 </li>
                
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/CancelacionesV2.php" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/CancelacionesV2.php" class="nav-link">
                   <i class="fas fa-calendar-times"></i>
                     <p>
                       Cancelaciones
@@ -200,7 +200,7 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/Calendarios" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/Calendarios" class="nav-link">
                     <i class="fas fa-calendar-check"></i>
                     <p>
                       Pacientes agendados
@@ -209,7 +209,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/DataCampañas" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/DataCampañas" class="nav-link">
                     <i class="fas fa-calendar-check"></i>
                     <p>
                    Datos campañas
@@ -296,7 +296,7 @@
               <ul class="nav nav-treeview">
              
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/MedicosExpress" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/MedicosExpress" class="nav-link">
                   <i class="fas fa-user-md"></i>
                     <p>
                      Agregar medico
@@ -305,7 +305,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/CitasEspecialistasExt" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/CitasEspecialistasExt" class="nav-link">
                     <i class="fas fa-calendar-check"></i>
                     <p>
                      Programar campaña
@@ -329,7 +329,7 @@
               </a>
               <ul class="nav nav-treeview">
               <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/MedicosEnGeneral" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/MedicosEnGeneral" class="nav-link">
                   <i class="fas fa-user-md"></i>
                     <p>
                      Médicos
@@ -338,7 +338,7 @@
                   </a>
                 </li>
               <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/ProgramacionSucursales" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/ProgramacionSucursales" class="nav-link">
                     <i class="fas fa-calendar-check"></i>
                     <p>
                      Programar campaña
@@ -354,7 +354,7 @@
             </li>
             <li class="nav-header">Reportes y data de pacientes </li>
             <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/ProductosV2" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/ProductosV2" class="nav-link">
                   <i class="fas fa-money-bill-alt"></i>
                     <p>
                      Listado de costos
@@ -362,7 +362,7 @@
                   </a>
                 </li>   
             <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/DatosPacientes" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/DatosPacientes" class="nav-link">
                   <i class="fas fa-database"></i>
                     <p>
                      Data general
@@ -372,7 +372,7 @@
                 </li>   
                 
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/Reportes" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/Reportes" class="nav-link">
                   <i class="fas fa-file-excel"></i>
                     <p>
                      Reportes laboratorios
@@ -381,7 +381,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/ReportesRx" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/ReportesRx" class="nav-link">
                   <i class="fas fa-file-excel"></i>
                     <p>
                      Reportes Rayos X
@@ -391,7 +391,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/ReportesUSG" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/ReportesUSG" class="nav-link">
                   <i class="fas fa-file-excel"></i>
                     <p>
                      Reportes USG
@@ -402,7 +402,7 @@
 
 
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/ReportesEkg" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/ReportesEkg" class="nav-link">
                   <i class="fas fa-file-excel"></i>
                     <p>
                      Reportes EKG
@@ -411,7 +411,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="https://controlfarmacia.com/AgendaDeCitas/ReportesSG" class="nav-link">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/ReportesSG" class="nav-link">
                   <i class="fas fa-file-excel"></i>
                     <p>
                      Reportes Signos vitales
@@ -434,7 +434,7 @@
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="https://controlfarmacia.com/AgendaDeCitas/RegistroDiariosSignosVitales" class="nav-link">
+            <a href="https://saludaclinicas.com/AgendaDeCitas/RegistroDiariosSignosVitales" class="nav-link">
             
             <i class="fas fa-calendar-day"></i>
               <p>
@@ -444,7 +444,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/AgendaDeCitas/RegistroSignosVitalesGeneral" class="nav-link">
+            <a href="https://saludaclinicas.com/AgendaDeCitas/RegistroSignosVitalesGeneral" class="nav-link">
             <i class="far fa-calendar-check"></i>
               <p>
               Registro general
@@ -564,7 +564,7 @@
 
         function salir() {
 
-          window.location.replace('https://controlfarmacia.com/Controldecitas/Cierre');
+          window.location.replace('https://saludaclinicas.com/Controldecitas/Cierre');
 
         }
         $(document).ready(function() {
