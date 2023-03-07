@@ -1,7 +1,7 @@
 function CargaCitasEnSucursal(){
 
 
-    $.post("https://controlfarmacia.com/AgendaDeCitas/Consultas/CitasEnSucursalDias.php","",function(data){
+    $.post("https://saludaclinicas.com/AgendaDeCitas/Consultas/CitasEnSucursalDias.php","",function(data){
       $("#CitasEnLaSucursal").html(data);
     })
   

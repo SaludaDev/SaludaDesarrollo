@@ -1,7 +1,7 @@
 function CargaFechasH(){
 
 
-    $.get("https://controlfarmacia.com/Controldecitas/Consultas/FechasH.php","",function(data){
+    $.get("https://saludaclinicas.com/Controldecitas/Consultas/FechasH.php","",function(data){
       $("#FechasCampanas").html(data);
     })
   

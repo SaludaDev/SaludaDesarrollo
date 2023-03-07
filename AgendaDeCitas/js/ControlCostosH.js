@@ -1,7 +1,7 @@
 function CargaCostosH(){
 
 
-    $.get("https://controlfarmacia.com/Controldecitas/Consultas/CostosH.php","",function(data){
+    $.get("https://saludaclinicas.com/Controldecitas/Consultas/CostosH.php","",function(data){
       $("#CostosEspeciales").html(data);
     })
   

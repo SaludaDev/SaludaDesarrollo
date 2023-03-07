@@ -1,7 +1,7 @@
 function   CargaAltaPacientes(){
 
 
-    $.post("https://controlfarmacia.com/ControldecitasV2/Consultas/DataPacientes.php","",function(data){
+    $.post("https://saludaclinicas.com/ControldecitasV2/Consultas/DataPacientes.php","",function(data){
       $("#Pacientes").html(data);
     })
   
