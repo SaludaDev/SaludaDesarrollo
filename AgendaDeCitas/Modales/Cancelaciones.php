@@ -155,4 +155,4 @@ if ($query->num_rows > 0) {
   <script src="js/RealizaCancelacionV2.js"></script>
 <?php else : ?>
   <p class="alert alert-danger">404 No se encuentra</p>
-<?php  endif; ?>
+<?php endif; ?>
