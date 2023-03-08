@@ -28,7 +28,7 @@ if ($query->num_rows > 0) {
           <div class="input-group-prepend">
             <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
           </div>
-          <input type="text" disabled class="form-control" value="<? echo $datapacientes->ID_Data_Paciente; ?>" readonly name="Folio" id="folio" aria-describedby="basic-addon1">
+          <input type="text" disabled class="form-control" value="<?php echo $datapacientes->ID_Data_Paciente; ?>" readonly name="Folio" id="folio" aria-describedby="basic-addon1">
         </div>
       </div>
       <div class="col">
@@ -37,7 +37,7 @@ if ($query->num_rows > 0) {
           <div class="input-group-prepend">
             <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
           </div>
-          <input type="text" class="form-control" value="<? echo $datapacientes->Nombre_Paciente; ?>" readonly name="Nombres" id="nombres" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" value="<?php echo $datapacientes->Nombre_Paciente; ?>" readonly name="Nombres" id="nombres" aria-describedby="basic-addon1">
         </div>
       </div>
     </div>
@@ -49,7 +49,7 @@ if ($query->num_rows > 0) {
             <div class="input-group-prepend">
               <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
             </div>
-            <input type="date" class="form-control" value="<? echo $datapacientes->Fecha_Nacimiento; ?>" readonly id="fechaNac" aria-describedby="basic-addon1">
+            <input type="date" class="form-control" value="<?php echo $datapacientes->Fecha_Nacimiento; ?>" readonly id="fechaNac" aria-describedby="basic-addon1">
           </div>
         </div>
         <div class="col">
@@ -58,7 +58,7 @@ if ($query->num_rows > 0) {
             <div class="input-group-prepend">
               <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
             </div>
-            <input type="text" class="form-control" value="<? echo $datapacientes->Edad; ?>" name="Edad" readonly id="edad" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" value="<?php echo $datapacientes->Edad; ?>" name="Edad" readonly id="edad" aria-describedby="basic-addon1">
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@ if ($query->num_rows > 0) {
             <div class="input-group-prepend">
               <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
             </div>
-            <input type="text" class="form-control" value="<? echo $datapacientes->Telefono; ?>" readonly name="Tel" id="tel" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" value="<?php echo $datapacientes->Telefono; ?>" readonly name="Tel" id="tel" aria-describedby="basic-addon1">
           </div>
 
         </div>
@@ -80,7 +80,7 @@ if ($query->num_rows > 0) {
             <div class="input-group-prepend">
               <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
             </div>
-            <input type="text" class="form-control" value="<? echo $datapacientes->Correo; ?>" readonly name="Correo" id="correo" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" value="<?php echo $datapacientes->Correo; ?>" readonly name="Correo" id="correo" aria-describedby="basic-addon1">
 
           </div>
 
@@ -93,7 +93,7 @@ if ($query->num_rows > 0) {
             <div class="input-group-prepend">
               <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
             </div>
-            <input type="text" class="form-control" value="<? echo $datapacientes->Sexo; ?>" readonly name="Sexo" id="sexo" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" value="<?php echo $datapacientes->Sexo; ?>" readonly name="Sexo" id="sexo" aria-describedby="basic-addon1">
           </div>
         </div>
         <div class="col">
@@ -102,7 +102,7 @@ if ($query->num_rows > 0) {
             <div class="input-group-prepend">
               <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
             </div>
-            <input type="text" class="form-control" value="<? echo $datapacientes->Alergias; ?>" readonly name="Alergias" id="alergias" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" value="<?php echo $datapacientes->Alergias; ?>" readonly name="Alergias" id="alergias" aria-describedby="basic-addon1">
           </div>
         </div>
       </div>
@@ -121,7 +121,7 @@ if ($query->num_rows > 0) {
             <?php
             $query = $conn->query("SELECT ID_SucursalC,Nombre_Sucursal,ID_H_O_D FROM Sucursales_CampañasV2 WHERE Estatus_Sucursal='Vigente' AND ID_H_O_D='" . $row['ID_H_O_D'] . "'");
             while ($valores = mysqli_fetch_array($query)) {
-              echo '<option value="' . $valores['ID_SucursalC'] . '">' . $valores['Nombre_Sucursal'] . '</option>';
+              echo '<option value="' . $valores['ID_SucursalC'] . '">' . $valores['Nombre_Sucursal'] . '</option>'; //aqui se cambio
             }
             ?>
           </select>
