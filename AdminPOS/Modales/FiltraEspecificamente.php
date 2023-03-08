@@ -15,7 +15,7 @@
      
       <div class="modal-body">
      
- <form action="javascript:void(0)" method="post" id="Filtrapormediodesucursalconajax">
+ <form action="javascript:void" method="post" id="Filtrapormediodesucursalconajax">
     
  
  <div class="row">
