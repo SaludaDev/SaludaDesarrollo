@@ -1,7 +1,5 @@
 
-<?php
-  $mysqli = new mysqli('localhost', 'u155356178_CorpoSaluda', 'SSalud4Dev2495#$', 'u155356178_DesarrolloSalu');
-?>
+  
       <div class="modal fade bd-example-modal-xl" id="FiltroEspecifico" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog  modal-notify modal-success">
     <div class="modal-content">
@@ -38,7 +36,7 @@
   <select id = "sucursal" class = "form-control" name = "Sucursal" required >
                                                <option value="">Seleccione una Sucursal:</option>
         <?php 
-          $query = $mysqli -> query ("SELECT ID_SucursalC,Nombre_Sucursal,ID_H_O_D FROM SucursalesCorre WHERE  ID_H_O_D='".$row['ID_H_O_D']."'");
+          $query = $conn -> query ("SELECT ID_SucursalC,Nombre_Sucursal,ID_H_O_D FROM SucursalesCorre WHERE  ID_H_O_D='".$row['ID_H_O_D']."'");
           while ($valores = mysqli_fetch_array($query)) {
             echo '<option value="'.$valores[ID_SucursalC].'">'.$valores[Nombre_Sucursal].'</option>';
           }
