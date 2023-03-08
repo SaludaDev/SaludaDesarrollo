@@ -9,4 +9,4 @@
 
 ?>
 <script src="js/LogSalida.js"></script>
-<script src="https://controlfarmacia.com/Controldecitas/js/Refresca.js"></script>
+<script src="https://saludaclinicas.com/Controldecitas/js/Refresca.js"></script>
