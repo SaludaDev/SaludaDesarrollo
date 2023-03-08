@@ -100,9 +100,9 @@ while ($r=$query->fetch_object()){
 </form>
 <script src="js/ActualizaFondos.js"></script>
 
-<? else:?>
+<?php else:?>
   <p class="alert alert-danger">404 No se encuentra</p>
-<? endif;?>
+<?php endif;?>
 <script type="text/javascript">
   
 
