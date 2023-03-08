@@ -55,14 +55,14 @@ $query = $conn->query($sql1);
     <td> <?php echo FechaCastellano($Usuarios["Fecha_Apertura"]); ?></td>
     <td> <button style="<?echo $Usuarios['CodigoEstatus'];?>" class="btn btn-default btn-sm" > <?php echo $Usuarios["Estatus"]; ?></button></td>
     <td> <?php echo $Usuarios["Turno"]; ?></td>
-    <td><button class="btn btn-default btn-sm" style=<?if($Usuarios['Asignacion'] ==1){
+    <td><button class="btn btn-default btn-sm" style=<?php if($Usuarios['Asignacion'] ==1){
    echo "background-color:#007bff!important";
 } elseif($Usuarios['Asignacion'] ==2) {
   echo "background-color:#001f3f!important";
 }else {
    echo "background-color:#fd7e14!important";
 }
-?>><?if($Usuarios['Asignacion'] ==1){
+?>><?php if($Usuarios['Asignacion'] ==1){
   echo "Asignado";
 } elseif($Usuarios['Asignacion'] ==2) {
  echo "Finalizado";
@@ -102,7 +102,7 @@ $query = $conn->query($sql1);
   	
       $(".btn-edit").click(function(){
     id = $(this).data("id");
-    $.post("https://controlfarmacia.com/AdminPOS/Modales/CortesDeCajaReimpresion.php","id="+id,function(data){
+    $.post("https://saludaclinicas.com/AdminPOS/Modales/CortesDeCajaReimpresion.php","id="+id,function(data){
         $("#form-edit").html(data);
         $("#Titulo").html("Corte de caja");
         $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -138,7 +138,7 @@ $query = $conn->query($sql1);
   </div><!-- /.modal -->
 
  
-  <?
+  <?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);
