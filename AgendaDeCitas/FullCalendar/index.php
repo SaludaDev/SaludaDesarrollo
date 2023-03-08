@@ -283,7 +283,7 @@ $events = $req->fetchAll();
 					$end = $event['end'];
 				}
 			?>
-				{
+				,{
 					id: '<?php echo $event['id']; ?>',
 					title: '<?php echo $event['title']; ?>',
 					start: '<?php echo $start; ?>',

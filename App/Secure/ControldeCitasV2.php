@@ -1,5 +1,5 @@
 <?
-header ("Location:https://controlfarmacia.com/App/Secure/IngresoAgenda");
+header ("Location:https://saludaclinicas.com/App/Secure/IngresoAgenda");
 include("db_connect.php");
 include("Cookies/Mensaje.php");
 ?>

@@ -77,7 +77,7 @@ $resultado_eventos2 = mysqli_query($conn, $consulta_eventos2);
 						<?php
 							while($registros_eventos = mysqli_fetch_array($resultado_eventos)){
 								?>
-								{
+								,{
 								id: '<?php echo $registros_eventos['ID_Agenda_Especialista']; ?>',
 								title: '<?php echo $registros_eventos['Nombre_rol']; ?>',
 								description:' <?php echo $registros_eventos['Nombre_Paciente']; ?> ',
@@ -189,7 +189,7 @@ $resultado_eventos2 = mysqli_query($conn, $consulta_eventos2);
 						<?php
 							while($registros_eventos2 = mysqli_fetch_array($resultado_eventos2)){
 								?>
-								{
+								,{
 								id: '<?php echo $registros_eventos2['ID_Agenda_Especialista']; ?>',
 								title: '<?php echo $registros_eventos2['Nombre_Especialidad']; ?>',
 								description:' <?php echo $registros_eventos2['Nombre_Paciente']; ?> ',
