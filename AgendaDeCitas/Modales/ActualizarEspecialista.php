@@ -28,7 +28,7 @@ if ($query->num_rows > 0) {
 
         <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
       </div>
-      <input type="text" class="form-control" value="<? echo $Especialistas->Nombre_Apellidos; ?>" id="actnombres" name="ActNombres" aria-describedby="basic-addon1">
+      <input type="text" class="form-control" value="<?php echo $Especialistas->Nombre_Apellidos; ?>" id="actnombres" name="ActNombres" aria-describedby="basic-addon1">
     </div>
     <label for="exampleFormControlInput1">Especialidad </label>
     <div class="input-group mb-3">
@@ -36,7 +36,7 @@ if ($query->num_rows > 0) {
 
         <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
       </div>
-      <input type="text" class="form-control" value="<? echo $Especialistas->Nombre_Especialidad; ?>" disabled aria-describedby="basic-addon1">
+      <input type="text" class="form-control" value="<?php echo $Especialistas->Nombre_Especialidad; ?>" disabled aria-describedby="basic-addon1">
 
     </div>
     <label for="exampleFormControlInput1">Telefono</label>
@@ -45,7 +45,7 @@ if ($query->num_rows > 0) {
 
         <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
       </div>
-      <input type="number" class="form-control" value="<? echo $Especialistas->Tel; ?>" name="ActTel" id="acttel" aria-describedby="basic-addon1">
+      <input type="number" class="form-control" value="<?php echo $Especialistas->Tel; ?>" name="ActTel" id="acttel" aria-describedby="basic-addon1">
     </div>
     <label for="exampleFormControlInput1">Correo</label>
     <div class="input-group mb-3">
@@ -53,7 +53,7 @@ if ($query->num_rows > 0) {
 
         <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
       </div>
-      <input type="text" class="form-control" value="<? echo $Especialistas->Correo; ?>" name="ActCorreo" id="actcorreo" aria-describedby="basic-addon1">
+      <input type="text" class="form-control" value="<?php echo $Especialistas->Correo; ?>" name="ActCorreo" id="actcorreo" aria-describedby="basic-addon1">
     </div>
 
     <label for="exampleFormControlInput1">Sucursal</label>
@@ -62,7 +62,7 @@ if ($query->num_rows > 0) {
 
         <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
       </div>
-      <input type="text" readonly class="form-control" value="<? echo $Especialistas->Nombre_Sucursal; ?>" aria-describedby="basic-addon1">
+      <input type="text" readonly class="form-control" value="<?php echo $Especialistas->Nombre_Sucursal; ?>" aria-describedby="basic-addon1">
     </div>
 
 
