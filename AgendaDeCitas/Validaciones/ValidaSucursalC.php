@@ -35,5 +35,6 @@ if (isset($_POST)) {
         echo "<script> activado(); </script>"; 
     }
 }
+?>
 
 

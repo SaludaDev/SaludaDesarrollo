@@ -1,4 +1,4 @@
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed" >
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
   <div class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-primary navbar-light" style="background-color:#2E64FE !important;">
@@ -97,7 +97,7 @@
             <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
           </div>
         </li>
-       
+
         <li class="nav-item">
           <a class="nav-link"><i class="fas fa-sign-out-alt" style="color: white;" data-toggle="modal" data-target="#Salida"></i></a>
         </li>
@@ -120,14 +120,14 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="../Perfiles/<?echo $row['file_name']?>" class="img-circle elevation-2" alt="User Image">
+            <img src="../Perfiles/<?php echo $row['file_name'] ?>" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
             <a id="DatosGenerales" class="d-block">
-              <?echo $row['Nombre_Apellidos']?>
+              <?php echo $row['Nombre_Apellidos'] ?>
             </a>
             <a id="DatosGenerales" class="d-block"><small>
-                <?echo $row['Nombre_rol']?>
+                <?php echo $row['Nombre_rol'] ?>
               </small></a>
           </div>
         </div>
@@ -148,45 +148,45 @@
 
 
 
-            
+
             <li class="nav-header">Agendamiento de citas</li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-clipboard"></i>
-            
+
 
                 <p>
-                Control de citas
+                  Control de citas
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="https://saludaclinicas.com/AgendaDeCitas/AgendamientoDeCitasV3" class="nav-link">
-                  <i class="fas fa-calendar-check"></i>
+                    <i class="fas fa-calendar-check"></i>
                     <p>
-                     Agendar citas
+                      Agendar citas
 
                     </p>
                   </a>
                 </li>
-               
+
                 <li class="nav-item">
                   <a href="https://saludaclinicas.com/AgendaDeCitas/CancelacionesV2.php" class="nav-link">
-                  <i class="fas fa-calendar-times"></i>
+                    <i class="fas fa-calendar-times"></i>
                     <p>
                       Cancelaciones
 
                     </p>
                   </a>
                 </li>
-             
+
               </ul>
             </li>
-<!-- CITAS -->
+            <!-- CITAS -->
 
 
-            
+
             <li class="nav-header">Calendarios de campañas</li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
@@ -194,7 +194,7 @@
 
 
                 <p>
-                Calendarios
+                  Calendarios
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
@@ -212,7 +212,7 @@
                   <a href="https://saludaclinicas.com/AgendaDeCitas/DataCampañas" class="nav-link">
                     <i class="fas fa-calendar-check"></i>
                     <p>
-                   Datos campañas
+                      Datos campañas
 
                     </p>
                   </a>
@@ -286,7 +286,7 @@
             <li class="nav-item has-treeview">
               <a href="" class="nav-link">
                 <i class="nav-icon fas fa-laptop-medical "></i>
-    
+
 
                 <p>
                   Campaña express
@@ -294,12 +294,12 @@
                 </p>
               </a>
               <ul class="nav nav-treeview">
-             
+
                 <li class="nav-item">
                   <a href="https://saludaclinicas.com/AgendaDeCitas/MedicosExpress" class="nav-link">
-                  <i class="fas fa-user-md"></i>
+                    <i class="fas fa-user-md"></i>
                     <p>
-                     Agregar medico
+                      Agregar medico
 
                     </p>
                   </a>
@@ -308,156 +308,156 @@
                   <a href="https://saludaclinicas.com/AgendaDeCitas/CitasEspecialistasExt" class="nav-link">
                     <i class="fas fa-calendar-check"></i>
                     <p>
-                     Programar campaña
+                      Programar campaña
 
                     </p>
                   </a>
                 </li>
-               
-              
-          
-            
+
+
+
+
               </ul>
             </li>
             <li class="nav-item has-treeview">
               <a href="" class="nav-link">
                 <i class="nav-icon fas fa-clinic-medical "></i>
-              <p>
-                Sucursales
+                <p>
+                  Sucursales
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
-              <li class="nav-item">
+                <li class="nav-item">
                   <a href="https://saludaclinicas.com/AgendaDeCitas/MedicosEnGeneral" class="nav-link">
-                  <i class="fas fa-user-md"></i>
+                    <i class="fas fa-user-md"></i>
                     <p>
-                     Médicos
+                      Médicos
 
                     </p>
                   </a>
                 </li>
-              <li class="nav-item">
+                <li class="nav-item">
                   <a href="https://saludaclinicas.com/AgendaDeCitas/ProgramacionSucursales" class="nav-link">
                     <i class="fas fa-calendar-check"></i>
                     <p>
-                     Programar campaña
+                      Programar campaña
 
                     </p>
                   </a>
                 </li>
-               
-              
-               
-            
+
+
+
+
               </ul>
             </li>
             <li class="nav-header">Reportes y data de pacientes </li>
             <li class="nav-item">
-                  <a href="https://saludaclinicas.com/AgendaDeCitas/ProductosV2" class="nav-link">
-                  <i class="fas fa-money-bill-alt"></i>
-                    <p>
-                     Listado de costos
-                    </p>
-                  </a>
-                </li>   
+              <a href="https://saludaclinicas.com/AgendaDeCitas/ProductosV2" class="nav-link">
+                <i class="fas fa-money-bill-alt"></i>
+                <p>
+                  Listado de costos
+                </p>
+              </a>
+            </li>
             <li class="nav-item">
-                  <a href="https://saludaclinicas.com/AgendaDeCitas/DatosPacientes" class="nav-link">
-                  <i class="fas fa-database"></i>
-                    <p>
-                     Data general
+              <a href="https://saludaclinicas.com/AgendaDeCitas/DatosPacientes" class="nav-link">
+                <i class="fas fa-database"></i>
+                <p>
+                  Data general
 
-                    </p>
-                  </a>
-                </li>   
-                
-                <li class="nav-item">
-                  <a href="https://saludaclinicas.com/AgendaDeCitas/Reportes" class="nav-link">
-                  <i class="fas fa-file-excel"></i>
-                    <p>
-                     Reportes laboratorios
+                </p>
+              </a>
+            </li>
 
-                    </p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://saludaclinicas.com/AgendaDeCitas/ReportesRx" class="nav-link">
-                  <i class="fas fa-file-excel"></i>
-                    <p>
-                     Reportes Rayos X
-
-                    </p>
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="https://saludaclinicas.com/AgendaDeCitas/ReportesUSG" class="nav-link">
-                  <i class="fas fa-file-excel"></i>
-                    <p>
-                     Reportes USG
-
-                    </p>
-                  </a>
-                </li>
-
-
-                <li class="nav-item">
-                  <a href="https://saludaclinicas.com/AgendaDeCitas/ReportesEkg" class="nav-link">
-                  <i class="fas fa-file-excel"></i>
-                    <p>
-                     Reportes EKG
-
-                    </p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://saludaclinicas.com/AgendaDeCitas/ReportesSG" class="nav-link">
-                  <i class="fas fa-file-excel"></i>
-                    <p>
-                     Reportes Signos vitales
-
-                    </p>
-                  </a>
-                </li>
-
-                
-
-           
-          
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-            <i class="fas fa-clipboard-list"></i>
-              <p>
-             Registro de pacientes
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="https://saludaclinicas.com/AgendaDeCitas/RegistroDiariosSignosVitales" class="nav-link">
-            
-            <i class="fas fa-calendar-day"></i>
-              <p>
-              Registro por día
-              
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="https://saludaclinicas.com/AgendaDeCitas/RegistroSignosVitalesGeneral" class="nav-link">
-            <i class="far fa-calendar-check"></i>
-              <p>
-              Registro general
-              
-              </p>
-            </a>
-          </li> 
-          <li class="nav-item">
-        
-            </ul>
-          </li>
+              <a href="https://saludaclinicas.com/AgendaDeCitas/Reportes" class="nav-link">
+                <i class="fas fa-file-excel"></i>
+                <p>
+                  Reportes laboratorios
 
-          <!-- <li class="nav-item has-treeview">
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://saludaclinicas.com/AgendaDeCitas/ReportesRx" class="nav-link">
+                <i class="fas fa-file-excel"></i>
+                <p>
+                  Reportes Rayos X
+
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="https://saludaclinicas.com/AgendaDeCitas/ReportesUSG" class="nav-link">
+                <i class="fas fa-file-excel"></i>
+                <p>
+                  Reportes USG
+
+                </p>
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              <a href="https://saludaclinicas.com/AgendaDeCitas/ReportesEkg" class="nav-link">
+                <i class="fas fa-file-excel"></i>
+                <p>
+                  Reportes EKG
+
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://saludaclinicas.com/AgendaDeCitas/ReportesSG" class="nav-link">
+                <i class="fas fa-file-excel"></i>
+                <p>
+                  Reportes Signos vitales
+
+                </p>
+              </a>
+            </li>
+
+
+
+
+
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="fas fa-clipboard-list"></i>
+                <p>
+                  Registro de pacientes
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/RegistroDiariosSignosVitales" class="nav-link">
+
+                    <i class="fas fa-calendar-day"></i>
+                    <p>
+                      Registro por día
+
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://saludaclinicas.com/AgendaDeCitas/RegistroSignosVitalesGeneral" class="nav-link">
+                    <i class="far fa-calendar-check"></i>
+                    <p>
+                      Registro general
+
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+
+              </ul>
+            </li>
+
+            <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
             <i class="fas fa-chart-bar"></i>
               <p>
@@ -488,92 +488,92 @@
 
 
 
-          <!-- Estadisticas del personal -->
+            <!-- Estadisticas del personal -->
 
 
 
 
+
+
+      </div>
+
+
+
+      </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+  </aside>
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+
+
+          <div class="col">
+            <div id="clockdate">
+              <div class="clockdate-wrapper">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item active" id="date"></li>
+                  <li class="breadcrumb-item" id="clock"></li>
+                </ol>
+              </div><!-- /.col -->
+            </div><!-- /.col -->
+          </div><!-- /.col -->
+
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+
+    <!-- Main content -->
+    <div class="modal fade" id="Cierre" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">¿Cerrar la sesión?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <button type="button" onclick="salir()" class="btn btn-danger btn-lg btn-block">Si, Cerrar sesión</button>
+            <br>
 
 
           </div>
+          <div class="modal-footer">
 
-           
+            <button type="button" data-dismiss="modal" class="btn btn-primary">Cerrar ventana</button>
 
-          </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
-      </div>
-      <!-- /.sidebar -->
-    </aside>
-    <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <div class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-
-
-            <div class="col">
-              <div id="clockdate">
-                <div class="clockdate-wrapper">
-                  <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item active" id="date"></li>
-                    <li class="breadcrumb-item" id="clock"></li>
-                  </ol>
-                </div><!-- /.col -->
-              </div><!-- /.col -->
-            </div><!-- /.col -->
-
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
-
-      <!-- Main content -->
-      <div class="modal fade" id="Cierre" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">¿Cerrar la sesión?</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <button type="button" onclick="salir()" class="btn btn-danger btn-lg btn-block">Si, Cerrar sesión</button>
-              <br>
-
-
-            </div>
-            <div class="modal-footer">
-
-              <button type="button" data-dismiss="modal" class="btn btn-primary">Cerrar ventana</button>
-
-            </div>
           </div>
         </div>
       </div>
-      <script src="js/clock.js"></script>
-      <!-- Main content -->
-      <script>
-        function inicio() {
-          $('#inicio').modal('show'); // abrir
-        }
+    </div>
+    <script src="js/clock.js"></script>
+    <!-- Main content -->
+    <script>
+      function inicio() {
+        $('#inicio').modal('show'); // abrir
+      }
 
-        function cierre() {
-          $('#Cierre').modal('show'); // abrir
-        }
+      function cierre() {
+        $('#Cierre').modal('show'); // abrir
+      }
 
-        function salir() {
+      function salir() {
 
-          window.location.replace('https://saludaclinicas.com/Controldecitas/Cierre');
+        window.location.replace('https://saludaclinicas.com/Controldecitas/Cierre');
 
-        }
-        $(document).ready(function() {
-          startTime();
-        });
-      </script>
+      }
+      $(document).ready(function() {
+        startTime();
+      });
+    </script>
 
-      <style>
-        #date {
-          color: #007bff;
-        }
-      </style>
+    <style>
+      #date {
+        color: #007bff;
+      }
+    </style>
