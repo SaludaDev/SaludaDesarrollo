@@ -1,8 +1,8 @@
-<?
+<?php
 include "../Consultas/db_connection.php";
 
-$user_id=null;
-$sql1= "SELECT AgendaCitas_EspecialistasV3.ID_Agenda_Especialista,AgendaCitas_EspecialistasV3.Fk_Especialidad,
+$user_id = null;
+$sql1 = "SELECT AgendaCitas_EspecialistasV3.ID_Agenda_Especialista,AgendaCitas_EspecialistasV3.Fk_Especialidad,
 AgendaCitas_EspecialistasV3.Fk_Especialista,AgendaCitas_EspecialistasV3.Fk_Sucursal,
 AgendaCitas_EspecialistasV3.Fk_Fecha,AgendaCitas_EspecialistasV3.Fk_Hora,
 AgendaCitas_EspecialistasV3.Tipo_Consulta,
@@ -18,138 +18,141 @@ AgendaCitas_EspecialistasV3.Fk_Especialidad = EspecialidadesV2.ID_Especialidad A
 AgendaCitas_EspecialistasV3.Fk_Sucursal =Sucursales_CampañasV2.ID_SucursalC AND
 AgendaCitas_EspecialistasV3.Fk_Fecha = Fechas_EspecialistasV2.ID_Fecha_Esp AND
 AgendaCitas_EspecialistasV3.Fk_Hora = Horarios_Citas_especialistasV2.ID_Horario AND
-AgendaCitas_EspecialistasV3.Fk_Costo =  Costos_EspecialistasV2.ID_Costo_Esp AND AgendaCitas_EspecialistasV3.ID_Agenda_Especialista = ".$_POST["id"];
+AgendaCitas_EspecialistasV3.Fk_Costo =  Costos_EspecialistasV2.ID_Costo_Esp AND AgendaCitas_EspecialistasV3.ID_Agenda_Especialista = " . $_POST["id"];
 $query = $conn->query($sql1);
 $Especialidades = null;
-if($query->num_rows>0){
-while ($r=$query->fetch_object()){
-  $Especialidades=$r;
-  break;
-}
-
+if ($query->num_rows > 0) {
+  while ($r = $query->fetch_object()) {
+    $Especialidades = $r;
+    break;
   }
+}
 ?>
 
-<? if($Especialidades!=null):?>
+<?php if ($Especialidades != null) : ?>
 
-<form action="javascript:void(0)" method="post" id="Cancelaciones">
-  <div class="form-row">
-    <div class="col">
-      <label for="exampleFormControlInput1">Especialidad </label>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
+  <form action="javascript:void(0)" method="post" id="Cancelaciones">
+    <div class="form-row">
+      <div class="col">
+        <label for="exampleFormControlInput1">Especialidad </label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
 
-          <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
+            <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
+          </div>
+          <input type="text" class="form-control" readonly value="<? echo $Especialidades->Nombre_Especialidad; ?>" aria-describedby="basic-addon1">
         </div>
-        <input type="text" class="form-control" readonly value="<? echo $Especialidades->Nombre_Especialidad; ?>" aria-describedby="basic-addon1">
       </div>
-    </div>
-    <div class="col">
-      <label for="exampleFormControlInput1">Paciente</label>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
+      <div class="col">
+        <label for="exampleFormControlInput1">Paciente</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
 
-          <span class="input-group-text" id="Tarjeta"><i class="fas fa-hospital-user"></i></span>
+            <span class="input-group-text" id="Tarjeta"><i class="fas fa-hospital-user"></i></span>
+          </div>
+          <input type="text" class="form-control" readonly value="<? echo $Especialidades->Nombre_Paciente; ?>" aria-describedby="basic-addon1">
         </div>
-        <input type="text" class="form-control" readonly value="<? echo $Especialidades->Nombre_Paciente; ?>" aria-describedby="basic-addon1">
       </div>
-    </div>
-    
-  </div>
 
-  
-  <div class="table-responsive">
-  <table class="table table-bordered">
-  <thead>
-    <tr>
-     
-     
-    <th scope="col" style="
+    </div>
+
+
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+
+
+            <th scope="col" style="
     background-color: #f00 !important;">Estatus de pago</th>
-     <th scope="col" style="
+            <th scope="col" style="
     background-color: #f00 !important;">Estatus de cita</th>
-       <th scope="col" style="
+            <th scope="col" style="
     background-color: #f00 !important;">Estatus de seguimiento</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      
-     
-      <td><button id="Cancelada" class="divOculto btn btn-default btn-sm" style="background-color: #FF0000 !important;">Cancelada</button></td> <td>
-      <button id="Cancelada" class="divOculto btn btn-default btn-sm" style="background-color: #FF0000 !important;">Cancelada</button></td>
-      <td><button id="Cancelada" class="divOculto btn btn-default btn-sm" style="background-color: #FF0000 !important;">Cancelada</button></td>
-    </tr>
-    
-  
-  </tbody>
-</table>
-</div>
-  
-  <input type="hidden" name="id" id="id" value="<?php echo $Especialidades->ID_Agenda_Especialista; ?>">
-  <button type="submit" name="submit" id="submit" class="btn btn-primary">Validar cancelacion <i class="fas fa-user-times"></i></button>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
 
-</form>
-<form action="javascript:void(0)" method="post" id="CancelaCompleto">
-  <div class="form-row">
-    <div class="col">
-      <label for="exampleFormControlInput1">Especialidad </label>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
 
-          <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
-        </div>
-        <input type="text" class="form-control" readonly value="<? echo $Especialidades->Nombre_Especialidad; ?>" aria-describedby="basic-addon1">
-      </div>
+            <td><button id="Cancelada" class="divOculto btn btn-default btn-sm" style="background-color: #FF0000 !important;">Cancelada</button></td>
+            <td>
+              <button id="Cancelada" class="divOculto btn btn-default btn-sm" style="background-color: #FF0000 !important;">Cancelada</button>
+            </td>
+            <td><button id="Cancelada" class="divOculto btn btn-default btn-sm" style="background-color: #FF0000 !important;">Cancelada</button></td>
+          </tr>
+
+
+        </tbody>
+      </table>
     </div>
-    <div class="col">
-      <label for="exampleFormControlInput1">Paciente</label>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
 
-          <span class="input-group-text" id="Tarjeta"><i class="fas fa-hospital-user"></i></span>
+    <input type="hidden" name="id" id="id" value="<?php echo $Especialidades->ID_Agenda_Especialista; ?>">
+    <button type="submit" name="submit" id="submit" class="btn btn-primary">Validar cancelacion <i class="fas fa-user-times"></i></button>
+
+  </form>
+  <form action="javascript:void(0)" method="post" id="CancelaCompleto">
+    <div class="form-row">
+      <div class="col">
+        <label for="exampleFormControlInput1">Especialidad </label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+
+            <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
+          </div>
+          <input type="text" class="form-control" readonly value="<? echo $Especialidades->Nombre_Especialidad; ?>" aria-describedby="basic-addon1">
         </div>
-        <input type="text" class="form-control" readonly value="<? echo $Especialidades->Nombre_Paciente; ?>" aria-describedby="basic-addon1">
       </div>
-    </div>
-    
-  </div>
+      <div class="col">
+        <label for="exampleFormControlInput1">Paciente</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
 
-  
-  <div class="table-responsive">
-  <table class="table table-bordered">
-  <thead>
-    <tr>
-     
-     
-    <th scope="col" style="
+            <span class="input-group-text" id="Tarjeta"><i class="fas fa-hospital-user"></i></span>
+          </div>
+          <input type="text" class="form-control" readonly value="<? echo $Especialidades->Nombre_Paciente; ?>" aria-describedby="basic-addon1">
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+
+
+            <th scope="col" style="
     background-color: #f00 !important;">Estatus de pago</th>
-     <th scope="col" style="
+            <th scope="col" style="
     background-color: #f00 !important;">Estatus de cita</th>
-       <th scope="col" style="
+            <th scope="col" style="
     background-color: #f00 !important;">Estatus de seguimiento</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      
-     
-      <td><button  class=" btn btn-default btn-sm" style="background-color: #FF0000 !important;">Cancelada</button></td> <td>
-      <button  class="btn btn-default btn-sm" style="background-color: #FF0000 !important;">Cancelada</button></td>
-      <td><button  class="btn btn-default btn-sm" style="background-color: #FF0000 !important;">Cancelada</button></td>
-    </tr>
-    
-  
-  </tbody>
-</table>
-</div>
-  
-  <input type="hidden" name="idcancela" id="idcancela" value="<?php echo $Especialidades->ID_Agenda_Especialista; ?>">
-  <button type="submit" name="submit_Cancela" id="submit_Cancela" class="btn btn-danger">Ejecutar Cancelacion <i class="fas fa-user-slash"></i></button>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
 
-</form>
-<script src="js/AplicaCancelacionV2.js"></script>
-<script src="js/RealizaCancelacionV2.js"></script>
-<? else:?>
-<p class="alert alert-danger">404 No se encuentra</p>
-<? endif;?>
+
+            <td><button class=" btn btn-default btn-sm" style="background-color: #FF0000 !important;">Cancelada</button></td>
+            <td>
+              <button class="btn btn-default btn-sm" style="background-color: #FF0000 !important;">Cancelada</button>
+            </td>
+            <td><button class="btn btn-default btn-sm" style="background-color: #FF0000 !important;">Cancelada</button></td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+
+    <input type="hidden" name="idcancela" id="idcancela" value="<?php echo $Especialidades->ID_Agenda_Especialista; ?>">
+    <button type="submit" name="submit_Cancela" id="submit_Cancela" class="btn btn-danger">Ejecutar Cancelacion <i class="fas fa-user-slash"></i></button>
+
+  </form>
+  <script src="js/AplicaCancelacionV2.js"></script>
+  <script src="js/RealizaCancelacionV2.js"></script>
+<?php else : ?>
+  <p class="alert alert-danger">404 No se encuentra</p>
+<?php  endif; ?>
