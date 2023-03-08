@@ -19,3 +19,4 @@ $Conectado=0;
 		echo json_encode(array("statusCode"=>201));
 	}
 	mysqli_close($conn);
+  ?>
