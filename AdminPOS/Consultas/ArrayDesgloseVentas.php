@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 include("db_connection.php");
 include "Consultas.php";
 include "Sesion.php";
-include "mcript.php";
+/* include "mcript.php"; */
 
 $sql = "SELECT Ventas_POS.Folio_Ticket,Ventas_POS.Fk_Caja,Ventas_POS.Venta_POS_ID,Ventas_POS.Identificador_tipo,
 Ventas_POS.Total_Venta,Ventas_POS.Importe,Ventas_POS.Total_VentaG,Ventas_POS.FormaDePago,Ventas_POS.Turno,Ventas_POS.FolioSignoVital,Ventas_POS.Cliente,
