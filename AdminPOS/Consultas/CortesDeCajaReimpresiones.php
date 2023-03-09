@@ -56,14 +56,14 @@ $query = $conn->query($sql1);
     <td> <?php echo $Usuarios["Turno"]; ?></td>
     <td><button class="btn btn-default btn-sm" style=<?php if($Usuarios['Asignacion'] ==1){
    echo "background-color:#007bff!important";
-} elseif($Usuarios['Asignacion'] ==2) {
+} if($Usuarios['Asignacion'] ==2) {
   echo "background-color:#001f3f!important";
 }else {
    echo "background-color:#fd7e14!important";
 }
 ?>><?php if($Usuarios['Asignacion'] ==1){
   echo "Asignado";
-} elseif($Usuarios['Asignacion'] ==2) {
+} if($Usuarios['Asignacion'] ==2) {
  echo "Finalizado";
 }else {
   echo "Sin asignar";
