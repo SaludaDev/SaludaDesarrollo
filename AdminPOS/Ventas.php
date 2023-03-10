@@ -133,10 +133,9 @@ include ("footer.php")?>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-<script src="js/SolicitudesCancelaciones.js"></script>
+
 <script src="js/ControlVentas.js"></script>
-<script src="js/CancelacionesCompletasTickets.js"></script>
-<script src="js/CancelacionesRechazadasTickets.js"></script>
+
 <script src="js/RealizaCambioDeSucursalPorFiltro.js"></script>
 <script src="datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
     <script src="datatables/JSZip-2.5.0/jszip.min.js"></script>    
