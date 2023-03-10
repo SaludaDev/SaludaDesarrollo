@@ -65,45 +65,7 @@ include "Consultas/Sesion.php";
 </div>
 
 <!-- PRESENTACIONES -->
-<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-  <div class="card text-center">
-  <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-  Solicitudes de cancelaciones <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
-  </div>
-  
-  <div >
- 
-</div>
 
-</div>
-<div id="TableSolicitudesCancelaciones"></div>
-  </div>
-<!-- POR CADUCAR -->
-  <div class="tab-pane fade" id="PorCaducar" role="tabpanel" aria-labelledby="pills-profile-tab">
-  <div class="card text-center">
-  <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-  Productos por caducar de <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
-  </div>
-  
-  <div >
- 
-</div>
-
-</div>
-<div id="TicketsCancelados"></div>
-  </div>
-  <div class="tab-pane fade" id="Rechazado" role="tabpanel" aria-labelledby="pills-profile-tab">
-  <div class="card text-center">
-  <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-  Cancelaciones rechazadas <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
-  </div>
-  
-  <div >
- 
-</div>
-
-</div>
-<div id="TicketsRechazadosTable"></div>
   </div>
 </div>
 
@@ -122,7 +84,6 @@ include "Consultas/Sesion.php";
  
   <!-- Main Footer -->
 <?php
-
   include ("Modales/Error.php");
   include ("Modales/Exito.php");
   include ("Modales/ExitoActualiza.php");
