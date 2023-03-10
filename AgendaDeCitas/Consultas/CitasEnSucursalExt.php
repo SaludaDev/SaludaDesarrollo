@@ -88,7 +88,7 @@ $query = $conn->query($sql1);
   
   <a data-id="<?php echo $Usuarios["ID_Agenda_Especialista"];?>" class="btn-CancelaExt dropdown-item" >Cancelar <i class="fas fa-ban"></i></a>
    
-  <a style=<?if($Usuarios['Fecha_Disponibilidad'] >= $fcha){
+  <a style=<?php if($Usuarios['Fecha_Disponibilidad'] >= $fcha){
    
    echo "display:block;";
 } else {
@@ -96,7 +96,7 @@ $query = $conn->query($sql1);
 }
 ?> data-id="<?php echo $Usuarios["ID_Agenda_Especialista"];?>" class="btn-WhatsExt dropdown-item" >Whatsapp <i class="fab fa-whatsapp"></i></a>
 
-<a href="tel:+<? echo $Usuarios["Telefono"]; ?>" class="btn-call dropdown-item" >Llamar <i class="fas fa-phone"></i></a>
+<a href="tel:+<?php echo $Usuarios["Telefono"]; ?>" class="btn-call dropdown-item" >Llamar <i class="fas fa-phone"></i></a>
 </div>
  
 <!-- Basic dropdown -->

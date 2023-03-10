@@ -59,4 +59,3 @@ $ColorEstatus=  $conn -> real_escape_string(htmlentities(strip_tags(Trim($_POST[
     
 }
 }
-?>

@@ -1,5 +1,5 @@
 
-<?$fcha = date("Y-m-d");?>
+<?php $fcha = date("Y-m-d");?>
 <script type="text/javascript">
 $(document).ready( function () {
   $('#SignosVitales').DataTable({
@@ -106,7 +106,7 @@ $query = $conn->query($sql1);
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlconsulta.com/Enfermeria2/Modales/ConfirmaDatosP.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/Enfermeria2/Modales/ConfirmaDatosP.php","id="+id,function(data){
   			$("#form-edit").html(data);
   		});
   		$('#editModal').modal('show');
@@ -131,7 +131,7 @@ $query = $conn->query($sql1);
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-  <?
+  <?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

@@ -61,7 +61,7 @@ $query = $conn->query($sql1);
 <?php endif;?>
   <!-- Modal -->
   
-  <?
+  <?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

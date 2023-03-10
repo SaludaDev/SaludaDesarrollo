@@ -70,7 +70,7 @@ $query = $conn->query($sql1);
 </td>
 
 <td>
-<button class="btn btn-default btn-sm" style="<?echo $Especialista['ColorEstatusCita'];?>"><?php echo $Especialista["Estatus_cita"]; ?></button> 
+<button class="btn btn-default btn-sm" style="<?php echo $Especialista['ColorEstatusCita'];?>"><?php echo $Especialista["Estatus_cita"]; ?></button> 
 <!-- Basic dropdown -->
    </td>
  

@@ -49,7 +49,7 @@ $query = $conn->query($sql1);
 	<td><?php echo $Especialidades["Nombre_Apellidos"]; ?></td>
   <td><?php echo $Especialidades["Nombre_Especialidad"]; ?></td>
   <td><?php echo $Especialidades["Nombre_Sucursal"]; ?></td>
-	<td><button class="btn btn-default btn-sm" style=<?if($Especialidades['Estatus'] == 'Disponible'){
+	<td><button class="btn btn-default btn-sm" style=<?php if($Especialidades['Estatus'] == 'Disponible'){
    echo "background-color:#00c851!important";
 } elseif($Especialidades['Estatus'] != 'Disponible'  &&  $Especialidades['Estatus'] != 'No disponible') {
   echo "background-color:#fd7e14!important";
@@ -57,7 +57,7 @@ $query = $conn->query($sql1);
     echo "background-color:#fd1414!important";
 }
 ?>>
-<?if($Especialidades['Estatus'] == ''){
+<?php if($Especialidades['Estatus'] == ''){
    echo "No se asigno estatus";
 } else {
     echo $Especialidades["Estatus"]; 
@@ -91,7 +91,7 @@ $query = $conn->query($sql1);
 <script>
   	$(".btn-detail").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/DetallesMedicoExpress.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/DetallesMedicoExpress.php","id="+id,function(data){
   			$("#form-edit").html(data);
           $("#Titulo").html("Detalles médico");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -103,7 +103,7 @@ $query = $conn->query($sql1);
   	});
     $(".btn-FinMed").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/BajaMedicoExpress.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/BajaMedicoExpress.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Cambio de vigencia");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -114,7 +114,7 @@ $query = $conn->query($sql1);
     });
     $(".btn-edicion").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/EditaMedicoExpress.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/EditaMedicoExpress.php","id="+id,function(data){
   			$("#form-edit").html(data);
           $("#Titulo").html("Editar datos de Médico");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -149,7 +149,7 @@ $query = $conn->query($sql1);
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

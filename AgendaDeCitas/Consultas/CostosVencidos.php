@@ -41,7 +41,7 @@ $query = $conn->query($sql1);
 	<td><?php echo $Costo["ID_Costo_Esp"]; ?></td>
     <td><?php echo $Costo["Nombre_Apellidos"]; ?></td>
     <td>$<?php echo $Costo["Costo_Especialista"]; ?></td>
-	<td><button class="btn btn-default btn-sm" style="<?echo $Costo['Codigocolor'];?>"><?php echo $Costo["Estatus"]; ?></button></td>
+	<td><button class="btn btn-default btn-sm" style="<?php echo $Costo['Codigocolor'];?>"><?php echo $Costo["Estatus"]; ?></button></td>
 	 
 		
   <td>
