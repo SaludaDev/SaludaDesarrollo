@@ -1,4 +1,3 @@
-
 <script>
 
 tabla = $('#Productos').DataTable({

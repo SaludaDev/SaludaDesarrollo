@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json');
+// header('Content-Type: application/json');
 include ("db_connection.php");
 include "Consultas.php";
 include "Sesion.php";
