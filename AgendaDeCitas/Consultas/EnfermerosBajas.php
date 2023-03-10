@@ -47,13 +47,13 @@ $query = $conn->query($sql1);
 </thead>
 <?php while ($PersonalEnfermeria=$query->fetch_array()):?>
 <tr><td><?php echo $PersonalEnfermeria["Enfermero_ID"]; ?></td>   
-<td><img  width="80" height="80" alt="avatar" class="rounded-circle img-responsive" src="https://controlconsulta.com/Perfiles/<?php echo $PersonalEnfermeria["file_name"]; ?> "></td>
+<td><img  width="80" height="80" alt="avatar" class="rounded-circle img-responsive" src="https://saludaclinicas.com/Perfiles/<?php echo $PersonalEnfermeria["file_name"]; ?> "></td>
 <td><?php echo $PersonalEnfermeria["Nombre_Apellidos"]; ?></td>   
 <td><?php echo $PersonalEnfermeria["Telefono"]; ?></td>   
 
     <td><?php echo $PersonalEnfermeria["Nombre_Sucursal"]; ?></td>
 
-    <td><?if($PersonalEnfermeria['Biometrico'] == 1){
+    <td><?php if($PersonalEnfermeria['Biometrico'] == 1){
    
    echo "Verificado ";
  

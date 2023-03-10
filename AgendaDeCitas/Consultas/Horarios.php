@@ -50,7 +50,7 @@ $query = $conn->query($sql1);
     <td><?php echo fechaCastellano($Horario["Fecha_Disponibilidad"]); ?></td>
     
   
-		<td><button class="btn btn-default btn-sm" style="<?echo $Horario['CodigoColorHo'];?>"><?php echo $Horario["Estatus_Horario"]; ?></button></td>
+		<td><button class="btn btn-default btn-sm" style="<?php echo $Horario['CodigoColorHo'];?>"><?php echo $Horario["Estatus_Horario"]; ?></button></td>
 
 		
 </tr>
@@ -80,7 +80,7 @@ $query = $conn->query($sql1);
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-  <?
+  <?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

@@ -47,12 +47,12 @@ $query = $conn->query($sql1);
 <?php while ($Especialidades=$query->fetch_array()):?>
 <tr>
 	<td><?php echo $Especialidades["Medico_ID"]; ?></td>
-	<td><img  width="80" height="80" alt="avatar" class="rounded-circle img-responsive" src="https://controlconsulta.com/Perfiles/<?php echo $Especialidades["file_name"]; ?> "></td>
+	<td><img  width="80" height="80" alt="avatar" class="rounded-circle img-responsive" src="https://saludaclinicas.com/Perfiles/<?php echo $Especialidades["file_name"]; ?> "></td>
 	<td><?php echo $Especialidades["Nombre_Apellidos"]; ?></td>
   <td><?php echo $Especialidades["Telefono"]; ?></td>
     <td><?php echo $Especialidades["Nombre_Sucursal"]; ?></td>
     <td><?php echo $Especialidades["Nombre_rol"]; ?></td>
-    <td><?if($Especialidades['Biometrico'] == 1){
+    <td><?php if($Especialidades['Biometrico'] == 1){
    
    echo "Verificado ";
  

@@ -45,7 +45,7 @@ $query = $conn->query($sql1);
     <td><?php echo $Fecha["Nombre_Apellidos"]; ?></td>
     <td><?php echo $Fecha["Fecha_Disponibilidad"]; ?></td>
 	
-	<td><button class="btn btn-default btn-sm" style="<?echo $Fecha['CodigoColorFe'];?>"><?php echo $Fecha["Estatus_fecha"]; ?></button></td>
+	<td><button class="btn btn-default btn-sm" style="<?php echo $Fecha['CodigoColorFe'];?>"><?php echo $Fecha["Estatus_fecha"]; ?></button></td>
 
 
 		

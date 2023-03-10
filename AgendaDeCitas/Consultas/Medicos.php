@@ -47,7 +47,7 @@ $query = $conn->query($sql1);
 <?php while ($Especialidades=$query->fetch_array()):?>
 <tr>
 	<td><?php echo $Especialidades["Medico_ID"]; ?></td>
-	<td><img  width="80" height="80" alt="avatar" class="rounded-circle img-responsive" src="https://controlconsulta.com/Perfiles/<?php echo $Especialidades["file_name"]; ?> "></td>
+	<td><img  width="80" height="80" alt="avatar" class="rounded-circle img-responsive" src="https://saludaclinicas.com/Perfiles/<?php echo $Especialidades["file_name"]; ?> "></td>
 	<td><?php echo $Especialidades["Nombre_Apellidos"]; ?></td>
   <td><?php echo $Especialidades["Telefono"]; ?></td>
     <td><?php echo $Especialidades["Nombre_Sucursal"]; ?></td>
@@ -70,9 +70,9 @@ $query = $conn->query($sql1);
 <a data-id="<?php echo $Especialidades["Medico_ID"];?>" class="btn-edit2 dropdown-item" >Editar datos <i class="fas fa-pencil-alt"></i></a>
 
   <a data-id="<?php echo $Especialidades["Medico_ID"];?>" class="btn-HistorialEmpleados dropdown-item" >Movimientos <i class="fas fa-history" aria-hidden="true"></i></a>
-  <a  class="dropdown-item"  href="http://localhost/AdminPOS/index.php?nombrerh=<?echo $row['Nombre_Apellidos']?>&&rol=<?echo $row['Nombre_rol']?>&&file=<?echo $row['file_name']?>&&
+  <a  class="dropdown-item"  href="http://localhost/AdminPOS/index.php?nombrerh=<?php echo $row['Nombre_Apellidos']?>&&rol=<?php echo $row['Nombre_rol']?>&&file=<?php echo $row['file_name']?>&&
   idempleado=<?php echo $Especialidades["Medico_ID"]; ?>&&nombreempleado=<?php echo $Especialidades["Nombre_Apellidos"]; ?>&&sucursalnombre=<?php echo $Especialidades["Nombre_Sucursal"]; ?>&&puesto=Médico">Capturar datos biometricos <i class="fas fa-fingerprint"></i></a>
-  <a  class="dropdown-item" href="https://api.whatsapp.com/send?phone=+52<?php echo $Especialidades["Telefono"]; ?>&text=Hola,<?php echo $Especialidades["Nombre_Apellidos"]; ?>,tus datos de accceso para el Sistema de enfermería son: %0A *Correo: <?php echo $Especialidades["Correo_Electronico"]; ?>*%0A *Contraseña :<?php echo $Especialidades["Password"]; ?>* %0A Recuerda que tu sistema puedes encontrarlo en el escritorio de tu tableta  o puedes ingresar  a través del siguiente link: https://controlconsulta.com/App/Secure/Enfermeria2" target="blank_" >Enviar datos por whatsapp <i class="fab fa-whatsapp"></i></a>
+  <a  class="dropdown-item" href="https://api.whatsapp.com/send?phone=+52<?php echo $Especialidades["Telefono"]; ?>&text=Hola,<?php echo $Especialidades["Nombre_Apellidos"]; ?>,tus datos de accceso para el Sistema de enfermería son: %0A *Correo: <?php echo $Especialidades["Correo_Electronico"]; ?>*%0A *Contraseña :<?php echo $Especialidades["Password"]; ?>* %0A Recuerda que tu sistema puedes encontrarlo en el escritorio de tu tableta  o puedes ingresar  a través del siguiente link: https://saludaclinicas.com/App/Secure/Enfermeria2" target="blank_" >Enviar datos por whatsapp <i class="fab fa-whatsapp"></i></a>
   <a data-id="<?php echo $Especialidades["Medico_ID"];?>" class="btn-baja dropdown-item" >Marcar como baja <i class="fas fa-user-slash"></i></a>
 </div>
 <!-- Basic dropdown -->
@@ -93,7 +93,7 @@ $query = $conn->query($sql1);
 <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/ContactoMedico.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/ContactoMedico.php","id="+id,function(data){
   			$("#form-edit").html(data);
           $("#Titulo").html("Medios disponibles para contactar al empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -106,7 +106,7 @@ $query = $conn->query($sql1);
   	});
     $(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/EditaMedico.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/EditaMedico.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Editar datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -121,7 +121,7 @@ $query = $conn->query($sql1);
 
     $(".btn-HistorialEmpleados").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/HistorialMedicos.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/HistorialMedicos.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Historial datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -133,7 +133,7 @@ $query = $conn->query($sql1);
 
     $(".btn-baja").click(function(){
     id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/BajaMedico.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AgendaDeCitas/Modales/BajaMedico.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Historial datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");

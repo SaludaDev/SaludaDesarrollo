@@ -49,13 +49,13 @@ $query = $conn->query($sql1);
 </thead>
 <?php while ($PersonalEnfermeria=$query->fetch_array()):?>
 <tr><td><?php echo $PersonalEnfermeria["Enfermero_ID"]; ?></td>   
-<td><img  width="80" height="80" alt="avatar" class="rounded-circle img-responsive" src="https://controlconsulta.com/Perfiles/<?php echo $PersonalEnfermeria["file_name"]; ?> "></td>
+<td><img  width="80" height="80" alt="avatar" class="rounded-circle img-responsive" src="https://saludaclinicas.com/Perfiles/<?php echo $PersonalEnfermeria["file_name"]; ?> "></td>
 <td><?php echo $PersonalEnfermeria["Nombre_Apellidos"]; ?></td>   
 <td><?php echo $PersonalEnfermeria["Telefono"]; ?></td>   
 
     <td><?php echo $PersonalEnfermeria["Nombre_Sucursal"]; ?></td>
 
-    <td><?if($PersonalEnfermeria['Biometrico'] == 1){
+    <td><?php if($PersonalEnfermeria['Biometrico'] == 1){
    
    echo "Verificado ";
  
@@ -76,7 +76,7 @@ $query = $conn->query($sql1);
   <a data-id="<?php echo $PersonalEnfermeria["Enfermero_ID"];?>" class="btn-HistorialEmpleados dropdown-item" >Movimientos <i class="fas fa-history" aria-hidden="true"></i></a>
   
  
-  <a  class="dropdown-item" href="https://api.whatsapp.com/send?phone=+52<?php echo $PersonalEnfermeria["Telefono"]; ?>&text=Hola,<?php echo $PersonalEnfermeria["Nombre_Apellidos"]; ?>,tus datos de accceso para el Sistema de enfermería son: %0A *Correo: <?php echo $PersonalEnfermeria["Correo_Electronico"]; ?>*%0A *Contraseña :<?php echo $PersonalEnfermeria["Password"]; ?>* %0A Recuerda que tu sistema puedes encontrarlo en el escritorio de tu tableta  o puedes ingresar  a través del siguiente link: https://controlconsulta.com/App/Secure/Enfermeria2" target="blank_" >Enviar datos por whatsapp <i class="fab fa-whatsapp"></i></a>
+  <a  class="dropdown-item" href="https://api.whatsapp.com/send?phone=+52<?php echo $PersonalEnfermeria["Telefono"]; ?>&text=Hola,<?php echo $PersonalEnfermeria["Nombre_Apellidos"]; ?>,tus datos de accceso para el Sistema de enfermería son: %0A *Correo: <?php echo $PersonalEnfermeria["Correo_Electronico"]; ?>*%0A *Contraseña :<?php echo $PersonalEnfermeria["Password"]; ?>* %0A Recuerda que tu sistema puedes encontrarlo en el escritorio de tu tableta  o puedes ingresar  a través del siguiente link: https://saludaclinicas.com/App/Secure/Enfermeria2" target="blank_" >Enviar datos por whatsapp <i class="fab fa-whatsapp"></i></a>
   <a data-id="<?php echo $PersonalEnfermeria["Enfermero_ID"];?>" class="btn-baja dropdown-item" >Marcar como baja <i class="fas fa-user-slash"></i></a>
 </div>
 <!-- Basic dropdown -->

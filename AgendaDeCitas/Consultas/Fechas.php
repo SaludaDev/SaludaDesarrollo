@@ -45,7 +45,7 @@ $query = $conn->query($sql1);
     <td><?php echo $Fecha["Nombre_Apellidos"]; ?></td>
     <td><?php echo fechaCastellano($Fecha["Fecha_Disponibilidad"]); ?></td>
 	
-	<td><button class="btn btn-default btn-sm" style="<?echo $Fecha['CodigoColorFe'];?>"><?php echo $Fecha["Estatus_fecha"]; ?></button></td>
+	<td><button class="btn btn-default btn-sm" style="<?php echo $Fecha['CodigoColorFe'];?>"><?php echo $Fecha["Estatus_fecha"]; ?></button></td>
 
 	<td>
 		<button data-id="<?php echo $Fecha["ID_Fecha_Esp"];?>" class="btn-edit btn btn-danger"><i class="fas fa-ban"></i></button></td>
@@ -97,7 +97,7 @@ $query = $conn->query($sql1);
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
-  <?
+  <?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

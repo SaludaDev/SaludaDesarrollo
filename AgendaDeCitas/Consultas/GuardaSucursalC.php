@@ -5,7 +5,7 @@ include_once 'db_connection.php';
 $EstatusVigencia="Vigente";
 $CodigodeEstatus="background-color:#b87455 !important";
 
- 
+
 $ID_SucursalC=$conn -> real_escape_string(htmlentities(strip_tags(trim($_POST['sucursal']))));
     
 $Nombre_Sucursal =  $conn -> real_escape_string(htmlentities(strip_tags(Trim($_POST['nsucursal']))));

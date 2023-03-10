@@ -45,7 +45,7 @@ $query = $conn->query($sql1);
     <td><?php echo date('h:i A', strtotime($Horario["Horario_Disponibilidad"])); ?></td>
 	
 		
-	<td><button class="<?echo $Horario['CodigoColorHo'];?>"><?php echo $Horario["Estatus_Horario"]; ?></button></td>
+	<td><button class="<?php echo $Horario['CodigoColorHo'];?>"><?php echo $Horario["Estatus_Horario"]; ?></button></td>
 	
 
 	
@@ -63,7 +63,7 @@ $query = $conn->query($sql1);
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/Controldecitas/Modales/EditaHorarioH.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/Controldecitas/Modales/EditaHorarioH.php","id="+id,function(data){
   			$("#form-edit").html(data);
   		});
   		$('#editModal').modal('show');
