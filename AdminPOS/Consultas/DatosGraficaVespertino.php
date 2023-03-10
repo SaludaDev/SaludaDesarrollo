@@ -1,13 +1,11 @@
- 
-<?php
+ <?php
 // Seteamos la cabecera a JSON
 header('Content-Type: application/json');
  
-// Configuramos la conexión a la base de datos
 define('DB_HOST', 'localhost');
-define('DB_USERNAME', 'somosgr1_SHWEB');
-define('DB_PASSWORD', 'yH.0a-v?T*1R');
-define('DB_NAME', 'somosgr1_Sistema_Hospitalario');
+define('DB_USERNAME', 'u155356178_CorpoSaluda');
+define('DB_PASSWORD', 'SSalud4Dev2495#$');
+define('DB_NAME', 'u155356178_DesarrolloSalu');
  
 // Desplegamos la conexión a la Basde de Datos
 $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
@@ -41,3 +39,4 @@ $mysqli->close();
 echo json_encode($data);
  
 //var_dump($data);
+?>

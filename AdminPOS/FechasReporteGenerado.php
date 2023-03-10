@@ -21,7 +21,7 @@ AND Ventas_POS.Identificador_tipo = Servicios_POS.Servicio_ID AND Ventas_POS.Fec
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Filtro de pedidos de la sucursal  <?php echo $nombresucursalelegida?> </title>
+  <title>Reporte de ventas del <?php echo $fecha1?> al <?php echo $fecha2?>  </title>
 
 <?php include "Header.php"?>
  <style>
@@ -37,7 +37,7 @@ AND Ventas_POS.Identificador_tipo = Servicios_POS.Servicio_ID AND Ventas_POS.Fec
 
 <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-  Datos de venta de la sucursal  <?php echo $nombresucursalelegida?> del <?php echo fechaCastellano($fecha1)?> al <?php echo fechaCastellano($fecha2)?>
+  Datos de venta  del <?php echo fechaCastellano($fecha1)?> al <?php echo fechaCastellano($fecha2)?>
   </div>
   <div >
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#FiltroEspecifico" class="btn btn-default">
