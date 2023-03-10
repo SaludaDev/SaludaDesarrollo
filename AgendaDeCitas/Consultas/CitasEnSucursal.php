@@ -86,7 +86,7 @@ $query = $conn->query($sql1);
 <a data-id="<?php echo $Usuarios["ID_Agenda_Especialista"];?>" class="btn-Detalles dropdown-item" >Detalles <i class="fas fa-calendar-week"></i></a>
   
   <a data-id="<?php echo $Usuarios["ID_Agenda_Especialista"];?>" class="btn-Cancela dropdown-item" >Cancelar <i class="fas fa-ban"></i></a>
-  <a style=<?if($Usuarios['Fecha_Disponibilidad'] >= $fcha){
+  <a style=<?php if($Usuarios['Fecha_Disponibilidad'] >= $fcha){
    
    echo "display:block;";
 } else {
@@ -158,7 +158,7 @@ $query = $conn->query($sql1);
          </button>
        </div>
         <div id="Mensaje "class="alert alert-info alert-styled-left text-blue-800 content-group">
-						                <span id="Aviso" class="text-semibold"><?echo $row['Nombre_Apellidos']?>
+						                <span id="Aviso" class="text-semibold"><?php echo $row['Nombre_Apellidos']?>
                             Verifique los campos antes de realizar alguna accion</span>
 						                <button type="button" class="close" data-dismiss="alert">×</button>
                             </div>

@@ -68,9 +68,9 @@ $query = $conn->query($sql1);
 	<?php echo date('h:i A', strtotime($Especialista["Horario_Disponibilidad"])); ?>
 </td>
 	
-	<td><button class="<?echo $Especialista['Color_Pago'];?>"><?php echo $Especialista["Estatus_pago"]; ?></button><br>
-	<button class="<?echo $Especialista['ColorEstatusCita'];?>"><?php echo $Especialista["Estatus_cita"]; ?></button>
-	<button class="<?echo $Especialista['Color_Seguimiento'];?>"><?php echo $Especialista["Estatus_Seguimiento"]; ?></button>
+	<td><button class="<?php echo $Especialista['Color_Pago'];?>"><?php echo $Especialista["Estatus_pago"]; ?></button><br>
+	<button class="<?php echo $Especialista['ColorEstatusCita'];?>"><?php echo $Especialista["Estatus_cita"]; ?></button>
+	<button class="<?php echo $Especialista['Color_Seguimiento'];?>"><?php echo $Especialista["Estatus_Seguimiento"]; ?></button>
 </td>
 
 	<td><button data-id="<?php echo $Especialista["ID_Agenda_Especialista"];?>" class="btn-edit btn btn-info btn-sm"><i class="far fa-eye"></i></button></td>

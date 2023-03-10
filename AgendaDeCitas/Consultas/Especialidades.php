@@ -46,7 +46,7 @@ $query = $conn->query($sql1);
 	<td><?php echo $Especialidades["ID_Especialidad"]; ?></td>
 	<td><?php echo $Especialidades["Nombre_Sucursal"]; ?></td>
 	<td><?php echo $Especialidades["Nombre_Especialidad"]; ?></td>
-	<td><button class="btn btn-default btn-sm" style="<?echo $Especialidades['Codigocolor'];?>"><?php echo $Especialidades["Estatus_Especialidad"]; ?></button></td>
+	<td><button class="btn btn-default btn-sm" style="<?php echo $Especialidades['Codigocolor'];?>"><?php echo $Especialidades["Estatus_Especialidad"]; ?></button></td>
 	 
 	 <td>
 		 <!-- Basic dropdown -->

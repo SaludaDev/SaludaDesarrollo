@@ -74,14 +74,14 @@ $query = $conn->query($sql1);
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/AgendaNuevo.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/AgendaNuevo.php","id="+id,function(data){
   			$("#form-edit").html(data);
   		});
   		$('#editModal').modal('show');
     });
     $(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/EditaDatosPaciente.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/EditaDatosPaciente.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Editar datos del paciente");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");

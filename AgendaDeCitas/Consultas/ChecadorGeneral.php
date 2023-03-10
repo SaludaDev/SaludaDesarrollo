@@ -1,4 +1,4 @@
-<?$fcha = date("Y-m-d");?>
+<?php $fcha = date("Y-m-d");?>
 <script type="text/javascript">
 $(document).ready( function () {
     $('#IngresoEmpleados').DataTable({
@@ -87,7 +87,7 @@ $query = $conn->query($sql1);
 <?php else:?>
 	<p class="alert alert-warning">No hay resultados</p>
 <?php endif;?>
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

@@ -81,7 +81,7 @@ $query = $conn->query($sql1);
 <?php while ($Usuarios=$query->fetch_array()):?>
 <tr>
 <td > <?php echo $Usuarios["PersonalAgenda_ID"]; ?></td>
-  <td><img  width="60" height="60" alt="avatar" class="rounded-circle img-responsive" src="https://controlfarmacia.com/Perfiles/<?php echo $Usuarios["file_name"]; ?> "></td>
+  <td><img  width="60" height="60" alt="avatar" class="rounded-circle img-responsive" src="https://saludaclinicas.com/Perfiles/<?php echo $Usuarios["file_name"]; ?> "></td>
   <td > <?php echo $Usuarios["Nombre_Apellidos"]; ?></td>
     <td><?php echo $Usuarios["Nombre_rol"]; ?></td>
     <td><?php echo $Usuarios["Telefono"]; ?></td>

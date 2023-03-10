@@ -45,7 +45,7 @@ $query = $conn->query($sql1);
 	
 	<td><?php echo $Especialidades["Nombre_Especialidad"]; ?></td>
 	<td><?php echo $Especialidades["Nombre_Sucursal"]; ?></td>
-	<td><button class="btn btn-default btn-sm" style=<?if($Especialidades['Estatus_Especialidad'] == 'Disponible'){
+	<td><button class="btn btn-default btn-sm" style=<?php if($Especialidades['Estatus_Especialidad'] == 'Disponible'){
    echo "background-color:#00c851!important";
 } elseif($Especialidades['Estatus_Especialidad'] != 'Disponible'  &&  $Especialidades['Estatus_Especialidad'] != 'No disponible') {
   echo "background-color:#fd7e14!important";
@@ -53,7 +53,7 @@ $query = $conn->query($sql1);
     echo "background-color:#fd1414!important";
 }
 ?>>
-<?if($Especialidades['Estatus_Especialidad'] == ''){
+<?php if($Especialidades['Estatus_Especialidad'] == ''){
    echo "No se asigno estatus";
 } else {
     echo $Especialidades["Estatus_Especialidad"]; 

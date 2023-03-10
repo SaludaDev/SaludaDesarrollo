@@ -1,4 +1,4 @@
-<?
+<?php
 include "db_connection.php";
 
 $user_id=null;
@@ -14,7 +14,7 @@ while ($r=$query->fetch_object()){
   }
 ?>
 
-<? if($person!=null):?>
+<?php if($person!=null):?>
 
 <form action="javascript:void(0)" method="post" id="ActualizaEspecial" >
    
@@ -35,6 +35,6 @@ while ($r=$query->fetch_object()){
 
 
 
-<? else:?>
+<?php else:?>
   <p class="alert alert-danger">404 No se encuentra</p>
-<? endif;?>
+<?php endif;?>

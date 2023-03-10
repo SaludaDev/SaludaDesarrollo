@@ -41,7 +41,7 @@ $query = $conn->query($sql1);
 	<td><?php echo $Sucursales["ID_SucursalC"]; ?></td>
     <td><?php echo $Sucursales["Nombre_Sucursal"]; ?></td>
 	
-  <td><button class="btn btn-default btn-sm" style="<?echo $Sucursales['Color_Sucursal'];?>"><?php echo $Sucursales["Estatus_Sucursal"]; ?></button></td>
+  <td><button class="btn btn-default btn-sm" style="<?php echo $Sucursales['Color_Sucursal'];?>"><?php echo $Sucursales["Estatus_Sucursal"]; ?></button></td>
 	
 
 		

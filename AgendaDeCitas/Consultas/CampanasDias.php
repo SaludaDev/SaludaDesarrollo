@@ -111,13 +111,13 @@ $query = $conn->query($sql1);
 <div class="dropdown-menu">
     <div class="text-center">
 <a class="dropdown-item" >Cita</a>
-<button class="btn btn-default btn-sm" style="<?echo $Especialista['ColorEstatusCita'];?>"><?php echo $Especialista["Estatus_cita"]; ?></button> 
+<button class="btn btn-default btn-sm" style="<?php echo $Especialista['ColorEstatusCita'];?>"><?php echo $Especialista["Estatus_cita"]; ?></button> 
 <div class="dropdown-divider"></div>
 <a class="dropdown-item" >Pago</a>
-<button class="btn btn-default btn-sm" style="<?echo $Especialista['Color_Pago'];?>"><?php echo $Especialista["Estatus_pago"]; ?></button>
+<button class="btn btn-default btn-sm" style="<?php echo $Especialista['Color_Pago'];?>"><?php echo $Especialista["Estatus_pago"]; ?></button>
 <div class="dropdown-divider"></div>
 <a class="dropdown-item" >Seguimiento</a>
-<button class="btn btn-default btn-sm" style="<?echo $Especialista['Color_Seguimiento'];?>"><?php echo $Especialista["Estatus_Seguimiento"]; ?></button>
+<button class="btn btn-default btn-sm" style="<?php echo $Especialista['Color_Seguimiento'];?>"><?php echo $Especialista["Estatus_Seguimiento"]; ?></button>
 </div>
 </div>
 <!-- Basic dropdown -->
