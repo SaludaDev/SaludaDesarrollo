@@ -21,7 +21,7 @@ AND Ventas_POS.Identificador_tipo = Servicios_POS.Servicio_ID AND Ventas_POS.Fec
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Filtro de pedidos de la sucursal  <?echo $nombresucursalelegida?> </title>
+  <title>Filtro de pedidos de la sucursal  <?php echo $nombresucursalelegida?> </title>
 
 <?php include "Header.php"?>
  <style>
