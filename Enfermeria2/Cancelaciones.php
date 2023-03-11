@@ -15,11 +15,11 @@ include "Consultas/ConeSelectDinamico.php";
   <title>Enfermería | Pacientes cancelados</title>
 
 
-  <? include "Header.php"?>
+  <?php include "Header.php"?>
 
   
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 <div class="card text-center">
   <div class="card-header" style="background-color:#FF0000 !important;color: white;">
     Cancelaciones de citas con especialistas al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
@@ -51,7 +51,7 @@ include "Consultas/ConeSelectDinamico.php";
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <?
+  <?php
     include ("Modales/Error.php");
     include ("Modales/Eliminar.php");
   include ("Modales/NuevoPaciente.php");
@@ -79,7 +79,7 @@ include "Consultas/ConeSelectDinamico.php";
 
 </body>
 </html>
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

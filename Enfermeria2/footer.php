@@ -14,4 +14,4 @@
 <?
 include ("Modales/Salidas.php");?>
 <script src="js/LogSalida.js"></script>
-<script src="https://controlconsulta.com/Enfermeria2/js/Refresca.js"></script>
+<script src="https://saludaclinicas.com/Enfermeria2/js/Refresca.js"></script>
