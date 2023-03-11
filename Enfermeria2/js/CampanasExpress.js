@@ -1,7 +1,7 @@
 function CargaCitasEnSucursalExt(){
 
 
-    $.post("https://controlconsulta.com/Enfermeria2/Consultas/CitasEnSucursalExt.php","",function(data){
+    $.post("https://saludaclinicas.com/Enfermeria2/Consultas/CitasEnSucursalExt.php","",function(data){
       $("#CitasEnLaSucursalExt").html(data);
     })
   

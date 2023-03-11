@@ -1,7 +1,7 @@
 function CargaAgenda(){
 
 
-    $.post("https://controlconsulta.com/Enfermeria2/Consultas/AgendaDePacientesNuevosV3.php","",function(data){
+    $.post("https://saludaclinicas.com/Enfermeria2/Consultas/AgendaDePacientesNuevosV3.php","",function(data){
       $("#PacientesAgendados").html(data);
     })
   
