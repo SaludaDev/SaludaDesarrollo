@@ -23,7 +23,7 @@ include "Consultas/AnalisisIndex.php";
 
     </style>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Base de datos de productos</a>
@@ -42,7 +42,7 @@ include "Consultas/AnalisisIndex.php";
 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-    Productos de <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+    Productos de <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
   
   <div >
@@ -138,7 +138,7 @@ setTimeout(function(){
 </script>
 </body>
 </html>
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

@@ -1,4 +1,3 @@
-
 <script>
 
 tabla = $('#Productos').DataTable({
@@ -8,7 +7,7 @@ tabla = $('#Productos').DataTable({
  "stateSave":true,
  "bAutoWidth": false,
  "order": [[ 0, "desc" ]],
- "sAjaxSource": "https://controlfarmacia.com/AdminPOS/Consultas/ArrayProductos.php",
+ "sAjaxSource": "https://saludaclinicas.com/AdminPOS/Consultas/ArrayProductos.php",
  "aoColumns": [
     { mData: 'IdbD' },
        { mData: 'Cod_Barra' },
@@ -52,16 +51,16 @@ tabla = $('#Productos').DataTable({
         //para usar los botones   
         responsive: "true",
         dom: "B<'#colvis row'><'row'><'row'<'col-md-6'l><'col-md-6'f>r>t<'bottom'ip><'clear'>'",
-        buttons:[ 
-			{
-				extend:    'excelHtml5',
-				text:      'Descargar excel  <i Descargar excel class="fas fa-file-excel"></i> ',
-				titleAttr: 'Descargar excel',
-                autoFilter: true,
-        title: 'Base general de productos ',
-				className: 'btn btn-success'
-			},
-        ],
+        // buttons:[ 
+		// 	{
+		// 		extend:    'excelHtml5',
+		// 		text:      'Descargar excel  <i Descargar excel class="fas fa-file-excel"></i> ',
+		// 		titleAttr: 'Descargar excel',
+        //         autoFilter: true,
+        // title: 'Base general de productos ',
+		// 		className: 'btn btn-success'
+		// 	},
+        // ],
        
        
    
