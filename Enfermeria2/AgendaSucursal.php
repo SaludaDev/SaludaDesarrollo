@@ -7,6 +7,7 @@ include "Consultas/ConeSelectDinamico.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,46 +16,46 @@ include "Consultas/ConeSelectDinamico.php";
   <title>AGENDAR CITA CON ESPECIALISTAS</title>
   <style>
     label.error {
-    display:block;
-}
+      display: block;
+    }
   </style>
 
-  <? include "Header.php"?>
+  <?php include "Header.php" ?>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once("Menu.php") ?>
 <div class="card text-center">
   <div class="card-header">
-  CITAS DE CAMPAÑAS MEDICAS POR SUCURSAL
+    CITAS DE CAMPAÑAS MEDICAS POR SUCURSAL
   </div>
+</div>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div id="TablaCampanas"></div>
+
+
+    </div>
   </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 
-    
-  
+<!-- Main Footer -->
+<?php
 
-  <div class="container">
-<div class="row">
-<div class="col-md-12">
-    
-<div id="TablaCampanas"></div>
-
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-
-  <!-- Main Footer -->
-  <?  
- 
-  include ("footer.php");
- ?>
+include("footer.php");
+?>
 <!-- ./wrapper -->
 <script src="js/CampanasSucursal.js"></script>
 
@@ -75,4 +76,5 @@ include "Consultas/ConeSelectDinamico.php";
 
 
 </body>
+
 </html>

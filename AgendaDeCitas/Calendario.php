@@ -33,7 +33,7 @@ $resultado_eventos = mysqli_query($conn, $consulta_eventos);
 
 	<title>CALENDARIO DE CITAS | AGENDA DE CITAS </title>
 
-	<?php include("Header.php")?>
+	<?php include("Header.php") ?>
 
 	<style>
 		.fc-content {

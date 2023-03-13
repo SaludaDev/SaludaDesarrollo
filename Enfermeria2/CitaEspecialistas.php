@@ -7,6 +7,7 @@ include "Consultas/ConeSelectDinamico.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,51 +15,51 @@ include "Consultas/ConeSelectDinamico.php";
 
   <title>AGENDAR CITA DE ESPECIALISTAS</title>
 
-  <? include "Header.php"?>
+  <?php include "Header.php" ?>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once("Menu.php") ?>
 
 <div class="card text-center">
   <div class="card-header" style="background-color: #2bbbad !important;color: white;">
-    Agendar citas con especialistas 
+    Agendar citas con especialistas
   </div>
- 
-  <div >
-  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#AgendarCitaDeEspecialistasNuevaVersion" class="btn btn-default">
-  Agendar nueva cita <i class="fas fa-calendar-plus"></i>
-</button>
-</div>
+
+  <div>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#AgendarCitaDeEspecialistasNuevaVersion" class="btn btn-default">
+      Agendar nueva cita <i class="fas fa-calendar-plus"></i>
+    </button>
+  </div>
 
 </div>
 
 <div class="container">
-<div class="row">
-<div class="col-md-12">
-    
-<div id="PacientesAgendados"></div>
+  <div class="row">
+    <div class="col-md-12">
+
+      <div id="PacientesAgendados"></div>
 
 
+    </div>
+  </div>
 </div>
-</div>
-</div>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 
-  <?
-   include ("Modales/Error.php");
-  
-   include ("Modales/Exito.php");
+<?php
+include("Modales/Error.php");
 
-   include ("Modales/Precarga.php");
-   include ("Modales/ExitoActualiza.php");
-   include ("Modales/EstatusAgendaGuardado.php");
-  include ("Modales/AgendaNuevaCitaDeEspecialistas.php");
- 
-  include ("footer.php")?>
+include("Modales/Exito.php");
+
+include("Modales/Precarga.php");
+include("Modales/ExitoActualiza.php");
+include("Modales/EstatusAgendaGuardado.php");
+include("Modales/AgendaNuevaCitaDeEspecialistas.php");
+
+include("footer.php") ?>
 <script src="js/PacientesAgendadosVersion3.js"></script>
 <script src="js/AgendamientoCitasNuevas.js"></script>
 <script src="js/ObtieneEspecialidad.js"></script>
@@ -86,10 +87,12 @@ include "Consultas/ConeSelectDinamico.php";
 
 
 </body>
-</html>
-<?
 
-function fechaCastellano ($fecha) {
+</html>
+<?php
+
+function fechaCastellano($fecha)
+{
   $fecha = substr($fecha, 0, 10);
   $numeroDia = date('d', strtotime($fecha));
   $dia = date('l', strtotime($fecha));
@@ -98,9 +101,9 @@ function fechaCastellano ($fecha) {
   $dias_ES = array("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo");
   $dias_EN = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
   $nombredia = str_replace($dias_EN, $dias_ES, $dia);
-$meses_ES = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+  $meses_ES = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
   $meses_EN = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
   $nombreMes = str_replace($meses_EN, $meses_ES, $mes);
-  return $nombredia." ".$numeroDia." de ".$nombreMes." de ".$anio;
+  return $nombredia . " " . $numeroDia . " de " . $nombreMes . " de " . $anio;
 }
 ?>

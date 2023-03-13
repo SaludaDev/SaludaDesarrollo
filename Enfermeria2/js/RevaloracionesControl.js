@@ -1,7 +1,7 @@
 function CargaRevaloraciones() {
 
 
-    $.post("https://controlconsulta.com/Enfermeria2/Consultas/RevaloracionesAgendadas.php", "", function(data) {
+    $.post("https://saludaclinicas.com/Enfermeria2/Consultas/RevaloracionesAgendadas.php", "", function(data) {
         $("#CitasDeRevaloracion").html(data);
     })
 

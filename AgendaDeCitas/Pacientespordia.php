@@ -13,7 +13,7 @@ include "Consultas/ConeSelectDinamico.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Total pacientes registrados por enfermeros de <? echo $row['ID_H_O_D'] ?></title>
+  <title>Total pacientes registrados por enfermeros de <?php echo $row['ID_H_O_D'] ?></title>
 
   <?php include "Header.php" ?>
 </head>

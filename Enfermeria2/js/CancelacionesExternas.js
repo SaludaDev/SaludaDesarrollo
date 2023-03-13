@@ -1,7 +1,7 @@
 function CargaCancelacionesExternas(){
 
 
-    $.post("https://controlconsulta.com/Enfermeria2/Consultas/CancelacionesExternas.php","",function(data){
+    $.post("https://saludaclinicas.com/Enfermeria2/Consultas/CancelacionesExternas.php","",function(data){
       $("#CitasCanceladasExt").html(data);
     })
   

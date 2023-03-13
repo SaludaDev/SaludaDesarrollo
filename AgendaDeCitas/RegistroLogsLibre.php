@@ -12,7 +12,7 @@ include "Consultas/AnalisisIndex.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Reloj checador <? echo $row['ID_H_O_D'] ?> </title>
+  <title>Reloj checador <?php echo $row['ID_H_O_D'] ?> </title>
 
   <?php include "Header.php" ?>
   <style>
@@ -29,7 +29,7 @@ include "Consultas/AnalisisIndex.php";
 
 <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-    Checador general del personal de <? echo $row['ID_H_O_D'] ?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>
+    Checador general del personal de <?php echo $row['ID_H_O_D'] ?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>
   </div>
 
   <div>

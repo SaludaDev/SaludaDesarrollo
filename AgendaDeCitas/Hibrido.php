@@ -28,7 +28,7 @@ include "Consultas/AnalisisIndex.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>AGENDA DE CITAS | <? echo $row['ID_H_O_D'] ?> </title>
+  <title>AGENDA DE CITAS | <?php echo $row['ID_H_O_D'] ?> </title>
 
   <!-- Font Awesome Icons -->
   <?php include "Header.php" ?>

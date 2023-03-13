@@ -1,7 +1,7 @@
 function   CargaCancelados(){
 
 
-    $.post("https://controlconsulta.com/Enfermeria2/Consultas/CancelacionesV2.php","",function(data){
+    $.post("https://saludaclinicas.com/Enfermeria2/Consultas/CancelacionesV2.php","",function(data){
       $("#Cancelaciones").html(data);
     })
   

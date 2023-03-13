@@ -12,7 +12,7 @@ include "Consultas/ConeSelectDinamico.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>GESTIONANDO NUEVA CITA PARA ESTUDIOS MEDICOS |SUCURSAL <? echo $row['ID_H_O_D'] ?> </title>
+  <title>GESTIONANDO NUEVA CITA PARA ESTUDIOS MEDICOS |SUCURSAL <?php echo $row['ID_H_O_D'] ?> </title>
 
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/b5ed0deb1b.js" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@ include "Consultas/ConeSelectDinamico.php";
             <div class="card-body">
               <div class="form-group">
 
-                <input type="text" name="Empresa" class="form-control" id="empresa" hidden readonly value="<? echo $row['ID_H_O_D'] ?>">
+                <input type="text" name="Empresa" class="form-control" id="empresa" hidden readonly value="<?php echo $row['ID_H_O_D'] ?>">
               </div>
               <div class="form-group">
 
-                <input type="text" name="Empleado" class="form-control" id="empleado" hidden readonly value="<? echo $row['Nombre_Apellidos'] ?>">
+                <input type="text" name="Empleado" class="form-control" id="empleado" hidden readonly value="<?php echo $row['Nombre_Apellidos'] ?>">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Sucursal</label>
