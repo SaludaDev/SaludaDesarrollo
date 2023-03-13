@@ -100,7 +100,7 @@ $query = $conn->query($sql1);
 	<p class="alert alert-warning">No hay créditos por vencer</p>
 <?php endif;?>
 
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

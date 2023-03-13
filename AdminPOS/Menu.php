@@ -452,7 +452,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="https://saludaclinicas.com/AdminPOS/CreditoEnfermeriaGeneral" class="nav-link">
             <i class="fas fa-user-md"></i>
               <p>
@@ -467,7 +467,7 @@
             Créditos Limpieza
               </p>
             </a>
-          </li>
+          </li> -->
          
             <li class="nav-header">Almacenaje y productos <i class="fas fa-dolly"></i>
 

@@ -128,7 +128,7 @@ $query = $conn->query($sql1);
 <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/AbonoCredito.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/AbonoCredito.php","id="+id,function(data){
   			$("#form-edit").html(data);
           $("#Titulo").html("Abono de crédito");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -140,7 +140,7 @@ $query = $conn->query($sql1);
   	});
     $(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/HistorialSaldos.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/HistorialSaldos.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Historial de pagos");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -174,7 +174,7 @@ $query = $conn->query($sql1);
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

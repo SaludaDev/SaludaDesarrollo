@@ -1,7 +1,7 @@
 function CargaCreditos(){
 
 
-    $.post("https://controlfarmacia.com/AdminPOS/Consultas/Creditos.php","",function(data){
+    $.post("https://saludaclinicas.com/AdminPOS/Consultas/Creditos.php","",function(data){
       $("#tablaCreditos").html(data);
     })
 
