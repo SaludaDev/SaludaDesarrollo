@@ -2,7 +2,7 @@
  $IdBusqueda=base64_decode($_GET['editprod']);
 include "Consultas/Consultas.php";
 include "Consultas/Sesion.php";
-include "Consultas/AnalisisIndex.php";
+// include "Consultas/AnalisisIndex.php";
 $fcha = date("Y-m-d");
 $user_id=null;
 $sql1= "SELECT Productos_POS.ID_Prod_POS,Productos_POS.Cod_Barra,Productos_POS.Clave_adicional,Productos_POS.Cod_Enfermeria,Productos_POS.Nombre_Prod,Productos_POS.Stock,
@@ -28,7 +28,7 @@ while ($r=$query->fetch_object()){
 
   <title>Editando datos del producto</title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
  <style>
         .error {
   color: red;
@@ -38,8 +38,8 @@ while ($r=$query->fetch_object()){
 
     </style>
 </head>
-<?include_once ("Menu.php")?>
-<? if($Especialistas!=null):?>
+<?php include_once ("Menu.php")?>
+<?php if($Especialistas!=null):?>
   <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
  Editando datos de <? echo $Especialistas->Nombre_Prod; ?>
