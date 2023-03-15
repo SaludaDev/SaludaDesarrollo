@@ -18,7 +18,7 @@ include "Consultas/Mensaje.php";
   <title>Datos de campañas| <?php echo $row['ID_H_O_D'] ?> </title>
 
   <!-- Font Awesome Icons -->
-  <? include "Header.php" ?>
+  <?php include "Header.php" ?>
 
 </head>
 <?php include_once("Menu.php") ?>
