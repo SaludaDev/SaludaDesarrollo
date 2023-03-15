@@ -9,7 +9,7 @@
  "stateSave":true,
  "bAutoWidth": false,
  "order": [[ 0, "desc" ]],
- "sAjaxSource": "https://controlfarmacia.com/AdminPOS/Consultas/ArrayStockSucursales.php",
+ "sAjaxSource": "https://saludaclinicas.com/AdminPOS/Consultas/ArrayStockSucursales.php",
  "aoColumns": [
        { mData: 'Cod_Barra' },
        { mData: 'Clave_adicional' },
@@ -48,7 +48,7 @@ return '<button class="btn btn-default btn-sm" style="background-color:#fd7e14!i
 
 
        { mData: 'Acciones' }, 
-       { mData: 'Traspaso' }, 
+    //    { mData: 'Traspaso' }, 
        { mData: 'Ingreso' }, 
        { mData: 'Auditoria' }, 
   
@@ -116,7 +116,7 @@ return '<button class="btn btn-default btn-sm" style="background-color:#fd7e14!i
     <th>Max </th>
     <th>Estatus </th>
         <th>Acciones </th>
-        <th>Traspaso </th>
+        <!-- <th>Traspaso </th> -->
         <th>Ingreso </th>
         <th>Historial </th>
 

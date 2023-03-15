@@ -25,7 +25,7 @@ while ($r=$query->fetch_object()){
 
   <title>Actualizando existencias </title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
  <style>
         .error {
   color: red;
@@ -39,15 +39,15 @@ while ($r=$query->fetch_object()){
 }
     </style>
 </head>
-<?include_once ("Menu.php")?>
-<? if($Especialistas!=null):?>
+<?php include_once ("Menu.php")?>
+<?php  if($Especialistas!=null):?>
 
   <div class="text-center">
     
   </div>
 <div class="card text-center">
 <div class="card-header" style="background-color:#4285f4!important;color: white;">
- Actualizando existencias del producto <? echo $Especialistas->Nombre_Prod; ?>
+ Actualizando existencias del producto <?php echo $Especialistas->Nombre_Prod; ?>
   </div>
    
   <div class="col-md-12">
