@@ -1,5 +1,5 @@
 <?php
-include_once("../db_connect.php");
+include_once("db_connect.php");
 $sql = "SELECT AgendaCita_Analisis.ID_Agenda,AgendaCita_Analisis.ID_H_O_D,AgendaCita_Analisis.Sucursal,
 AgendaCita_Analisis.Fecha,AgendaCita_Analisis.Hora_cita,AgendaCita_Analisis.Tipo_analisis, 
 AgendaCita_Analisis.Tipo_estudio,AgendaCita_Analisis.Nombre_solicitante,AgendaCita_Analisis.Edad,
