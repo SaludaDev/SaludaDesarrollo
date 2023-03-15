@@ -33,7 +33,7 @@ $resultado_eventos2 = mysqli_query($conn, $consulta_eventos2);
 
 	<title>Agendamiento de citas </title>
 
-	<? include "Header.php" ?>
+	<?php include "Header.php" ?>
 	<link href='js/fullcalendar/fullcalendar.css' rel='stylesheet' />
 </head>
 <?php include_once("Menu.php") ?>

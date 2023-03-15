@@ -1,4 +1,3 @@
-
 <?php
 header('Content-Type: application/json');
 include("db_connection.php");
@@ -41,4 +40,3 @@ $results = ["sEcho" => 1,
  
 echo json_encode($results);
 ?>
- 
