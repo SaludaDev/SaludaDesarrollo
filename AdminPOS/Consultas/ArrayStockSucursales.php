@@ -30,8 +30,7 @@ while($fila=$result->fetch_assoc()){
     $data[$c]["Proveedor2"] = $fila["Proveedor2"];
     $data[$c]["Sucursal"] = $fila["Nombre_Sucursal"];
     $data[$c]["UltimoMovimiento"] = $fila["AgregadoEl"];
-    $data[$c]["Existencias_R"] = $fila["Existencias_R"];
-    
+    $data[$c]["Existencias_R"] = $fila["Existencias_R"];   
     $data[$c]["Min_Existencia"] = $fila["Min_Existencia"];
     $data[$c]["Max_Existencia"] = $fila["Max_Existencia"];
    
@@ -44,8 +43,7 @@ while($fila=$result->fetch_assoc()){
       <a href=https://saludaclinicas.com/AdminPOS/GeneradorTraspasos?idProd=".base64_encode($fila["Folio_Prod_Stock"])." class='btn-editProd dropdown-item' >Traspaso
        <i class='fas fa-exchange-alt'></i></a><a href=https://saludaclinicas.com/AdminPOS/EstadisticaVentas?idProd=".base64_encode($fila["Cod_Barra"])." 
        class='btn-Delete dropdown-item' >Estadisticas de venta <i class='fas fa-chart-line'></i></a></div> "];
-    //    $data[$c]["Traspaso"] = [ "<a class='btn btn-success btn-sm' href=https://saludaclinicas.com/AdminPOS/GeneradorTraspasos?idProd=".base64_encode($fila["Folio_Prod_Stock"])."' >
-    //    <i class='fas fa-exchange-alt'></i></a>"];
+   
        $data[$c]["Ingreso"] = ["<a href=https://saludaclinicas.com/AdminPOS/ActualizaOne?idProd=".base64_encode($fila["Folio_Prod_Stock"])." type='button' class='btn btn-info  btn-sm '><i class='fas fa-capsules'></i></a> "];
        $data[$c]["Auditoria"] = ["<a href=https://saludaclinicas.com/AdminPOS/HistorialProductoAudita?idProd=".base64_encode($fila["Folio_Prod_Stock"])." type='button' class='btn btn-primary  btn-sm '><i class='fas fa-history'></i></a> "];
     $c++; 
