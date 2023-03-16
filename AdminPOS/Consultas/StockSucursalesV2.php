@@ -116,7 +116,7 @@ return '<button class="btn btn-default btn-sm" style="background-color:#fd7e14!i
     <th>Max </th>
     <th>Estatus </th>
         <th>Acciones </th>
-        <!-- <th>Traspaso </th> -->
+        
         <th>Ingreso </th>
         <th>Historial </th>
 
