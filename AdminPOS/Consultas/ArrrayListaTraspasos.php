@@ -1,6 +1,3 @@
-
-
-
 <?php
 header('Content-Type: application/json');
 include("db_connection.php");
@@ -41,7 +38,7 @@ echo json_encode($results);
 
 
 
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);
