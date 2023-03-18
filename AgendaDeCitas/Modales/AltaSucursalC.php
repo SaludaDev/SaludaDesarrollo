@@ -42,8 +42,8 @@
         </div>
         <input type="text" class="form-control" id="nsucursal" readonly hidden name="NSucursal">
 
-        <input type="text" class="form-control" id="empresa" name="Empresa" hidden value="<? echo $row['ID_H_O_D'] ?>">
-        <input type="text" class="form-control" id="usuario" name="Usuario" hidden value="<? echo $row['Nombre_Apellidos'] ?>">
+        <input type="text" class="form-control" id="empresa" name="Empresa" hidden value="<?php echo $row['ID_H_O_D'] ?>">
+        <input type="text" class="form-control" id="usuario" name="Usuario" hidden value="<?php echo $row['Nombre_Apellidos'] ?>">
 
         <div>
           <button type="submit" name="submit_registro" id="submit_registro" value="Guardar" class="btn btn-success">Guardar <i class="fas fa-save"></i></button>

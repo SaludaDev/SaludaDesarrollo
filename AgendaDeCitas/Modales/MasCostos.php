@@ -25,7 +25,7 @@
 
        <!--Footer-->
        <div class="modal-footer justify-content-center">
-         <a type="button" href="https://controlfarmacia.com/ControldecitasV2/Fechas" class="btn btn-primary">Continuar a fechas <i class="fas fa-plus-circle"></i></a>
+         <a type="button" href="https://saludaclinicas.com/ControldecitasV2/Fechas" class="btn btn-primary">Continuar a fechas <i class="fas fa-plus-circle"></i></a>
            <button  type="button" class="btn btn-success" data-toggle="modal" data-target="#AltaCosto" class="btn btn-default" onclick="MoreCostos()">
   Añadir Mas especialidades <i class="fas fa-plus-square"></i>    
 </button>
