@@ -167,9 +167,9 @@
                 </div>
               </div>
             </div>
-            <input type="text" class="form-control" name="Usuario" id="usuario" value="<? echo $row['Nombre_Apellidos'] ?>" hidden readonly>
+            <input type="text" class="form-control" name="Usuario" id="usuario" value="<?php echo $row['Nombre_Apellidos'] ?>" hidden readonly>
             <input type="text" class="form-control" name="Sistema" id="sistema" value="Agenda de citas" hidden readonly>
-            <input type="text" class="form-control" name="Empresa" id="empresa" value="<? echo $row['ID_H_O_D'] ?>" hidden readonly>
+            <input type="text" class="form-control" name="Empresa" id="empresa" value="<?php echo $row['ID_H_O_D'] ?>" hidden readonly>
 
 
             <button type="submit" name="submit_Age" id="submit_Age" class="btn btn-success">Confirmar datos <i class="fas fa-user-check"></i></button>
