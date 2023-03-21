@@ -16,11 +16,6 @@ tabla = $('#Productos').DataTable({
        { mData: 'Nom_Serv' },
        { mData: 'Sucursal' },
        { mData: 'Existencias_R' },
-     
-      
- 
-
-
        { mData: 'Acciones' },
   
       ],
