@@ -23,7 +23,7 @@ while($fila=$result->fetch_assoc()){
     $data[$c]["Medico"] = $fila["Medico"];
     $data[$c]["Turno"] = $fila["Turno"];
     $data[$c]["MotivoConsulta"] = $fila["Motivo_Consulta"];
-    $data[$c]["ConWhatsaap"] = $fila["Nom_Serv"];
+    // $data[$c]["ConWhatsaap"] = $fila["Nom_Serv"];
     $data[$c]["Agendo"] = $fila["Agrego"];
     $data[$c]["RegistradoEl"] = $fila["AgregadoEl"];
     
