@@ -18,7 +18,7 @@ tabla = $('#RevaloracionesIndex').DataTable({
        { mData: 'Medico' },
        { mData: 'Turno' },
        { mData: 'MotivoConsulta' },
-       { mData: 'ConWhatsapp' },
+    //    { mData: 'ConWhatsapp' },
        { mData: 'Agendo' },
        { mData: 'RegistradoEl' },
    
@@ -76,7 +76,7 @@ tabla = $('#RevaloracionesIndex').DataTable({
 <th>Medico</th>
 <th>Turno</th>
 <th>Motivo de Consulta</th>
-<th>Contacto por whatsaap</th>
+<!-- <th>Contacto por whatsaap</th> -->
 
 <th>Agendado por </th>
 <th>Registrado el </th>
