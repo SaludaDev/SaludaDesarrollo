@@ -45,7 +45,7 @@ tabla = $('#Productos').DataTable({
             },
           
         //para usar los botones   
-        responsive: "true",
+        // responsive: "true",
        
        
    
