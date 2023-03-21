@@ -11,12 +11,10 @@ tabla = $('#PacientesNuevos').DataTable({
  "aoColumns": [
        { mData: 'Folio' },
        { mData: 'Nombre' },
-
        { mData: 'Edad' },
        { mData: 'Sexo' },
        { mData: 'Telefono' },
-       
-    //    { mData: 'Llamar' },
+      { mData: 'Llamar' },
        { mData: 'Whats' },
        { mData: 'Contactado' },
 //        { mData: 'Existencias_R' },
@@ -91,7 +89,7 @@ tabla = $('#PacientesNuevos').DataTable({
 
     <th>Llamar</th>
     
-    <!-- <th>Whatsapp</th> -->
+    <th>Whatsapp</th>
     <th>Marcar como contactado</th>
 
 
