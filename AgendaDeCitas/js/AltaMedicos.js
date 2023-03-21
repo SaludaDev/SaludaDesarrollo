@@ -121,7 +121,7 @@ vigencia: {
 
 		$.ajax({				
 			type : 'POST',
-			url  : 'https://controlconsulta.com/CEnfermeria/Consultas/AltaEmpMedico',
+			url  : 'https://saludaclinicas.com/CEnfermeria/Consultas/AltaEmpMedico',
 		  data: new FormData(this),
             contentType: false,
             cache: false,
