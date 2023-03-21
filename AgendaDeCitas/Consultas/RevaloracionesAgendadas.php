@@ -18,7 +18,7 @@ tabla = $('#RevaloracionesIndex').DataTable({
        { mData: 'Medico' },
        { mData: 'Turno' },
        { mData: 'MotivoConsulta' },
-       { mData: 'ConWhatsapp' },
+    //    { mData: 'ConWhatsapp' },
        { mData: 'Agendo' },
        { mData: 'RegistradoEl' },
    
@@ -45,18 +45,18 @@ tabla = $('#RevaloracionesIndex').DataTable({
           
         //para usar los botones   
         responsive: "true",
-          dom: "B<'#colvis row'><'row'><'row'<'col-md-6'l><'col-md-6'f>r>t<'bottom'ip><'clear'>'",
-        buttons:[ 
-			{
-				extend:    'excelHtml5',
-				text:      'Exportar a Excel  <i Exportar a Excel class="fas fa-file-excel"></i> ',
-				titleAttr: 'Exportar a Excel',
-                title: 'Pacientes para revaloracion agendados',
-				className: 'btn btn-success'
-			},
+          dom: "<'#colvis row'><'row'><'row'<'col-md-6'l><'col-md-6'f>r>t<'bottom'ip><'clear'>'",
+        // buttons:[ 
+		// 	{
+		// 		extend:    'excelHtml5',
+		// 		text:      'Exportar a Excel  <i Exportar a Excel class="fas fa-file-excel"></i> ',
+		// 		titleAttr: 'Exportar a Excel',
+        //         title: 'Pacientes para revaloracion agendados',
+		// 		className: 'btn btn-success'
+		// 	},
 			
 		
-        ],
+        // ],
        
    
 	   
@@ -76,7 +76,7 @@ tabla = $('#RevaloracionesIndex').DataTable({
 <th>Medico</th>
 <th>Turno</th>
 <th>Motivo de Consulta</th>
-<th>Contacto por whatsaap</th>
+<!-- <th>Contacto por whatsaap</th> -->
 
 <th>Agendado por </th>
 <th>Registrado el </th>
