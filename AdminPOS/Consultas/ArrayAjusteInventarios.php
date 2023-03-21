@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 include("db_connection.php");
 include "Consultas.php";
 include "Sesion.php";
-include "mcript.php";
+// include "mcript.php";
 
 $sql = "SELECT Stock_POS.Folio_Prod_Stock,Stock_POS.Clave_adicional,Stock_POS.ID_Prod_POS,
 Stock_POS.Cod_Barra,Stock_POS.Nombre_Prod,Stock_POS.Tipo_Servicio,Stock_POS.Fk_sucursal,
@@ -29,7 +29,7 @@ while($fila=$result->fetch_assoc()){
     $data[$c]["Existencias_R"] = $fila["Existencias_R"];
     
    
-    $data[$c]["Acciones"] = ["<a href=https://controlfarmacia.com/AdminPOS/ActualizaInventarios?idProd=".base64_encode($fila["Folio_Prod_Stock"])." type='button' class='btn btn-success  btn-sm '><i class='fas fa-sliders-h'></i></a> "];
+    $data[$c]["Acciones"] = ["<a href=https://saludaclinicas.com/AdminPOS/ActualizaInventarios?idProd=".base64_encode($fila["Folio_Prod_Stock"])." type='button' class='btn btn-success  btn-sm '><i class='fas fa-sliders-h'></i></a> "];
     
     $c++; 
  

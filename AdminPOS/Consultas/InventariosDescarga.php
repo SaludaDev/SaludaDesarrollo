@@ -1,4 +1,4 @@
-<?include("db_connection.php");
+<?php include("db_connection.php");
 include "Consultas.php";
 include "Sesion.php";?>
 <script>
