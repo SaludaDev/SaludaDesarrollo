@@ -29,7 +29,7 @@ $(document).ready( function () {
 				extend:    'excelHtml5',
 				text:      'Exportar a Excel  <i Exportar a Excel class="fas fa-file-excel"></i> ',
                 titleAttr: 'Exportar a Excel',
-                title: 'Registro de pacientes al <?echo $fcha?>  ',
+                title: 'Registro de pacientes al <?php echo $fcha?>  ',
 				className: 'btn btn-success'
 			},
 			

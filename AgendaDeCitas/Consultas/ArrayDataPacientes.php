@@ -22,7 +22,7 @@ while($fila=$result->fetch_assoc()){
     $data[$c]["Telefono"] = $fila["Telefono"];
 
     $data[$c]["Llamar"] = ["<a href=tel:".$fila["Telefono"]." type='button' class='btn btn-primary '><i class='fas fa-phone-volume'></i></a> "];
-    $data[$c]["Whats"] = ["<a href=https://api.whatsapp.com/send?phone=+52".$fila["Telefono"]." target='_blank' type='button' class='btn btn-success '><i class='fab fa-whatsapp-square'></i></a> "];
+    //$data[$c]["Whats"] = ["<a href=https://api.whatsapp.com/send?phone=+52".$fila["Telefono"]." target='_blank' type='button' class='btn btn-success '><i class='fab fa-whatsapp-square'></i></a> "];
     $data[$c]["Contactado"] = ["<a href=tel:+".$fila["ID_Data_Paciente"]." type='button' class='btn btn-info '><i class='fas fa-check'></i> </a>"];
     $c++; 
  
