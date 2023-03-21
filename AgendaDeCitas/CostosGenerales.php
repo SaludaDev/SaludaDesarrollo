@@ -84,7 +84,7 @@ include("footer.php") ?>
 </body>
 
 </html>
-<?
+<?php
 
 function fechaCastellano($fecha)
 {
