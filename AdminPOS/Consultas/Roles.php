@@ -79,7 +79,7 @@ $query = $conn->query($sql1);
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/DescontinuaRol.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/DescontinuaRol.php","id="+id,function(data){
   			$("#form-edit").html(data);
           $("#Titulo").html("Descontinuar rol");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -92,7 +92,7 @@ $query = $conn->query($sql1);
   	});
     $(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/Editarol.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/Editarol.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Editar datos de rol/puesto");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -108,7 +108,7 @@ $query = $conn->query($sql1);
 
     $(".btn-HistorialEmpleados").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/HistorialEmpleadosEnfermero.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/HistorialEmpleadosEnfermero.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Historial datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");

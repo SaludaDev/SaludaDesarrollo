@@ -1,5 +1,4 @@
-<?
-
+<?php
 
 include_once("db_connection.php");
 $user_id=null;

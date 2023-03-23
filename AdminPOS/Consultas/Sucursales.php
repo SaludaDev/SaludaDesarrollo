@@ -73,7 +73,7 @@ $query = $conn->query($sql1);
   
     $(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/EditaSucursal.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/EditaSucursal.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Editar datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -89,7 +89,7 @@ $query = $conn->query($sql1);
 
     $(".btn-Historial").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/HistorialSucursales.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/HistorialSucursales.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Historial datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
