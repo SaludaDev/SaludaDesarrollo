@@ -17,7 +17,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
       
     </ul>
 
-    <?if($TraspasosPendientes['traspasopendiente'] !=0){
+    <?php if($TraspasosPendientes['traspasopendiente'] !=0){
    echo "<font face='Impact'>
    <marquee bgcolor='#FFFF00' style='width: 300% !important;
    '>Estimado ".$row['Nombre_Apellidos'].", revise sus traspasos pendientes </marquee>
@@ -88,18 +88,18 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell" style="color: white;"></i>
-          <span class="badge badge-info navbar-badge"><?echo $totalmonto?></span>
+          <span class="badge badge-info navbar-badge"><?php echo $totalmonto?></span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-item dropdown-header">Notificaciones</span>
           <div class="dropdown-divider"></div>
           <a href="ProductosConCambiosDePrecios" class="dropdown-item">
-            <i class="fas fa-dollar-sign mr-2"></i> <?echo $CambiosdepreciosNuevos['totalnotifi']?>  Cambios de precios
+            <i class="fas fa-dollar-sign mr-2"></i> <?php echo $CambiosdepreciosNuevos['totalnotifi']?>  Cambios de precios
            
           </a>
           <div class="dropdown-divider"></div>
-          <a href="https://controlfarmacia.com/POS2/ListadoDeTraspasos" class="dropdown-item">
-          <i class="fas fa-exchange-alt mr-2"></i> <?echo $TraspasosPendientes['traspasopendiente']?>  Traspasos pendientes
+          <a href="https://saludaclinicas.com/POS2/ListadoDeTraspasos" class="dropdown-item">
+          <i class="fas fa-exchange-alt mr-2"></i> <?php echo $TraspasosPendientes['traspasopendiente']?>  Traspasos pendientes
           
           </a>
           <!-- <div class="dropdown-divider"></div>
@@ -124,7 +124,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
     <!-- Brand Logo -->
     <a href="index" class="brand-link" style="background-color: #2b73bb !important;">
     
-      <span class="brand-text font-weight-light" style="color: white;">PUNTO DE VENTA <?echo $row['Nombre_Sucursal']?></span>
+      <span class="brand-text font-weight-light" style="color: white;">PUNTO DE VENTA <?php echo $row['Nombre_Sucursal']?></span>
     
     </a>
 
@@ -133,11 +133,11 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../Perfiles/<?echo $row['file_name']?>" class="img-circle elevation-2" alt="User Image">
+          <img src="../Perfiles/<?php echo $row['file_name']?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a  id="DatosGenerales" class="d-block" ><?echo $row['Nombre_Apellidos']?></a>
-          <a  id="DatosGenerales" class="d-block"><small><?echo $row['Nombre_rol']?></small></a>
+          <a  id="DatosGenerales" class="d-block" ><?php echo $row['Nombre_Apellidos']?></a>
+          <a  id="DatosGenerales" class="d-block"><small><?php echo $row['Nombre_rol']?></small></a>
           <a  id="DatosGenerales" class="d-block"  ><small>Turno actual: <strong><?php echo $ValorCaja['Turno']?></strong></small></a>
 
                <a  id="DatosGenerales" class="d-block"  title="<?php echo $row['Cuenta_Clip']?>" lang="es" ><small title="<?php echo $row['Cuenta_Clip']?>" lang="es">CLIP Usuario   <br> <?php echo $row['Cuenta_Clip']?></small></a>
@@ -210,7 +210,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/CancelacionesV2" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/CancelacionesV2" class="nav-link">
             <i class="fas fa-calendar-times"></i>
               <p>
               Cancelaciones
@@ -219,7 +219,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
             </a>
           </li>
           <!-- <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/CancelacionesAgenda" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/CancelacionesAgenda" class="nav-link">
             <i class="fas fa-calendar-times"></i>
               <p>
               Cancelaciones V2.0
@@ -273,7 +273,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/Creditos" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/Creditos" class="nav-link">
             <i class="fas fa-dot-circle"></i>
               <p>
                 Apertura de crédito
@@ -303,7 +303,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
             </ul>
           </li>
           
-          <a href="https://controlfarmacia.com/POS2/VentaV2" class="nav-link">
+          <a href="https://saludaclinicas.com/POS2/VentaV2" class="nav-link">
             <i class="fas fa-hand-holding-usd"></i>
               <p>
               Realizar venta
@@ -312,7 +312,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
             </a>
           <li class="nav-header">Almacenaje y productos <i class="fas fa-dolly"></i>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/InventarioRapido" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/InventarioRapido" class="nav-link">
             <i class="fas fa-boxes"></i>
               <p>
               Conteo diario
@@ -321,7 +321,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/ReportesMedicamentos" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/ReportesMedicamentos" class="nav-link">
             <i class="fa-solid fa-people-carry-box"></i>
               <p>
            Generar devoluciones
@@ -340,7 +340,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
             <ul class="nav nav-treeview">
         
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/ProductosV2" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/ProductosV2" class="nav-link">
             <i class="fas fa-prescription-bottle-alt"></i>
               <p>
             Productos
@@ -351,7 +351,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
          
 
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/ProductosEnfermeria" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/ProductosEnfermeria" class="nav-link">
             <i class="fas fa-user-nurse"></i>
               <p>
            Stock enfermeria
@@ -360,7 +360,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
             </a>
           </li>
           <!-- <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/RegistroProductos" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/RegistroProductos" class="nav-link">
             <i class="fas fa-dot-circle"></i>
               <p>
             Registrar productos
@@ -411,7 +411,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
             </a>
           </li> -->
           <li class="nav-item">
-            <a  href="https://controlfarmacia.com/POS2/ListadoDeTraspasos"  class="nav-link">
+            <a  href="https://saludaclinicas.com/POS2/ListadoDeTraspasos"  class="nav-link">
             <i class="fas fa-exchange-alt"></i>
             
               <p>
@@ -422,7 +422,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
           </li>
          
           <li class="nav-item">
-            <a  href="https://controlfarmacia.com/POS2/TraspasosRecepcionados"  class="nav-link">
+            <a  href="https://saludaclinicas.com/POS2/TraspasosRecepcionados"  class="nav-link">
             <i class="fas fa-dolly-flatbed"></i>
               <p>
           Traspasos recepcionados               
@@ -434,7 +434,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
 
 
           
-        <div style=<?if($row['Nombre_Sucursal'] != "Oficinas"){
+        <div style=<?php if($row['Nombre_Sucursal'] != "Oficinas"){
    
    echo "display:none;";
  
@@ -442,7 +442,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
   echo "display:block;";
 }
 ?>> <li class="nav-item">
-<a  href="https://controlfarmacia.com/POS2/TraspasosASucursales"  class="nav-link">
+<a  href="https://saludaclinicas.com/POS2/TraspasosASucursales"  class="nav-link">
 <i class="fas fa-dolly-flatbed"></i>
   <p>
 Realizar Traspasos              
@@ -451,7 +451,7 @@ Realizar Traspasos
 </li>
 
 <li class="nav-item">
-<a  href="https://controlfarmacia.com/POS2/SurtidoAEnfermeria" target="blank_" class="nav-link">
+<a  href="https://saludaclinicas.com/POS2/SurtidoAEnfermeria" target="blank_" class="nav-link">
 <i class="fas fa-briefcase-medical"></i>
   <p>
 Surtir a enfermería             
@@ -460,7 +460,7 @@ Surtir a enfermería
 </li>
 
 <li class="nav-item">
-<a  href="https://controlfarmacia.com/POS2/RealizarVentaVfinal"  class="nav-link">
+<a  href="https://saludaclinicas.com/POS2/RealizarVentaVfinal"  class="nav-link">
 <i class="fas fa-briefcase-medical"></i>
   <p>
 Surtir a enfermería             
@@ -480,7 +480,7 @@ Surtir a enfermería
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/ComprasSucursales" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/ComprasSucursales" class="nav-link">
             <i class="fas fa-clinic-medical"></i>
               <p>
               Farmacia
@@ -492,7 +492,7 @@ Surtir a enfermería
          
          
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/ComprasEnfermeria" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/ComprasEnfermeria" class="nav-link">
             <i class="fas fa-user-nurse"></i>
               <p>
               Enfermería
@@ -504,7 +504,7 @@ Surtir a enfermería
             </ul>
           </li>
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/RegistrosEnergiaElectrica" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/RegistrosEnergiaElectrica" class="nav-link">
             <i class="fas fa-lightbulb"></i>
               <p>
              Control de energia 
@@ -523,7 +523,7 @@ Surtir a enfermería
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/AdministraCaja" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/AdministraCaja" class="nav-link">
             <i class="fas fa-dot-circle"></i>
               <p>
               Administrar Caja
@@ -570,7 +570,7 @@ Surtir a enfermería
             </a>
           </li> 
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/TotalesServicios" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/TotalesServicios" class="nav-link">
             <i class="fas fa-dot-circle"></i>
               <p>
               Totales
@@ -579,7 +579,7 @@ Surtir a enfermería
             </a>
           </li>      
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/TotalesServiciosAnteriores" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/TotalesServiciosAnteriores" class="nav-link">
             <i class="fas fa-dot-circle"></i>
               <p>
               Totales anteriores
@@ -646,7 +646,7 @@ Surtir a enfermería
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/ReporteRapido" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/ReporteRapido" class="nav-link">
             <i class="fas fa-dot-circle"></i>
               <p>
               Reportar
@@ -657,7 +657,7 @@ Surtir a enfermería
          
          
           <li class="nav-item">
-            <a href="https://controlfarmacia.com/POS2/ReporteMobiliario" class="nav-link">
+            <a href="https://saludaclinicas.com/POS2/ReporteMobiliario" class="nav-link">
             <i class="fas fa-dot-circle"></i>
               <p>
               Reporte de mobiliario
@@ -749,7 +749,7 @@ function cierre()
 function salir()
 {
     
-window.location.replace('https://controlfarmacia.com/POS/Cierre'); 
+window.location.replace('https://saludaclinicas.com/POS/Cierre'); 
 
 }
 $( document ).ready(function() {
