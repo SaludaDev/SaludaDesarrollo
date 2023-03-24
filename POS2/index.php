@@ -31,7 +31,7 @@ include "Consultas/ConsultaFondoCaja.php";
 
   <?php include "Header.php"?>
 </head>
-<?php include_once ("Menu.php")?>
+<?include_once ("Menu.php")?>
 <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
