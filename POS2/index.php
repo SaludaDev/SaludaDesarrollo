@@ -29,7 +29,7 @@ include "Consultas/ConsultaFondoCaja.php";
 
   <title>PUNTO DE VENTA | <?php echo $row["Nombre_Sucursal"]; ?></title>
 
-  <? include "Header.php"?>
+  <?php include "Header.php"?>
 </head>
 <?include_once ("Menu.php")?>
 <div class="container-fluid">
