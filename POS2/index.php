@@ -1,3 +1,4 @@
+
 <?php
 # Iniciando la variable de control que permitirá mostrar o no el modal
 $exibirModal = false;
@@ -13,10 +14,10 @@ if(!isset($_COOKIE["IngresoVentas"]))
 }
 include "Consultas/Consultas.php";
 include "Consultas/Sesion.php";
-// include "Consultas/NotificacionesApp.php";
-//  include "Consultas/Conexion_selects.php";
-//  include "Consultas/ConeSelectDinamico.php";
-// include "Consultas/ConsultaFondoCaja.php";
+include "Consultas/NotificacionesApp.php";
+include "Consultas/Conexion_selects.php";
+include "Consultas/ConeSelectDinamico.php";
+include "Consultas/ConsultaFondoCaja.php";
 
 ?>
 <!DOCTYPE html>
@@ -28,9 +29,9 @@ include "Consultas/Sesion.php";
 
   <title>PUNTO DE VENTA | <?php echo $row["Nombre_Sucursal"]; ?></title>
 
-  <?php include "Header.php"?>
+  <? include "Header.php"?>
 </head>
-<?php include_once ("Menu.php")?>
+<?include_once ("Menu.php")?>
 <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -130,17 +131,17 @@ include "Consultas/Sesion.php";
     <!-- Then put toasts within -->
     <div class="toast" id="toastt" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
-      <img src="https://saludaclinicas.com/Perfiles/Saluda.png" style="width: 8%;" class="rounded mr-2" alt="...">
-        <strong class="mr-auto"><?php echo $Usuarios['Tipo_Notificacion']?></strong><small class="text-mute"><?php echo date('h:i A', strtotime(($Usuarios['Registrado'])))?></small> <br>
+      <img src="https://controlconsulta.com/Perfiles/Doctor_Consulta.png" style="width: 8%;" class="rounded mr-2" alt="...">
+        <strong class="mr-auto"><?echo $Usuarios['Tipo_Notificacion']?></strong><small class="text-mute"><?echo date('h:i A', strtotime(($Usuarios['Registrado'])))?></small> <br>
         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="toast-body">
         <div class="text-center">
-      <?php echo $Usuarios['Encabezado']?> <?php echo $Usuarios['Mensaje_Notificacion']?>
+      <?echo $Usuarios['Encabezado']?> <?echo $Usuarios['Mensaje_Notificacion']?>
       <form enctype="multipart/form-data" id="ActualizaNotificaciones">
-        <input hidden type="text" name="idactualizable"value="<?php echo $Usuarios['ID_Notificacion']?>">
+        <input hidden type="text" name="idactualizable"value="<?echo $Usuarios['ID_Notificacion']?>">
         <input hidden type="text" name="nuevoestado"value="0">
       <button type="submit"  onclick="chale()" id="EnviarDatos" value="Guardar" class="btn btn-success btn-sm">Marcar como leído <i class="fa-solid fa-check"></i></button>
       
@@ -178,7 +179,7 @@ $(document).ready(function(){
   }
 </script>
 </div></div>
-  <?php  include ("Modales/Ingreso.php");
+  <? include ("Modales/Ingreso.php");
       include ("Modales/ModalConsultaProductos.php");
       include ("Modales/ModalTraspasos.php");
       include ("Modales/Error.php");
@@ -223,7 +224,7 @@ $(document).ready(function()
   	
     $(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://saludaclinicas.com/POS2/Modales/AbreCajaIndex.php","id="+id,function(data){
+  		$.post("https://controlfarmacia.com/POS2/Modales/AbreCajaIndex.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Apertura de caja");
               $("#Di").addClass("modal-dialog modal-lg modal-notify modal-success");
@@ -246,7 +247,7 @@ window.addEventListener("offline",function(){$("#Sinwifi").modal("show");},false
          </button>
        </div>
         <div id="Mensaje "class="alert alert-info alert-styled-left text-blue-800 content-group">
-						                <span id="Aviso" class="text-semibold"><?php echo $row['Nombre_Apellidos']?>
+						                <span id="Aviso" class="text-semibold"><?echo $row['Nombre_Apellidos']?>
                             Verifique los campos antes de realizar alguna accion</span>
 						                <button type="button" class="close" data-dismiss="alert">×</button>
                             </div>
@@ -260,7 +261,7 @@ window.addEventListener("offline",function(){$("#Sinwifi").modal("show");},false
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
-<?php
+<?
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);
