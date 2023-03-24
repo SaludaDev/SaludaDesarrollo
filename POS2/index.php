@@ -14,8 +14,8 @@ if(!isset($_COOKIE["IngresoVentas"]))
 include "Consultas/Consultas.php";
 include "Consultas/Sesion.php";
 include "Consultas/NotificacionesApp.php";
-include "Consultas/Conexion_selects.php";
-include "Consultas/ConeSelectDinamico.php";
+// include "Consultas/Conexion_selects.php";
+// include "Consultas/ConeSelectDinamico.php";
 include "Consultas/ConsultaFondoCaja.php";
 
 ?>
