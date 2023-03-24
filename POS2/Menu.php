@@ -1,10 +1,10 @@
-<?php include "Consultas/ContadorParaNotificacion.php";
+<!-- <?php include "Consultas/ContadorParaNotificacion.php";
 include "Consultas/ConsultaCaja.php";
 
 
 $sucursaldefinitiva= $row['Fk_Sucursal'];
 setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
-?>
+?> -->
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <!-- Navbar -->
