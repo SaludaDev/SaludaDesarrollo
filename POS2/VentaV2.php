@@ -191,7 +191,7 @@ $(".btn-aperturacaja").click(function() {
    
    <script src="js/ControladorFormVentas.js"></script>
 
-   <script src="js/VentasControlador.js"></script>
+  <!--  <script src="js/VentasControlador.js"></script> -->
      <script src="js/BusquedaVentasV.js"></script>
      <script src="js/BusquedaVentasV2.js"></script>
      <script src="js/BusquedaVentasV23.js"></script>
@@ -259,7 +259,7 @@ $meses_ES = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"
          </button>
        </div>
         <div id="Mensaje "class="alert alert-info alert-styled-left text-blue-800 content-group">
-						                <span id="Aviso" class="text-semibold"><?echo $row['Nombre_Apellidos']?>
+						                <span id="Aviso" class="text-semibold"><?php echo $row['Nombre_Apellidos']?>
                             Verifique los campos antes de realizar alguna accion</span>
 						                <button type="button" class="close" data-dismiss="alert">×</button>
                             </div>
