@@ -30,7 +30,7 @@ include ("db_connection.php");
  
   
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 
 
   
