@@ -1,10 +1,4 @@
-<?php include "Consultas/ContadorParaNotificacion.php";
-include "Consultas/ConsultaCaja.php";
 
-
-$sucursaldefinitiva= $row['Fk_Sucursal'];
-setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
-?> 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <!-- Navbar -->
@@ -17,15 +11,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
       
     </ul>
 
-    <?php if($TraspasosPendientes['traspasopendiente'] !=0){
-   echo "<font face='Impact'>
-   <marquee bgcolor='#FFFF00' style='width: 300% !important;
-   '>Estimado ".$row['Nombre_Apellidos'].", revise sus traspasos pendientes </marquee>
-   </font>";
-} else {
   
-}
-?>
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">

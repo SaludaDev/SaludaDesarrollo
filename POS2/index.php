@@ -261,7 +261,7 @@ window.addEventListener("offline",function(){$("#Sinwifi").modal("show");},false
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);
