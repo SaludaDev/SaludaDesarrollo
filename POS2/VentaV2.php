@@ -13,9 +13,9 @@ include ("db_connection.php");
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>VENTAS | <?echo $row['ID_H_O_D']?> </title>
+  <title>VENTAS | <?php echo $row['ID_H_O_D']?> </title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
  <style>
         .error {
   color: red;
@@ -118,7 +118,7 @@ include ("db_connection.php");
      <!-- Control Sidebar -->
     
      <!-- Main Footer -->
-   <?
+   <?php 
     include ("Modales/ModalConsultaProductos.php");
      include ("Modales/Error.php");
      include ("Modales/Exito.php");
@@ -156,7 +156,7 @@ include ("db_connection.php");
 
 $(".btn-edit").click(function() {
     id = $(this).data("id");
-    $.post("https://controlfarmacia.com/POS2/Modales/CortesDeCajaNuevo.php", "id=" + id, function(data) {
+    $.post("https://saludaclinicas.com/POS2/Modales/CortesDeCajaNuevo.php", "id=" + id, function(data) {
         $("#form-edit").html(data);
         $("#Titulo").html("Corte de caja");
         $("#Di").addClass("modal-dialog modal-lg modal-notify modal-warning");
@@ -166,7 +166,7 @@ $(".btn-edit").click(function() {
 
 $(".btn-arqui").click(function() {
     id = $(this).data("id");
-    $.post("https://controlfarmacia.com/POS2/Modales/ArqueoDeCaja.php", "id=" + id, function(data) {
+    $.post("https://saludaclinicas.com/POS2/Modales/ArqueoDeCaja.php", "id=" + id, function(data) {
         $("#form-edit").html(data);
         $("#Titulo").html("Arqueo De Caja");
         $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-warning");
@@ -177,7 +177,7 @@ $(".btn-arqui").click(function() {
 
 $(".btn-aperturacaja").click(function() {
     id = $(this).data("id");
-    $.post("https://controlfarmacia.com/POS2/Modales/AbreCajaEnVentas.php", "id=" + id, function(data) {
+    $.post("https://saludaclinicas.com/POS2/Modales/AbreCajaEnVentas.php", "id=" + id, function(data) {
         $("#form-edit").html(data);
         $("#Titulo").text("Apertura De caja");
         $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-warning");
@@ -224,7 +224,7 @@ $(".btn-aperturacaja").click(function() {
 
 </body>
 </html>
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

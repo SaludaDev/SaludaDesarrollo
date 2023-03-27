@@ -11,7 +11,7 @@ include "Consultas/AnalisisIndex.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Registro de ventas realizadas  <?echo $row['ID_H_O_D']?>  <?echo $row['Nombre_Sucursal']?> </title>
+  <title>Registro de ventas realizadas  <?php echo $row['ID_H_O_D']?>  <?php echo $row['Nombre_Sucursal']?> </title>
 
 <?include "Header.php"?>
  <style>
@@ -23,14 +23,14 @@ include "Consultas/AnalisisIndex.php";
 
     </style>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 
 
 
 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 <div class="card text-center">
   <div class="card-header" style="background-color:#2bbbad !important;color: white;">
-    Ventas de <?echo $row['ID_H_O_D']?> <?echo $row['Nombre_Sucursal']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+    Ventas de <?php echo $row['ID_H_O_D']?> <?echo $row['Nombre_Sucursal']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
   
   <div >
@@ -57,7 +57,7 @@ include "Consultas/AnalisisIndex.php";
   <!-- Control Sidebar -->
  
   <!-- Main Footer -->
-<?
+<?php 
 
   include ("Modales/Error.php");
   include ("Modales/Exito.php");
@@ -92,8 +92,7 @@ include "Consultas/AnalisisIndex.php";
 
 </body>
 </html>
-<?
-
+<?php
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);
   $numeroDia = date('d', strtotime($fecha));
