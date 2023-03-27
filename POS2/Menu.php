@@ -1,10 +1,10 @@
-<!-- <?php include "Consultas/ContadorParaNotificacion.php";
+<?php include "Consultas/ContadorParaNotificacion.php";
 include "Consultas/ConsultaCaja.php";
 
 
 $sucursaldefinitiva= $row['Fk_Sucursal'];
 setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
-?> -->
+?> 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <!-- Navbar -->
@@ -434,21 +434,7 @@ setcookie("Busquedadefinitiva", $sucursaldefinitiva, Date(2068, 1, 02, 11, 20));
 
 
           
-        <div style=<?php if($row['Nombre_Sucursal'] != "Oficinas"){
-   
-   echo "display:none;";
- 
-} else {
-  echo "display:block;";
-}
-?>> <li class="nav-item">
-<a  href="https://saludaclinicas.com/POS2/TraspasosASucursales"  class="nav-link">
-<i class="fas fa-dolly-flatbed"></i>
-  <p>
-Realizar Traspasos              
-  </p>
-</a>
-</li>
+     
 
 <li class="nav-item">
 <a  href="https://saludaclinicas.com/POS2/SurtidoAEnfermeria" target="blank_" class="nav-link">
