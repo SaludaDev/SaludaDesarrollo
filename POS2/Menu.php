@@ -1,4 +1,8 @@
+<?php
+include "Consultas/ConsultaCaja.php";
 
+
+?> 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <!-- Navbar -->
@@ -11,7 +15,7 @@
       
     </ul>
 
-  
+    
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
