@@ -100,7 +100,8 @@ include("Cookies/Mensaje.php");?>
 					</div>
                     </form>  <div id="error">
   </div>
-					
+  <?php include "Modal.php";
+  include "Modales.php";?>
 
 					
 					
