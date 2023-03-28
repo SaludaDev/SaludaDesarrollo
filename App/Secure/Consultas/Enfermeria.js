@@ -45,7 +45,7 @@ $('document').ready(function() {
 						text: 'Bienvenido, espere un momento!',
 						showConfirmButton: false,
 					  }))
-					setTimeout(' window.location.href = "https://controlfarmacia.com/Enfermeria/"; ',2000);
+					setTimeout(' window.location.href = "https://saludaclinicas.com/Enfermeria/"; ',2000);
 				} else {									
 					$("#error").fadeIn(1000, function(){									
 						$("#error").html(Swal.fire({

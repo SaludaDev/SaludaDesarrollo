@@ -13,6 +13,11 @@ function POSV(){
     location.href="https://saludaclinicas.com/App/Secure/IngresoAgenda" 
  }
  
+ function Enfermeros(){
+  location.href="https://saludaclinicas.com/App/Secure/Enfermeria2" 
+}
+
+ 
   /*Redirecciones para volver a identificacion de perfiles, y soporte tecnico */
  
   
@@ -23,7 +28,3 @@ function POSV(){
   function Home(){
     location.href="hhttps://saludaclinicas.com/App/"
   }
-  function Enfermeros(){
-    location.href="https://saludaclinicas.com/App/Secure/Enfermeria2" 
- }
- 
