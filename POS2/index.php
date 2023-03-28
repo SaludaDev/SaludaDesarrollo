@@ -179,7 +179,7 @@ $(document).ready(function(){
   }
 </script>
 </div></div>
-  <? include ("Modales/Ingreso.php");
+  <?php include ("Modales/Ingreso.php");
       include ("Modales/ModalConsultaProductos.php");
       include ("Modales/ModalTraspasos.php");
       include ("Modales/Error.php");
