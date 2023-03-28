@@ -1,5 +1,4 @@
 <?php 
-
 date_default_timezone_set("America/Monterrey");
 include "../Consultas/db_connection.php";
 include "../Consultas/Consultas.php";
