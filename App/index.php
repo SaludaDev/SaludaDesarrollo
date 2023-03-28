@@ -91,7 +91,7 @@ include "Header.php";
   <i  onclick="Administracion()" class="fas fa-laptop-medical"></i>
   </span>
   <div class="details">
-  <h1>ADMINISTRACIÓN</h1>
+  <h1>ENFERMERÍA</h1>
     </div>
  
 </div>
@@ -102,7 +102,7 @@ include "Header.php";
   <i onclick="controlconsulta()" class="fas fa-hospital-alt"></i>
   </span>
   <div class="details">
-  <h1>CONTROL CONSULTA</h1>
+  <h1>MEDICOS</h1>
    
   </div>
 </div>
