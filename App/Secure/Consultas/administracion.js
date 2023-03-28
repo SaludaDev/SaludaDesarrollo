@@ -46,7 +46,7 @@ $('document').ready(function() {
                         showConfirmButton: false,
                         timer:2000,
                       }))
-                      setTimeout(' window.location.href = "https://controlfarmacia.com/PanelAdmin/"; ',2000);
+                      setTimeout(' window.location.href = "https://saludaclinicas.com/PanelAdmin/"; ',2000);
                    
 				} else {									
 					$("#error").fadeIn(1000, function(){									
