@@ -184,8 +184,7 @@ $(document).ready(function(){
       include ("Modales/ModalTraspasos.php");
       include ("Modales/Error.php");
       include ("Modales/ReporteRapido.php");
-  
-   include ("Modales/Exito.php");
+  include ("Modales/Exito.php");
   include ("footer.php");
  ?>
 <!-- ./wrapper -->
