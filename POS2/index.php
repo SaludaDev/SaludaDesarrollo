@@ -224,7 +224,7 @@ $(document).ready(function()
   	
     $(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/POS2/Modales/AbreCajaIndex.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/POS2/Modales/AbreCajaIndex.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Apertura de caja");
               $("#Di").addClass("modal-dialog modal-lg modal-notify modal-success");
