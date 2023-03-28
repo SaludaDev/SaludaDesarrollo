@@ -21,7 +21,7 @@
       </div>
       <!--Footer-->
       <div class="modal-footer flex-center">
-        <a href="https://controlconsulta.com/Enfermeria2/Cierre" class="btn btn-warning">Aceptar</a>
+        <a href="https://saludaclinicas.com/Enfermeria2/Cierre" class="btn btn-warning">Aceptar</a>
        
       </div>
     </div>
