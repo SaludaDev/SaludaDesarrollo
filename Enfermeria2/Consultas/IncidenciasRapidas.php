@@ -62,7 +62,7 @@ $query = $conn->query($sql1);
 	<p class="alert alert-warning">Aún no hay incidencias registradas </p>
 <?php endif;?>
   <!-- Modal -->
-  <?
+  <?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

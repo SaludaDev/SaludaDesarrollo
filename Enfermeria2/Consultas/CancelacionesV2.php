@@ -71,7 +71,7 @@ $query = $conn->query($sql1);
 </td>
 
 <td>
-<button class="btn btn-default btn-sm" style="<?echo $Especialista['ColorEstatusCita'];?>"><?php echo $Especialista["Estatus_cita"]; ?></button> 
+<button class="btn btn-default btn-sm" style="<?php echo $Especialista['ColorEstatusCita'];?>"><?php echo $Especialista["Estatus_cita"]; ?></button> 
 <!-- Basic dropdown -->
    </td>
  
@@ -95,7 +95,7 @@ $query = $conn->query($sql1);
  <script>
   	$(".btn-edit1").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/ControldecitasV2/Modales/DetallesCancelacion.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/ControldecitasV2/Modales/DetallesCancelacion.php","id="+id,function(data){
               $("#form-edit").html(data);
               
   		});
