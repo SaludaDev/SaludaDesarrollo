@@ -88,7 +88,7 @@ include "Header.php";
 </div>
 <div class="prog-container degree">
   <span class="icon">
-  <i  onclick="Administracion()" class="fas fa-laptop-medical"></i>
+  <i  onclick="Enfermeros()" class="fas fa-laptop-medical"></i>
   </span>
   <div class="details">
   <h1>ENFERMERÍA</h1>
