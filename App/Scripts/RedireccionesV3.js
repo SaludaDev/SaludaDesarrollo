@@ -23,3 +23,7 @@ function POSV(){
   function Home(){
     location.href="hhttps://saludaclinicas.com/App/"
   }
+  function Enfermeros(){
+    location.href="https://saludaclinicas.com/App/Secure/Enfermeria2" 
+ }
+ 
