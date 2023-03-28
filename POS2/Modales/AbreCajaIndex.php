@@ -1,10 +1,4 @@
 <?php 
-$usuario = 'u155356178_CorpoSaluda';
-$password = 'SSalud4Dev2495#$';
-$db = new PDO('mysql:host=localhost;dbname=u155356178_DesarrolloSalu', $usuario, $password);
-$query = $db->prepare("SELECT Enfermero_ID,Nombre_Apellidos,ID_H_O_D,Fk_Sucursal,Estatus FROM Personal_Enfermeria WHERE Estatus='Vigente' AND ID_H_O_D='".$row['ID_H_O_D']."' AND Fk_Sucursal='".$row['Fk_Sucursal']."'");
-$query->execute();
-$data = $query->fetchAll();
 date_default_timezone_set("America/Monterrey");
 include "../Consultas/db_connection.php";
 include "../Consultas/Consultas.php";
@@ -113,10 +107,10 @@ while ($r=$query->fetch_object()){
                                                <option value="Ninguno">Ninguno</option>
                                                <option value="Otro">Otro</option>
         <?php
-         foreach ($data as $valores):
-          echo '<option value="'.$valores["Nombre_Apellidos"].'">'.$valores["Nombre_Apellidos"].'</option>';
-          endforeach;
-           
+          $query = $conn -> query ("SELECT Enfermero_ID,Nombre_Apellidos,ID_H_O_D,Fk_Sucursal,Estatus FROM Personal_Enfermeria WHERE Estatus='Vigente' AND ID_H_O_D='".$row['ID_H_O_D']."' AND Fk_Sucursal='".$row['Fk_Sucursal']."' ");
+          while ($valores = mysqli_fetch_array($query)) {
+            echo '<option value="'.$valores[Nombre_Apellidos].'">'.$valores[Nombre_Apellidos].'</option>';
+          }
         ?>  </select>  
     </div>
     </div>
@@ -284,7 +278,7 @@ while ($r=$query->fetch_object()){
 <script src="js/Sumadinero.js"></script>
 <?php else:?>
   <p class="alert alert-danger"><i class="fas fa-exclamation-triangle fa-2x" style="color: #f50909;"></i> No encontramos algún fondo de caja asignado, por favor verifica e intenta de nuevo <i class="fas fa-exclamation-triangle fa-2x" style="color: #f50909;"></i></p>
-<?php endif;?>
+<? endif;?>
  <script>
 
 function CapturaNombreEnfermero() {
