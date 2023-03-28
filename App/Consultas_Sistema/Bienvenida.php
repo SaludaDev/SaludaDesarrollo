@@ -1,4 +1,4 @@
-<?# Iniciando la variable de control que permitirá mostrar o no el modal
+<?php # Iniciando la variable de control que permitirá mostrar o no el modal
 $MuestraBienvenida = false;
 # Verificando si existe o no la cookie
 if(!isset($_COOKIE["BienvenidoFarmacia"]))
