@@ -73,7 +73,7 @@ $query = $conn->query($sql1);
 	<td><?php echo fechaCastellano($Especialista["Fecha_Disponibilidad"]); ?><br>
 	<?php echo date('h:i A', strtotime($Especialista["Horario_Disponibilidad"])); ?>
 </td>
-<td><button class="btn btn-default btn-sm" style="<?echo $Especialista['ColorEstatusCita'];?>"><?php echo $Especialista["Estatus_cita"]; ?></button></td>
+<td><button class="btn btn-default btn-sm" style="<?php echo $Especialista['ColorEstatusCita'];?>"><?php echo $Especialista["Estatus_cita"]; ?></button></td>
 
 	<td><button data-id="<?php echo  $Especialista["ID_Agenda_Especialista"];?>" type="button" class=" btn-edit btn btn-primary"   class="btn btn-default">
   <i class="fas fa-file-medical"></i>  
@@ -95,7 +95,7 @@ $query = $conn->query($sql1);
  <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlconsulta.com/Enfermeria2/Modales/AgendaSignosVital.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/Enfermeria2/Modales/AgendaSignosVital.php","id="+id,function(data){
   			$("#form-edit").html(data);
   		});
   		$('#editModal').modal('show');

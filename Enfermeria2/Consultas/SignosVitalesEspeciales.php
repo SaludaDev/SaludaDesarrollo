@@ -52,7 +52,7 @@ $query = $conn->query($sql1);
        <?php echo date('h:i A', strtotime($DataPacientes["Fecha_Visita"])); ?></td>
     <td><?php echo $DataPacientes["Nombre_Doctor"]; ?></td>
    
-    <td><button class="btn btn-default btn-sm" style="<?echo $DataPacientes['CodigoEstatus'];?>"><?php echo $DataPacientes["Estatus"]; ?></button></td>
+    <td><button class="btn btn-default btn-sm" style="<?php echo $DataPacientes['CodigoEstatus'];?>"><?php echo $DataPacientes["Estatus"]; ?></button></td>
 	
  
 
@@ -66,7 +66,7 @@ $query = $conn->query($sql1);
 	<p class="alert alert-warning">Aún no hay pacientes registrados</p>
 <?php endif;?>
   <!-- Modal -->
-  <?
+  <?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);
