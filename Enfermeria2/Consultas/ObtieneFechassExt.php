@@ -25,6 +25,3 @@ function fechaCastellano ($fecha) {
 			echo '<option value = "'.$row['ID_Fecha_Esp'].'">'.fechaCastellano(( $row['Fecha_Disponibilidad'])).'</option>';
 		}
 ?>
-
-
-?>

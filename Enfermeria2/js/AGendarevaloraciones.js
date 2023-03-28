@@ -67,7 +67,7 @@ $('document').ready(function($) {
 
         $.ajax({
             type: 'POST',
-            url: "https://controlconsulta.com/Enfermeria2/Consultas/GuardaCitasDeRevaloracion.php",
+            url: "https://saludaclinicas.com/Enfermeria2/Consultas/GuardaCitasDeRevaloracion.php",
             data: $('#AgendaExternoRevaloraciones').serialize(),
             cache: false,
             beforeSend: function() {

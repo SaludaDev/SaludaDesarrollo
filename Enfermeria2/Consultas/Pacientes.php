@@ -67,7 +67,7 @@ $query = $conn->query($sql1);
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlconsulta.com/Enfermeria2/Modales/ConfirmaDatosP.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/Enfermeria2/Modales/ConfirmaDatosP.php","id="+id,function(data){
   			$("#form-edit").html(data);
   		});
   		$('#editModal').modal('show');
@@ -84,13 +84,13 @@ $query = $conn->query($sql1);
          </button>
        </div>
         <div class="alert alert-info alert-styled-left text-blue-800 content-group">
-						                <span class="text-semibold"><?echo $row['Nombre_Apellidos']?>, </span>
+						                <span class="text-semibold"><?php echo $row['Nombre_Apellidos']?>, </span>
                             Antes iniciar el proceso de captura de datos de signos vitales del paciente, se requiere una previa confirmación de sus datos, por favor verifica los campos antes de continuar.
                             
 						                <button type="button" class="close" data-dismiss="alert">×</button>
                             </div>
                             <div class="alert alert-warning alert-styled-left text-blue-800 content-group">
-                            <span class="text-semibold"><?echo $row['Nombre_Apellidos']?>, </span>
+                            <span class="text-semibold"><?php echo $row['Nombre_Apellidos']?>, </span>
                             los campos con un  <span class="text-danger" style="font-weight: 900;"> * </span> son campos necesarios para el correcto ingreso de datos.
 						                <button type="button" class="close" data-dismiss="alert">×</button>
                             </div>

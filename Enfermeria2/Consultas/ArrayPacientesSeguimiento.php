@@ -20,7 +20,7 @@ while($fila=$result->fetch_assoc()){
     $data[$c]["Edad"] = $fila["Edad"];
     $data[$c]["Sexo"] = $fila["Sexo"];
     $data[$c]["Alergias"] = $fila["Alergias"];
-    $data[$c]["Cita"] = ["<a href=https://controlconsulta.com/Enfermeria2/TomaDeSignosVitales?idpaciente=".base64_encode($fila["ID_Data_Paciente"])." type='button' class='btn btn-success'><i class='fas fa-file-medical-alt'></i> "];
+    $data[$c]["Cita"] = ["<a href=https://saludaclinicas.com/Enfermeria2/TomaDeSignosVitales?idpaciente=".base64_encode($fila["ID_Data_Paciente"])." type='button' class='btn btn-success'><i class='fas fa-file-medical-alt'></i> "];
     $c++; 
  
 }
