@@ -74,7 +74,7 @@ include "Consultas/ConeSelectDinamico.php";
 
 </body>
 </html>
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

@@ -7,7 +7,7 @@ tabla = $('#PacientesNuevos').DataTable({
  "ordering": true,
  "bAutoWidth": false,
  "order": [[ 0, "desc" ]],
- "sAjaxSource": "https://controlconsulta.com/Enfermeria2/Consultas/ArrayPacientesSeguimiento.php",
+ "sAjaxSource": "https://saludaclinicas.com/Enfermeria2/Consultas/ArrayPacientesSeguimiento.php",
  "aoColumns": [
        { mData: 'Folio' },
        { mData: 'Nombre' },

@@ -69,13 +69,13 @@ $query = $conn->query($sql1);
 </table>
 </div>
 <?php else:?>
-	<p class="alert alert-warning"><?echo $row['Nombre_Apellidos']?> aún no has ingresado nuevos pacientes al sistema</p>
+	<p class="alert alert-warning"><?php echo $row['Nombre_Apellidos']?> aún no has ingresado nuevos pacientes al sistema</p>
 <?php endif;?>
   <!-- Modal -->
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlconsulta.com/Enfermeria2/Modales/SignosVitalesAlta.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/Enfermeria2/Modales/SignosVitalesAlta.php","id="+id,function(data){
         $("#form-edit").html(data);
         $("#Titulo").html("Captura de signos vitales");
   		});
@@ -84,7 +84,7 @@ $query = $conn->query($sql1);
     
   	$(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlconsulta.com/Enfermeria2/Modales/AgendaNuevo.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/Enfermeria2/Modales/AgendaNuevo.php","id="+id,function(data){
         $("#form-edit").html(data);
         $("#Titulo").html("Agendar cita con especialista");
   		});
