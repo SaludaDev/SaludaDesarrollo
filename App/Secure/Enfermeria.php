@@ -1,6 +1,7 @@
 <?php
 include("Cookies/CookieCita.php");
-include("Cookies/Mensaje.php");?>
+include("Cookies/Mensaje.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -100,8 +101,6 @@ include("Cookies/Mensaje.php");?>
 					</div>
                     </form>  <div id="error">
   </div>
-  <?php include "Modal.php";
-  include "Modales.php";?>
 
 					
 					
