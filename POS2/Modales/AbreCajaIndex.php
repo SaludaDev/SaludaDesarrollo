@@ -96,7 +96,7 @@ while ($r=$query->fetch_object()){
 <div class="" id="Ok" role="alert">
   
 </div>
-<div class="row">
+<!-- <div class="row">
     <div class="col">
     <label for="exampleFormControlInput1">Enfermero en turno </label>
     <div class="input-group mb-3">
@@ -134,7 +134,7 @@ while ($r=$query->fetch_object()){
   </div>
   <input type="text" name="MedicoEnturno" id="medicoenturno" hidden >
   <input type="text" name="EnfermeroEnturno" id="enfermeroturno" hidden >
-</div><label for="resultado" class="error"></div>
+</div><label for="resultado" class="error"></div> -->
   
   <button type="submit"  id="submit"  class="btn btn-info">Abrir caja <i class="fas fa-check"></i></button>
     <!-- INICIA CONTADOR DINERO -->
