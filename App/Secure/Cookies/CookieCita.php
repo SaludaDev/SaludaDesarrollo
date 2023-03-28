@@ -1,4 +1,4 @@
-<?
+<?php
 # Iniciando la variable de control que permitirá mostrar o no el modal
 $exibirModal = false;
 # Verificando si existe o no la cookie

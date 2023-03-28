@@ -1,4 +1,4 @@
-<?
+<?php
 include("Cookies/CookieCita.php");
 include("Cookies/Mensaje.php");?>
 <!DOCTYPE html>
@@ -66,7 +66,7 @@ include("Cookies/Mensaje.php");?>
 				<form class="login100-form validate-form" method="post" id="login-form">
 
 					<span class="login100-form-title p-b-49">
-						<?echo $mensaje?>
+						<?php echo $mensaje?>
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Debes ingresar tu usuario">
