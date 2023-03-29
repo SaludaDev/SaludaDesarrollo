@@ -138,7 +138,7 @@ include("Cookies/Mensaje.php");?>
   <!-- Copyright -->
 
 </footer>
-<?include ("Modales/Soporte.php");
+<?php include ("Modales/Soporte.php");
   include ("Modales/ModalEnfer.php");?>
 <!--===============================================================================================-->
 	
