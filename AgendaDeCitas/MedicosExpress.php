@@ -72,8 +72,8 @@ include "Consultas/Sesion.php";
 <?php
  include("Modales/Error.php");
 include("Modales/Exito.php");
-// include("Modales/Precarga.php");
-// include("Modales/ExitoActualiza.php");
+include("Modales/Precarga.php");
+ include("Modales/ExitoActualiza.php");
 // include("Modales/EstatusAgendaGuardado.php");
 // include("Modales/AltaEspecialidad.php");
 // include("Modales/AltaEspecialista.php");
