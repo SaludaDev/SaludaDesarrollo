@@ -2,7 +2,6 @@
 
 session_start();
 
-include ("Scripts/Enfermeria2.php");
 
 if($_SESSION["Enfermeria"])	//Condicion personal
 {
