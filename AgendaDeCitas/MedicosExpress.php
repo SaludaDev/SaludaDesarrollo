@@ -70,8 +70,8 @@ include "Consultas/Sesion.php";
 <!-- /.control-sidebar -->
 
 <?php
-// include("Modales/Error.php");
-// include("Modales/Exito.php");
+ include("Modales/Error.php");
+include("Modales/Exito.php");
 // include("Modales/Precarga.php");
 // include("Modales/ExitoActualiza.php");
 // include("Modales/EstatusAgendaGuardado.php");
