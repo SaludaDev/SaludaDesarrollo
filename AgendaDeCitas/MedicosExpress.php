@@ -70,13 +70,13 @@ include "Consultas/Sesion.php";
 <!-- /.control-sidebar -->
 
 <?php
-include("Modales/Error.php");
-include("Modales/Exito.php");
-include("Modales/Precarga.php");
-include("Modales/ExitoActualiza.php");
-include("Modales/EstatusAgendaGuardado.php");
-include("Modales/AltaEspecialidad.php");
-include("Modales/AltaEspecialista.php");
+// include("Modales/Error.php");
+// include("Modales/Exito.php");
+// include("Modales/Precarga.php");
+// include("Modales/ExitoActualiza.php");
+// include("Modales/EstatusAgendaGuardado.php");
+// include("Modales/AltaEspecialidad.php");
+// include("Modales/AltaEspecialista.php");
 include("footer.php")
 ?>
 <script src="js/MedicosExpress.js"></script>
