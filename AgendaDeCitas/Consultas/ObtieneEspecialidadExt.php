@@ -11,4 +11,3 @@
 						}
 ?>
 
-$medicos = $conn->prepare("SELECT ID_Especialidad,Nombre_Especialidad,Fk_Sucursal FROM Especialidades_Express WHERE Fk_Sucursal = '$sucursal'") or die(mysqli_error());
