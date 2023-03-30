@@ -1,7 +1,7 @@
 <?php
 	include("ConeSelectDinamico.php");
-	$sucursal=intval($_REQUEST['especialidadext']);
-	$medicos = $conn->prepare("SELECT * FROM Personal_Medico_Express WHERE Estatus='Disponible' AND Especialidad_Express = '$sucursal'");
+	$especialidad=intval($_REQUEST['especialidadext']);
+	$medicos = $conn->prepare("SELECT * FROM Personal_Medico_Express WHERE Estatus='Disponible' AND Especialidad_Express = '$especailidad'");
 		echo '<option value = "">Selecciona un medico </option>';
 	if($medicos->execute()){
 		$a_result = $medicos->get_result();
