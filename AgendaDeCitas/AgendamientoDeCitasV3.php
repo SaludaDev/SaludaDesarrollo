@@ -99,7 +99,7 @@ include("Modales/Precarga.php");
 include("Modales/ExitoActualiza.php");
  include("Modales/EstatusAgendaGuardado.php");
 include("Modales/AgendarCitasDeSucursales.php");
-// include("Modales/AgendarCitasExt.php");
+include("Modales/AgendarCitasExt.php");
 // include("Modales/AltaEspecialista.php");
 // include("Modales/BusquedaCitasMes.php");
 include("footer.php") 
