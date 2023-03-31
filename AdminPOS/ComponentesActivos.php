@@ -10,7 +10,7 @@ include "Consultas/Sesion.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Componentes activos | <?echo $row['ID_H_O_D']?> </title>
+  <title>Componentes activos | <?php echo $row['ID_H_O_D']?> </title>
 
 <?include "Header.php"?>
  <style>
@@ -22,7 +22,7 @@ include "Consultas/Sesion.php";
 
     </style>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 <div class="card text-center">
   <div class="card-header" style="background-color: #2b73bb !important;color: white;">
    Componentes de medicamentos
@@ -61,7 +61,7 @@ include "Consultas/Sesion.php";
   <!-- Control Sidebar -->
  
   <!-- Main Footer -->
-<?
+<?php 
     
 
   include ("Modales/ComponentesActivos.php");
@@ -102,7 +102,7 @@ include "Consultas/Sesion.php";
          </button>
        </div>
         <div id="Mensaje" class="alert alert-info alert-styled-left text-blue-800 content-group">
-						                <span id="Aviso" class="text-semibold"><?echo $row['Nombre_Apellidos']?>
+						                <span id="Aviso" class="text-semibold"><?php echo $row['Nombre_Apellidos']?>
                             Verifique los campos antes de realizar alguna accion</span>
 						                <button type="button" class="close" data-dismiss="alert">×</button>
                             </div>
@@ -115,7 +115,7 @@ include "Consultas/Sesion.php";
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

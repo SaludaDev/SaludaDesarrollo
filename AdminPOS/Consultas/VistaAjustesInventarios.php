@@ -1,4 +1,3 @@
-
 <script>
 
 tabla = $('#Productos').DataTable({
@@ -8,7 +7,7 @@ tabla = $('#Productos').DataTable({
  "stateSave":true,
  "bAutoWidth": false,
  "order": [[ 0, "desc" ]],
- "sAjaxSource": "https://controlfarmacia.com/AdminPOS/Consultas/ArrayAjusteInventarios.php",
+ "sAjaxSource": "https://saludaclinicas.com/AdminPOS/Consultas/ArrayAjusteInventarios.php",
  "aoColumns": [
        { mData: 'Cod_Barra' },
        { mData: 'Nombre_Prod' },
@@ -17,11 +16,6 @@ tabla = $('#Productos').DataTable({
        { mData: 'Nom_Serv' },
        { mData: 'Sucursal' },
        { mData: 'Existencias_R' },
-     
-      
- 
-
-
        { mData: 'Acciones' },
   
       ],
@@ -46,7 +40,7 @@ tabla = $('#Productos').DataTable({
             },
           
         //para usar los botones   
-        responsive: "true",
+        // responsive: "true",
        
        
    

@@ -15,9 +15,9 @@ AND Stock_POS.ID_Prod_POS = $IdBusqueda";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Actualizando existencias de <?echo $Usuarios['Nombre_Prod']?> </title>
+  <title>Actualizando existencias de <?php echo $Usuarios['Nombre_Prod']?> </title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
  <style>
         .error {
   color: red;
@@ -27,11 +27,11 @@ AND Stock_POS.ID_Prod_POS = $IdBusqueda";
 
     </style>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 
 <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-    Productos de <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+    Productos de <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
   <div >
   <button type="button" class="btn btn-outline-info btn-sm" onClick="history.go(-1);" class="btn btn-default">
@@ -76,7 +76,7 @@ $(document).ready( function () {
 	  
 	 
 </script>
-<?
+<?php 
 ;
 
 
@@ -147,7 +147,7 @@ $query = $conn->query($sql1);
   <!-- Control Sidebar -->
  
   <!-- Main Footer -->
-<?
+<?php 
  
   include ("Modales/ExitoActualiza.php");
 
@@ -189,7 +189,7 @@ setTimeout(function(){
 </script>
 </body>
 </html>
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

@@ -83,7 +83,7 @@ $query = $conn->query($sql1);
 <?php while ($Usuarios=$query->fetch_array()):?>
 <tr>
 <td > <?php echo $Usuarios["Pos_ID"]; ?></td>
-  <td><img  width="60" height="60" alt="avatar" class="rounded-circle img-responsive" src="https://controlfarmacia.com/Perfiles/<?php echo $Usuarios["file_name"]; ?> "></td>
+  <td><img  width="60" height="60" alt="avatar" class="rounded-circle img-responsive" src="https://saludaclinicas.com/Perfiles/<?php echo $Usuarios["file_name"]; ?> "></td>
   <td > <?php echo $Usuarios["Nombre_Apellidos"]; ?></td>
     <td><?php echo $Usuarios["Nombre_Sucursal"]; ?></td>
       <td> <button style="<?echo $Usuarios['ColorEstatus'];?>" class="btn btn-default btn-sm" > <?php echo $Usuarios["Estatus"]; ?></button></td>
@@ -122,7 +122,7 @@ $query = $conn->query($sql1);
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/ContactoEmpleado.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/ContactoEmpleado.php","id="+id,function(data){
   			$("#form-edit").html(data);
           $("#Titulo").html("Medios disponibles para contactar al empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -135,7 +135,7 @@ $query = $conn->query($sql1);
   	});
     $(".btn-edit2").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/EditaEmpleado.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/EditaEmpleado.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Editar datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -150,7 +150,7 @@ $query = $conn->query($sql1);
 
     $(".btn-HistorialEmpleados").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/HistorialEmpleados.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/HistorialEmpleados.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Historial datos de empleado");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");

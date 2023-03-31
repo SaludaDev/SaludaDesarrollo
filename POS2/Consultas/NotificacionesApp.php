@@ -1,6 +1,4 @@
-<?
-
-
+<?php
 include_once("db_connection.php");
 $user_id=null;
 $sql1="SELECT * FROM Area_De_Notificaciones Where Estado=1 AND Sucursal='".$row['Fk_Sucursal']."' LIMIT 2";

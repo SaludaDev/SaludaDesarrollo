@@ -1,8 +1,8 @@
 <?php
 include "Consultas/Consultas.php";
 include "Consultas/Sesion.php";
-include "Consultas/Conexion_selects.php";
-include "Consultas/ConeSelectDinamico.php";
+// include "Consultas/Conexion_selects.php";
+// include "Consultas/ConeSelectDinamico.php";
 
 ?>
 <!DOCTYPE html>
@@ -70,13 +70,13 @@ include "Consultas/ConeSelectDinamico.php";
 <!-- /.control-sidebar -->
 
 <?php
-include("Modales/Error.php");
+ include("Modales/Error.php");
 include("Modales/Exito.php");
 include("Modales/Precarga.php");
-include("Modales/ExitoActualiza.php");
+ include("Modales/ExitoActualiza.php");
 include("Modales/EstatusAgendaGuardado.php");
 include("Modales/AltaEspecialidad.php");
-include("Modales/AltaEspecialista.php");
+ include("Modales/AltaEspecialista.php");
 include("footer.php")
 ?>
 <script src="js/MedicosExpress.js"></script>

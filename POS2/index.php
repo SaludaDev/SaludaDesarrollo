@@ -29,9 +29,9 @@ include "Consultas/ConsultaFondoCaja.php";
 
   <title>PUNTO DE VENTA | <?php echo $row["Nombre_Sucursal"]; ?></title>
 
-  <? include "Header.php"?>
+  <?php include "Header.php"?>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -179,13 +179,12 @@ $(document).ready(function(){
   }
 </script>
 </div></div>
-  <? include ("Modales/Ingreso.php");
+  <?php include ("Modales/Ingreso.php");
       include ("Modales/ModalConsultaProductos.php");
       include ("Modales/ModalTraspasos.php");
       include ("Modales/Error.php");
       include ("Modales/ReporteRapido.php");
-  
-   include ("Modales/Exito.php");
+  include ("Modales/Exito.php");
   include ("footer.php");
  ?>
 <!-- ./wrapper -->
@@ -224,7 +223,7 @@ $(document).ready(function()
   	
     $(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/POS2/Modales/AbreCajaIndex.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/POS2/Modales/AbreCajaIndex.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Apertura de caja");
               $("#Di").addClass("modal-dialog modal-lg modal-notify modal-success");
@@ -247,7 +246,7 @@ window.addEventListener("offline",function(){$("#Sinwifi").modal("show");},false
          </button>
        </div>
         <div id="Mensaje "class="alert alert-info alert-styled-left text-blue-800 content-group">
-						                <span id="Aviso" class="text-semibold"><?echo $row['Nombre_Apellidos']?>
+						                <span id="Aviso" class="text-semibold"><?php echo $row['Nombre_Apellidos']?>
                             Verifique los campos antes de realizar alguna accion</span>
 						                <button type="button" class="close" data-dismiss="alert">×</button>
                             </div>
@@ -261,7 +260,7 @@ window.addEventListener("offline",function(){$("#Sinwifi").modal("show");},false
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

@@ -13,10 +13,10 @@ include "Consultas/AnalisisIndex.php";
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>Generar reportes |
-    <?echo $row['ID_H_O_D']?>
+    <?php echo $row['ID_H_O_D']?>
   </title>
 
-  <?include "Header.php"?>
+  <?php include "Header.php"?>
   <style>
     .error {
       color: red;
@@ -25,11 +25,11 @@ include "Consultas/AnalisisIndex.php";
     }
   </style>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
     Generar reportes para
-    <?echo $row['ID_H_O_D']?>
+    <?php echo $row['ID_H_O_D']?>
   </div>
 
   <!-- <div>
@@ -135,7 +135,7 @@ include "Consultas/AnalisisIndex.php";
   </div>
   <select id = "sucursal" class = "form-control" name = "Sucursal"  onchange="sucursaldereporte();">
                                                <option value="">Seleccione una Sucursal:</option>
-        <?
+        <?php 
           $query = $conn -> query ("SELECT ID_SucursalC,Nombre_Sucursal,ID_H_O_D FROM SucursalesCorre WHERE  ID_H_O_D='".$row['ID_H_O_D']."' AND Nombre_Sucursal !='Matriz'");
           while ($valores = mysqli_fetch_array($query)) {
             echo '<option value="'.$valores[ID_SucursalC].'">'.$valores[Nombre_Sucursal].'</option>';
@@ -177,10 +177,10 @@ $("#sucursalporsucursal").val(selected);
 
  </script>
 
-    <input type="text" class="form-control" name="UsuarioPorSucursal" id="usuario"  value="<?echo $row['Nombre_Apellidos']?>"  hidden readonly >
+    <input type="text" class="form-control" name="UsuarioPorSucursal" id="usuario"  value="<?php echo $row['Nombre_Apellidos']?>"  hidden readonly >
     <input type="text" class="form-control" name="SucursalPorSucursal" id="sucursalporsucursal"    hidden readonly >
     <input type="text" class="form-control" name="Sistema" id="sistema"  value="Farmacia" hidden  readonly >
-    <input type="text" class="form-control" name="Empresa" id="empresa"  value="<?echo $row['ID_H_O_D']?>" hidden  readonly >
+    <input type="text" class="form-control" name="Empresa" id="empresa"  value="<?php echo $row['ID_H_O_D']?>" hidden  readonly >
 
     
 <button type="submit"  name="submit_Age" id="submit_Age"  class="btn btn-success">Generar Reporte <i class="fas fa-file-import"></i></button>
@@ -209,7 +209,7 @@ $("#sucursalporsucursal").val(selected);
   </div>
   <select id = "sucursalvendedor" class = "form-control" >
                                                <option value="">Seleccione una Sucursal:</option>
-        <?
+        <?php 
           $query = $conn -> query ("SELECT ID_SucursalC,Nombre_Sucursal,ID_H_O_D FROM SucursalesCorre WHERE  ID_H_O_D='".$row['ID_H_O_D']."' AND Nombre_Sucursal !='Matriz'");
           while ($valores = mysqli_fetch_array($query)) {
             echo '<option value="'.$valores[ID_SucursalC].'">'.$valores[Nombre_Sucursal].'</option>';
@@ -264,10 +264,10 @@ $("#vendedorporvendedor").val(selected);
 
  </script>
 
-    <input type="text" class="form-control" name="UsuarioPorSucursal" id="usuario"  value="<?echo $row['Nombre_Apellidos']?>"  hidden readonly >
+    <input type="text" class="form-control" name="UsuarioPorSucursal" id="usuario"  value="<?php echo $row['Nombre_Apellidos']?>"  hidden readonly >
     <input type="text" class="form-control" name="VendedorPorVendedor" id="vendedorporvendedor"    hidden readonly >
     <input type="text" class="form-control" name="Sistema" id="sistema"  value="Farmacia" hidden  readonly >
-    <input type="text" class="form-control" name="Empresa" id="empresa"  value="<?echo $row['ID_H_O_D']?>" hidden  readonly >
+    <input type="text" class="form-control" name="Empresa" id="empresa"  value="<?php echo $row['ID_H_O_D']?>" hidden  readonly >
 
     
 <button type="submit"  name="submit_Age" id="submit_Age"  class="btn btn-success">Generar Reporte <i class="fas fa-file-import"></i></button>
@@ -467,7 +467,7 @@ $("#vendedorporvendedoroff").val(selected);
 <!-- Control Sidebar -->
 
 <!-- Main Footer -->
-<?
+<?php 
     
   include ("footer.php")?>
 
@@ -497,7 +497,7 @@ $("#vendedorporvendedoroff").val(selected);
 </body>
 
 </html>
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

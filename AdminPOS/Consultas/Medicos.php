@@ -52,7 +52,7 @@ $query = $conn->query($sql1);
   <td><?php echo $Especialidades["Telefono"]; ?></td>
     <td><?php echo $Especialidades["Nombre_Sucursal"]; ?></td>
     <td><?php echo $Especialidades["Nombre_rol"]; ?></td>
-    <td><?if($Especialidades['Biometrico'] == 1){
+    <td><?php if($Especialidades['Biometrico'] == 1){
    
    echo "Verificado ";
  
@@ -70,7 +70,7 @@ $query = $conn->query($sql1);
 <a data-id="<?php echo $Especialidades["Medico_ID"];?>" class="btn-edit2 dropdown-item" >Editar datos <i class="fas fa-pencil-alt"></i></a>
 
   <a data-id="<?php echo $Especialidades["Medico_ID"];?>" class="btn-HistorialEmpleados dropdown-item" >Movimientos <i class="fas fa-history" aria-hidden="true"></i></a>
-  <a  class="dropdown-item"  href="http://localhost/AdminPOS/index.php?nombrerh=<?echo $row['Nombre_Apellidos']?>&&rol=<?echo $row['Nombre_rol']?>&&file=<?echo $row['file_name']?>&&
+  <a  class="dropdown-item"  href="http://localhost/AdminPOS/index.php?nombrerh=<?php echo $row['Nombre_Apellidos']?>&&rol=<?echo $row['Nombre_rol']?>&&file=<?echo $row['file_name']?>&&
   idempleado=<?php echo $Especialidades["Medico_ID"]; ?>&&nombreempleado=<?php echo $Especialidades["Nombre_Apellidos"]; ?>&&sucursalnombre=<?php echo $Especialidades["Nombre_Sucursal"]; ?>&&puesto=Médico" target="Blank_">Capturar datos biometricos <i class="fas fa-fingerprint"></i></a>
  
   <a  class="dropdown-item" href="https://api.whatsapp.com/send?phone=+52<?php echo $Especialidades["Telefono"]; ?>&text=Hola,<?php echo $Especialidades["Nombre_Apellidos"]; ?>,tus datos de accceso para el Sistema de enfermería son: %0A *Correo: <?php echo $Especialidades["Correo_Electronico"]; ?>*%0A *Contraseña :<?php echo $Especialidades["Password"]; ?>* %0A Recuerda que tu sistema puedes encontrarlo en el escritorio de tu tableta  o puedes ingresar  a través del siguiente link: https://controlconsulta.com/App/Secure/Enfermeria2" target="blank_" >Enviar datos por whatsapp <i class="fab fa-whatsapp"></i></a>

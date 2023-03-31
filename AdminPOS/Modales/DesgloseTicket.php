@@ -1,4 +1,4 @@
-<?
+<?php
 include "../Consultas/db_connection.php";
 include "../Consultas/Consultas.php";
 include "../Consultas/Sesion.php";
@@ -36,7 +36,7 @@ while ($r=$query->fetch_object()){
 
 
 
-<? if($Especialistas!=null):?>
+<?php if($Especialistas!=null):?>
     <div class="row">
     <div class="col">
     <label for="exampleFormControlInput1">N° Ticket</label>
@@ -150,10 +150,10 @@ while ($r=$query->fetch_object()){
 <?php endif;?>
 
   
-<? else:?>
+<?php else:?>
   <p class="alert alert-danger">404 No se encuentra  <br>El ticket puede corresponder a un crédito, te sugerimos revisar el área de créditos  </p>
-<? endif;?>
-<?
+<?php  endif;?>
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

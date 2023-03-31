@@ -1,3 +1,3 @@
 <?php
-$conn = new mysqli('localhost','somosgr1_SHWEB', 'yH.0a-v?T*1R', 'somosgr1_Sistema_Hospitalario') or die(mysqli_error());	
+$conn = new mysqli('localhost','u155356178_CorpoSaluda', 'SSalud4Dev2495#$', 'u155356178_DesarrolloSalu');	
 ?>

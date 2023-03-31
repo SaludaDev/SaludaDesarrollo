@@ -2,6 +2,7 @@
 $(document).ready( function () {
     $('#EnfermerosBajas').DataTable({
       "order": [[ 0, "desc" ]],
+      "stateSave":true,
       "language": {
         "url": "Componentes/Spanish.json"
 		}

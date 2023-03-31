@@ -1,5 +1,5 @@
 function CargaEmpleadosBajas(){
-    $.get("https://controlfarmacia.com/AdminPOS/Consultas/IntendenciaBajas.php","",function(data){
+    $.get("https://saludaclinicas.com/AdminPOS/Consultas/IntendenciaBajas.php","",function(data){
         $("#tablaEmpleadosBajas").html(data);
       })
       }

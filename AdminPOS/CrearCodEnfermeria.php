@@ -28,7 +28,7 @@ while ($r=$query->fetch_object()){
 
   <title>Editando datos del producto</title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
  <style>
         .error {
   color: red;
@@ -38,11 +38,11 @@ while ($r=$query->fetch_object()){
 
     </style>
 </head>
-<?include_once ("Menu.php")?>
-<? if($Especialistas!=null):?>
+<?php include_once ("Menu.php")?>
+<?php if($Especialistas!=null):?>
   <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
- Editando datos de <? echo $Especialistas->Nombre_Prod; ?>
+ Editando datos de <?php echo $Especialistas->Nombre_Prod; ?>
  
   </div>
   <div >
@@ -62,7 +62,7 @@ while ($r=$query->fetch_object()){
     <div class="input-group mb-3">
   <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta"><i class="fas fa-receipt"></i></span>
   </div>
-  <input type="text" class="form-control " name="Nombre" readonly  value="<? echo $Especialistas->Cod_Barra; ?>" >
+  <input type="text" class="form-control " name="Nombre" readonly  value="<?php echo $Especialistas->Cod_Barra; ?>" >
     </div>
     </div>
     
@@ -74,14 +74,14 @@ while ($r=$query->fetch_object()){
   
     <span class="input-group-text" id="Tarjeta"><i class="fas fa-barcode"></i></span>
   </div>
-  <input type="text" class="form-control "  id="clavadicional" name="ClaveAdicional"  value="<? echo $Especialistas->Clave_adicional; ?>">            
+  <input type="text" class="form-control "  id="clavadicional" name="ClaveAdicional"  value="<?php echo $Especialistas->Clave_adicional; ?>">            
 </div><label for="clav" class="error"></div>
 <div class="col">
     <label for="exampleFormControlInput1">Nombre / Descripcion<span class="text-danger">*</span></label>
     <div class="input-group mb-3">
   <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta"><i class="fas fa-at"></i></span>
   </div>
-  <textarea class="form-control" id="namedescrip"   oninput="actualizarNombreProd()" name="NameDescrip" rows="3" ><? echo $Especialistas->Nombre_Prod; ?></textarea>
+  <textarea class="form-control" id="namedescrip"   oninput="actualizarNombreProd()" name="NameDescrip" rows="3" ><?php echo $Especialistas->Nombre_Prod; ?></textarea>
          
     </div><label for="nombreprod" class="error">
     </div>
@@ -98,7 +98,7 @@ while ($r=$query->fetch_object()){
   
     <span class="input-group-text" id="Tarjeta"><i class="fas fa-mobile"></i></span>
   </div>
-  <input type="text" class="form-control "  id="leviclave" oninput="actualizarClaveLevic()" name="ClaveLevic" value="<? echo $Especialistas->Clave_Levic; ?>"  >
+  <input type="text" class="form-control "  id="leviclave" oninput="actualizarClaveLevic()" name="ClaveLevic" value="<?php echo $Especialistas->Clave_Levic; ?>"  >
 </div><label for="pv" class="error"></div>
 
 
@@ -107,7 +107,7 @@ while ($r=$query->fetch_object()){
     <div class="input-group mb-3">
   <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta"><i class="fas fa-at"></i></span>
   </div>
-  <input type="date" class="form-control "   name="fechacad" value="<? echo $Especialistas->Fecha_Caducidad; ?>" >
+  <input type="date" class="form-control "   name="fechacad" value="<?php echo $Especialistas->Fecha_Caducidad; ?>" >
     </div><label for="pc" class="error">
     </div>
     <div class="col">
@@ -115,7 +115,7 @@ while ($r=$query->fetch_object()){
     <div class="input-group mb-3">
   <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta"><i class="fas fa-at"></i></span>
   </div>
-  <input type="text" class="form-control "   name="lestock"aria-describedby="basic-addon1" value="<? echo $Especialistas->Stock; ?>" >           
+  <input type="text" class="form-control "   name="lestock"aria-describedby="basic-addon1" value="<?php echo $Especialistas->Stock; ?>" >           
     </div><label for="mine" class="error">
     </div>
     
@@ -133,12 +133,12 @@ while ($r=$query->fetch_object()){
   
    
 
-    <input type="text" class="form-control " hidden name="ACT_ID_Prod" value="<? echo $Especialistas->ID_Prod_POS; ?>" >
+    <input type="text" class="form-control " hidden name="ACT_ID_Prod" value="<?php echo $Especialistas->ID_Prod_POS; ?>" >
 
        
      
-    <input type="text" class="form-control"  hidden name="AgregaProductosBy" id="agrega" readonly value=" <?echo $row['Nombre_Apellidos']?>">
-    <input type="text" class="form-control"  hidden name="SistemaProductos" id="sistema" readonly value=" POS <?echo $row['Nombre_rol']?>">
+    <input type="text" class="form-control"  hidden name="AgregaProductosBy" id="agrega" readonly value=" <?php echo $row['Nombre_Apellidos']?>">
+    <input type="text" class="form-control"  hidden name="SistemaProductos" id="sistema" readonly value=" POS <?php echo $row['Nombre_rol']?>">
     
    
 
@@ -146,14 +146,14 @@ while ($r=$query->fetch_object()){
 
        </div>
  
- <? else:?>
+ <?php else:?>
   <p class="alert alert-danger">404 No se encuentra</p>
 <? endif;?>
 
 
 <script src="js/CreaCodigoDeEnfemeria.js"></script>
 
-<?
+<?php
   include ("Modales/Vacios.php");
   include ("Modales/Error.php");
   include ("Modales/Exito.php");
@@ -201,7 +201,7 @@ $(function(){
 </script>
 </body>
 </html>
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

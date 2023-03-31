@@ -18,7 +18,7 @@ Stock_registrosNuevos.ID_Prod_POS = Productos_POS.ID_Prod_POS AND Productos_POS.
 
   <title>Actualizando existencias de <?echo $Usuarios['Nombre_Prod']?> </title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
  <style>
         .error {
   color: red;
@@ -28,11 +28,11 @@ Stock_registrosNuevos.ID_Prod_POS = Productos_POS.ID_Prod_POS AND Productos_POS.
 
     </style>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 
 <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-    Productos de <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+    Productos de <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
   <div >
   <button type="button" class="btn btn-outline-info btn-sm" onClick="history.go(-1);" class="btn btn-default">
@@ -77,7 +77,7 @@ $(document).ready( function () {
 	  
 	 
 </script>
-<?
+<?php 
 ;
 
 
@@ -121,7 +121,7 @@ $query = $conn->query($sql1);
   <td > <?php echo $Usuarios['Recibido']; ?> </td>
   <td > <?php echo $Usuarios['AgregadoPor']; ?> </td>
   <td > <?php echo $Usuarios['AgregadoEl']; ?> </td>
-  <!-- <td >  <button class="btn btn-default btn-sm" style="<?echo $Usuarios['CodigoEstatus'];?>"><?php echo $Usuarios["Estatus"]; ?></button> </td> -->
+  <!-- <td >  <button class="btn btn-default btn-sm" style="<?php echo $Usuarios['CodigoEstatus'];?>"><?php echo $Usuarios["Estatus"]; ?></button> </td> -->
     
 	
 		
@@ -149,7 +149,7 @@ $query = $conn->query($sql1);
   <!-- Control Sidebar -->
  
   <!-- Main Footer -->
-<?
+<?php 
  
   include ("Modales/ExitoActualiza.php");
 
@@ -191,7 +191,7 @@ setTimeout(function(){
 </script>
 </body>
 </html>
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

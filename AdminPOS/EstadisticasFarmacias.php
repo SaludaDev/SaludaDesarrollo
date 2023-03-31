@@ -1,7 +1,7 @@
 <?php
 include "Consultas/Consultas.php";
 include "Consultas/Sesion.php";
-include "Consultas/AnalisisIndex.php";
+// include "Consultas/AnalisisIndex.php";
 
 ?>
 <!DOCTYPE html>
@@ -11,9 +11,9 @@ include "Consultas/AnalisisIndex.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Estadística de venta del personal de farmacia de  <?echo $row['ID_H_O_D']?> <?echo $row['Nombre_Sucursal']?> </title>
+  <title>Estadística de venta del personal de farmacia de  <?php echo $row['ID_H_O_D']?> <?php echo $row['Nombre_Sucursal']?> </title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js" integrity="sha256-JG6hsuMjFnQ2spWq0UiaDRJBaarzhFbUxiUTxQDA9Lk=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
@@ -31,7 +31,7 @@ include "Consultas/AnalisisIndex.php";
 
     </style>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Total generado por personal de farmacia </a>
@@ -45,7 +45,7 @@ include "Consultas/AnalisisIndex.php";
 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-  Estadística de venta del personal de farmacia de <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+  Estadística de venta del personal de farmacia de <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
  
   <div >
@@ -71,7 +71,7 @@ include "Consultas/AnalisisIndex.php";
 <div class="tab-pane fade " id="Graficador" role="tabpanel" aria-labelledby="pills-home-tab">
 <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-  Estadística de venta del personal de farmacia de <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+  Estadística de venta del personal de farmacia de <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
  
   <div >
@@ -109,7 +109,7 @@ include "Consultas/AnalisisIndex.php";
    
 $(document).ready(function() {
   $.ajax({
-        url: "https://controlfarmacia.com/AdminPOS/Consultas/DatosGraficaVespertino.php",
+        url: "https://saludaclinicas.com/AdminPOS/Consultas/DatosGraficaVespertino.php",
         dataType: 'json',
         contentType: "application/json; charset=utf-8",
         method: "POST",
@@ -129,7 +129,7 @@ $(document).ready(function() {
             }
  
     $.ajax({
-        url: "https://controlfarmacia.com/AdminPOS/Consultas/DatosGrafica.php",
+        url: "https://saludaclinicas.com/AdminPOS/Consultas/DatosGrafica.php",
         dataType: 'json',
         contentType: "application/json; charset=utf-8",
         method: "POST",
@@ -149,7 +149,7 @@ $(document).ready(function() {
 
         
             $.ajax({
-        url: "https://controlfarmacia.com/AdminPOS/Consultas/DatosGraficaNocturno.php",
+        url: "https://saludaclinicas.com/AdminPOS/Consultas/DatosGraficaNocturno.php",
         dataType: 'json',
         contentType: "application/json; charset=utf-8",
         method: "POST",
@@ -246,7 +246,7 @@ new Chart($grafica, {
   <!-- Control Sidebar -->
  
   <!-- Main Footer -->
-<?
+<?php 
 
   include ("Modales/Error.php");
   include ("Modales/Exito.php");
@@ -283,7 +283,7 @@ include ("footer.php")?>
 
 </body>
 </html>
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

@@ -1,7 +1,7 @@
 <?php
 include "Consultas/Consultas.php";
 include "Consultas/Sesion.php";
-include "Consultas/AnalisisIndex.php";
+// include "Consultas/AnalisisIndex.php";
 
 ?>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ include "Consultas/AnalisisIndex.php";
 
   <title>Ultimos registros ingresados </title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
  <style>
         .error {
   color: red;
@@ -23,12 +23,12 @@ include "Consultas/AnalisisIndex.php";
 
     </style>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 
 
 <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-    Productos asignados en sucursales de doctor <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?> por el usuario <?echo $row['Nombre_Apellidos']?>
+    Productos asignados en sucursales de doctor <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?> por el usuario <?echo $row['Nombre_Apellidos']?>
   </div>
   
   <div >
@@ -58,7 +58,7 @@ include "Consultas/AnalisisIndex.php";
   <!-- Control Sidebar -->
  
   <!-- Main Footer -->
-<?
+<?php
 ;
 
   include ("footer.php")?>
@@ -100,7 +100,7 @@ setTimeout(function(){
 </script>
 </body>
 </html>
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

@@ -14,10 +14,10 @@ include "Consultas/ConeSelectDinamico.php";
 
   <title>Generando Devoluciones</title>
 
-  <? include "Header.php"?>
+  <?php include "Header.php"?>
   
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 
 <div class="card text-center">
   <div class="card-header" style="background-color: #2bbbad !important;color: white;">
@@ -73,7 +73,7 @@ include "Consultas/ConeSelectDinamico.php";
 
 </body>
 </html>
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

@@ -1,4 +1,4 @@
-<?$fcha = date("Y-m-d");?>
+<?php $fcha = date("Y-m-d");?>
 <script type="text/javascript">
 $(document).ready( function () {
     $('#TotalesGeneralesCortes').DataTable({
@@ -28,7 +28,7 @@ $(document).ready( function () {
 				extend:    'excelHtml5',
 				text:      'Exportar a Excel  <i Exportar a Excel class="fas fa-file-excel"></i> ',
                 titleAttr: 'Exportar a Excel',
-                title: 'Totales de servicios generales descargado el  <?echo $fcha;?>  ',
+                title: 'Totales de servicios generales descargado el  <?php echo $fcha;?>  ',
 				className: 'btn btn-success'
 			},
 			
@@ -105,7 +105,7 @@ $query = $conn->query($sql1);
   <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/ContactoProveedor.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/ContactoProveedor.php","id="+id,function(data){
   			$("#form-edit").html(data);
           $("#Titulo").html("Medios disponibles para contactar al proveedor");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -141,7 +141,7 @@ $query = $conn->query($sql1);
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-  <?
+  <?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

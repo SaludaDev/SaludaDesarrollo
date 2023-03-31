@@ -1,7 +1,7 @@
 <?php
 try
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=somosgr1_Sistema_Hospitalario;charset=utf8', 'somosgr1_SHWEB', 'yH.0a-v?T*1R');
+	$bdd = new PDO('mysql:host=localhost;dbname=u155356178_DesarrolloSalu;charset=utf8', 'u155356178_CorpoSaluda', 'SSalud4Dev2495#$');
 }
 catch(Exception $e)
 {

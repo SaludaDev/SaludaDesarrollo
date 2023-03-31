@@ -110,7 +110,7 @@ $query = $conn->query($sql1);
 <script>
   	$(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/POS2/Modales/ReimprimeAbono.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/POS2/Modales/ReimprimeAbono.php","id="+id,function(data){
   			$("#form-edit").html(data);
           $("#Titulo").html("Generando reimpresion");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -122,7 +122,7 @@ $query = $conn->query($sql1);
   	});
     $(".btn-desglosaTicket").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/DesglosaTicketAbono.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/DesglosaTicketAbono.php","id="+id,function(data){
   			$("#form-edit").html(data);
           $("#Titulo").html("Desglose de ticket");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -157,7 +157,7 @@ $query = $conn->query($sql1);
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

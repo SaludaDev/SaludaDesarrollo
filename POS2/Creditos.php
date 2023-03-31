@@ -15,9 +15,9 @@ $fcha = date("Y-m-d");
 
   <title>Apertura de credito| <?echo $row['ID_H_O_D']?> </title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Créditos dentales</a>
@@ -38,7 +38,7 @@ $fcha = date("Y-m-d");
 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 <div class="card text-center">
   <div class="card-header" style="background-color: #2bbbad !important;color: white;">
-    Creditos en clinicas <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+    Creditos en clinicas <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
   
   <div >
@@ -60,7 +60,7 @@ $fcha = date("Y-m-d");
 <div class="tab-pane fade show " id="pills-TipPro" role="tabpanel" aria-labelledby="pills-home-tab">
 <div class="card text-center">
   <div class="card-header" style="background-color: #2bbbad !important;color: white;">
-  Créditos finalizados de <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+  Créditos finalizados de <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
   
   <div >
@@ -75,7 +75,7 @@ $fcha = date("Y-m-d");
 <div class="tab-pane fade show " id="Porvencercred" role="tabpanel" aria-labelledby="pills-home-tab">
 <div class="card text-center">
   <div class="card-header" style="background-color: #2bbbad !important;color: white;">
-  Créditos por vencer de <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+  Créditos por vencer de <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
   
   <div >
@@ -90,7 +90,7 @@ $fcha = date("Y-m-d");
 <div class="tab-pane fade show " id="Vencidos" role="tabpanel" aria-labelledby="pills-home-tab">
 <div class="card text-center">
   <div class="card-header" style="background-color: #2bbbad !important;color: white;">
-  Créditos vencidos de <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+  Créditos vencidos de <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
   
   <div >
@@ -115,7 +115,8 @@ $fcha = date("Y-m-d");
   
 
   <!-- Main Footer -->
-  <?include ("Modales/AperturaCredito.php");
+  <?php 
+  include ("Modales/AperturaCredito.php");
   include ("Modales/AperturaCreditoClinicas.php");
   include ("Modales/Error.php");
   include ("Modales/Exito.php");
@@ -156,7 +157,7 @@ $fcha = date("Y-m-d");
 
 </body>
 </html>
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

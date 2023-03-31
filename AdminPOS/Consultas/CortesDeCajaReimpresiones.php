@@ -17,15 +17,14 @@ $(document).ready( function () {
 } );
 </script>
 <?php
-
-include("db_connection.php");
+include ("db_connection.php");
 include "Consultas.php";
 include "Sesion.php";
 
 $user_id=null;
 $sql1="SELECT Cajas_POS.ID_Caja,Cajas_POS.Cantidad_Fondo,Cajas_POS.Empleado,Cajas_POS.Sucursal,Cajas_POS.Estatus,Cajas_POS.CodigoEstatus,Cajas_POS.Turno,Cajas_POS.Asignacion,
 Cajas_POS.Fecha_Apertura,Cajas_POS.Valor_Total_Caja,Cajas_POS.ID_H_O_D, SucursalesCorre.ID_SucursalC, SucursalesCorre.Nombre_Sucursal 
-FROM Cajas_POS,SucursalesCorre where Cajas_POS.Sucursal = SucursalesCorre.ID_SucursalC AND Cajas_POS.Estatus='Cerrada'  AND Cajas_POS.ID_H_O_D='".$row['ID_H_O_D']."'  AND Cajas_POS.Sucursal='".$row['Fk_Sucursal']."' ";
+FROM Cajas_POS,SucursalesCorre where Cajas_POS.Sucursal = SucursalesCorre.ID_SucursalC AND Cajas_POS.Estatus='Cerrada'    AND Cajas_POS.Sucursal='".$row['Fk_Sucursal']."' ";
 $query = $conn->query($sql1);
 ?>
 
@@ -53,23 +52,23 @@ $query = $conn->query($sql1);
     <td> <?php echo $Usuarios["Empleado"]; ?></td>
     <td> <?php echo $Usuarios["Cantidad_Fondo"]; ?></td>
     <td> <?php echo FechaCastellano($Usuarios["Fecha_Apertura"]); ?></td>
-    <td> <button style="<?echo $Usuarios['CodigoEstatus'];?>" class="btn btn-default btn-sm" > <?php echo $Usuarios["Estatus"]; ?></button></td>
+    <td> <button style="<?php echo $Usuarios['CodigoEstatus'];?>" class="btn btn-default btn-sm" > <?php echo $Usuarios["Estatus"]; ?></button></td>
     <td> <?php echo $Usuarios["Turno"]; ?></td>
-    <td><button class="btn btn-default btn-sm" style=<?if($Usuarios['Asignacion'] ==1){
+    <td><button class="btn btn-default btn-sm" style=<?php if($Usuarios['Asignacion'] ==1){
    echo "background-color:#007bff!important";
-} elseif($Usuarios['Asignacion'] ==2) {
+} if($Usuarios['Asignacion'] ==2) {
   echo "background-color:#001f3f!important";
 }else {
    echo "background-color:#fd7e14!important";
 }
-?>><?if($Usuarios['Asignacion'] ==1){
+?>><?php if($Usuarios['Asignacion'] ==1){
   echo "Asignado";
-} elseif($Usuarios['Asignacion'] ==2) {
+} if($Usuarios['Asignacion'] ==2) {
  echo "Finalizado";
 }else {
   echo "Sin asignar";
 }
-?></button>  <?php echo $Usuarios[""]; ?></td>
+?></button></td>
     <td> <?php echo $Usuarios["Valor_Total_Caja"]; ?></td>
 
     <td>
@@ -102,7 +101,7 @@ $query = $conn->query($sql1);
   	
       $(".btn-edit").click(function(){
     id = $(this).data("id");
-    $.post("https://controlfarmacia.com/AdminPOS/Modales/CortesDeCajaReimpresion.php","id="+id,function(data){
+    $.post("https://saludaclinicas.com/AdminPOS/Modales/CortesDeCajaReimpresion.php","id="+id,function(data){
         $("#form-edit").html(data);
         $("#Titulo").html("Corte de caja");
         $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -123,7 +122,7 @@ $query = $conn->query($sql1);
          </button>
        </div>
         <div id="Mensaje "class="alert alert-info alert-styled-left text-blue-800 content-group">
-						                <span id="Aviso" class="text-semibold"><?echo $row['Nombre_Apellidos']?>
+						                <span id="Aviso" class="text-semibold"><?php echo $row['Nombre_Apellidos']?>
                             Verifique los campos antes de realizar alguna accion</span>
 						                <button type="button" class="close" data-dismiss="alert">×</button>
                             </div>
@@ -138,7 +137,7 @@ $query = $conn->query($sql1);
   </div><!-- /.modal -->
 
  
-  <?
+  <?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

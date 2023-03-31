@@ -1,7 +1,7 @@
 function MedicosCreditos(){
 
 
-    $.post("https://controlfarmacia.com/AdminPOS/Consultas/MedicosCreditos.php","",function(data){
+    $.post("https://saludaclinicas.com/AdminPOS/Consultas/MedicosCreditos.php","",function(data){
       $("#TableMedicosCreditos").html(data);
     })
 
