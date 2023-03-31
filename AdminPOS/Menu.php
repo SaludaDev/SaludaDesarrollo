@@ -788,6 +788,11 @@
   echo "display:none;";
 
 	break;
+
+  case $row['Permisos']==10 ;				
+  echo "display:block;";
+
+	break;
 	case $row['Permisos']==0 ;		
   echo "display:block;";
 		
