@@ -1,4 +1,4 @@
-<?
+<?php
 include "../Consultas/db_connection.php";
 
 $user_id=null;
@@ -32,7 +32,7 @@ while ($r=$query->fetch_object()){
   }
 ?>
 
-<? if($Especialidades!=null):?>
+<?php if($Especialidades!=null):?>
 
 
   <div class="form-row">
@@ -43,7 +43,7 @@ while ($r=$query->fetch_object()){
 
           <span class="input-group-text" id="Tarjeta"><i class="far fa-address-card"></i></span>
         </div>
-        <input type="text" class="form-control" readonly value="<? echo $Especialidades->Nombre_Especialidad; ?>" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" readonly value="<?php echo $Especialidades->Nombre_Especialidad; ?>" aria-describedby="basic-addon1">
       </div>
     </div>
     <div class="col">
@@ -53,7 +53,7 @@ while ($r=$query->fetch_object()){
 
           <span class="input-group-text" id="Tarjeta"><i class="fas fa-hospital-user"></i></span>
         </div>
-        <input type="text" class="form-control" readonly value="<? echo $Especialidades->Nombre_Paciente; ?>" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" readonly value="<?php echo $Especialidades->Nombre_Paciente; ?>" aria-describedby="basic-addon1">
       </div>
     </div>
     
@@ -92,6 +92,6 @@ while ($r=$query->fetch_object()){
   
 
 
-<? else:?>
+<?php else:?>
 <p class="alert alert-danger">404 No se encuentra</p>
-<? endif;?>
+<?php endif;?>
