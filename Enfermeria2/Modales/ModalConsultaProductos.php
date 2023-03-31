@@ -72,7 +72,7 @@ $query = $conn->query($sql1);
                       <td> <?php echo $Usuarios['Cod_Barra']; ?></td>
                       <td> <?php echo $Usuarios['Nombre_Prod']; ?></td>
                       <td> <?php echo $Usuarios['Proveedor1']; ?> <br>
-                           <?php echo $Usuarios['Proveedor2']; ?>
+                        <?php echo $Usuarios['Proveedor2']; ?>
                       </td>
                       <!-- <td > <?php echo $Usuarios['Existencias_R']; ?></td> -->
                       <td> $ <?php echo $Usuarios['Precio_Venta']; ?></td>
