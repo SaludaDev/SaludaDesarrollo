@@ -18,7 +18,7 @@
   }
 include "Consultas/Consultas.php";
 include "Consultas/Sesion.php";
-
+include "Consultas/ContadorIndex.php";
 
 ?>
 
@@ -29,7 +29,7 @@ include "Consultas/Sesion.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>PUNTO DE VENTA <?php echo $row['ID_H_O_D']?> </title>
+  <title>Panel administrativo <?php echo $row['ID_H_O_D']?> </title>
 
   <!-- Font Awesome Icons -->
   <?php include "Header.php"?>
@@ -196,10 +196,10 @@ Registros del reloj checador de <?echo $row['ID_H_O_D']?> al <?php echo FechaCas
 </div>
 <div id="RegistrosEntradas"></div>
   </div>
-  <div class="tab-pane fade" id="pills-MoreVentas" role="tabpanel" aria-labelledby="pills-profile-tab">
+  <!-- <div class="tab-pane fade" id="pills-MoreVentas" role="tabpanel" aria-labelledby="pills-profile-tab">
   <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-Productos mas vendidos  <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+Productos mas vendidos  <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
   
   <div >
@@ -209,7 +209,7 @@ Productos mas vendidos  <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(
 </div>
 <div id="RegistrosMasVendidosDias"></div>
   </div>
-</div>
+</div> -->
 
     
 </div></div>
@@ -251,7 +251,7 @@ Productos mas vendidos  <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(
 <script src="js/Logs.js"></script>
 
 <script src="js/RegistroDiasEntradas.js"></script>
-<script src="js/RegistroMasVendidosDelDia.js"></script>
+<!-- <script src="js/RegistroMasVendidosDelDia.js"></script> -->
 <script src="datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
     <script src="datatables/JSZip-2.5.0/jszip.min.js"></script>    
     <script src="datatables/pdfmake-0.1.36/pdfmake.min.js"></script>    
@@ -267,7 +267,7 @@ Productos mas vendidos  <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(
 
 <!-- OPTIONAL SCRIPTS -->
 <script src="dist/js/demo.js"></script>
-<script src="js/Cookies.js"></script>
+
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
 <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
@@ -287,8 +287,7 @@ $(document).ready(function()
 });
 </script>
 <?php endif; ?>
-<?
-
+<?php
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);
   $numeroDia = date('d', strtotime($fecha));

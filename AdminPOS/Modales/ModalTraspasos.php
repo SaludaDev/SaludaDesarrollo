@@ -77,11 +77,11 @@ $query = $conn->query($sql1);
   <td > <?php echo $Usuarios['Nombre_Sucursal']; ?></td>
   <td > <?php echo $Usuarios['Fk_Sucursal_Destino']; ?>
   </td>
-  <td >  <button class="btn btn-default btn-sm" style=<?if($Usuarios["Estatus"] =="Generado"){
+  <td >  <button class="btn btn-default btn-sm" style=<?php if($Usuarios["Estatus"] =="Generado"){
    echo "background-color:#00c851!important";
 } else {
    echo "background-color:#fd7e14!important";
-}?>><?if($Usuarios["Estatus"] =="Autorizado"){
+}?>><?php if($Usuarios["Estatus"] =="Autorizado"){
     echo "Autorizado";
  } else {
     echo "Error";

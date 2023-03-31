@@ -44,7 +44,7 @@ $query = $conn->query($sql1);
 <?php while ($Especialidades=$query->fetch_array()):?>
 <tr>
 	<td><?php echo $Especialidades["Intendencia_ID"]; ?></td>
-    <td><img  width="60" height="60" alt="avatar" class="rounded-circle img-responsive" src="https://www.somosgrupoe.com/Administracion/Perfiles/<?php echo $Especialidades["file_name"]; ?> "></td>
+    <td><img  width="60" height="60" alt="avatar" class="rounded-circle img-responsive" src="https://www.saludaclinicas.com/Perfiles/<?php echo $Especialidades["file_name"]; ?> "></td>
 	<td><?php echo $Especialidades["Nombre_Apellidos"]; ?></td>
     <td><?php echo $Especialidades["Nombre_Sucursal"]; ?></td>
     <td><?php echo $Especialidades["Nombre_rol"]; ?></td>

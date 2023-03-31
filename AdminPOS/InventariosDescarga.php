@@ -1,7 +1,7 @@
 <?php
 include "Consultas/Consultas.php";
 include "Consultas/Sesion.php";
-include "Consultas/AnalisisIndex.php";
+// include "Consultas/AnalisisIndex.php";
 
 ?>
 <!DOCTYPE html>
@@ -11,9 +11,9 @@ include "Consultas/AnalisisIndex.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Productos en sucursales de <?echo $row['ID_H_O_D']?> </title>
+  <title>Productos en sucursales de <?php echo $row['ID_H_O_D']?> </title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
  <style>
         .error {
   color: red;
@@ -28,7 +28,7 @@ table td {
 
     </style>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   
@@ -44,7 +44,7 @@ table td {
 <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
   <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-  Stock por sucursales de <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+  Stock por sucursales de <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
  
   <div >
@@ -63,7 +63,7 @@ table td {
   <div class="tab-pane fade" id="PorCaducar" role="tabpanel" aria-labelledby="pills-profile-tab">
   <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-  Productos por caducar de <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+  Productos por caducar de <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
   
   <div >
@@ -90,7 +90,7 @@ table td {
   <!-- Control Sidebar -->
  
   <!-- Main Footer -->
-<?
+<?php 
   include ("Modales/FiltroSucursales.php");
   include ("Modales/FiltroServicios.php");
   include ("Modales/Vacios.php");
@@ -108,12 +108,12 @@ table td {
 <script src="js/CambiaDeSucursal.js"></script>
 
 
-<script src="datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
+<!-- <script src="datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
     <script src="datatables/JSZip-2.5.0/jszip.min.js"></script>    
     <script src="datatables/pdfmake-0.1.36/pdfmake.min.js"></script>    
     <script src="datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
     <script src="datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script> -->
 
 
 <!-- Bootstrap -->
@@ -130,7 +130,7 @@ table td {
 
 </body>
 </html>
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

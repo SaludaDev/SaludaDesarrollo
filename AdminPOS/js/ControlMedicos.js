@@ -1,5 +1,5 @@
 function CargaEmpleados(){
-    $.get("https://controlfarmacia.com/AdminPOS/Consultas/Medicos.php","",function(data){
+    $.get("https://saludaclinicas.com/AdminPOS/Consultas/Medicos.php","",function(data){
         $("#tablaEmpleados").html(data);
       })
       }

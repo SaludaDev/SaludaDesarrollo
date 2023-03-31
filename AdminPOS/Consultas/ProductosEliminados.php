@@ -1,4 +1,4 @@
-<?$fcha = date("Y-m-d");?>
+<?php $fcha = date("Y-m-d");?>
 <script type="text/javascript">
 $(document).ready( function () {
     $('#Productos').DataTable({
@@ -79,7 +79,7 @@ $query = $conn->query($sql1);
 </div>
 </div>
 <?php else:?>
-	<p class="alert alert-warning">Aún no hay productos registrados para <?echo $row['ID_H_O_D']?></p>
+	<p class="alert alert-warning">Aún no hay productos registrados para <?php echo $row['ID_H_O_D']?></p>
 <?php endif;?>
   <!-- Modal -->
   <!-- <script>

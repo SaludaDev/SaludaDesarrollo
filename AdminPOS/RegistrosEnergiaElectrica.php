@@ -1,7 +1,7 @@
 <?php
 include "Consultas/Consultas.php";
 include "Consultas/Sesion.php";
-include "Consultas/AnalisisIndex.php";
+
 
 ?>
 <!DOCTYPE html>
@@ -11,9 +11,9 @@ include "Consultas/AnalisisIndex.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Registro de uso de energia electrica <?echo $row['ID_H_O_D']?> </title>
+  <title>Registro de uso de energia electrica <?php echo $row['ID_H_O_D']?> </title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
  <style>
         .error {
   color: red;
@@ -28,13 +28,13 @@ table td {
 
     </style>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 
 
 
   <div class="card text-center">
   <div class="card-header" style="background-color:#2b73bb !important;color: white;">
-  Registro diario de uso de energia electrica <?echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
+  Registro diario de uso de energia electrica <?php echo $row['ID_H_O_D']?> al <?php echo FechaCastellano(date('d-m-Y H:i:s')); ?>  
   </div>
  
   <div >

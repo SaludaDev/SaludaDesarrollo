@@ -97,7 +97,7 @@ $query = $conn->query($sql1);
   	
     $(".btn-Detalles").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/DetallesCaja.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/DetallesCaja.php","id="+id,function(data){
               $("#FormCajas").html(data);
               $("#TitulosCajas").html("Detalles de apertura de caja");
               $("#CajasDi").addClass("modal-dialog modal-xl modal-notify modal-info");
@@ -107,7 +107,7 @@ $query = $conn->query($sql1);
 
     $(".btn-Movimientos").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/HistorialCaja.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/HistorialCaja.php","id="+id,function(data){
               $("#FormCajas").html(data);
               $("#TitulosCajas").html("Historial de caja");
               $("#CajasDi").removeClass("modal-dialog modal-xl modal-notify modal-info");
@@ -119,7 +119,7 @@ $query = $conn->query($sql1);
     
     $(".btn-Ventas").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/HistorialVentas.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/HistorialVentas.php","id="+id,function(data){
               $("#FormCajas").html(data);
               $("#TitulosCajas").html("Historial de ventas");
               $("#CajasDi").removeClass("modal-dialog modal-xl modal-notify modal-info");

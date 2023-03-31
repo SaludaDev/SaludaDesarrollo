@@ -48,7 +48,7 @@ $query = $conn->query($sql1);
 	<td><?php echo $Especialidades["Nombre_Apellidos"]; ?></td>
     <td><?php echo $Especialidades["Nombre_Sucursal"]; ?></td>
     <td><?php echo $Especialidades["Nombre_rol"]; ?></td>
-	<td><button class="btn btn-default btn-sm" style=<?if($Especialidades['Estatus'] == 'Vigente'){
+	<td><button class="btn btn-default btn-sm" style=<?php if($Especialidades['Estatus'] == 'Vigente'){
    echo "background-color:#00c851!important";
 } elseif($Especialidades['Estatus'] != 'Disponible'  &&  $Especialidades['Estatus'] != 'Baja') {
   echo "background-color:#fd7e14!important";
@@ -56,7 +56,7 @@ $query = $conn->query($sql1);
     echo "background-color:#fd1414!important";
 }
 ?>>
-<?if($Especialidades['Estatus'] == ''){
+<?php if($Especialidades['Estatus'] == ''){
    echo "No se asigno estatus";
 } else {
     echo $Especialidades["Estatus"]; 
@@ -76,7 +76,7 @@ $query = $conn->query($sql1);
 <script>
   	$(".btn-AsigSucursal").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AgendaDeCitas/Modales/AsignaAlEspecialistaEnSucursal.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/Modales/AsignaAlEspecialistaEnSucursal.php","id="+id,function(data){
   			$("#form-edit").html(data);
           $("#Titulo").html("Asignar sucursal a médico");
               $("#Di").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -122,7 +122,7 @@ $query = $conn->query($sql1);
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

@@ -1,4 +1,4 @@
-<?$fcha = date("Y-m-d");?>
+<?php $fcha = date("Y-m-d");?>
 <script type="text/javascript">
 $(document).ready( function () {
     $('#IngresoEmpleados').DataTable({
@@ -28,7 +28,7 @@ $(document).ready( function () {
 				extend:    'excelHtml5',
 				text:      'Descargar excel  <i Descargar excel class="fas fa-file-excel"></i> ',
 				titleAttr: 'Descargar excel',
-        title: 'Sugerencias de compras sucursales <?echo $fcha;?>',
+        title: 'Sugerencias de compras sucursales <?php echo $fcha;?>',
 				className: 'btn btn-success'
 			},
 		
@@ -90,7 +90,7 @@ $query = $conn->query($sql1);
 <?php else:?>
 	<p class="alert alert-warning">No se puede generar el total de horas laboradas, hasta que el personal marque su salida.</p>
 <?php endif;?>
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

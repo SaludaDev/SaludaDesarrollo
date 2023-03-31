@@ -38,11 +38,11 @@
                   <select id="SucEs" class="form-control">
                     <option value="">Seleccione una Sucursal:</option>
                     <?php
-                    $query = $mysqli->query("SELECT 	ID_SucursalC,Nombre_Sucursal FROM SucursalesCorre WHERE  ID_H_O_D='" . $row['ID_H_O_D'] . "'");
-                    while ($valores = mysqli_fetch_array($query)) {
-                      echo '<option value="' . $valores[ID_SucursalC] . '">' . $valores[Nombre_Sucursal] . '</option>';
-                    }
-                    ?>
+                $query = $conn->query("SELECT ID_SucursalC,Nombre_Sucursal,ID_H_O_D FROM SucursalesCorre WHERE  ID_H_O_D='" . $row['ID_H_O_D'] . "' AND Nombre_Sucursal !='Matriz'");
+                while ($valores = mysqli_fetch_array($query)) {
+                  echo '<option value="' . $valores["ID_SucursalC"] . '">' . $valores["Nombre_Sucursal"] . '</option>';
+                }
+                ?>
                   </select>
 
                 </div><label for="nombreprod" class="error">

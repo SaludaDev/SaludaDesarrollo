@@ -1,7 +1,7 @@
 function AreasCreditos(){
 
 
-    $.post("https://controlfarmacia.com/AdminPOS/Consultas/AreasCreditos.php","",function(data){
+    $.post("https://saludaclinicas.com/AdminPOS/Consultas/AreasCreditos.php","",function(data){
       $("#TableAreasCreditos").html(data);
     })
 

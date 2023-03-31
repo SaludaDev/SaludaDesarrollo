@@ -10,7 +10,7 @@ tabla = $('#Productos').DataTable({
  "stateSave":true,
  "bAutoWidth": false,
  "order": [[ 0, "desc" ]],
- "sAjaxSource": "https://controlfarmacia.com/AdminPOS/Consultas/ArrayAjustesDeInventariosRealizados.php",
+ "sAjaxSource": "https://saludaclinicas.com/AdminPOS/Consultas/ArrayAjustesDeInventariosRealizados.php",
  "aoColumns": [
        { mData: 'FolioAjuste' },
        { mData: 'Nombre_Prod' },
@@ -49,17 +49,17 @@ tabla = $('#Productos').DataTable({
         //para usar los botones   
         responsive: "true",
        
-        dom: "B<'#colvis row'><'row'><'row'<'col-md-6'l><'col-md-6'f>r>t<'bottom'ip><'clear'>'",
-        buttons:[ 
-			{
-				extend:    'excelHtml5',
-				text:      'Descargar excel  <i Descargar excel class="fas fa-file-excel"></i> ',
-				titleAttr: 'Descargar excel',
-        title: 'Ajustes realizdos al inventario de la sucursal <?php echo $row['Nombre_Sucursal']?> del día <?echo $fcha;?>',
-				className: 'btn btn-success'
-			},
+        dom: "<'#colvis row'><'row'><'row'<'col-md-6'l><'col-md-6'f>r>t<'bottom'ip><'clear'>'",
+        // buttons:[ 
+		// 	{
+		// 		extend:    'excelHtml5',
+		// 		text:      'Descargar excel  <i Descargar excel class="fas fa-file-excel"></i> ',
+		// 		titleAttr: 'Descargar excel',
+        // title: 'Ajustes realizdos al inventario de la sucursal <?php echo $row['Nombre_Sucursal']?> del día <?echo $fcha;?>',
+		// 		className: 'btn btn-success'
+		// 	},
 		
-        ],
+        // ],
        
        
        

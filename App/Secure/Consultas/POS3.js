@@ -44,16 +44,11 @@ $('document').ready(function() {
 			},
 				
 			success : function(response){						
-				if(response=="1"){									
+				if(response=="ok"){									
                     $("#login_button").html("Iniciando...")
 					$('#Ingreso').modal('toggle');
-					setTimeout(' window.location.href = "https://saluda.com.mx/App/AdminPOS/"; ',3000);
-				}
-				else if (response == "2"){
-					$("#login_button").html("Iniciando...")
-					$('#Ingreso').modal('toggle');
-					setTimeout(' window.location.href = "https://saluda.com.mx/App/AdminPOS/"; ',3000);
-				  } else {									
+					setTimeout(' window.location.href = "https://saludaclinicas.com/App/Secure/ControlPOS"; ',2000);
+				} else {									
 					$("#error").fadeIn(1000, function(){						
                         $("#error").html();
                         setTimeout(function(){ 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +8,7 @@
   <title>Cierre de sesión |...  </title>
 
   <!-- Font Awesome Icons -->
-  <?include "Header.php"?>
+  <?php include "Header.php"?>
 </head>
 
 <div class="card text-center">
@@ -45,7 +44,7 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <?
+  <?php 
 include ("Modales/Expirado.php");
   include ("footer.php");?>
 <!-- ./wrapper -->
@@ -84,7 +83,7 @@ $(document).ready(function()
 </body>
 </html>
 
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

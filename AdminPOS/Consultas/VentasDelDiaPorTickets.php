@@ -34,11 +34,11 @@ $(document).ready( function () {
 	  
 	 
 </script>
-<?
+<?php 
 include "../Consultas/db_connection.php";
 include "../Consultas/Consultas.php";
-include "../Consultas/Sesion.php";
-
+include "../Consultas/Sesion.php";?>
+<?php 
 $user_id=null;
 $sql1= "SELECT Ventas_POS.Folio_Ticket,Ventas_POS.Fk_Caja,Ventas_POS.Venta_POS_ID,Ventas_POS.Identificador_tipo,Ventas_POS.Cod_Barra,Ventas_POS.Clave_adicional,
 Ventas_POS.Nombre_Prod,Ventas_POS.Cantidad_Venta,Ventas_POS.Fk_sucursal,Ventas_POS.AgregadoPor,Ventas_POS.AgregadoEl,
@@ -100,7 +100,7 @@ $query = $conn->query($sql1);
 <script>
     $(".btn-desglose").click(function(){
     id = $(this).data("id");
-    $.post("https://controlfarmacia.com/AdminPOS/Modales/DesgloseTicket.php","id="+id,function(data){
+    $.post("https://saludaclinicas.com/AdminPOS/Modales/DesgloseTicket.php","id="+id,function(data){
         $("#FormCancelacion").html(data);
         $("#TituloCancelacion").html("Desglose del ticket");
         $("#Di3").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -122,7 +122,7 @@ $query = $conn->query($sql1);
 
 $(".btn-Reimpresion").click(function(){
     id = $(this).data("id");
-    $.post("https://controlfarmacia.com/AdminPOS/Modales/ReimpresionTicketVenta.php","id="+id,function(data){
+    $.post("https://saludaclinicas.com/AdminPOS/Modales/ReimpresionTicketVenta.php","id="+id,function(data){
         $("#FormCancelacion").html(data);
         $("#TituloCancelacion").html("Editar datos de categoría");
         $("#Di3").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -142,7 +142,7 @@ $(".btn-Reimpresion").click(function(){
     $('#Cancelacionmodal').modal('show');
 });
 </script>
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

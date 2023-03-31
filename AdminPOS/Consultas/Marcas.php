@@ -97,7 +97,7 @@ $query = $conn->query($sql1);
 <script>
   	$(".btn-edit5").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/EditaMarca.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/EditaMarca.php","id="+id,function(data){
   			$("#form-edit3").html(data);
           $("#Titulo").html("Editar datos de categoria");
               $("#Di3").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -110,7 +110,7 @@ $query = $conn->query($sql1);
   	});
     $(".btn-edit6").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/DetallesMarca.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/DetallesMarca.php","id="+id,function(data){
               $("#form-edit3").html(data);
               $("#Titulo3").html("Detalles de marca ");
               $("#Di3").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -122,7 +122,7 @@ $query = $conn->query($sql1);
     });
     $(".btn-historialMar").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/HistorialMarcas.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/HistorialMarcas.php","id="+id,function(data){
               $("#form-edit3").html(data);
               $("#Titulo3").html("Movimientos realizados");
               $("#Di3").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -143,7 +143,7 @@ $query = $conn->query($sql1);
          </button>
        </div>
         <div id="Mensaje "class="alert alert-info alert-styled-left text-blue-800 content-group">
-						                <span id="Aviso" class="text-semibold"><i class="fas fa-info-circle"></i> <?echo $row['Nombre_Apellidos']?>, 
+						                <span id="Aviso" class="text-semibold"><i class="fas fa-info-circle"></i> <?php echo $row['Nombre_Apellidos']?>, 
                             Verifique los campos antes de realizar alguna accion</span>
 						                <button type="button" class="close" data-dismiss="alert">×</button>
                             </div>
@@ -156,7 +156,7 @@ $query = $conn->query($sql1);
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div>
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

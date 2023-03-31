@@ -1,7 +1,7 @@
 function StockPorSucursales() {
 
 
-    $.post("https://controlfarmacia.com/AdminPOS/Consultas/AjustesRealizados.php", "", function(data) {
+    $.post("https://saludaclinicas.com/AdminPOS/Consultas/AjustesRealizados.php", "", function(data) {
         $("#TableStockSucursales").html(data);
     })
 

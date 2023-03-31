@@ -1,7 +1,7 @@
 function CargaCreditosPorVencer(){
 
 
-    $.post("https://controlfarmacia.com/AdminPOS/Consultas/CreditosPorVencer.php","",function(data){
+    $.post("https://saludaclinicas.com/AdminPOS/Consultas/CreditosPorVencer.php","",function(data){
       $("#tablaCreditosPorVencer").html(data);
     })
 

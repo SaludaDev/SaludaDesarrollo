@@ -1,7 +1,7 @@
 function  CargaGestionventas(){
 
 
-    $.post("https://controlfarmacia.com/POS2/VistaVentas.php","",function(data){
+    $.post("https://saludaclinicas.com/POS2/VistaVentas.php","",function(data){
       $("#Tabladeventas").html(data);
     })
 

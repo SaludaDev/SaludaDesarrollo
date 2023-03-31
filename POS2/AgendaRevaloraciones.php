@@ -14,10 +14,10 @@ include "Consultas/ConeSelectDinamico.php";
 
   <title>Agendamiento de citas de revaloracion </title>
 
-  <? include "Header.php"?>
+  <?php include "Header.php"?>
   <link href='js/fullcalendar/fullcalendar.css' rel='stylesheet' />
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   
   <li class="nav-item">
@@ -101,7 +101,7 @@ Citas de especialistas
 
 </body>
 </html>
-<?
+<?php
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

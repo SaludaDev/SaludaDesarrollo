@@ -98,7 +98,7 @@ $query = $conn->query($sql1);
 <script>
   	$(".btn-edit3").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/EditaPresentacion.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/EditaPresentacion.php","id="+id,function(data){
   			$("#form-edit2").html(data);
           $("#Titulo2").html("Editar datos de presentacion");
               $("#Di2").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -111,7 +111,7 @@ $query = $conn->query($sql1);
   	});
     $(".btn-edit4").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/DetallesPresentaciones.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/DetallesPresentaciones.php","id="+id,function(data){
               $("#form-edit2").html(data);
               $("#Titulo2").html("Detalles de categoria ");
               $("#Di2").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -123,7 +123,7 @@ $query = $conn->query($sql1);
     });
     $(".btn-historialPre").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/AdminPOS/Modales/HistorialPresentaciones.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/AdminPOS/Modales/HistorialPresentaciones.php","id="+id,function(data){
               $("#form-edit2").html(data);
               $("#Titulo2").html("Movimientos realizados");
               $("#Di2").removeClass("modal-dialog modal-lg modal-notify modal-info");
@@ -144,7 +144,7 @@ $query = $conn->query($sql1);
          </button>
        </div>
         <div id="Mensaje "class="alert alert-info alert-styled-left text-blue-800 content-group">
-						                <span id="Aviso" class="text-semibold"><i class="fas fa-info-circle"></i> <?echo $row['Nombre_Apellidos']?>, 
+						                <span id="Aviso" class="text-semibold"><i class="fas fa-info-circle"></i> <?php echo $row['Nombre_Apellidos']?>, 
                             Verifique los campos antes de realizar alguna accion</span>
 						                <button type="button" class="close" data-dismiss="alert">×</button>
                             </div>
@@ -157,7 +157,7 @@ $query = $conn->query($sql1);
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div>
-<?
+<?php 
 
 function fechaCastellano ($fecha) {
   $fecha = substr($fecha, 0, 10);

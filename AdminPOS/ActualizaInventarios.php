@@ -25,7 +25,7 @@ while ($r=$query->fetch_object()){
 
   <title>Actualizando existencias </title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
  <style>
         .error {
   color: red;
@@ -39,15 +39,15 @@ while ($r=$query->fetch_object()){
 }
     </style>
 </head>
-<?include_once ("Menu.php")?>
-<? if($Especialistas!=null):?>
+<?php include_once ("Menu.php")?>
+<?php  if($Especialistas!=null):?>
 
   <div class="text-center">
     
   </div>
 <div class="card text-center">
 <div class="card-header" style="background-color:#4285f4!important;color: white;">
- Actualizando existencias del producto <? echo $Especialistas->Nombre_Prod; ?>
+ Actualizando existencias del producto <?php echo $Especialistas->Nombre_Prod; ?>
   </div>
    
   <div class="col-md-12">
@@ -59,7 +59,7 @@ while ($r=$query->fetch_object()){
     <div class="input-group mb-3">
   <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta"><i class="fas fa-receipt"></i></span>
   </div>
-  <input type="text" class="form-control " readonly  value="<? echo $Especialistas->Cod_Barra; ?>" >
+  <input type="text" class="form-control " readonly  value="<?php echo $Especialistas->Cod_Barra; ?>" >
     </div>
     </div>
     
@@ -69,7 +69,7 @@ while ($r=$query->fetch_object()){
     <div class="input-group mb-3">
   <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta"><i class="fas fa-at"></i></span>
   </div>
-  <textarea class="form-control" readonly rows="3" ><? echo $Especialistas->Nombre_Prod; ?></textarea>
+  <textarea class="form-control" readonly rows="3" ><?php echo $Especialistas->Nombre_Prod; ?></textarea>
          
     </div><label for="nombreprod" class="error">
     </div>
@@ -85,7 +85,7 @@ while ($r=$query->fetch_object()){
     <div class="input-group mb-3">
   <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta"><i class="fas fa-pills"></i></span>
   </div>
-  <input type="number" class="form-control "  readonly name="ExistenciaPrev" id="existenciaactual" value="<? echo $Especialistas->Existencias_R; ?>" >
+  <input type="number" class="form-control "  readonly name="ExistenciaPrev" id="existenciaactual" value="<?php echo $Especialistas->Existencias_R; ?>" >
     </div><label for="pc" class="error">
     </div>
     <div class="col">
@@ -110,12 +110,12 @@ while ($r=$query->fetch_object()){
 
     
 
-    <input type="text" class="form-control " hidden name="ACT_ID_Prod" value="<? echo $Especialistas->ID_Prod_POS; ?>" >
+    <input type="text" class="form-control " hidden name="ACT_ID_Prod" value="<?php echo $Especialistas->ID_Prod_POS; ?>" >
 
-    <input type="text" class="form-control "  hidden name="StockActualiza" value="<? echo $Especialistas->Fk_sucursal; ?>" >
+    <input type="text" class="form-control "  hidden name="StockActualiza" value="<?php echo $Especialistas->Fk_sucursal; ?>" >
      
-    <input type="text" class="form-control"  hidden name="AgregaProductosBy" id="agrega" readonly value=" <?echo $row['Nombre_Apellidos']?>">
-    <input type="text" class="form-control"  hidden name="SistemaProductos" id="sistema" readonly value=" POS <?echo $row['Nombre_rol']?>">
+    <input type="text" class="form-control"  hidden name="AgregaProductosBy" id="agrega" readonly value=" <?php echo $row['Nombre_Apellidos']?>">
+    <input type="text" class="form-control"  hidden name="SistemaProductos" id="sistema" readonly value=" POS <?php echo $row['Nombre_rol']?>">
     
       
 
@@ -134,7 +134,7 @@ while ($r=$query->fetch_object()){
     <div class="input-group mb-3">
   <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta"><i class="fas fa-receipt"></i></span>
   </div>
-  <input type="text" class="form-control " readonly  value="<? echo $Especialistas->Cod_Barra; ?>" >
+  <input type="text" class="form-control " readonly  value="<?php echo $Especialistas->Cod_Barra; ?>" >
     </div>
    
     
@@ -144,7 +144,7 @@ while ($r=$query->fetch_object()){
     <div class="input-group mb-3">
   <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta"><i class="fas fa-at"></i></span>
   </div>
-  <textarea class="form-control" readonly rows="3" ><? echo $Especialistas->Nombre_Prod; ?></textarea>
+  <textarea class="form-control" readonly rows="3" ><?php echo $Especialistas->Nombre_Prod; ?></textarea>
          
     </div><label for="nombreprod" class="error">
     </div>
@@ -158,7 +158,7 @@ while ($r=$query->fetch_object()){
     <div class="input-group mb-3">
   <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta"><i class="fas fa-pills"></i></span>
   </div>
-  <input type="number" class="form-control "  readonly name="ExistenciaPrev" id="existenciaactuall" value="<? echo $Especialistas->Existencias_R; ?>" >
+  <input type="number" class="form-control "  readonly name="ExistenciaPrev" id="existenciaactuall" value="<?php echo $Especialistas->Existencias_R; ?>" >
     </div><label for="pc" class="error">
     </div>
     <div class="col">
@@ -210,12 +210,12 @@ function actualizarlote() {
 
     </script>
 
-    <input type="text" class="form-control " hidden name="ACT_ID_Prod" value="<? echo $Especialistas->ID_Prod_POS; ?>" >
+    <input type="text" class="form-control " hidden name="ACT_ID_Prod" value="<?php echo $Especialistas->ID_Prod_POS; ?>" >
 
-    <input type="text" class="form-control "  hidden name="StockActualiza" value="<? echo $Especialistas->Fk_sucursal; ?>" >
+    <input type="text" class="form-control "  hidden name="StockActualiza" value="<?php echo $Especialistas->Fk_sucursal; ?>" >
      
-    <input type="text" class="form-control"  hidden name="AgregaProductosBy" id="agrega" readonly value=" <?echo $row['Nombre_Apellidos']?>">
-    <input type="text" class="form-control"  hidden name="SistemaProductos" id="sistema" readonly value=" POS <?echo $row['Nombre_rol']?>">
+    <input type="text" class="form-control"  hidden name="AgregaProductosBy" id="agrega" readonly value=" <?php echo $row['Nombre_Apellidos']?>">
+    <input type="text" class="form-control"  hidden name="SistemaProductos" id="sistema" readonly value=" POS <?php echo $row['Nombre_rol']?>">
     
       
 
@@ -229,7 +229,7 @@ function actualizarlote() {
                                        
          
       </div></div>
- <? else:?>
+ <?php else:?>
   <p class="alert alert-danger">404 No se encuentra</p>
 <? endif;?>
 <script src="js/ActualizaExistenciasDeProductosEnSucursales.js"></script>
