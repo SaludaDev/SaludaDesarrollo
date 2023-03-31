@@ -28,10 +28,10 @@
   </div>
  <select id = "sucursal" class = "form-control " name = "Sucursal" >
                                                <option value="">Seleccione una Sucursal:</option>
-        <?
+        <?php 
           $query = $mysqli -> query ("SELECT 	ID_SucursalC,Nombre_Sucursal,ID_H_O_D FROM Sucursales_Campañas WHERE Estatus_Sucursal='Activo' AND ID_H_O_D='".$row['ID_H_O_D']."'");
           while ($valores = mysqli_fetch_array($query)) {
-            echo '<option value="'.$valores[ID_SucursalC].'">'.$valores[Nombre_Sucursal].'</option>';
+            echo '<option value="'.$valores['ID_SucursalC'].'">'.$valores['Nombre_Sucursal'].'</option>';
           }
         ?>  </select>
       
@@ -201,9 +201,9 @@
   <input type="hidden" readonly name="EstatusCita" id="estatuscita"  >
   <input type="hidden" readonly name="EstatusSeguimiento" id="estatussegui" value="Sin seguimiento" >
   <input type="hidden" readonly name="ColorSigue" id="colorsegui" value="btn btn-dark btn-sm" >
-  <input type="text" class="form-control" id="empresa" name="Empresa" hidden  readonly value="<? echo $row['ID_H_O_D']?>" >
-  <input type="text" class="form-control" id="agenda" name="AgendaPor" hidden readonly   value="<?echo $row['Nombre_Apellidos']?>" >
-  <input type="text" class="form-control" id="sistema" name="Sistema"  hidden  readonly value="<?echo $row['Nombre_rol']?>" >
+  <input type="text" class="form-control" id="empresa" name="Empresa" hidden  readonly value="<?php echo $row['ID_H_O_D']?>" >
+  <input type="text" class="form-control" id="agenda" name="AgendaPor" hidden readonly   value="<?php echo $row['Nombre_Apellidos']?>" >
+  <input type="text" class="form-control" id="sistema" name="Sistema"  hidden  readonly value="<?php echo $row['Nombre_rol']?>" >
   <button type="submit"  name="submit_registro" id="submit_registro" value="Guardar" class="btn btn-primary">Guardar <i class="fas fa-save"></i></button>
                                         </form>
      

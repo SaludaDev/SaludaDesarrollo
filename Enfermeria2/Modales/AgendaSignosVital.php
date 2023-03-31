@@ -352,7 +352,7 @@ if ($query->num_rows > 0) {
             <?php
             $query = $conn->query("SELECT ID_Estado,Nombre_Estado FROM Estados");
             while ($valores = mysqli_fetch_array($query)) {
-              echo '<option value="' . $valores[ID_Estado] . '">' . $valores[Nombre_Estado] . '</option>';
+              echo '<option value="' . $valores['ID_Estado'] . '">' . $valores['Nombre_Estado'] . '</option>';
             }
             ?>
           </select>
@@ -402,7 +402,7 @@ if ($query->num_rows > 0) {
     </div>
 
     <input type="text" class="form-control" value="<?php echo $datapacientes->Sexo; ?>" readonly name="Sexoo" id="sexoo" hidden aria-describedby="basic-addon1">
-    <input type="text" class="form-control" readonly id="turno" name="Turno" hidden value="<? echo $Turno ?>">
+    <input type="text" class="form-control" readonly id="turno" name="Turno" hidden value="<?php echo $Turno ?>">
     <input type="text" class="form-control" name="visita" id="visita" value="Primera vez" hidden readonly>
     <input type="text" class="form-control" name="estador" id="estador" hidden readonly>
     <input type="text" class="form-control" name="municipior" id="municipior" hidden readonly>

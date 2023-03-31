@@ -70,7 +70,7 @@
                 <?php
                 $query = $conn->query("SELECT Nombre_Apellidos,Fk_Sucursal,Estatus FROM  Personal_Medico WHERE Estatus='Vigente' AND Fk_Sucursal='" . $row['Fk_Sucursal'] . "'");
                 while ($valores = mysqli_fetch_array($query)) {
-                  echo '<option value="' . $valores[Nombre_Apellidos] . '">' . $valores[Nombre_Apellidos] . '</option>';
+                  echo '<option value="' . $valores['Nombre_Apellidos'] . '">' . $valores['Nombre_Apellidos'] . '</option>';
                 }
                 ?>
               </select>
