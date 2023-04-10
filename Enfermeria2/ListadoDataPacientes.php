@@ -3,7 +3,7 @@ include "Consultas/Consultas.php";
 include "Consultas/Sesion.php";
 include "Consultas/Conexion_selects.php";
 include "Consultas/ConeSelectDinamico.php";
-include "Consulta/SignoVitales.php"
+include "Consulta/SignosVitales.php"
 ?>
 <!DOCTYPE html>
 <html lang="es">
