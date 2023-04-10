@@ -3,7 +3,7 @@ include "Consultas/Consultas.php";
 include "Consultas/Sesion.php";
 include "Consultas/Conexion_selects.php";
 include "Consultas/ConeSelectDinamico.php";
-
+include "Consulta/SignoVitales.php"
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -45,7 +45,6 @@ include "Consultas/ConeSelectDinamico.php";
 <?php
 include("Modales/AltaCitaSucursal.php");
 include("Modales/Exito.php");
-include("Modales/SignoVitales.php");
 include("footer.php"); ?>
 <!-- ./wrapper -->
 
