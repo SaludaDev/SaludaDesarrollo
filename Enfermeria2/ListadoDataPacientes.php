@@ -45,6 +45,7 @@ include "Consultas/ConeSelectDinamico.php";
 <?php
 include("Modales/AltaCitaSucursal.php");
 include("Modales/Exito.php");
+include("Modales/SignoVitales.php");
 include("footer.php"); ?>
 <!-- ./wrapper -->
 
