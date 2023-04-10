@@ -5,7 +5,7 @@
 			<div class="panel panel-body login-form">
 				<div class="text-center">
 					<img width="175" height="93"  src="./web/assets/images/acceso.png">
-					<h5 class="content-group">Bienvenido a GesNet<small class="display-block">Iniciar Sesión</small></h5>
+					<h5 class="content-group">Bienvenido<small class="display-block">Iniciar Sesión</small></h5>
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
