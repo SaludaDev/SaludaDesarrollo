@@ -26,5 +26,11 @@ function POSV(){
   }
   
   function Home(){
-    location.href="hhttps://saludaclinicas.com/App/"
+    location.href="https://saludaclinicas.com/App/"
   }
+
+  function Inventarios(){
+    location.href="  https://saludaclinicas.com/Inventarios/"
+  }
+
+
