@@ -66,7 +66,15 @@ include "Header.php";
     <h1>PUNTO DE VENTA</h1>
    </div>
 </div>
-
+<div class="prog-container degree">
+  <span class="icon">
+  <i onclick="controlconsulta()" class="fas fa-hospital-alt"></i>
+  </span>
+  <div class="details">
+  <h1>  INVENTARIOS</h1>
+   
+  </div>
+</div>
 <div class="prog-container degree">
   <span class="icon">
   <i onclick="Citas()" class="fas fa-calendar-day"></i>
