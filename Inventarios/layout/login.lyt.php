@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="autor" content="Systema">
 	<meta name="description" content="GesNet es un sistema de ventas que le permite llevar el control de todo lo relacionado a su negocio.">
-	<title>GesNet - Facturación e Inventario</title>
+	<title>Inventarios</title>
 
 
     <!-- Global stylesheets -->
