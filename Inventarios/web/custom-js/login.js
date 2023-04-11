@@ -73,7 +73,7 @@ $(function() {
         rules: {
             username: {
                 required:true,
-                maxlength: 8,
+                maxlength: 20,
                 minlength:4
             },
             password:{
@@ -85,7 +85,7 @@ $(function() {
         messages: {
             username:{
                 required:"Ingrese su usuario",
-                maxlength :"No pueden ser mas de 8 caracteres",
+                maxlength :"No pueden ser mas de 20 caracteres",
                 minlength: jQuery.validator.format("Debe ingresar {0} caracteres minimo")
             },
             password: {
