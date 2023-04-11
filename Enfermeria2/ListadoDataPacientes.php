@@ -5,7 +5,7 @@ include "Consultas/Conexion_selects.php";
 include "Consultas/ConeSelectDinamico.php";
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"> 
 
 <head>
   <meta charset="utf-8">
