@@ -68,10 +68,10 @@ include "Header.php";
 </div>
 <div class="prog-container degree">
   <span class="icon">
-  <i onclick="controlconsulta()" class="fas fa-hospital-alt"></i>
+  <i onclick="controlconsulta()"  class="fas fa-boxes"></i>
   </span>
   <div class="details">
-  <h1>  INVENTARIOS</h1>
+  <h1>INVENTARIOS</h1>
    
   </div>
 </div>
