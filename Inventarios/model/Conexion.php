@@ -4,12 +4,11 @@ date_default_timezone_set("America/Monterrey");
 
 		public static function Conectar(){
 
-
 			$driver = 'mysql'; //mysql no cambiar
+			$driver = 'mysqli'; //mysql no cambiar
 			$host = 'localhost'; //localhost
-			$dbname = 'u155356178_DesarrolloSalu'; //bdd
-			$username ='u155356178_CorpoSaluda'; //usuario
-			$passwd = 'SSalud4Dev2495#$'; //contra
+			$dbname = 'u155356178_inventarios'; //bdd
+			$username ='u155356178_inventarios'; //usuario
 
 
 
