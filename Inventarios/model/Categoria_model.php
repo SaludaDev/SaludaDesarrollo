@@ -1,6 +1,6 @@
 <?php 
 
-	require_once('Conexion.php');
+	require ('Conexion.php');
 
 	class CategoriaModel extends Conexion
 	{
