@@ -7,9 +7,9 @@ date_default_timezone_set("America/Lima");
 
 			$driver = 'mysql'; //mysql no cambiar
 			$host = 'localhost'; //localhost
-			$dbname = 'u155356178_DesarrolloSalu'; //bdd
-			$username ='u155356178_CorpoSaluda'; //usuario
-			$passwd = 'SSalud4Dev2495#$'; //contra
+			$dbname = 'u155356178_inventarios'; //bdd
+			$username ='u155356178_inventarios'; //usuario
+			$passwd = 'q40Nz67~7G'; //contra
 
 
 
