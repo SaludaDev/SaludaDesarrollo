@@ -5,7 +5,7 @@ date_default_timezone_set("America/Lima");
 		public static function Conectar(){
 
 
-			$driver = 'mysqli'; //mysql no cambiar
+			$driver = 'mysql'; //mysql no cambiar
 			$host = 'localhost'; //localhost
 			$dbname = 'u155356178_DesarrolloSalu'; //bdd
 			$username ='u155356178_CorpoSaluda'; //usuario
