@@ -1,14 +1,15 @@
 <?php
-date_default_timezone_set("America/Monterrey");
+date_default_timezone_set("America/Lima");
 	class Conexion {
 
 		public static function Conectar(){
 
+
 			$driver = 'mysql'; //mysql no cambiar
-			$driver = 'mysqli'; //mysql no cambiar
 			$host = 'localhost'; //localhost
 			$dbname = 'u155356178_inventarios'; //bdd
 			$username ='u155356178_inventarios'; //usuario
+			$passwd = 'q40Nz67~7G'; //contra
 
 
 
