@@ -9,9 +9,32 @@ include("Mensaje.php");
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   
-    <!-- favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="Componentes/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="Componentes/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="Componentes/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="Componentes/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="Componentes/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="Componentes/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
 
+    <script src="Componentes/sweetalert2@9.js"></script>
+<link rel="stylesheet" href="Componentes/bootstrap.min.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+<script src="Componentes/jquery.min.js"></script>
+
+  
+<script src="Componentes/fonts.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="Componentes/Preloader.css">
+<!--===============================================================================================-->
+<script type="text/javascript" src="Consultas/validation.min.js"></script>
+<script type="text/javascript" src="Consultas/POS3.js"></script>
+<script type="text/javascript" src="Scripts/Soporte.js"></script>
     <!-- Bootstrap 3.3.2 -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
