@@ -57,24 +57,42 @@ include("Mensaje.php");
       <div class="login-box-body">
         <p class="login-box-msg"><i class="fa fa-user icon-title"></i> Por favor Inicie Sesión</p>
         <br/>
-        <form action="login-check.php" method="POST">
-          <div class="form-group has-feedback">
-            <input type="text" class="form-control" name="username" placeholder="Username" autocomplete="off" required />
-            <span class="glyphicon glyphicon-user form-control-feedback"></span>
-          </div>
+        <form class="login100-form validate-form" method="post" id="login-form" autocomplete="off">
 
-          <div class="form-group has-feedback">
-            <input type="password" class="form-control" name="password" placeholder="Password" required />
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-xs-12">
-              <input type="submit" class="btn btn-primary btn-lg btn-block btn-flat" name="login" value="Ingresar" />
-            </div><!-- /.col -->
-          </div>
-        </form>
+					<span class="login100-form-title p-b-49">
+						<?php echo $mensaje?>
+					</span>
 
+					<div class="wrap-input100 " >
+						<span class="label-input100">Correo electronico</span>
+						<input class="input100" input type="email" autocomplete="off" required placeholder="puntoventa@consulta.com" name="user_email" id="user_email" maxlength="50">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 ">
+						<span class="label-input100">Contraseña</span>
+						<input class="input100" type="password" required placeholder="************" autocomplete="new-password" name="password" id="password"  maxlength="10">
+                       
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+                        
+                    </div>
+                    <br>
+                    <div class="checkbox">
+    <label>
+    <input id="show_password" type="checkbox" /> Mostrar contraseña
+    </label>
+  </div>   
+ 
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" type="submit"  name="login_button" id="login_button">
+								Ingresar
+							</button>
+						</div>
+					</div>
+                 
+                    </form>
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
 
