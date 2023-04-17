@@ -68,7 +68,7 @@ include "Header.php";
 </div>
 <div class="prog-container degree">
   <span class="icon">
-  <i onclick="controlconsulta()"  class="fas fa-boxes"></i>
+  <i onclick="Inventarios()"  class="fas fa-boxes"></i>
   </span>
   <div class="details">
   <h1>INVENTARIOS</h1>
