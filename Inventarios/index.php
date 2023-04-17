@@ -1,4 +1,6 @@
-
+<?php 
+include("Mensaje.php");
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,9 +8,7 @@
     <title>Login | Control de inventarios </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content="Aplikasi Persediaan Obat pada Apotek">
-    <meta name="author" content="Indra Styawantoro" />
-
+  
     <!-- favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.png" />
 
@@ -27,7 +27,7 @@
   <body class="login-page bg-login">
     <div class="login-box">
       <div style="color:#3c8dbc" class="login-logo">
-        <!-- <img style="margin-top:-12px" src="assets/img/logo-blue.png" alt="Logo" height="50"> <b>MEDISYS</b> -->
+         <!-- <img style="margin-top:-12px" src="assets/img/logo-blue.png" alt="Logo" height="50"> <b><?php echo $mensaje?></b>  -->
       </div><!-- /.login-logo -->
       <?php  
  
