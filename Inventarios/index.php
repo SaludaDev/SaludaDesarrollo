@@ -27,30 +27,9 @@ include("Mensaje.php");
   <body class="login-page bg-login">
     <div class="login-box">
       <div style="color:#3c8dbc" class="login-logo">
-         <img style="margin-top:-12px" src="assets/img/logo-blue.png" alt="Logo" height="50"> <b><?php echo $mensaje?></b> 
+        <b><?php echo $mensaje?></b> 
       </div><!-- /.login-logo -->
-      <?php  
- 
-      if (empty($_GET['alert'])) {
-        echo "";
-      } 
-
-      elseif ($_GET['alert'] == 1) {
-        echo "<div class='alert alert-danger alert-dismissable'>
-                <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-                <h4>  <i class='icon fa fa-times-circle'></i> Error al entrar!</h4>
-               Usuario o la contraseña es incorrecta, vuelva a verificar su nombre de usuario y contraseña.
-              </div>";
-      }
-
-      elseif ($_GET['alert'] == 2) {
-        echo "<div class='alert alert-success alert-dismissable'>
-                <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-                <h4>  <i class='icon fa fa-check-circle'></i> Exito!!</h4>
-              Has salido con éxito.
-              </div>";
-      }
-      ?>
+     
 
       <div class="login-box-body">
         <p class="login-box-msg"><i class="fa fa-user icon-title"></i> Por favor Inicie Sesión</p>
