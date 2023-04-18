@@ -1,15 +1,14 @@
-<<<<<<< HEAD
-<?php 
-include("Mensaje.php");
-?>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Login | Control de inventarios </title>
+    <title>Login | Inventario de Medicamentos</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  
+    <meta name="description" content="Aplikasi Persediaan Obat pada Apotek">
+    <meta name="author" content="Indra Styawantoro" />
+
     <!-- favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.png" />
 
@@ -28,9 +27,30 @@ include("Mensaje.php");
   <body class="login-page bg-login">
     <div class="login-box">
       <div style="color:#3c8dbc" class="login-logo">
-        <b><?php echo $mensaje?></b> 
+        <img style="margin-top:-12px" src="assets/img/logo-blue.png" alt="Logo" height="50"> <b>MEDISYS</b>
       </div><!-- /.login-logo -->
-     
+      <?php  
+ 
+      if (empty($_GET['alert'])) {
+        echo "";
+      } 
+
+      elseif ($_GET['alert'] == 1) {
+        echo "<div class='alert alert-danger alert-dismissable'>
+                <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                <h4>  <i class='icon fa fa-times-circle'></i> Error al entrar!</h4>
+               Usuario o la contraseña es incorrecta, vuelva a verificar su nombre de usuario y contraseña.
+              </div>";
+      }
+
+      elseif ($_GET['alert'] == 2) {
+        echo "<div class='alert alert-success alert-dismissable'>
+                <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                <h4>  <i class='icon fa fa-check-circle'></i> Exito!!</h4>
+              Has salido con éxito.
+              </div>";
+      }
+      ?>
 
       <div class="login-box-body">
         <p class="login-box-msg"><i class="fa fa-user icon-title"></i> Por favor Inicie Sesión</p>
@@ -63,64 +83,3 @@ include("Mensaje.php");
 
   </body>
 </html>
-=======
-<?php
-	// session_start();
-	 require_once("config/app.conf.php");
-
-	  
-	  spl_autoload_register(function($className) {
-	            $model = "model/". $className ."_model.php";
-	            $controller = "controller/". $className ."_controller.php";
-
-	           require_once($model);
-	           require_once($controller);
-	    });
-
-		$Login = new Login();
-
-
-		#Si NO EXISTE SESION LO MANDO A LOGIN
-	    if(!isset($_SESSION['user_id'])){
-
-	    	 $view = DEFAULT_VIEW;
-
-	    } elseif (!empty($_GET["View"]) && isset($_SESSION['user_id'])){
-		  //Si  existe vista pone la que viene en GET - ?view=Algo
-			$view = $_GET["View"];
-
-			$usuario = $_SESSION['user_name'];
-			$tipo_usuario = $_SESSION['user_tipo'];
-			$nombre_empleado =  $_SESSION['user_empleado'];
-
-		}  else if(empty($_GET["View"]) && isset($_SESSION['user_id'])) {
-		   //poner por defecto Home
-		    $view = "Inicio";
-			$usuario = $_SESSION['user_name'];
-			$tipo_usuario = $_SESSION['user_tipo'];
-			$nombre_empleado =  $_SESSION['user_empleado'];
-		}
-
-
-
-		if (empty($conf[$view]))
-		{
-		  //Si es vacia poner error no existe hacela en la vista y no existe hacela en la vista y agrega a config
-		  $view = "error_404"; //asi debes configurarlo en el app.conf.php error_404== nombre en el conf
-
-		}
-
-		if (empty($conf[$view]["layout"]))
-		{
-		  //Si no tiene layout agregar el por defecto
-			$conf[$view]["layout"] = DEFAULT_LAYOUT;
-		}
-
-		 $pathLayout = PATH_LAYOUT."/".$conf[$view]["layout"];// cargo el layou
-  		 $pathView = PATH_VIEW."/".$conf[$view]["file"]; // busco la vista almacenada en conf
-
-		require_once($pathLayout); // agrego el layout encontrado y dentro del el busco la vista correspondiente en
-		//este proceso
-
- ?>
->>>>>>> parent of 729e629 (AjustesInventarios)
