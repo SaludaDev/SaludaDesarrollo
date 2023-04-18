@@ -64,7 +64,8 @@ include("Cookies/Mensaje.php");
 </div></div>
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color" style="background-color: #2E64FE !important;">
-  <a class="navbar-brand" href="#">CONTROL DE INVENTARIOS  <i  class="fas fa-receipt fa-2x fa-lgfa-2x fa-lg"></i></a>
+  <a class="navbar-brand" href="#">CONTROL DE INVENTARIOS  <i  class="fas fa-dolly-flatbed fa-2x fa-lgfa-2x fa-lg"></i></a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
