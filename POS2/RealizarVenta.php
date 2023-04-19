@@ -32,13 +32,6 @@ include ("db_connection.php");
 </head>
 <?php include_once ("Menu.php")?>
 
-
-  
-
-
-
- 
-
    <div class="text-center">
 <button data-toggle="modal" data-target="#ConsultaProductos" class="btn btn-primary btn-sm"  >Consulta productos <i class="fas fa-search"></i></button>
 <button data-id="<?php echo $ValorCaja["ID_Caja"];?>" class="btn-arqui btn btn-warning btn-sm " type="submit"  >Arqueo de caja <i class="fa-solid fa-money-bill-transfer"></i> </button> 
@@ -47,11 +40,11 @@ include ("db_connection.php");
      <button  data-toggle="modal" data-target="#ReimprimeVentas"   class="btn-reimpresion btn btn-info btn-sm  " type="submit"  >Reimpresión de tickets de venta <i class="fas fa-print"></i></button>
      <button data-toggle="modal" data-target="#CapturaFacturacion" class="btn btn-success btn-sm" style="
     background: #6610f2 !important;"type="submit" name="guardar" >Datos para facturación <i class="far fa-bell"></i></button>
-      <div class="input-group mb-3">
+      
         
   
 
-  
+  </div>
  
      <!-- Control Sidebar -->
     
