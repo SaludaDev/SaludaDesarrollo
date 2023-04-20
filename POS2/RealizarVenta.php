@@ -269,7 +269,7 @@ include ("db_connection.php");
                         <div class="col-md-5 text-right">
                             S./ <span class="" id="boleta_total">0.00</span>
                         </div>
-                        <div>                        <button class="btn btn-primary" id="btnIniciarVenta">
+                        <div class="text-center">                        <button class="btn btn-primary" id="btnIniciarVenta">
                                 <i class="fas fa-shopping-cart"></i> Realizar Venta
                             </button>
                             </div>
