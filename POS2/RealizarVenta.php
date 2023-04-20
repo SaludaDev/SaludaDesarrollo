@@ -82,9 +82,7 @@ include ("db_connection.php");
 
                         <!-- BOTONES PARA VACIAR LISTADO Y COMPLETAR LA VENTA -->
                         <div class="col-md-5 text-right">
-                            <button class="btn btn-primary" id="btnIniciarVenta">
-                                <i class="fas fa-shopping-cart"></i> Realizar Venta
-                            </button>
+                            
                             <button class="btn btn-danger" id="btnVaciarListado">
                                 <i class="far fa-trash-alt"></i> Vaciar Listado
                             </button>
@@ -271,6 +269,9 @@ include ("db_connection.php");
                         <div class="col-md-5 text-right">
                             S./ <span class="" id="boleta_total">0.00</span>
                         </div>
+                        <button class="btn btn-primary" id="btnIniciarVenta">
+                                <i class="fas fa-shopping-cart"></i> Realizar Venta
+                            </button>
                     </div>
 
                 </div><!-- ./ CARD BODY -->
