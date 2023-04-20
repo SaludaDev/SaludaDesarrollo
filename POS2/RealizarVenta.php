@@ -48,7 +48,18 @@ include ("db_connection.php");
  
 <!-- Main content -->
 <div class="content">
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    
+
+<div class="container-fluid">
+
+    <div class="row mb-3">
+
+        <div class="col-md-9">
+
+            <div class="card card-gray shadow">
+
+                <div class="card-body p-3">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
   </li>
@@ -64,17 +75,6 @@ include ("db_connection.php");
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
 </div>
-
-<div class="container-fluid">
-
-    <div class="row mb-3">
-
-        <div class="col-md-9">
-
-            <div class="card card-gray shadow">
-
-                <div class="card-body p-3">
-
                     <div class="row">
                         <!-- INPUT PARA INGRESO DEL CODIGO DE BARRAS O DESCRIPCION DEL PRODUCTO -->
                         <div class="col-md-12 mb-3">
