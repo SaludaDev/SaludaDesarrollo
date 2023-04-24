@@ -168,7 +168,7 @@ Aqui va el corte de caja
             <div class="card card-gray shadow">
 
                 <!-- <h5 class="card-header py-1 bg-primary text-white text-center">
-                    Total Venta: S./ <span id="totalVentaRegistrar">0.00</span>
+                    Total Venta: MXN <span id="totalVentaRegistrar">0.00</span>
                 </h5> -->
 
                 <div class="card-body p-2">
@@ -239,11 +239,11 @@ Aqui va el corte de caja
                     <div class="row mt-2">
 
                         <div class="col-12">
-                            <h6 class="text-start fw-bold">Monto Efectivo: S./ <span id="EfectivoEntregado">0.00</span></h6>
+                            <h6 class="text-start fw-bold">Monto Efectivo: MXN <span id="EfectivoEntregado">0.00</span></h6>
                         </div>
 
                         <div class="col-12">
-                            <h6 class="text-start text-danger fw-bold">Vuelto: S./ <span id="Vuelto">0.00</span>
+                            <h6 class="text-start text-danger fw-bold">Vuelto: MXN <span id="Vuelto">0.00</span>
                             </h6>
                         </div>
 
@@ -256,42 +256,42 @@ Aqui va el corte de caja
                             <span>OPE. GRAVADAS</span>
                         </div>
                         <div class="col-md-5 text-right">
-                            S./ <span class="" id="">0.00</span>
+                            MXN <span class="" id="">0.00</span>
                         </div>
 
                         <div class="col-md-7">
                             <span>OPE. INAFECTAS</span>
                         </div>
                         <div class="col-md-5 text-right">
-                            S./ <span class="" id="">0.00</span>
+                            MXN <span class="" id="">0.00</span>
                         </div>
 
                         <div class="col-md-7">
                             <span>OPE. EXONERADAS</span>
                         </div>
                         <div class="col-md-5 text-right">
-                            S./ <span class="" id="">0.00</span>
+                            MXN <span class="" id="">0.00</span>
                         </div>
 
                         <div class="col-md-7">
                             <span>IGV (18%)</span>
                         </div>
                         <div class="col-md-5 text-right">
-                            S./ <span class="" id="boleta_igv">0.00</span>
+                            MXN <span class="" id="boleta_igv">0.00</span>
                         </div>
 
                         <div class="col-md-7">
                             <span>SUBTOTAL</span>
                         </div>
                         <div class="col-md-5 text-right">
-                            S./ <span class="" id="boleta_subtotal">0.00</span>
+                            MXN <span class="" id="boleta_subtotal">0.00</span>
                         </div>
 
                         <div class="col-md-7">
                             <span>TOTAL</span>
                         </div>
                         <div class="col-md-5 text-right">
-                            S./ <span class="" id="boleta_total">0.00</span>
+                            MXN <span class="" id="boleta_total">0.00</span>
                         </div>
                         <div class="col-md-5 text-center">                    
                             <button class="btn btn-primary" id="btnIniciarVenta">
@@ -507,8 +507,8 @@ TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
 
                     table.cell(idx, 5).data(cantidad + ' Und(s)').draw();
 
-                    NuevoPrecio = (parseInt(data['cantidad']) * data['precio_venta_producto'].replace("S./ ", "")).toFixed(2);
-                    NuevoPrecio = "S./ " + NuevoPrecio;
+                    NuevoPrecio = (parseInt(data['cantidad']) * data['precio_venta_producto'].replace("MXN ", "")).toFixed(2);
+                    NuevoPrecio = "MXN " + NuevoPrecio;
 
                     table.cell(idx, 7).data(NuevoPrecio).draw();
 
@@ -534,8 +534,8 @@ TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
 
             table.cell(idx, 5).data(cantidad + ' Und(s)').draw();
 
-            NuevoPrecio = (parseInt(data['cantidad']) * data['precio_venta_producto'].replace("S./ ", "")).toFixed(2);
-            NuevoPrecio = "S./ " + NuevoPrecio;
+            NuevoPrecio = (parseInt(data['cantidad']) * data['precio_venta_producto'].replace("MXN ", "")).toFixed(2);
+            NuevoPrecio = "MXN " + NuevoPrecio;
 
             table.cell(idx, 7).data(NuevoPrecio).draw();
 
@@ -568,8 +568,8 @@ TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
 
                 table.cell(idx, 5).data(cantidad + ' Kg(s)').draw();
 
-                NuevoPrecio = ((parseFloat(data['cantidad']) * data['precio_venta_producto'].replace("S./ ", "")).toFixed(2));
-                NuevoPrecio = "S./ " + NuevoPrecio;
+                NuevoPrecio = ((parseFloat(data['cantidad']) * data['precio_venta_producto'].replace("MXN ", "")).toFixed(2));
+                NuevoPrecio = "MXN " + NuevoPrecio;
 
                 table.cell(idx, 7).data(NuevoPrecio).draw();
 
@@ -589,7 +589,7 @@ TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
 
         codigo_producto = $(this).attr("codigo");
         console.log("🚀 ~ file: ventas.php:527 ~ $ ~ codigo_producto", codigo_producto)
-        precio_venta = parseFloat($(this).attr("precio").replaceAll("S./ ", "")).toFixed(2);
+        precio_venta = parseFloat($(this).attr("precio").replaceAll("MXN ", "")).toFixed(2);
 
         recalcularMontos(codigo_producto, precio_venta);
     });
@@ -651,8 +651,8 @@ TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
                             $("#iptCodigoVenta").focus();
 
                             // ACTUALIZAR EL NUEVO PRECIO DEL ITEM DEL LISTADO DE VENTA
-                            NuevoPrecio = (parseFloat(1) * data['precio_venta_producto'].replaceAll("S./ ", "")).toFixed(2);
-                            NuevoPrecio = "S./ " + NuevoPrecio;
+                            NuevoPrecio = (parseFloat(1) * data['precio_venta_producto'].replaceAll("MXN ", "")).toFixed(2);
+                            NuevoPrecio = "MXN " + NuevoPrecio;
                             table.cell(index, 7).data(NuevoPrecio).draw();
 
                             // RECALCULAMOS TOTALES
@@ -665,8 +665,8 @@ TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
 
 
                             // ACTUALIZAR EL NUEVO PRECIO DEL ITEM DEL LISTADO DE VENTA
-                            NuevoPrecio = (parseFloat(cantidad_actual) * data['precio_venta_producto'].replaceAll("S./ ", "")).toFixed(2);
-                            NuevoPrecio = "S./ " + NuevoPrecio;
+                            NuevoPrecio = (parseFloat(cantidad_actual) * data['precio_venta_producto'].replaceAll("MXN ", "")).toFixed(2);
+                            NuevoPrecio = "MXN " + NuevoPrecio;
                             table.cell(index, 7).data(NuevoPrecio).draw();
 
                             // RECALCULAMOS TOTALES
@@ -699,7 +699,7 @@ TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
 
             $("#EfectivoEntregado").html(totalVenta);
 
-            var EfectivoRecibido = parseFloat($("#EfectivoEntregado").html().replace("S./ ", ""));
+            var EfectivoRecibido = parseFloat($("#EfectivoEntregado").html().replace("MXN ", ""));
 
             vuelto = parseFloat(totalVenta) - parseFloat(EfectivoRecibido);
 
@@ -818,15 +818,15 @@ function recalcularMontos(codigo_producto, precio_venta) {
         if (data['codigo_producto'] == codigo_producto) {
 
             // AUMENTAR EN 1 EL VALOR DE LA CANTIDAD
-            table.cell(index, 6).data("S./ " + parseFloat(precio_venta).toFixed(2)).draw();
+            table.cell(index, 6).data("MXN " + parseFloat(precio_venta).toFixed(2)).draw();
 
             // cantidad_actual = 
             console.log("🚀 ~ file: ventas.php:744 ~ table.rows ~ data", parseFloat($.parseHTML(data['cantidad'])[0]['value']))
             cantidad_actual = parseFloat($.parseHTML(data['cantidad'])[0]['value']);
 
             // ACTUALIZAR EL NUEVO PRECIO DEL ITEM DEL LISTADO DE VENTA
-            NuevoPrecio = (parseFloat(cantidad_actual) * data['precio_venta_producto'].replaceAll("S./ ", "")).toFixed(2);
-            NuevoPrecio = "S./ " + NuevoPrecio;
+            NuevoPrecio = (parseFloat(cantidad_actual) * data['precio_venta_producto'].replaceAll("MXN ", "")).toFixed(2);
+            NuevoPrecio = "MXN " + NuevoPrecio;
             table.cell(index, 7).data(NuevoPrecio).draw();
 
         }
@@ -851,7 +851,7 @@ function recalcularTotales() {
         var row = table.row(index);
         var data = row.data();
 
-        TotalVenta = parseFloat(TotalVenta) + parseFloat(data['total'].replace("S./ ", ""));
+        TotalVenta = parseFloat(TotalVenta) + parseFloat(data['total'].replace("MXN ", ""));
 
     });
 
@@ -940,8 +940,8 @@ function CargarProductos(producto = "") {
 
 
                         // ACTUALIZAR EL NUEVO PRECIO DEL ITEM DEL LISTADO DE VENTA
-                        NuevoPrecio = (parseFloat(cantidad_a_comprar) * data['precio_venta_producto'].replaceAll("S./ ", "")).toFixed(2);
-                        NuevoPrecio = "S./ " + NuevoPrecio;
+                        NuevoPrecio = (parseFloat(cantidad_a_comprar) * data['precio_venta_producto'].replaceAll("MXN ", "")).toFixed(2);
+                        NuevoPrecio = "MXN " + NuevoPrecio;
                         table.cell(index, 7).data(NuevoPrecio).draw();
 
                         // RECALCULAMOS TOTALES
@@ -1005,8 +1005,8 @@ function CargarProductos(producto = "") {
 
                         "<ul class='dropdown-menu'>" +
                         "<li><a class='dropdown-item' codigo = '" + respuesta['codigo_producto'] + "' precio=' " + respuesta['precio_venta_producto'] + "' style='cursor:pointer; font-size:14px;'>Normal (" + respuesta['precio_venta_producto'] + ")</a></li>" +
-                        "<li><a class='dropdown-item' codigo = '" + respuesta['codigo_producto'] + "' precio=' " + respuesta['precio_mayor_producto'] + "' style='cursor:pointer; font-size:14px;'>Por Mayor (S./ " + parseFloat(respuesta['precio_mayor_producto']).toFixed(2) + ")</a></li>" +
-                        "<li><a class='dropdown-item' codigo = '" + respuesta['codigo_producto'] + "' precio=' " + respuesta['precio_oferta_producto'] + "' style='cursor:pointer; font-size:14px;'>Oferta (S./ " + parseFloat(respuesta['precio_oferta_producto']).toFixed(2) + ")</a></li>" +
+                        "<li><a class='dropdown-item' codigo = '" + respuesta['codigo_producto'] + "' precio=' " + respuesta['precio_mayor_producto'] + "' style='cursor:pointer; font-size:14px;'>Por Mayor (MXN " + parseFloat(respuesta['precio_mayor_producto']).toFixed(2) + ")</a></li>" +
+                        "<li><a class='dropdown-item' codigo = '" + respuesta['codigo_producto'] + "' precio=' " + respuesta['precio_oferta_producto'] + "' style='cursor:pointer; font-size:14px;'>Oferta (MXN " + parseFloat(respuesta['precio_oferta_producto']).toFixed(2) + ")</a></li>" +
                         "</ul>" +
                         "</div>" +
                         "</center>",
@@ -1069,7 +1069,7 @@ function realizarVenta() {
 
                 var data = row.data();
 
-                arr[index] = data['codigo_producto'] + "," + parseFloat($.parseHTML(data['cantidad'])[0]['value']) + "," + data['total'].replace("S./ ", "");
+                arr[index] = data['codigo_producto'] + "," + parseFloat($.parseHTML(data['cantidad'])[0]['value']) + "," + data['total'].replace("MXN ", "");
 
                 formData.append('arr[]', arr[index]);
 
