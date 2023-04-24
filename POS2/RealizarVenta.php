@@ -70,7 +70,7 @@ include ("db_connection.php");
     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Reimpresion de tickets </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Consulta de productos</a>
+    <a class="nav-link" id="pills-contact-tab2" data-toggle="pill" href="#pills-contact2" role="tab" aria-controls="pills-contact2" aria-selected="false">Consulta de productos</a>
   </li>
 </ul>
 <div class="tab-content" id="pills-tabContent">
@@ -145,6 +145,17 @@ Aqui va el corte de caja
 <!-- Aqui finaliza el div que llama a la tabla por ajax -->
 
   </div>
+
+  <div class="tab-pane fade" id="pills-contact2" role="tabpanel" aria-labelledby="pills-contact-tab">  
+
+<!-- aqui va el div que llama a la tabla por medio de ajax -->
+
+<div id="TableVentasDelDia"></div>
+
+<!-- Aqui finaliza el div que llama a la tabla por ajax -->
+
+  </div>
+
 </div>
                     
                 </div> <!-- ./ end card-body -->
