@@ -163,26 +163,7 @@ Aqui va el corte de caja
                 <div class="card-body p-2">
 
                     <!-- SELECCIONAR TIPO DE DOCUMENTO -->
-                    <div class="form-group mb-2">
-
-                        <label class="col-form-label p-0" for="selCategoriaReg">
-                            <i class="fas fa-file-alt fs-6"></i>
-                            <span class="small">Documento</span><span class="text-danger">*</span>
-                        </label>
-
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="selDocumentoVenta" disabled>
-                            <option value="0">Seleccione Documento</option>
-                            <option value="1" selected="true">Boleta</option>
-                            <option value="2">Factura</option>
-                            <option value="3">Ticket</option>
-                        </select>
-
-                        <span id="validate_categoria" class="text-danger small fst-italic" style="display:none">
-                            Debe Seleccione documento
-                        </span>
-
-                    </div>
-
+                    
                     <!-- SELECCIONAR TIPO DE PAGO -->
                     <div class="form-group mb-2">
 
