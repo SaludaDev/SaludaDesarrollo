@@ -99,7 +99,7 @@ include ("db_connection.php");
                         <!-- BOTONES PARA VACIAR LISTADO Y COMPLETAR LA VENTA -->
                         <div class="col-md-5 text-right">
                             
-                            <button class="btn btn-danger" id="btnVaciarListado">
+                            <button class="btn btn-danger btn-sm" id="btnVaciarListado">
                                 <i class="far fa-trash-alt"></i> Vaciar Listado
                             </button>
                         </div>
