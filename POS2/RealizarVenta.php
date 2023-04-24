@@ -136,7 +136,15 @@ include ("db_connection.php");
 Aqui va el corte de caja
 
   </div>
-  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">  </div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">  
+
+<!-- aqui va el div que llama a la tabla por medio de ajax -->
+
+<div id="TableVentasDelDia"></div>
+
+<!-- Aqui finaliza el div que llama a la tabla por ajax -->
+
+  </div>
 </div>
                     
                 </div> <!-- ./ end card-body -->
@@ -1196,19 +1204,6 @@ $(".btn-aperturacaja").click(function() {
 
   <!--  <script src="js/VentasControlador.js"></script> -->
      <script src="js/BusquedaVentasV.js"></script>
-     <script src="js/BusquedaVentasV2.js"></script>
-     <script src="js/BusquedaVentasV23.js"></script>
-     <script src="js/BusquedaVentasV24.js"></script>
-     <script src="js/BusquedaVentasV25.js"></script>
-     <script src="js/BusquedaVentasV26.js"></script>
-     <script src="js/BusquedaVentasV27.js"></script>
-     <script src="js/BusquedaVentasV28.js"></script>
-     <script src="js/BusquedaVentasV29.js"></script>
-     <script src="js/BusquedaVentasV210.js"></script>
-
-  
-      
-   
      <script src="js/RealizaVentas.js"></script>
      <script src="js/CapturaDataFacturacion.js"></script>
      <script src="js/BuscaDataPacientes.js"></script>
