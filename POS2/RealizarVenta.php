@@ -92,7 +92,7 @@ include ("db_connection.php");
                         </div>
 
                         <!-- ETIQUETA QUE MUESTRA LA SUMA TOTAL DE LOS PRODUCTOS AGREGADOS AL LISTADO -->
-                        <div class="col-md-7 mb-3 rounded-3" style="background-color: gray;color: white;text-align:center;border:1px solid gray;">
+                        <div class="col-md-7 mb-3 rounded-3" style="background-color:#2b73bb;color: white;text-align:center;border:1px solid #2b73bb;">
                             <h2 class="fw-bold m-0">MXN <span class="fw-bold" id="totalVenta">0.00</span></h2>
                         </div>
 
