@@ -138,21 +138,21 @@ Aqui va el corte de caja
   </div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">  
 
-<!-- aqui va el div que llama a la tabla por medio de ajax -->
+<!-- aqui va el div que llama a la tabla por medio de ajax para la consulta de los tickets y poder reimprimir -->
 
 <div id="TableVentasDelDia"></div>
 
-<!-- Aqui finaliza el div que llama a la tabla por ajax -->
+<!-- Aqui finaliza el div que llama a la tabla por ajax para la consulta de los tickets y poder reimprimir -->
 
   </div>
 
   <div class="tab-pane fade" id="pills-contact2" role="tabpanel" aria-labelledby="pills-contact-tab">  
 
-<!-- aqui va el div que llama a la tabla por medio de ajax -->
+<!-- aqui va el div que llama a la tabla por medio de ajax para la consulta de los productos  -->
 
-<div id="TableVentasDelDia"></div>
+<div id="TablaConsultaDeProductos"></div>
 
-<!-- Aqui finaliza el div que llama a la tabla por ajax -->
+<!-- aqui va el div que llama a la tabla por medio de ajax para la consulta de los productos  -->
 
   </div>
 
