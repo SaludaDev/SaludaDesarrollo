@@ -132,8 +132,11 @@ include ("db_connection.php");
                         <!-- /.col -->
                     </div>
   </div>
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+Aqui va el corte de caja
+
+  </div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">  </div>
 </div>
                     
                 </div> <!-- ./ end card-body -->
