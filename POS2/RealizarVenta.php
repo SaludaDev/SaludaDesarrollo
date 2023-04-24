@@ -172,7 +172,7 @@ Aqui va el corte de caja
                             <span class="small">Tipo Pago</span><span class="text-danger">*</span>
                         </label>
 
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="selTipoPago">
+                        <select class="form-control form-select form-select-sm" aria-label=".form-select-sm example" id="selTipoPago">
                             <option value="0">Seleccione Tipo Pago</option>
                             <option value="1" selected="true">Efectivo</option>
                             <option value="2">Yape</option>
