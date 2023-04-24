@@ -10,7 +10,7 @@ include "Consultas/Sesion.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Consulta de tickets | <?echo $row['ID_H_O_D']?> <?echo $row['Nombre_Sucursal']?> </title>
+  <title>Consulta de tickets | <?php echo $row['ID_H_O_D']?> <?php echo $row['Nombre_Sucursal']?> </title>
 
 <?php include "Header.php"?>
  <style>
