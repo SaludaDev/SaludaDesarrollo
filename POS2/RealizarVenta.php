@@ -1199,7 +1199,7 @@ $(".btn-aperturacaja").click(function() {
   </script>
 
    <!-- ./wrapper -->
-   
+   <script src="js/ControlDeTicketsVentas.js"></script>
    <script src="js/ControladorFormVentas.js"></script>
 
   <!--  <script src="js/VentasControlador.js"></script> -->
