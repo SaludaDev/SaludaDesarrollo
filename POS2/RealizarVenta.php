@@ -104,28 +104,8 @@ include ("db_connection.php");
     </div>  </div>
 
 
-<div class="col">
-      
-<label for="exampleFormControlInput1">Numero de ticket</label> <br>
-      <div class="input-group mb-3">
-    <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
-    </div>
-    <input type="number" class="form-control "  value="<?php echo $totalmonto;?>"readonly  >
-      </div>
 
-  <label for="clav" class="error"></div>
-  <div class="col">
-      
-  <label for="exampleFormControlInput1">Total de venta </label> <br>
-      <div class="input-group mb-3">
-    <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-money-check-alt"></i></span>
-    </div>
-    <input type="number" class="form-control " id="totalventa2"  readonly  >
-   
-      </div>
   
-    
-</div>
 </div>
 
                                 <label class="col-form-label" for="iptCodigoVenta">
@@ -246,7 +226,16 @@ Aqui va el corte de caja
 
                     <!-- SERIE Y NRO DE BOLETA -->
                     <div class="form-group">
-
+                    <div class="col">
+      
+      <label for="exampleFormControlInput1">Numero de ticket</label> <br>
+            <div class="input-group mb-3">
+          <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
+          </div>
+          <input type="number" class="form-control "  value="<?php echo $totalmonto;?>"readonly  >
+            </div>
+      
+        <label for="clav" class="error"></div>
                         <div class="row">
 
                             <div class="col-md-4">
