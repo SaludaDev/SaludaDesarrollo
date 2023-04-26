@@ -30,7 +30,7 @@ function POSV(){
   }
 
   function Inventarios(){
-    location.href="  https://saludaclinicas.com/Inventarios/"
+    location.href="https://saludaclinicas.com/App/Secure/Inventarios"
   }
 
 

@@ -21,7 +21,7 @@ if ($conn)
         $Clave_adicional =$row['Clave_adicional'];
         $Tipo_Servicio =$row['Tipo_Servicio'];
         
-     
+     // Optimizacion de consulta para la busqueda del producto, hasta el proceso de venta, y guardado de datos 
 
         // AQUI VAN LOS ID DE LOS INPUTS
         $row_array['value'] = $row['Cod_Barra']." | ".$row['Nombre_Prod']." | $".$row['Precio_Venta'];

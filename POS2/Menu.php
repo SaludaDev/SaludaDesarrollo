@@ -426,24 +426,7 @@ include "Consultas/ConsultaCaja.php";
           
      
 
-<li class="nav-item">
-<a  href="https://saludaclinicas.com/POS2/SurtidoAEnfermeria" target="blank_" class="nav-link">
-<i class="fas fa-briefcase-medical"></i>
-  <p>
-Surtir a enfermería             
-  </p>
-</a>
-</li>
 
-<li class="nav-item">
-<a  href="https://saludaclinicas.com/POS2/RealizarVentaVfinal"  class="nav-link">
-<i class="fas fa-briefcase-medical"></i>
-  <p>
-Surtir a enfermería             
-  </p>
-</a>
-</li>
-</div>
           
 
           <li class="nav-item has-treeview">
