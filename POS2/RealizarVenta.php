@@ -80,6 +80,53 @@ include ("db_connection.php");
                         <div class="col-md-12 mb-3">
 
                             <div class="form-group mb-2">
+                            <div class="row">
+<input hidden type="text" class="form-control "  readonly value="<?php echo $row['Nombre_Apellidos']?>" >
+    
+    <div class="col">
+      
+    <label for="exampleFormControlInput1">Caja</label> <br>
+    <div class="input-group mb-3">
+  <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-barcode"></i></span>
+  </div>
+  <input type="text" class="form-control "  readonly value="<?php echo $ValorCaja['Valor_Total_Caja']?>" >
+  <input type="text" class="form-control " hidden id="valcaja" name="CajaSucursal[]" readonly value="<?php echo $ValorCaja["ID_Caja"];?>" >
+    </div>  </div>
+      
+    <div class="col">
+      
+    <label for="exampleFormControlInput1">Turno</label> <br>
+    <div class="input-group mb-3">
+  <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-clock"></i></span>
+  </div>
+  <input type="text" class="form-control "  readonly value="<?php echo $ValorCaja['Turno']?>" >
+  
+    </div>  </div>
+
+
+<div class="col">
+      
+<label for="exampleFormControlInput1">Numero de ticket</label> <br>
+      <div class="input-group mb-3">
+    <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
+    </div>
+    <input type="number" class="form-control "  value="<?php echo $totalmonto;?>"readonly  >
+      </div>
+
+  <label for="clav" class="error"></div>
+  <div class="col">
+      
+  <label for="exampleFormControlInput1">Total de venta </label> <br>
+      <div class="input-group mb-3">
+    <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-money-check-alt"></i></span>
+    </div>
+    <input type="number" class="form-control " id="totalventa2"  readonly  >
+   
+      </div>
+  
+    
+</div>
+</div>
 
                                 <label class="col-form-label" for="iptCodigoVenta">
                                     <i class="fas fa-barcode fs-6"></i>
