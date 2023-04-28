@@ -13,7 +13,7 @@ include "Consultas/ConsultaCaja.php";
 
   <title>Administración de caja | <?php echo $row['ID_H_O_D']?> </title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
  <style>
         .error {
   color: red;
@@ -23,10 +23,10 @@ include "Consultas/ConsultaCaja.php";
 
     </style>
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 <div class="card text-center">
   <div class="card-header" style="background-color: #2bbbad !important;color: white;">
-  Administración de caja de <?echo $row['ID_H_O_D']?> <?echo $row['Nombre_Sucursal']?>
+  Administración de caja de <?php echo $row['ID_H_O_D']?> <?echo $row['Nombre_Sucursal']?>
   </div>
   
   <div >
@@ -62,7 +62,7 @@ include "Consultas/ConsultaCaja.php";
   <!-- Control Sidebar -->
  
   <!-- Main Footer -->
-<?
+<?php 
     
   
   include ("Modales/Error.php");
@@ -96,7 +96,7 @@ include "Consultas/ConsultaCaja.php";
   	
     $(".btn-edit").click(function(){
   		id = $(this).data("id");
-  		$.post("https://controlfarmacia.com/POS2/Modales/AbreCaja.php","id="+id,function(data){
+  		$.post("https://saludaclinicas.com/POS2/Modales/AbreCaja.php","id="+id,function(data){
               $("#form-edit").html(data);
               $("#Titulo").html("Apertura de caja");
               $("#Di").addClass("modal-dialog modal-lg modal-notify modal-success");
