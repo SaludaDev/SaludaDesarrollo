@@ -234,8 +234,7 @@ Aqui va el corte de caja
           </div>
           <input type="number" class="form-control "  value="<?php echo $totalmonto;?>"readonly  >
             </div>
-      
-        <label for="clav" class="error"></div>
+      </div>
         <div class="col">
       
       <label for="exampleFormControlInput1">Cliente</label> <br>
