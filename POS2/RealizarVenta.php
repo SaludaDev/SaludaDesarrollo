@@ -236,24 +236,31 @@ Aqui va el corte de caja
             </div>
       
         <label for="clav" class="error">
-                        <div class="row">
-
-                            <div class="col-md-4">
-
-                                <label for="iptNroSerie" class="p-0 m-0">Serie</label>
-
-                                <input type="text" min="0" name="iptEfectivo" id="iptNroSerie" class="form-control form-control-sm" placeholder="nro Serie" disabled>
-                            </div>
-
-                            <div class="col-md-8">
-
-                                <label for="iptNroVenta" class="p-0 m-0">Correlativo</label>
-
-                                <input type="text" min="0" name="iptEfectivo" id="iptNroVenta" class="form-control form-control-sm" placeholder="Nro Venta" disabled>
-
-                            </div>
-
-                        </div>
+            </div>
+            <div class="form-group">
+                   
+      
+                   <label for="exampleFormControlInput1">Numero de ticket</label> <br>
+                         <div class="input-group mb-3">
+                       <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
+                       </div>
+                       <input type="number" class="form-control "  value="<?php echo $totalmonto;?>"readonly  >
+                         </div>
+                   
+                     <label for="clav" class="error">
+                         </div>
+                         <div class="form-group">
+                   
+      
+                   <label for="exampleFormControlInput1">Numero de ticket</label> <br>
+                         <div class="input-group mb-3">
+                       <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
+                       </div>
+                       <input type="number" class="form-control "  value="<?php echo $totalmonto;?>"readonly  >
+                         </div>
+                   
+                     <label for="clav" class="error">
+                         </div>
 
                     </div>
 
