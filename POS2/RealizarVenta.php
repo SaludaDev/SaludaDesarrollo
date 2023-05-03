@@ -242,10 +242,10 @@ Aqui va el corte de caja
             <div class="input-group mb-3">
           <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
           </div>
-          <input type="number" class="form-control "    >
+          <input type="text" class="form-control "    >
             </div>
       
-        <label for="clav" class="error"></div>
+        </div>
                        
 
                     </div>
