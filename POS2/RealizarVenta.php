@@ -226,6 +226,7 @@ Aqui va el corte de caja
 
                     <!-- SERIE Y NRO DE BOLETA -->
                     <div class="form-group">
+                        <div class="text-center">
                     <div class="col">
       
       <label for="exampleFormControlInput1">Numero de ticket</label> <br>
@@ -265,7 +266,7 @@ Aqui va el corte de caja
                         </div>
 
                     </div>
-
+                    </div>
                     <!-- INPUT DE EFECTIVO ENTREGADO -->
                     <div class="form-group">
                         <label for="iptEfectivoRecibido" class="p-0 m-0">Efectivo recibido</label>
