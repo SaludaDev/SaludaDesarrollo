@@ -231,7 +231,7 @@ Aqui va el corte de caja
       
       <label for="exampleFormControlInput1">Numero de ticket</label> <br>
             <div class="input-group mb-3">
-          <!-- <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span> -->
+          <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
           </div>
           <input type="number" class="form-control "  value="<?php echo $totalmonto;?>"readonly  >
             </div>
@@ -240,7 +240,7 @@ Aqui va el corte de caja
       
       <label for="exampleFormControlInput1">Cliente</label> <br>
             <div class="input-group mb-3">
-          <!-- <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span> -->
+          <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
           </div>
           <input type="text" class="form-control "    >
             </div>
@@ -250,7 +250,7 @@ Aqui va el corte de caja
       
       <label for="exampleFormControlInput1">Folio de signo vital</label> <br>
             <div class="input-group mb-3">
-          <!-- <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span> -->
+          <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
           </div>
           <input type="text" class="form-control "    >
             </div>
@@ -260,7 +260,7 @@ Aqui va el corte de caja
       
       <label for="exampleFormControlInput1"># de ticket anterior</label> <br>
             <div class="input-group mb-3">
-          <!-- <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span> -->
+          <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
           </div>
           <input type="text" class="form-control "    >
             </div>
