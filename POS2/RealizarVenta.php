@@ -325,9 +325,9 @@ Aqui va el corte de caja
                         <!-- <div class="col-md-7">
                             <span>IGV (18%)</span>
                         </div> -->
-                        <div class="col-md-5 text-right">
+                        <!-- <div class="col-md-5 text-right">
                             MXN <span class="" id="boleta_igv">0.00</span>
-                        </div>
+                        </div> -->
 
                         <div class="col-md-7">
                             <span>SUBTOTAL</span>
