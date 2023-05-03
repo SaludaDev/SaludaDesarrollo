@@ -236,6 +236,16 @@ Aqui va el corte de caja
             </div>
       
         <label for="clav" class="error"></div>
+        <div class="col">
+      
+      <label for="exampleFormControlInput1">Cliente</label> <br>
+            <div class="input-group mb-3">
+          <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
+          </div>
+          <input type="number" class="form-control "    >
+            </div>
+      
+        <label for="clav" class="error"></div>
                         <div class="row">
 
                             <div class="col-md-4">
