@@ -246,24 +246,7 @@ Aqui va el corte de caja
             </div>
       
         <label for="clav" class="error"></div>
-                        <div class="row">
-
-                            <div class="col-md-4">
-
-                                <label for="iptNroSerie" class="p-0 m-0">Serie</label>
-
-                                <input type="text" min="0" name="iptEfectivo" id="iptNroSerie" class="form-control form-control-sm" placeholder="nro Serie" disabled>
-                            </div>
-
-                            <div class="col-md-8">
-
-                                <label for="iptNroVenta" class="p-0 m-0">Correlativo</label>
-
-                                <input type="text" min="0" name="iptEfectivo" id="iptNroVenta" class="form-control form-control-sm" placeholder="Nro Venta" disabled>
-
-                            </div>
-
-                        </div>
+                       
 
                     </div>
                     </div>
