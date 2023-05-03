@@ -302,29 +302,29 @@ Aqui va el corte de caja
                     <div class="row fw-bold">
 
                         <div class="col-md-7">
-                            <span>OPE. GRAVADAS</span>
+                            <span>IVA</span>
                         </div>
                         <div class="col-md-5 text-right">
                             MXN <span class="" id="">0.00</span>
                         </div>
-
+<!-- 
                         <div class="col-md-7">
                             <span>OPE. INAFECTAS</span>
                         </div>
                         <div class="col-md-5 text-right">
                             MXN <span class="" id="">0.00</span>
-                        </div>
+                        </div> -->
 
-                        <div class="col-md-7">
+                        <!-- <div class="col-md-7">
                             <span>OPE. EXONERADAS</span>
                         </div>
                         <div class="col-md-5 text-right">
                             MXN <span class="" id="">0.00</span>
-                        </div>
+                        </div> -->
 
-                        <div class="col-md-7">
+                        <!-- <div class="col-md-7">
                             <span>IGV (18%)</span>
-                        </div>
+                        </div> -->
                         <div class="col-md-5 text-right">
                             MXN <span class="" id="boleta_igv">0.00</span>
                         </div>
