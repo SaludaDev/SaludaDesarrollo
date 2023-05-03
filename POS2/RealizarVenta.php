@@ -246,6 +246,26 @@ Aqui va el corte de caja
             </div>
       
         </div>
+        <div class="col">
+      
+      <label for="exampleFormControlInput1">Folio de signo vital</label> <br>
+            <div class="input-group mb-3">
+          <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
+          </div>
+          <input type="text" class="form-control "    >
+            </div>
+      
+        </div>
+        <div class="col">
+      
+      <label for="exampleFormControlInput1"># de ticket anterior</label> <br>
+            <div class="input-group mb-3">
+          <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
+          </div>
+          <input type="text" class="form-control "    >
+            </div>
+      
+        </div>
                        
 
                     </div>
