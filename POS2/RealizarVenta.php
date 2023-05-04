@@ -113,7 +113,7 @@ include ("db_connection.php");
                                     <span class="small">Productos</span>
                                 </label>
 
-                                <input type="text" class="form-control form-control-sm" id="iptCodigoVenta" placeholder="Ingrese el código de barras o el nombre del producto">
+                                <input type="text" class="form-control form-control" id="iptCodigoVenta" placeholder="Ingrese el código de barras o el nombre del producto">
                             </div>
 
                         </div>
