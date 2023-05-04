@@ -229,7 +229,7 @@ Aqui va el corte de caja
                         <div class="text-center">
                     <div class="col">
       
-      <label for="exampleFormControlInput1">Numero de ticket</label> <br>
+      <label for="exampleFormControlInput1">Ticket</label> <br>
             <div class="input-group mb-3">
           <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
           </div>
