@@ -1,9 +1,9 @@
 <?php
 
-require_once "https://saludaclinicas.com/POS2/controladores/productos.controlador.php";
-require_once "https://saludaclinicas.com/POS2/modelos/productos.modelo.php";
+require_once "../controladores/productos.controlador.php";
+require_once "../modelos/productos.modelo.php";
 
-require_once "https://saludaclinicas.com/POS2/vendor/autoload.php";
+require_once "../vendor/autoload.php";
 
 class ajaxProductos{
 
@@ -204,4 +204,3 @@ if(isset($_POST['accion']) && $_POST['accion'] == 1){ // parametro para listar p
     $archivo_productos-> fileProductos = $_FILES['fileProductos'];
     $archivo_productos -> ajaxCargaMasivaProductos();
 }
-?>
