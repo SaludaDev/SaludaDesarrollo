@@ -292,7 +292,7 @@ Aqui va el corte de caja
                         </div>
 
                         <div class="col-12">
-                            <h6 class="text-start text-danger fw-bold">Vuelto: MXN <span id="Vuelto">0.00</span>
+                            <h6 class="text-start text-danger fw-bold">Cambio: MXN <span id="Vuelto">0.00</span>
                             </h6>
                         </div>
 
