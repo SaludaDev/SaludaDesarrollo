@@ -211,9 +211,9 @@ Aqui va el corte de caja
                         </label>
 
                         <select class="form-control form-select form-select-sm" aria-label=".form-select-sm example" id="selTipoPago">
-                            <option value="0">Seleccione Tipo Pago</option>
+                            <option value="0">Seleccione el Tipo de Pago</option>
                             <option value="1" selected="true">Efectivo</option>
-                            <option value="2">Tarjeta de credito</option>
+                            <option value="2">Tarjeta de crédito</option>
                             <option value="2">Tarjeta de debito</option>
                             <option value="4">Transferencia</option>
                             
@@ -230,7 +230,7 @@ Aqui va el corte de caja
                         <div class="text-center">
                     <div class="col">
       
-      <label for="exampleFormControlInput1">Numero de ticket</label> <br>
+      <label for="exampleFormControlInput1" class="small">Numero de ticket</label> <br>
             <div class="input-group mb-3">
           <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
           </div>
