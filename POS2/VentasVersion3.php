@@ -14,7 +14,7 @@ include ("db_connection.php");
 
   <title>VENTAS | <?echo $row['ID_H_O_D']?> </title>
 
-<?include "Header.php"?>
+<?php include "Header.php"?>
  <style>
         .error {
   color: red;
@@ -38,7 +38,7 @@ function BorrarRegistro() {
 </script>
   
 </head>
-<?include_once ("Menu.php")?>
+<?php include_once ("Menu.php")?>
 
 
   
