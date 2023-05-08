@@ -204,3 +204,4 @@ if(isset($_POST['accion']) && $_POST['accion'] == 1){ // parametro para listar p
     $archivo_productos-> fileProductos = $_FILES['fileProductos'];
     $archivo_productos -> ajaxCargaMasivaProductos();
 }
+?>
