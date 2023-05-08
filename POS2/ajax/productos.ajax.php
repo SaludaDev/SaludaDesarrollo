@@ -1,7 +1,7 @@
 <?php
 
-require_once "controladores/productos.controlador.php";
-require_once "modelos/productos.modelo.php";
+require_once "https://saludaclinicas.com/POS2/controladores/productos.controlador.php";
+require_once "https://saludaclinicas.com/POS2/modelos/productos.modelo.php";
 
 
 
