@@ -375,11 +375,7 @@ var Toast = Swal.mixin({
 
 $(document).ready(function() {
 
-    /* ======================================================================================
-    TRAER EL NRO DE BOLETA
-    ======================================================================================*/
-    CargarNroBoleta();
-
+   
     /* ======================================================================================
     EVENTO PARA VACIAR EL CARRITO DE COMPRAS
     =========================================================================================*/
@@ -468,37 +464,37 @@ $(document).ready(function() {
     /* ======================================================================================
 TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
 ======================================================================================*/
-    $.ajax({
-        async: false,
-         url: "ajax/productos.ajax.php",
-        method: "POST",
-        data: {
-            'accion': 6
-        },
-        dataType: 'json',
-        success: function(respuesta) {
+    // $.ajax({
+    //     async: false,
+    //      url: "ajax/productos.ajax.php",
+    //     method: "POST",
+    //     data: {
+    //         'accion': 6
+    //     },
+    //     dataType: 'json',
+    //     success: function(respuesta) {
 
-            for (let i = 0; i < respuesta.length; i++) {
-                items.push(respuesta[i]['descripcion_producto'])
-            }
+    //         for (let i = 0; i < respuesta.length; i++) {
+    //             items.push(respuesta[i]['descripcion_producto'])
+    //         }
 
-            $("#iptCodigoVenta").autocomplete({
+    //         $("#iptCodigoVenta").autocomplete({
 
-                source: items,
-                select: function(event, ui) {
+    //             source: items,
+    //             select: function(event, ui) {
 
-                    CargarProductos(ui.item.value);
+    //                 CargarProductos(ui.item.value);
 
-                    $("#iptCodigoVenta").val("");
+    //                 $("#iptCodigoVenta").val("");
 
-                    $("#iptCodigoVenta").focus();
+    //                 $("#iptCodigoVenta").focus();
 
-                    return false;
-                }
-            })
+    //                 return false;
+    //             }
+    //         })
 
-        }
-    });
+    //     }
+    // });
 
 
     /* ======================================================================================
