@@ -784,26 +784,26 @@ TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
 /*===================================================================*/
 //FUNCION PARA CARGAR EL NRO DE BOLETA
 /*===================================================================*/
-function CargarNroBoleta() {
+// function CargarNroBoleta() {
 
-    $.ajax({
-        async: false,
-        url: "ajax/ventas.ajax.php",
-        method: "POST",
-        data: {
-            'accion': 1
-        },
-        dataType: 'json',
-        success: function(respuesta) {
+//     $.ajax({
+//         async: false,
+//         url: "ajax/ventas.ajax.php",
+//         method: "POST",
+//         data: {
+//             'accion': 1
+//         },
+//         dataType: 'json',
+//         success: function(respuesta) {
 
-            serie_boleta = respuesta["serie_boleta"];
-            nro_boleta = respuesta["nro_venta"];
+//             serie_boleta = respuesta["serie_boleta"];
+//             nro_boleta = respuesta["nro_venta"];
 
-            $("#iptNroSerie").val(serie_boleta);
-            $("#iptNroVenta").val(nro_boleta);
-        }
-    });
-}
+//             $("#iptNroSerie").val(serie_boleta);
+//             $("#iptNroVenta").val(nro_boleta);
+//         }
+//     });
+// }
 
 /*===================================================================*/
 //FUNCION PARA LIMPIAR TOTALMENTE EL CARRITO DE VENTAS
