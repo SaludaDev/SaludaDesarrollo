@@ -1089,84 +1089,84 @@ function CargarProductos(producto = "") {
 /*===================================================================*/
 //REALIZAR LA VENTA
 /*===================================================================*/
-function realizarVenta() {
+// function realizarVenta() {
 
-    var count = 0;
-    var totalVenta = $("#totalVenta").html();
-    var nro_boleta = $("#iptNroVenta").val();
+//     var count = 0;
+//     var totalVenta = $("#totalVenta").html();
+//     var nro_boleta = $("#iptNroVenta").val();
 
-    table.rows().eq(0).each(function(index) {
-        count = count + 1;
-    });
+//     table.rows().eq(0).each(function(index) {
+//         count = count + 1;
+//     });
 
-    if (count > 0) {
+//     if (count > 0) {
 
-        if ($("#iptEfectivoRecibido").val() > 0 && $("#iptEfectivoRecibido").val() != "") {
+//         if ($("#iptEfectivoRecibido").val() > 0 && $("#iptEfectivoRecibido").val() != "") {
 
-            if ($("#iptEfectivoRecibido").val() < parseFloat(totalVenta)) {
+//             if ($("#iptEfectivoRecibido").val() < parseFloat(totalVenta)) {
 
-                mensajeToast('error', 'EL EFECTIVO ES MENOR EL COSTO TOTAL DE LA VENTA');
+//                 mensajeToast('error', 'EL EFECTIVO ES MENOR EL COSTO TOTAL DE LA VENTA');
 
-                return false;
-            }
+//                 return false;
+//             }
 
-            var formData = new FormData();
-            var arr = [];
+//             var formData = new FormData();
+//             var arr = [];
 
-            table.rows().eq(0).each(function(index) {
+//             table.rows().eq(0).each(function(index) {
 
-                var row = table.row(index);
+//                 var row = table.row(index);
 
-                var data = row.data();
+//                 var data = row.data();
 
-                arr[index] = data['codigo_producto'] + "," + parseFloat($.parseHTML(data['cantidad'])[0]['value']) + "," + data['total'].replace("MXN ", "");
+//                 arr[index] = data['codigo_producto'] + "," + parseFloat($.parseHTML(data['cantidad'])[0]['value']) + "," + data['total'].replace("MXN ", "");
 
-                formData.append('arr[]', arr[index]);
+//                 formData.append('arr[]', arr[index]);
 
-            });
+//             });
 
-            formData.append('nro_boleta', nro_boleta);
-            formData.append('descripcion_venta', 'Venta realizada con Nro Boleta: ' + nro_boleta);
-            formData.append('total_venta', parseFloat(totalVenta));
+//             formData.append('nro_boleta', nro_boleta);
+//             formData.append('descripcion_venta', 'Venta realizada con Nro Boleta: ' + nro_boleta);
+//             formData.append('total_venta', parseFloat(totalVenta));
 
-            $.ajax({
-                url: "ajax/ventas.ajax.php",
-                method: "POST",
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: function(respuesta) {
-
-
-                    mensajeToast('success', respuesta);
-
-                    table.clear().draw();
-
-                    LimpiarInputs();
-
-                    CargarNroBoleta();
-
-                    window.open('http://localhost:8080/market-pos-youtube/vistas/generar_ticket.php?nro_boleta='+nro_boleta);
-
-                }
-            });
+//             $.ajax({
+//                 url: "ajax/ventas.ajax.php",
+//                 method: "POST",
+//                 data: formData,
+//                 cache: false,
+//                 contentType: false,
+//                 processData: false,
+//                 success: function(respuesta) {
 
 
-        } else {
+//                     mensajeToast('success', respuesta);
 
-            mensajeToast('error', 'INGRESE EL MONTO EN EFECTIVO');
-        }
+//                     table.clear().draw();
 
-    } else {
+//                     LimpiarInputs();
 
-        mensajeToast('error', 'NO HAY PRODUCTOS EN EL LISTADO');
+//                     CargarNroBoleta();
 
-    }
+//                     window.open('http://localhost:8080/market-pos-youtube/vistas/generar_ticket.php?nro_boleta='+nro_boleta);
 
-    $("#iptCodigoVenta").focus();
+//                 }
+//             });
 
-} /* FIN realizarVenta */
+
+//         } else {
+
+//             mensajeToast('error', 'INGRESE EL MONTO EN EFECTIVO');
+//         }
+
+//     } else {
+
+//         mensajeToast('error', 'NO HAY PRODUCTOS EN EL LISTADO');
+
+//     }
+
+//     $("#iptCodigoVenta").focus();
+
+// } /* FIN realizarVenta */
 </script>
      <!-- Control Sidebar -->
     
