@@ -1,9 +1,9 @@
 <?php
 
-require_once "../controladores/productos.controlador.php";
-require_once "../modelos/productos.modelo.php";
+require_once "https://saludaclinicas.com/controladores/productos.controlador.php";
+require_once "https://saludaclinicas.com/modelos/productos.modelo.php";
 
-require_once "../vendor/autoload.php";
+require_once "https://saludaclinicas.com/vendor/autoload.php";
 
 class ajaxProductos{
 
