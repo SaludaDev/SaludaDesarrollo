@@ -469,7 +469,7 @@ TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
 ======================================================================================*/
     $.ajax({
         async: false,
-        url: "Consultas/productos.ajax.php",
+        url: "ajax/productos.ajax.php",
         method: "POST",
         data: {
             'accion': 6
