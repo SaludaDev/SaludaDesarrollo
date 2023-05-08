@@ -213,9 +213,10 @@ Aqui va el corte de caja
                         <select class="form-control form-select form-select-sm" aria-label=".form-select-sm example" id="selTipoPago">
                             <option value="0">Seleccione Tipo Pago</option>
                             <option value="1" selected="true">Efectivo</option>
-                            <option value="2">Yape</option>
-                            <option value="3">Plin</option>
+                            <option value="2">Tarjeta de credito</option>
+                            <option value="2">Tarjeta de debito</option>
                             <option value="4">Transferencia</option>
+                            
                         </select>
 
                         <span id="validate_categoria" class="text-danger small fst-italic" style="display:none">
