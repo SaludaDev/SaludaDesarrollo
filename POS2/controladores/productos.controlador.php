@@ -3,12 +3,12 @@
 
 class ProductosControlador{
 
-    static public function ctrCargaMasivaProductos($fileProductos){
+    // static public function ctrCargaMasivaProductos($fileProductos){
         
-        $respuesta = ProductosModelo::mdlCargaMasivaProductos($fileProductos);
+    //     $respuesta = ProductosModelo::mdlCargaMasivaProductos($fileProductos);
         
-        return $respuesta;
-    }
+    //     return $respuesta;
+    // }
 
     static public function ctrListarProductos(){
     
@@ -18,33 +18,33 @@ class ProductosControlador{
     
     }
 
-    static public function ctrRegistrarProducto($array_datos_producto, $imagen){
+    // static public function ctrRegistrarProducto($array_datos_producto, $imagen){
 
-        $registroProducto = ProductosModelo::mdlRegistrarProducto($array_datos_producto, $imagen);
+    //     $registroProducto = ProductosModelo::mdlRegistrarProducto($array_datos_producto, $imagen);
 
-        return $registroProducto;
-    }
+    //     return $registroProducto;
+    // }
 
-    static public function ctrAumentarStock($codigo_producto, $nuevo_stock){
+    // static public function ctrAumentarStock($codigo_producto, $nuevo_stock){
         
-        $respuesta = ProductosModelo::mdlAumentarStock($codigo_producto, $nuevo_stock);
+    //     $respuesta = ProductosModelo::mdlAumentarStock($codigo_producto, $nuevo_stock);
         
-        return $respuesta;
-    }
+    //     return $respuesta;
+    // }
 
-    static public function ctrDisminuirStock($codigo_producto, $nuevo_stock){
+    // static public function ctrDisminuirStock($codigo_producto, $nuevo_stock){
         
-        $respuesta = ProductosModelo::mdlDisminuirStock($codigo_producto, $nuevo_stock);
+    //     $respuesta = ProductosModelo::mdlDisminuirStock($codigo_producto, $nuevo_stock);
         
-        return $respuesta;
-    }
+    //     return $respuesta;
+    // }
 
-    static public function ctrActualizarProducto($table, $data, $id, $nameId){
+    // static public function ctrActualizarProducto($table, $data, $id, $nameId){
         
-        $respuesta = ProductosModelo::mdlActualizarInformacion($table, $data, $id, $nameId);
+    //     $respuesta = ProductosModelo::mdlActualizarInformacion($table, $data, $id, $nameId);
         
-        return $respuesta;
-    }
+    //     return $respuesta;
+    // }
 
     static public function ctrEliminarProducto($table, $id, $nameId)
     {

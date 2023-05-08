@@ -21,12 +21,12 @@ class ajaxProductos{
 
     public $cantidad_a_comprar;
 
-    public function ajaxCargaMasivaProductos(){
+    // public function ajaxCargaMasivaProductos(){
 
-        $respuesta = ProductosControlador::ctrCargaMasivaProductos($this->fileProductos);
+    //     $respuesta = ProductosControlador::ctrCargaMasivaProductos($this->fileProductos);
 
-        echo json_encode($respuesta);
-    }
+    //     echo json_encode($respuesta);
+    // }
 
     public function ajaxListarProductos(){
     
@@ -36,38 +36,38 @@ class ajaxProductos{
     
     }
 
-    public function ajaxRegistrarProducto($array_datos_producto, $imagen = null){
+    // public function ajaxRegistrarProducto($array_datos_producto, $imagen = null){
         
-        $producto = ProductosControlador::ctrRegistrarProducto($array_datos_producto, $imagen);
+    //     $producto = ProductosControlador::ctrRegistrarProducto($array_datos_producto, $imagen);
 
-        echo json_encode($producto);
-    }
+    //     echo json_encode($producto);
+    // }
 
-    public function ajaxAumentarStock(){
+    // public function ajaxAumentarStock(){
 
-        $respuesta = ProductosControlador::ctrAumentarStock($_POST["codigo_producto"], $_POST["nuevoStock"]);
+    //     $respuesta = ProductosControlador::ctrAumentarStock($_POST["codigo_producto"], $_POST["nuevoStock"]);
 
-        echo json_encode($respuesta);
-    }
+    //     echo json_encode($respuesta);
+    // }
 
-    public function ajaxDisminuirStock(){
+    // public function ajaxDisminuirStock(){
 
-        $respuesta = ProductosControlador::ctrDisminuirStock($_POST["codigo_producto"], $_POST["nuevoStock"]);
+    //     $respuesta = ProductosControlador::ctrDisminuirStock($_POST["codigo_producto"], $_POST["nuevoStock"]);
 
-        echo json_encode($respuesta);
-    }
+    //     echo json_encode($respuesta);
+    // }
 
     
-    public function ajaxActualizarProducto($data){
+    // public function ajaxActualizarProducto($data){
         
-        $table = "productos";
-        $id = $_POST["codigo_producto"];
-        $nameId = "codigo_producto";
+    //     $table = "productos";
+    //     $id = $_POST["codigo_producto"];
+    //     $nameId = "codigo_producto";
 
-        $respuesta = ProductosControlador::ctrActualizarProducto($table, $data, $id, $nameId);
+    //     $respuesta = ProductosControlador::ctrActualizarProducto($table, $data, $id, $nameId);
 
-        echo json_encode($respuesta);
-    }
+    //     echo json_encode($respuesta);
+    // }
 
     public function ajaxEliminarProducto(){
 
