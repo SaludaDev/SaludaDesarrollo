@@ -58,7 +58,7 @@ function BorrarRegistro() {
 <script>
     $(document).ready(function() {
     // Seteamos el máximo de campos
-    var campos_max = 10;
+    var campos_max = 100;
 
     // Contador de campos
     var contador = 1;
