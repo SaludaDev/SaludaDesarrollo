@@ -229,8 +229,11 @@ Aqui va el corte de caja
                     <div class="form-group">
                         <div class="text-center">
                     <div class="col">
+                    <label class="col-form-label p-0" for="selCategoriaReg">
+                            <i class="fas fa-money-bill-alt fs-6"></i>
+                            <span class="small">Numero de ticket</span><span class="text-danger">*</span>
+                        </label>
       
-      <label for="exampleFormControlInput1" class="small">Numero de ticket</label> <br>
             <div class="input-group mb-3">
           <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
           </div>
