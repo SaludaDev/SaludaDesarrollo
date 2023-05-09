@@ -539,7 +539,7 @@ TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
             url: "ajax/productos.ajax.php",
             method: "POST",
             data: {
-                'accion': 8,
+                'accion': 6,
                 'codigo_producto': codigo_producto,
                 'cantidad_a_comprar': cantidad
             },
