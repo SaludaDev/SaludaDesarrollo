@@ -398,41 +398,41 @@ $(document).ready(function() {
     ======================================================================================*/
     table = $('#lstProductosVenta').DataTable({
         "columns": [{
+                "data": "id"
+            },
+            {
+                "data": "codigo_producto"
+            },
+            {
+                "data": "id_categoria"
+            },
+            {
+                "data": "nombre_categoria"
+            },
+            {
                 "data": "descripcion_producto"
             },
-            // {
-            //     "data": "codigo_producto"
-            // },
-            // {
-            //     "data": "id_categoria"
-            // },
-            // {
-            //     "data": "nombre_categoria"
-            // },
-            // {
-            //     "data": "descripcion_producto"
-            // },
-            // {
-            //     "data": "cantidad"
-            // },
-            // {
-            //     "data": "precio_venta_producto"
-            // },
-            // {
-            //     "data": "total"
-            // },
-            // {
-            //     "data": "acciones"
-            // },
-            // {
-            //     "data": "aplica_peso"
-            // },
-            // {
-            //     "data": "precio_mayor_producto"
-            // },
-            // {
-            //     "data": "precio_oferta_producto"
-            // }
+            {
+                "data": "cantidad"
+            },
+            {
+                "data": "precio_venta_producto"
+            },
+            {
+                "data": "total"
+            },
+            {
+                "data": "acciones"
+            },
+            {
+                "data": "aplica_peso"
+            },
+            {
+                "data": "precio_mayor_producto"
+            },
+            {
+                "data": "precio_oferta_producto"
+            }
         ],
         columnDefs: [{
                 targets: 0,
