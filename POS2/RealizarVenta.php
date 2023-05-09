@@ -421,7 +421,10 @@ $(document).ready(function() {
             {
                 "data": "total"
             },
-           
+            {
+                "data": "acciones"
+            },
+          
         ],
         columnDefs: [{
                 targets: 0,
