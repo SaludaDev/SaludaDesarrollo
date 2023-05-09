@@ -232,7 +232,7 @@ Aqui va el corte de caja
                     <!-- SERIE Y NRO DE BOLETA -->
                     <div class="form-group mb-2">
                         
-                    <div class="col">
+                  
                     <label class="col-form-label p-0" for="selCategoriaReg">
                             
                             <span class="small">Numero de ticket</span><span class="text-danger">*</span>
@@ -244,7 +244,7 @@ Aqui va el corte de caja
           <input type="number" class="form-control "  value="<?php echo $totalmonto;?>"readonly  >
             </div>
       </div>
-        <div class="col">
+ 
       
       <label for="exampleFormControlInput1">Cliente</label> <br>
             <div class="input-group mb-3">
