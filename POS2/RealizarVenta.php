@@ -206,7 +206,7 @@ Aqui va el corte de caja
                     <div class="form-group mb-2">
 
                         <label class="col-form-label p-0" for="selCategoriaReg">
-                            <i class="fas fa-money-bill-alt fs-6"></i>
+                           
                             <span class="small">Tipo Pago</span><span class="text-danger">*</span>
                         </label>
 
@@ -230,7 +230,7 @@ Aqui va el corte de caja
                         <div class="text-center">
                     <div class="col">
                     <label class="col-form-label p-0" for="selCategoriaReg">
-                            <i class="fas fa-money-bill-alt fs-6"></i>
+                            
                             <span class="small">Numero de ticket</span><span class="text-danger">*</span>
                         </label>
       
