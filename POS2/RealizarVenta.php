@@ -244,7 +244,7 @@ Aqui va el corte de caja
           <input type="number" class="form-control "  value="<?php echo $totalmonto;?>"readonly  >
             </div>
       </div>
- 
+    
       
       <label for="exampleFormControlInput1">Cliente</label> <br>
             <div class="input-group mb-3">
@@ -254,7 +254,7 @@ Aqui va el corte de caja
             </div>
       
         </div>
-        <div class="col">
+      
       
       <label for="exampleFormControlInput1">Folio de signo vital</label> <br>
             <div class="input-group mb-3">
@@ -264,7 +264,7 @@ Aqui va el corte de caja
             </div>
       
         </div>
-        <div class="col">
+        
       
       <label for="exampleFormControlInput1"># de ticket anterior</label> <br>
             <div class="input-group mb-3">
