@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 if(isset($_POST['accion'])) {
 
     // Obtener los productos desde la base de datos
-    if($_POST['accion'] == 6) {
+    if($_POST['accion'] == 7) {
         $items = array();
 
         $sql = "SELECT descripcion_producto FROM productos";

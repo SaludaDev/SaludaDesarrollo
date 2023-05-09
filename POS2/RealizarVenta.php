@@ -539,7 +539,7 @@ $.ajax({
     url: "ajax/productos.ajax.php",
     method: "POST",
     data: {
-        'accion': 6,
+        'accion': 7,
         'codigo_producto': codigo_producto,
         'cantidad_a_comprar': cantidad
     },
