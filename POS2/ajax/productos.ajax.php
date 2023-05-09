@@ -23,6 +23,7 @@ if(isset($_POST['accion'])) {
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 array_push($items, $row['descripcion_producto']);
+                
             }
         }
 
