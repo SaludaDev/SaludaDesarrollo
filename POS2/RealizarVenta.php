@@ -61,16 +61,16 @@ include ("db_connection.php");
                 <div class="card-body p-3">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true" style="font-weight: 600;background-color: #c80096 !important;">Ventas</a>
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true" style="font-weight: 600;">Ventas</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false" style="font-weight: 600;background-color: #c80096 !important;" >Corte de caja</a>
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false" style="font-weight: 600" >Corte de caja</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"style="font-weight: 600;background-color: #c80096 !important;" >Reimpresion de tickets </a>
+    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"style="font-weight: 600" >Reimpresion de tickets </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="pills-contact-tab2" data-toggle="pill" href="#pills-contact2" role="tab" aria-controls="pills-contact2" aria-selected="false" style="font-weight: 600;background-color: #c80096 !important;">Consulta de productos</a>
+    <a class="nav-link" id="pills-contact-tab2" data-toggle="pill" href="#pills-contact2" role="tab" aria-controls="pills-contact2" aria-selected="false" style="font-weight: 600">Consulta de productos</a>
   </li>
 </ul>
 <div class="tab-content" id="pills-tabContent">
