@@ -265,7 +265,7 @@ Aqui va el corte de caja
       
         </div>
         
-      
+        <div class="form-group mb-2">
       <label for="exampleFormControlInput1"># de ticket anterior</label> <br>
             <div class="input-group mb-3">
           <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
@@ -276,8 +276,7 @@ Aqui va el corte de caja
         </div>
                        
 
-                    </div>
-                    </div>
+                   
                     <!-- INPUT DE EFECTIVO ENTREGADO -->
                     <div class="form-group">
                         <label for="iptEfectivoRecibido" class="p-0 m-0">Efectivo recibido</label>
