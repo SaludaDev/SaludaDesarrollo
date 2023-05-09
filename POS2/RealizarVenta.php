@@ -245,7 +245,7 @@ Aqui va el corte de caja
             </div>
       </div>
     
-      
+      <div class="form-group mb-2">
       <label for="exampleFormControlInput1">Cliente</label> <br>
             <div class="input-group mb-3">
           <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
@@ -255,7 +255,7 @@ Aqui va el corte de caja
       
         </div>
       
-      
+        <div class="form-group mb-2">
       <label for="exampleFormControlInput1">Folio de signo vital</label> <br>
             <div class="input-group mb-3">
           <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
