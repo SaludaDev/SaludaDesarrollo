@@ -23,7 +23,7 @@ include ("db_connection.php");
   
 }
 #Tarjeta2{
-  background-color: #2bbbad !important;
+  background-color: #e83e8c  !important;
   color: white;
 }
     </style>
