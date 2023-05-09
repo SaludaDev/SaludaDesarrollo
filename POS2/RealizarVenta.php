@@ -421,18 +421,7 @@ $(document).ready(function() {
             {
                 "data": "total"
             },
-            {
-                "data": "acciones"
-            },
-            {
-                "data": "aplica_peso"
-            },
-            {
-                "data": "precio_mayor_producto"
-            },
-            {
-                "data": "precio_oferta_producto"
-            }
+           
         ],
         columnDefs: [{
                 targets: 0,
