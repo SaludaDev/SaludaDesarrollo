@@ -527,53 +527,41 @@ TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
     ====================================================================================== */
     $('#lstProductosVenta tbody').on('click', '.btnAumentarCantidad', function() {
 
-        var data = table.row($(this).parents('tr')).data(); //Recuperar los datos de la fila
+var data = table.row($(this).parents('tr')).data(); //Recuperar los datos de la fila
 
-        var idx = table.row($(this).parents('tr')).index(); // Recuperar el Indice de la Fila
+var idx = table.row($(this).parents('tr')).index(); // Recuperar el Indice de la Fila
 
-        var codigo_producto = data['codigo_producto'];
-        var cantidad = data['cantidad'];
+var codigo_producto = data['codigo_producto'];
+var cantidad = data['cantidad'];
 
-        $.ajax({
-            async: false,
-            url: "ajax/productos.ajax.php",
-            method: "POST",
-            data: {
-                'accion': 6,
-                'codigo_producto': codigo_producto,
-                'cantidad_a_comprar': cantidad
-            },
+$.ajax({
+    async: false,
+    url: "ajax/productos.ajax.php",
+    method: "POST",
+    data: {
+        'accion': 6,
+        'codigo_producto': codigo_producto,
+        'cantidad_a_comprar': cantidad
+    },
 
-            dataType: 'json',
-            success: function(respuesta) {
+    dataType: 'json',
+    success: function(respuesta) {
 
-                if (parseInt(respuesta['existe']) == 0) {
+        cantidad = parseInt(data['cantidad']) + 1;
 
-                    Toast.fire({
-                        icon: 'error',
-                        title: ' El producto ' + data['descripcion_producto'] + ' ya no tiene stock'
-                    })
+        table.cell(idx, 5).data(cantidad + ' Und(s)').draw();
 
-                    $("#iptCodigoVenta").val("");
-                    $("#iptCodigoVenta").focus();
+        NuevoPrecio = (parseInt(data['cantidad']) * data['precio_venta_producto'].replace("MXN ", "")).toFixed(2);
+        NuevoPrecio = "MXN " + NuevoPrecio;
 
-                } else {
+        table.cell(idx, 7).data(NuevoPrecio).draw();
 
-                    cantidad = parseInt(data['cantidad']) + 1;
+        recalcularTotales();
+    }
+});
 
-                    table.cell(idx, 5).data(cantidad + ' Und(s)').draw();
+});
 
-                    NuevoPrecio = (parseInt(data['cantidad']) * data['precio_venta_producto'].replace("MXN ", "")).toFixed(2);
-                    NuevoPrecio = "MXN " + NuevoPrecio;
-
-                    table.cell(idx, 7).data(NuevoPrecio).draw();
-
-                    recalcularTotales();
-                }
-            }
-        });
-
-    });
 
     /* ======================================================================================
     EVENTO PARA DESMINUIR LA CANTIDAD DE UN PRODUCTO DEL LISTADO
