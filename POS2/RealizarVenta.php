@@ -209,8 +209,10 @@ Aqui va el corte de caja
                            
                             <span class="small">Tipo Pago</span><span class="text-danger">*</span>
                         </label>
-
-                        <select class="form-control form-select form-select-sm" aria-label=".form-select-sm example" id="selTipoPago">
+                        <div class="input-group mb-3">
+          <div class="input-group-prepend">  <span class="input-group-text" id="Tarjeta2"><i class="fas fa-receipt"></i></span>
+          </div>
+          <select class="form-control form-select form-select-sm" aria-label=".form-select-sm example" id="selTipoPago">
                             <option value="0">Seleccione el Tipo de Pago</option>
                             <option value="1" selected="true">Efectivo</option>
                             <option value="2">Tarjeta de crédito</option>
@@ -218,6 +220,8 @@ Aqui va el corte de caja
                             <option value="4">Transferencia</option>
                             
                         </select>
+            </div>
+                        
 
                         <span id="validate_categoria" class="text-danger small fst-italic" style="display:none">
                             Debe Ingresar tipo de pago
