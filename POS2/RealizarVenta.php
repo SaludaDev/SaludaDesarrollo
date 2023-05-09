@@ -226,7 +226,7 @@ Aqui va el corte de caja
                     </div>
 
                     <!-- SERIE Y NRO DE BOLETA -->
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <div class="text-center">
                     <div class="col">
                     <label class="col-form-label p-0" for="selCategoriaReg">
