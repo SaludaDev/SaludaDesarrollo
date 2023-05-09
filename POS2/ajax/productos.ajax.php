@@ -17,11 +17,12 @@ if(isset($_POST['accion'])) {
     if($_POST['accion'] == 7) {
         $items = array();
 
-        $sql = "SELECT descripcion_producto FROM productos";
+        $sql = "SELECT * FROM productos";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
+                array_push($items, $row['id_categoria_producto']);
                 array_push($items, $row['descripcion_producto']);
                 
             }
