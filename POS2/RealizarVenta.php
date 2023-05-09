@@ -278,7 +278,7 @@ Aqui va el corte de caja
 
                    
                     <!-- INPUT DE EFECTIVO ENTREGADO -->
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="iptEfectivoRecibido" class="p-0 m-0">Efectivo recibido</label>
                         <input type="number" min="0" name="iptEfectivo" id="iptEfectivoRecibido" class="form-control form-control-sm" placeholder="Cantidad de efectivo recibida">
                     </div>
