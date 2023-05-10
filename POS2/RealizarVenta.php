@@ -369,7 +369,6 @@ Aqui va el corte de caja
 <script>
     $(document).ready(function() {
     var items = [];
-    var itemProducto = 1;
     var table = $('#lstProductosVenta').DataTable({
         "columns": [
             {"data": "id"},
@@ -454,16 +453,16 @@ Aqui va el corte de caja
 });
 </script>
 <script>
-// var table;
-// var items = []; // SE USA PARA EL INPUT DE AUTOCOMPLETE
+var table;
+var items = []; // SE USA PARA EL INPUT DE AUTOCOMPLETE
+var itemProducto = 1;
 
-
-// var Toast = Swal.mixin({
-//     toast: true,
-//     position: 'top',
-//     showConfirmButton: false,
-//     timer: 3000
-// });
+var Toast = Swal.mixin({
+    toast: true,
+    position: 'top',
+    showConfirmButton: false,
+    timer: 3000
+});
 
 $(document).ready(function() {
 
@@ -479,110 +478,110 @@ $(document).ready(function() {
         vaciarListado();
     })
 
-//     /* ======================================================================================
-//     INICIALIZAR LA TABLA DE VENTAS
-//     ======================================================================================*/
-//     table = $('#lstProductosVenta').DataTable({
-//         "columns": [{
-//                 "data": "id"
-//             },
-//             {
-//                 "data": "codigo_producto"
-//             },
-//             {
-//                 "data": "id_categoria"
-//             },
-//             {
-//                 "data": "nombre_categoria"
-//             },
-//             {
-//                 "data": "descripcion_producto"
-//             },
-//             {
-//                 "data": "cantidad"
-//             },
-//             {
-//                 "data": "precio_venta_producto"
-//             },
-//             {
-//                 "data": "total"
-//             },
-//             {
-//                 "data": "acciones"
-//             },
+    /* ======================================================================================
+    INICIALIZAR LA TABLA DE VENTAS
+    ======================================================================================*/
+    table = $('#lstProductosVenta').DataTable({
+        "columns": [{
+                "data": "id"
+            },
+            {
+                "data": "codigo_producto"
+            },
+            {
+                "data": "id_categoria"
+            },
+            {
+                "data": "nombre_categoria"
+            },
+            {
+                "data": "descripcion_producto"
+            },
+            {
+                "data": "cantidad"
+            },
+            {
+                "data": "precio_venta_producto"
+            },
+            {
+                "data": "total"
+            },
+            {
+                "data": "acciones"
+            },
           
-//         ],
-//         columnDefs: [{
-//                 targets: 0,
-//                 visible: false
-//             },
-//             {
-//                 targets: 3,
-//                 visible: false
-//             },
-//             {
-//                 targets: 2,
-//                 visible: false
-//             },
-//             {
-//                 targets: 6,
-//                 orderable: false
-//             },
-//             {
-//                 targets: 9,
-//                 visible: false
-//             },
-//             {
-//                 targets: 10,
-//                 visible: false
-//             },
-//             {
-//                 targets: 11,
-//                 visible: false
-//             }
-//         ],
-//         "order": [
-//             [0, 'desc']
-//         ],
-//         "language": {
-//             "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
-//         }
-//     });
+        ],
+        columnDefs: [{
+                targets: 0,
+                visible: false
+            },
+            {
+                targets: 3,
+                visible: false
+            },
+            {
+                targets: 2,
+                visible: false
+            },
+            {
+                targets: 6,
+                orderable: false
+            },
+            {
+                targets: 9,
+                visible: false
+            },
+            {
+                targets: 10,
+                visible: false
+            },
+            {
+                targets: 11,
+                visible: false
+            }
+        ],
+        "order": [
+            [0, 'desc']
+        ],
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+        }
+    });
 
-//     /* ======================================================================================
-// TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO NO CREA FILAS NUEVAS
-// ======================================================================================*/
-//     $.ajax({
-//         async: false,
-//          url: "ajax/productos.ajax.php",
-//         method: "POST",
-//         data: {
-//             'accion': 6
-//         },
-//         dataType: 'json',
-//         success: function(respuesta) {
+    /* ======================================================================================
+TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO NO CREA FILAS NUEVAS
+======================================================================================*/
+    $.ajax({
+        async: false,
+         url: "ajax/productos.ajax.php",
+        method: "POST",
+        data: {
+            'accion': 6
+        },
+        dataType: 'json',
+        success: function(respuesta) {
 
-//             for (let i = 0; i < respuesta.length; i++) {
-//                 items.push(respuesta[i]['descripcion_producto'])
-//             }
+            for (let i = 0; i < respuesta.length; i++) {
+                items.push(respuesta[i]['descripcion_producto'])
+            }
 
-//             $("#iptCodigoVenta").autocomplete({
+            $("#iptCodigoVenta").autocomplete({
 
-//                 source: items,
-//                 select: function(event, ui) {
+                source: items,
+                select: function(event, ui) {
 
-//                     CargarProductos(ui.item.value);
+                    CargarProductos(ui.item.value);
 
-//                     $("#iptCodigoVenta").val("");
+                    $("#iptCodigoVenta").val("");
 
-//                     $("#iptCodigoVenta").focus();
+                    $("#iptCodigoVenta").focus();
 
-//                     return false;
-//                 }
-//             })
+                    return false;
+                }
+            })
 
-//         }
-//     });
+        }
+    });
 
 
     /* ======================================================================================
