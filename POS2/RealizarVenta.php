@@ -368,6 +368,275 @@ Aqui va el corte de caja
 </div>
 
 
+<script>
+var table;
+var items = []; // SE USA PARA EL INPUT DE AUTOCOMPLETE
+var itemProducto = 1;
+
+var Toast = Swal.mixin({
+    toast: true,
+    position: 'top',
+    showConfirmButton: false,
+    timer: 3000
+});
+
+$(document).ready(function() {
+
+  
+    $("#btnVaciarListado").on('click', function() {
+        vaciarListado();
+    })
+
+    /* ======================================================================================
+    INICIALIZAR LA TABLA DE VENTAS
+    ======================================================================================*/
+    table = $('#lstProductosVenta').DataTable({
+        "columns": [{
+                "data": "id"
+            },
+            {
+                "data": "codigo_producto"
+            },
+            {
+                "data": "id_categoria"
+            },
+            {
+                "data": "nombre_categoria"
+            },
+            {
+                "data": "descripcion_producto"
+            },
+            {
+                "data": "cantidad"
+            },
+            {
+                "data": "precio_venta_producto"
+            },
+            {
+                "data": "total"
+            },
+            {
+                "data": "acciones"
+            },
+          
+        ],
+        columnDefs: [{
+                targets: 0,
+                visible: false
+            },
+            {
+                targets: 3,
+                visible: false
+            },
+            {
+                targets: 2,
+                visible: false
+            },
+            {
+                targets: 6,
+                orderable: false
+            },
+            {
+                targets: 9,
+                visible: false
+            },
+            {
+                targets: 10,
+                visible: false
+            },
+            {
+                targets: 11,
+                visible: false
+            }
+        ],
+        "order": [
+            [0, 'desc']
+        ],
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+        }
+    });
+
+    /* ======================================================================================
+    TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
+    ======================================================================================*/
+    $.ajax({
+        async: false,
+        url: "ajax/productos.ajax.php",
+        method: "POST",
+        data: {
+            'accion': 6
+        },
+        dataType: 'json',
+        success: function(respuesta) {
+
+            for (let i = 0; i < respuesta.length; i++) {
+                items.push(respuesta[i]['descripcion_producto'])
+            }
+
+            $("#iptCodigoVenta").autocomplete({
+
+                source: items,
+                select: function(event, ui) {
+
+                    CargarProductos(ui.item.value);
+
+                    $("#iptCodigoVenta").val("");
+
+                    $("#iptCodigoVenta").focus();
+
+                    return false;
+                }
+            })
+
+        }
+    });
+
+});
+
+function CargarProductos(descripcion_producto) {
+    $.ajax({
+        url: "ajax/productos.ajax.php",
+        method: "POST",
+        data: {
+            'accion': 2,
+            'descripcion_producto': descripcion_producto
+        },
+        dataType: 'json',
+        success: function(respuesta) {
+            // Crear objeto con las propiedades de la nueva fila
+            var nuevaFila = {
+                "id": respuesta.id,
+                "codigo_producto": respuesta.codigo_producto,
+                "id_categoria": respuesta.id_categoria,
+                "nombre_categoria": respuesta.nombre_categoria,
+                "descripcion_producto": respuesta.descripcion_producto,
+                "cantidad": 1, // Inicialmente, la cantidad es 1
+                "precio_venta_producto": respuesta.precio_venta_producto,
+                "total": respuesta.precio_venta_producto, // Inicialmente, el total es el precio de venta del producto
+                "acciones": '<button type="button" class="btn btn-danger btn-xs" onclick="eliminarProducto(this)"><i class="fa fa-trash"></i></button>'
+            };
+
+            // Agregar la nueva fila a la tabla
+            table.row.add(nuevaFila).draw();
+
+            // Calcular y mostrar el total de la venta
+            calcularTotalVenta();
+        }
+    });
+}
+
+  /* ======================================================================================
+FUNCIÓN PARA AGREGAR FILA EN LA TABLA
+======================================================================================*/
+function AgregarFila(idProducto, codigoProducto, idCategoria, nombreCategoria, descripcionProducto, cantidad, precioVenta, total) {
+    // Agregar fila a la tabla de ventas
+    table.row.add({
+        "id": idProducto,
+        "codigo_producto": codigoProducto,
+        "id_categoria": idCategoria,
+        "nombre_categoria": nombreCategoria,
+        "descripcion_producto": descripcionProducto,
+        "cantidad": cantidad,
+        "precio_venta_producto": precioVenta,
+        "total": total,
+        "acciones": '<button class="btn btn-danger btn-sm btnEliminarFila" title="Eliminar fila"><i class="fas fa-trash-alt"></i></button>'
+    }).draw(false);
+
+    // Agregar evento para eliminar la fila
+    $(".btnEliminarFila").off().on("click", function() {
+        var row = $(this).closest("tr");
+        var idProducto = row.find("td:eq(0)").text();
+
+        table.row(row).remove().draw(false);
+
+        var total = calcularTotal();
+        $("#lblTotal").text(total);
+
+        items.push(descripcionProducto);
+        items.sort();
+
+        $("#iptCodigoVenta").autocomplete({
+            source: items
+        });
+
+    });
+
+    // Actualizar el total
+    var total = calcularTotal();
+    $("#lblTotal").text(total);
+}
+
+/* ======================================================================================
+FUNCIÓN PARA CALCULAR EL TOTAL
+======================================================================================*/
+function calcularTotal() {
+    var total = 0;
+
+    table.rows().eq(0).each(function(index) {
+        var row = table.row(index);
+
+        var precio = row.data().precio_venta_producto;
+        var cantidad = row.data().cantidad;
+        var subtotal = precio * cantidad;
+
+        total += subtotal;
+    });
+
+    return total.toFixed(2);
+}
+
+/* ======================================================================================
+FUNCIÓN PARA CARGAR LOS PRODUCTOS EN LA TABLA
+======================================================================================*/
+function CargarProductos(descripcion) {
+
+    // Traer los datos del producto por la descripción
+    $.ajax({
+        async: false,
+        url: "ajax/productos.ajax.php",
+        method: "POST",
+        data: {
+            'accion': 7,
+            'descripcion': descripcion
+        },
+        dataType: 'json',
+        success: function(respuesta) {
+            if (respuesta.length > 0) {
+                var idProducto = respuesta[0]['id'];
+                var codigoProducto = respuesta[0]['codigo_producto'];
+                var idCategoria = respuesta[0]['id_categoria'];
+                var nombreCategoria = respuesta[0]['nombre_categoria'];
+                var descripcionProducto = respuesta[0]['descripcion_producto'];
+                var cantidad = 1;
+                var precioVenta = respuesta[0]['precio_venta_producto'];
+                var total = cantidad * precioVenta;
+
+                // Agregar la fila a la tabla
+                AgregarFila(idProducto, codigoProducto, idCategoria, nombreCategoria, descripcionProducto, cantidad, precioVenta, total);
+
+                // Eliminar la descripción del array de items
+                var index = items.indexOf(descripcion);
+                if (index > -1) {
+                    items.splice(index, 1);
+                }
+                $("#iptCodigoVenta").autocomplete({
+                    source: items
+                });
+
+            } else {
+                // Si no hay resultados, mostrar un mensaje de error
+                Toast.fire({
+                    icon: 'error',
+                    title: 'No se encontraron resultados'
+                });
+            }
+        }
+    });
+}
+             
+
+
 </script>
      <!-- Control Sidebar -->
     
