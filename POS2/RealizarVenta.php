@@ -465,7 +465,7 @@ $(document).ready(function() {
         url: "ajax/productos.ajax.php",
         method: "POST",
         data: {
-            'accion': 6
+            'accion': 1
         },
         dataType: 'json',
         success: function(respuesta) {
