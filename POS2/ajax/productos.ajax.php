@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 if(isset($_POST['accion'])) {
 
     // Obtener los productos desde la base de datos
-    if($_POST['accion'] == 6) {
+    if($_POST['accion'] == 8) {
         $items = array();
 
         $sql = "SELECT * FROM productos";
@@ -22,7 +22,8 @@ if(isset($_POST['accion'])) {
 
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                array_push($items, $row['descripcion_producto']);
+                array_push($items, $row['codigo_producto']);
+             
             }
         }
 
