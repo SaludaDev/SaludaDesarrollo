@@ -466,37 +466,37 @@ $(document).ready(function() {
     /* ======================================================================================
 TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
 ======================================================================================*/
-    // $.ajax({
-    //     async: false,
-    //      url: "ajax/productos.ajax.php",
-    //     method: "POST",
-    //     data: {
-    //         'accion': 6
-    //     },
-    //     dataType: 'json',
-    //     success: function(respuesta) {
+    $.ajax({
+        async: false,
+         url: "ajax/productos.ajax.php",
+        method: "POST",
+        data: {
+            'accion': 6
+        },
+        dataType: 'json',
+        success: function(respuesta) {
 
-    //         for (let i = 0; i < respuesta.length; i++) {
-    //             items.push(respuesta[i]['descripcion_producto'])
-    //         }
+            for (let i = 0; i < respuesta.length; i++) {
+                items.push(respuesta[i]['descripcion_producto'])
+            }
 
-    //         $("#iptCodigoVenta").autocomplete({
+            $("#iptCodigoVenta").autocomplete({
 
-    //             source: items,
-    //             select: function(event, ui) {
+                source: items,
+                select: function(event, ui) {
 
-    //                 CargarProductos(ui.item.value);
+                    CargarProductos(ui.item.value);
 
-    //                 $("#iptCodigoVenta").val("");
+                    $("#iptCodigoVenta").val("");
 
-    //                 $("#iptCodigoVenta").focus();
+                    $("#iptCodigoVenta").focus();
 
-    //                 return false;
-    //             }
-    //         })
+                    return false;
+                }
+            })
 
-    //     }
-    // });
+        }
+    });
 
 
     /* ======================================================================================
@@ -552,6 +552,38 @@ $.ajax({
     }
 });
 
+});
+
+
+$(document).ready(function() {
+    var table = $('#lstProductosVenta').DataTable({
+        "ajax": {
+            "url": "ajax/productos.ajax.php",
+            "type": "POST",
+            "data": {
+                "accion": 8
+            },
+            "dataType": "json"
+        },
+        "columns": [
+            { "data": "codigo_producto" },
+            { "data": "descripcion_producto" },
+            { "data": "precio_venta_producto" },
+            { "defaultContent": "<button type='button' class='btn btn-primary btn-sm btnAgregarProducto'>Agregar</button>" }
+        ],
+        "language": {
+            "url": "plugins/datatables/Spanish.json"
+        }
+    });
+    
+    $('#btnCargarProductos').click(function() {
+        table.ajax.reload();
+    });
+    
+    $('#lstProductosVenta tbody').on('click', '.btnAgregarProducto', function() {
+        var data = table.row($(this).parents('tr')).data();
+        // Aquí agregas el código para agregar el producto a la venta
+    });
 });
 
 
