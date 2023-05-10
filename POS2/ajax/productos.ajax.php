@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-<?php
+
 
 if(isset($_POST['accion']) && !empty($_POST['accion'])) {
     $accion = $_POST['accion'];
@@ -59,7 +59,6 @@ if(isset($_POST['accion']) && !empty($_POST['accion'])) {
 //Devolver la respuesta en formato JSON
 echo json_encode($response);
 
-?>
 
 $conn->close();
 ?>
