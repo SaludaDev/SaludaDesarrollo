@@ -1,6 +1,6 @@
 <?php
 // Conexión a la base de datos
-require_once "../config/config.php";
+require_once "../Consultas/db_connect.php";
 
 // Verificar que se haya recibido la acción a realizar
 if (isset($_POST["accion"])) {
