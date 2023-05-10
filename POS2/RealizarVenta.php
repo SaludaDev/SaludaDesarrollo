@@ -539,17 +539,21 @@ $.ajax({
     dataType: 'json',
     success: function(respuesta) {
 
-        cantidad = parseInt(data['cantidad']) + 1;
+// Actualiza la cantidad en la fila correspondiente
+cantidad = parseInt(data['cantidad']) + 1;
+table.cell(idx, 5).data(cantidad + ' Und(s)');
 
-        table.cell(idx, 5).data(cantidad + ' Und(s)').draw();
+// Actualiza el precio en la fila correspondiente
+NuevoPrecio = (parseInt(data['cantidad']) * data['precio_venta_producto'].replace("MXN ", "")).toFixed(2);
+NuevoPrecio = "MXN " + NuevoPrecio;
+table.cell(idx, 7).data(NuevoPrecio);
 
-        NuevoPrecio = (parseInt(data['cantidad']) * data['precio_venta_producto'].replace("MXN ", "")).toFixed(2);
-        NuevoPrecio = "MXN " + NuevoPrecio;
+// Vuelve a dibujar la tabla para mostrar los cambios
+table.draw();
 
-        table.cell(idx, 7).data(NuevoPrecio).draw();
-
-        recalcularTotales();
-    }
+// Recalcula los totales
+recalcularTotales();
+}
 });
 
 });
