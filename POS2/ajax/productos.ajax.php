@@ -2,6 +2,8 @@
 // Conexión a la base de datos
 require_once "../Consultas/db_connect.php";
 
+
+
 // Verificar que se haya recibido la acción a realizar
 if (isset($_POST["accion"])) {
     $accion = $_POST["accion"];
@@ -41,6 +43,21 @@ if (isset($_POST["accion"])) {
                 // Retornar resultado como JSON
                 echo json_encode($result);
             }
+            break;
+
+        case 6: // Obtener lista de productos para autocompletado
+            // Consulta SQL para obtener la lista de productos
+            $query = "SELECT descripcion_producto FROM productos";
+
+            // Ejecutar consulta SQL
+            $stmt = $pdo->prepare($query);
+            $stmt->execute();
+
+            // Obtener resultado de la consulta
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Retornar resultado como JSON
+            echo json_encode($result);
             break;
 
         default:
