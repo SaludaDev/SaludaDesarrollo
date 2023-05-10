@@ -466,37 +466,37 @@ $(document).ready(function() {
     /* ======================================================================================
 TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
 ======================================================================================*/
-    $.ajax({
-        async: false,
-         url: "ajax/productos.ajax.php",
-        method: "POST",
-        data: {
-            'accion': 6
-        },
-        dataType: 'json',
-        success: function(respuesta) {
+    // $.ajax({
+    //     async: false,
+    //      url: "ajax/productos.ajax.php",
+    //     method: "POST",
+    //     data: {
+    //         'accion': 6
+    //     },
+    //     dataType: 'json',
+    //     success: function(respuesta) {
 
-            for (let i = 0; i < respuesta.length; i++) {
-                items.push(respuesta[i]['descripcion_producto'])
-            }
+    //         for (let i = 0; i < respuesta.length; i++) {
+    //             items.push(respuesta[i]['descripcion_producto'])
+    //         }
 
-            $("#iptCodigoVenta").autocomplete({
+    //         $("#iptCodigoVenta").autocomplete({
 
-                source: items,
-                select: function(event, ui) {
+    //             source: items,
+    //             select: function(event, ui) {
 
-                    CargarProductos(ui.item.value);
+    //                 CargarProductos(ui.item.value);
 
-                    $("#iptCodigoVenta").val("");
+    //                 $("#iptCodigoVenta").val("");
 
-                    $("#iptCodigoVenta").focus();
+    //                 $("#iptCodigoVenta").focus();
 
-                    return false;
-                }
-            })
+    //                 return false;
+    //             }
+    //         })
 
-        }
-    });
+    //     }
+    // });
 
 
     /* ======================================================================================
@@ -514,76 +514,44 @@ TRAER LISTADO DE PRODUCTOS PARA INPUT DE AUTOCOMPLETADO
         recalcularTotales();
     });
 
-//     /* ======================================================================================
-//     EVENTO PARA AUMENTAR LA CANTIDAD DE UN PRODUCTO DEL LISTADO
-//     ====================================================================================== */
-//     $('#lstProductosVenta tbody').on('click', '.btnAumentarCantidad', function() {
+    /* ======================================================================================
+    EVENTO PARA AUMENTAR LA CANTIDAD DE UN PRODUCTO DEL LISTADO
+    ====================================================================================== */
+    $('#lstProductosVenta tbody').on('click', '.btnAumentarCantidad', function() {
 
-// var data = table.row($(this).parents('tr')).data(); //Recuperar los datos de la fila
+var data = table.row($(this).parents('tr')).data(); //Recuperar los datos de la fila
 
-// var idx = table.row($(this).parents('tr')).index(); // Recuperar el Indice de la Fila
+var idx = table.row($(this).parents('tr')).index(); // Recuperar el Indice de la Fila
 
-// var codigo_producto = data['codigo_producto'];
-// var cantidad = data['cantidad'];
+var codigo_producto = data['codigo_producto'];
+var cantidad = data['cantidad'];
 
-// $.ajax({
-//     async: false,
-//     url: "ajax/productos.ajax.php",
-//     method: "POST",
-//     data: {
-//         'accion': 7,
-//         'codigo_producto': codigo_producto,
-//         'cantidad_a_comprar': cantidad
-//     },
+$.ajax({
+    async: false,
+    url: "ajax/productos.ajax.php",
+    method: "POST",
+    data: {
+        'accion': 7,
+        'codigo_producto': codigo_producto,
+        'cantidad_a_comprar': cantidad
+    },
 
-//     dataType: 'json',
-//     success: function(respuesta) {
+    dataType: 'json',
+    success: function(respuesta) {
 
-//         cantidad = parseInt(data['cantidad']) + 1;
+        cantidad = parseInt(data['cantidad']) + 1;
 
-//         table.cell(idx, 5).data(cantidad + ' Und(s)').draw();
+        table.cell(idx, 5).data(cantidad + ' Und(s)').draw();
 
-//         NuevoPrecio = (parseInt(data['cantidad']) * data['precio_venta_producto'].replace("MXN ", "")).toFixed(2);
-//         NuevoPrecio = "MXN " + NuevoPrecio;
+        NuevoPrecio = (parseInt(data['cantidad']) * data['precio_venta_producto'].replace("MXN ", "")).toFixed(2);
+        NuevoPrecio = "MXN " + NuevoPrecio;
 
-//         table.cell(idx, 7).data(NuevoPrecio).draw();
+        table.cell(idx, 7).data(NuevoPrecio).draw();
 
-//         recalcularTotales();
-//     }
-// });
+        recalcularTotales();
+    }
+});
 
-// });
-
-
-$(document).ready(function() {
-    var table = $('#lstProductosVenta').DataTable({
-        "ajax": {
-            "url": "ajax/productos.ajax.php",
-            "type": "POST",
-            "data": {
-                "accion": 8
-            },
-            "dataType": "json"
-        },
-        "columns": [
-            { "data": "codigo_producto" },
-            { "data": "descripcion_producto" },
-            { "data": "precio_venta_producto" },
-            { "defaultContent": "<button type='button' class='btn btn-primary btn-sm btnAgregarProducto'>Agregar</button>" }
-        ],
-        "language": {
-            "url": "plugins/datatables/Spanish.json"
-        }
-    });
-    
-    $('#btnCargarProductos').click(function() {
-        table.ajax.reload();
-    });
-    
-    $('#lstProductosVenta tbody').on('click', '.btnAgregarProducto', function() {
-        var data = table.row($(this).parents('tr')).data();
-        // Aquí agregas el código para agregar el producto a la venta
-    });
 });
 
 
