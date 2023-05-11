@@ -23,30 +23,40 @@ include ("db_connection.php");
 }
 
     </style>
-   <script>
-
-function BorrarRegistro() {
-	$('div.lista-producto').each(function(index, item){
-		jQuery(':checkbox', this).each(function () {
-            if ($(this).is(':checked')) {
-				$(item).remove();
-            }
-        });
-	});
-}
-
-</script>
-  
+   
 </head>
 <?php include_once ("Menu.php")?>
 
 
   
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<div class="row">
-
+<label>Escanear Código de Barras</label>
+					<div class="input-group">
+						<div class="input-group-addon"><i class="fa fa-barcode"></i></div>
+						<input type="text" class="form-control producto" name="codigoEscaneado" id="codigoEscaneado" autocomplete="off" onchange="buscarArticulo();">
+					</div>
+				</div>
+				<div>
+					<table class="table table-striped" id="tablaAgregarArticulos">
+						<thead>	
+							<tr>
+								<th>Producto</th>
+								<th>Cantidad</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+						
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="btnCerrarModal">Cerrar</button>
+				<button type="button" class="btn btn-primary" id="btnAgregar" onclick="agregar();">Agregar</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <!-- FINALIZA DATA DE AGENDA -->
       </div>
@@ -60,7 +70,7 @@ function BorrarRegistro() {
      <!-- Control Sidebar -->
     
      <!-- Main Footer -->
-   <?
+   <?php
      include ("Modales/AltaProductos.php");
      include ("Modales/AltaTipoProductos.php");
      include ("Modales/Error.php");
