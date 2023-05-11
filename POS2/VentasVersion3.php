@@ -38,7 +38,7 @@ include ("db_connection.php");
 </div>
   
 <label>Escanear Código de Barras</label>
-					<div class="input-group">
+				
 						<div class="input-group-addon"><i class="fa fa-barcode"></i></div>
 						<input type="text" class="form-control producto" name="codigoEscaneado" id="codigoEscaneado" autocomplete="off" onchange="buscarArticulo();">
 					</div>
