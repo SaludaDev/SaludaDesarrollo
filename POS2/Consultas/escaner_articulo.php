@@ -1,11 +1,11 @@
 <?php
 
-    $host = 'nombre_del_servidor';
-    $dbname = 'nombre_de_la_base_de_datos';
-    $user = 'nombre_de_usuario';
-    $password = 'contraseña';
+    $host = 'localhost';
+    $dbname = 'u155356178_DesarrolloSalu';
+    $user = 'u155356178_CorpoSaluda';
+    $password = 'SSalud4Dev2495#$';
 
-    $codigo = $_POST['codigoEscaneado'];
+
 
     try {
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
