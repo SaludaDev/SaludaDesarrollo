@@ -57,7 +57,32 @@ include ("db_connection.php");
 		</div>
 	</div>
 </div>
-
+<script>
+  function buscarArticulo(){	
+	var form = $('#formulario-busqueda');
+	$.ajax({
+		url: "Consultas/escaner_articulo",
+		type:'POST',
+		data: form.serializeArray(),
+		dataType: 'json',
+		success: function(data) {
+			if (data.length === 0) {
+				msjError('No Encontrado');
+				
+				$('#codigoEscaneado').val('');
+				$('#codigoEscaneado').focus();
+			} else if (data.codigo) {
+				msj('Artículo encontrado');
+				
+				agregarArticulo(data);
+			}
+		},
+		error: function(data) {
+			msjError('Se ha producido un error al intentar buscar el Artículo.');
+		}
+	});
+}
+</script>
 <!-- FINALIZA DATA DE AGENDA -->
       </div>
       </div>
