@@ -23,74 +23,36 @@ include ("db_connection.php");
 }
 
     </style>
-   
+   <script>
+
+function BorrarRegistro() {
+	$('div.lista-producto').each(function(index, item){
+		jQuery(':checkbox', this).each(function () {
+            if ($(this).is(':checked')) {
+				$(item).remove();
+            }
+        });
+	});
+}
+
+</script>
+  
 </head>
 <?php include_once ("Menu.php")?>
 
-<div class="card text-center">
-  <div class="card-header" style="background-color:#2b73bb !important;color: white;">
+
   
-  </div>
-  <div >
- 
-</div>
- 
-</div>
-  
-<label>Escanear Código de Barras</label>
-				
-						<div class="input-group-addon"><i class="fa fa-barcode"></i></div>
-						<input type="text" class="form-control producto" name="codigoEscaneado" id="codigoEscaneado" autocomplete="off" onchange="buscarArticulo();">
-					</div>
-				</div>
-				<div>
-					<table class="table table-striped" id="tablaAgregarArticulos">
-						<thead>	
-							<tr>
-								<th>Producto</th>
-								<th>Cantidad</th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-						
-						</tbody>
-					</table>
-				</div>
-			</div>
-			
-				<button type="button" class="btn btn-default" data-dismiss="modal" id="btnCerrarModal">Cerrar</button>
-				<button type="button" class="btn btn-primary" id="btnAgregar" onclick="agregar();">Agregar</button>
-			
-      </div>
-<script>
-  function buscarArticulo(){	
-	var form = $('#formulario-busqueda');
-	$.ajax({
-		url: "Consultas/escaner_articulo",
-		type:'POST',
-		data: form.serializeArray(),
-		dataType: 'json',
-		success: function(data) {
-			if (data.length === 0) {
-				msjError('No Encontrado');
-				
-				$('#codigoEscaneado').val('');
-				$('#codigoEscaneado').focus();
-			} else if (data.codigo) {
-				msj('Artículo encontrado');
-				
-				agregarArticulo(data);
-			}
-		},
-		error: function(data) {
-			msjError('Se ha producido un error al intentar buscar el Artículo.');
-		}
-	});
-}
-</script>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="row">
+
+
 <!-- FINALIZA DATA DE AGENDA -->
-      
+      </div>
+      </div>
+      </div>
+      </div>
    
 
      <!-- /.content-wrapper -->
@@ -98,7 +60,7 @@ include ("db_connection.php");
      <!-- Control Sidebar -->
     
      <!-- Main Footer -->
-   <?php
+   <?
      include ("Modales/AltaProductos.php");
      include ("Modales/AltaTipoProductos.php");
      include ("Modales/Error.php");
