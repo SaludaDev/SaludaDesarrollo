@@ -27,7 +27,15 @@ include ("db_connection.php");
 </head>
 <?php include_once ("Menu.php")?>
 
-
+<div class="card text-center">
+  <div class="card-header" style="background-color:#2b73bb !important;color: white;">
+  
+  </div>
+  <div >
+ 
+</div>
+ 
+</div>
   
 <label>Escanear Código de Barras</label>
 					<div class="input-group">
