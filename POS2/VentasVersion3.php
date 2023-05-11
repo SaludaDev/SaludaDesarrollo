@@ -39,6 +39,8 @@ include ("db_connection.php");
     $('#codigoEscaneado').focus();
 });
 </script>
+
+<button class="btn btn-success" type="button" id="btnNuevo" data-toggle="modal" data-target="#modalArticulos" data-keyboard="false" data-backdrop="static"><i class="fa fa-plus"></i> Nuevo Bulto</button>
 <!-- Modal -->
 <div class="modal fade" id="modalArticulos" tabindex="-1" role="dialog" aria-labelledby="modalArticulosLabel">
 	<div class="modal-dialog" role="document">
