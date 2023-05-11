@@ -56,7 +56,10 @@ include ("db_connection.php");
 			</div>
 		</div>
 	</div>
-</div>
+</div></div>
+      </div>
+      </div>
+      </div>
 <script>
   function buscarArticulo(){	
 	var form = $('#formulario-busqueda');
@@ -84,10 +87,7 @@ include ("db_connection.php");
 }
 </script>
 <!-- FINALIZA DATA DE AGENDA -->
-      </div>
-      </div>
-      </div>
-      </div>
+      
    
 
      <!-- /.content-wrapper -->
