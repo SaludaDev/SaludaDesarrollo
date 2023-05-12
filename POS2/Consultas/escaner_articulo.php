@@ -21,7 +21,7 @@ if ($conn->connect_error) {
 $codigo = $_POST['codigoEscaneado'];
 
 // Se busca el artículo en la base de datos
-$sql = "SELECT * FROM articulos WHERE codigo = '$codigo'";
+$sql = "SELECT * FROM productos WHERE codigo_producto = '$codigo'";
 $resultado = $conn->query($sql);
 
 // Se comprueba si se encontró el artículo
@@ -29,10 +29,9 @@ if ($resultado->num_rows > 0) {
     // Se obtienen los datos del artículo y se los devuelve al frontend en formato JSON
     $fila = $resultado->fetch_assoc();
     $articulo = array(
-        'id' => $fila['id'],
-        'descripcion' => $fila['descripcion'],
-        'cantidad' => $fila['cantidad'],
-        'codigo' => $fila['codigo']
+        'id' => $fila['codigo_producto'],
+        'descripcion' => $fila['descripcion_producto'],
+        'codigo' => $fila['codigo_producto']
     );
     echo json_encode($articulo);
 } else {
