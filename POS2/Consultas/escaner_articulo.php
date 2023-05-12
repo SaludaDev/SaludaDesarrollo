@@ -1,48 +1,42 @@
 <?php
-
-
-
-
-    // Conectamos con la base de datos (suponiendo que utilizas MySQL)
     $servername = "localhost";
     $username = "u155356178_CorpoSaluda";
     $password = "SSalud4Dev2495#$";
     $dbname = "u155356178_DesarrolloSalu";
  
-// Se crea una conexión a la base de datos
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Se comprueba si la conexión fue exitosa
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
-
-// Se obtiene el código de barras del artículo enviado por el frontend
-$codigo = $_POST['codigoEscaneado'];
-
-// Se busca el artículo en la base de datos
-$sql = "SELECT * FROM productos WHERE codigo_producto = '$codigo'";
-$resultado = $conn->query($sql);
-
-// Se comprueba si se encontró el artículo
-if ($resultado->num_rows > 0) {
-    // Se obtienen los datos del artículo y se los devuelve al frontend en formato JSON
-    $fila = $resultado->fetch_assoc();
-    $articulo = array(
-        'id' => $fila['codigo_producto'],
-        'descripcion' => $fila['descripcion_producto'],
-        'codigo' => $fila['codigo_producto']
-    );
-    echo json_encode($articulo);
-} else {
-    // Si no se encontró el artículo, se devuelve un mensaje de error en formato JSON
-    $error = array(
-        'mensaje' => 'Artículo no encontrado'
-    );
-    echo json_encode($error);
-}
-
-// Se cierra la conexión a la base de datos
-$conn->close();
-
-?>
+    
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    
+    // Verificar la conexión
+    if ($conn->connect_error) {
+        die("Conexión fallida: " . $conn->connect_error);
+    }
+    
+    // Obtener el código de barras enviado por AJAX
+    $codigo = $_POST['codigoEscaneado'];
+    
+    // Consultar la base de datos para obtener el artículo correspondiente al código de barras
+    $sql = "SELECT * FROM articulos WHERE codigo = '$codigo'";
+    $result = $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+        // Si se encontró el artículo, devolver sus datos en formato JSON
+        $row = $result->fetch_assoc();
+        $data = array(
+            "id" => $row["id"],
+            "descripcion" => $row["descripcion"],
+            "cantidad" => $row["cantidad"],
+            "codigo" => $row["codigo"]
+        );
+        echo json_encode($data);
+    } else {
+        // Si no se encontró el artículo, devolver un array vacío en formato JSON
+        $data = array();
+        echo json_encode($data);
+    }
+    
+    // Cerrar la conexión a la base de datos
+    $conn->close();
+    
+    ?>
+    
