@@ -1,7 +1,7 @@
 <?php
 
 // Verificamos si se recibió el código del artículo en la solicitud POST
-if (isset($_POST['codigoArticulo'])) {
+if (isset($_POST['codigo'])) {
 
     // Conectamos con la base de datos (suponiendo que utilizas MySQL)
     $servername = "localhost";
@@ -16,10 +16,10 @@ if (isset($_POST['codigoArticulo'])) {
     }
 
     // Escapamos el código del artículo para evitar inyecciones SQL
-    $codigoArticulo = $conn->real_escape_string($_POST['codigoArticulo']);
+    $codigo = $conn->real_escape_string($_POST['codigo']);
 
     // Realizamos la consulta para obtener los detalles del artículo
-    $sql = "SELECT codigo_producto, descripcion_producto FROM productos WHERE codigo_producto = '{$codigoArticulo}'";
+    $sql = "SELECT codigo_producto, descripcion_producto FROM productos WHERE codigo_producto = '{$codigo}'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
