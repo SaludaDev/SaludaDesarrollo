@@ -1,7 +1,7 @@
 <?php
 
-// Verificamos si se recibió el código del artículo en la solicitud POST
-if (isset($_POST['codigo'])) {
+
+
 
     // Conectamos con la base de datos (suponiendo que utilizas MySQL)
     $servername = "localhost";
@@ -9,46 +9,41 @@ if (isset($_POST['codigo'])) {
     $password = "SSalud4Dev2495#$";
     $dbname = "u155356178_DesarrolloSalu";
  
-    $conn = new mysqli($servername, $username, $password, $dbname);
+// Se crea una conexión a la base de datos
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
-
-    // Escapamos el código del artículo para evitar inyecciones SQL
-    $codigo = $conn->real_escape_string($_POST['codigoEscaneado']);
-
-    // Realizamos la consulta para obtener los detalles del artículo
-    $sql = "SELECT codigo_producto, descripcion_producto FROM productos WHERE codigo_producto = '{$codigo}'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-
-        // Si se encontró el artículo, devolvemos los detalles en formato JSON
-        $row = $result->fetch_assoc();
-        $response = array(
-            "codigo" => true,
-            "id" => $row["codigo_producto"],
-            "descripcion" => $row["descripcion_producto"],
-           
-        );
-        echo json_encode($response);
-
-    } else {
-
-        // Si no se encontró el artículo, devolvemos una respuesta vacía en formato JSON
-        $response = array("codigo" => false);
-        echo json_encode($response);
-
-    }
-
-    // Cerramos la conexión con la base de datos
-    $conn->close();
-
-} else {
-
-    // Si no se recibió el código del artículo, devolvemos un error en formato JSON
-    $response = array("error" => "Código de artículo no recibido en la solicitud");
-    echo json_encode($response);
-
+// Se comprueba si la conexión fue exitosa
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
 }
+
+// Se obtiene el código de barras del artículo enviado por el frontend
+$codigo = $_POST['codigoEscaneado'];
+
+// Se busca el artículo en la base de datos
+$sql = "SELECT * FROM articulos WHERE codigo = '$codigo'";
+$resultado = $conn->query($sql);
+
+// Se comprueba si se encontró el artículo
+if ($resultado->num_rows > 0) {
+    // Se obtienen los datos del artículo y se los devuelve al frontend en formato JSON
+    $fila = $resultado->fetch_assoc();
+    $articulo = array(
+        'id' => $fila['id'],
+        'descripcion' => $fila['descripcion'],
+        'cantidad' => $fila['cantidad'],
+        'codigo' => $fila['codigo']
+    );
+    echo json_encode($articulo);
+} else {
+    // Si no se encontró el artículo, se devuelve un mensaje de error en formato JSON
+    $error = array(
+        'mensaje' => 'Artículo no encontrado'
+    );
+    echo json_encode($error);
+}
+
+// Se cierra la conexión a la base de datos
+$conn->close();
+
+?>
