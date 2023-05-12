@@ -1,26 +1,27 @@
 <?php
 
-    $host = 'localhost';
-    $dbname = 'u155356178_DesarrolloSalu';
-    $user = 'u155356178_CorpoSaluda';
-    $password = 'SSalud4Dev2495#$';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $codigo = $_POST['codigoEscaneado'];
 
+    $conexion = new mysqli("localhost", "u155356178_CorpoSaluda", "SSalud4Dev2495#$","u155356178_DesarrolloSalu");
 
-
-    try {
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $stmt = $pdo->prepare("SELECT * FROM articulos WHERE codigo = :codigo");
-        $stmt->bindParam(':codigo', $codigo);
-        $stmt->execute();
-
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode($data);
-
-    } catch(PDOException $e) {
-        echo "Error al conectarse a la base de datos: " . $e->getMessage();
+    if ($conexion->connect_error) {
+        die('Error de conexión a la base de datos: ' . $conexion->connect_error);
     }
 
+    $stmt = $conexion->prepare('SELECT * FROM articulos WHERE codigo_producto = ?');
+    $stmt->bind_param('s', $codigo);
 
+    if (!$stmt->execute()) {
+        die('Error al ejecutar la consulta: ' . $stmt->error);
+    }
+
+    $resultado = $stmt->get_result();
+    $data = $resultado->fetch_assoc();
+
+    echo json_encode($data);
+
+    $stmt->close();
+    $conexion->close();
+}
 ?>
