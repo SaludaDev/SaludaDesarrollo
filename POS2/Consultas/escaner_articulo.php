@@ -9,7 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die('Error de conexión a la base de datos: ' . $conexion->connect_error);
     }
 
-    $stmt = $conexion->prepare('SELECT * FROM articulos WHERE codigo_producto = ?');
+   
+    $stmt = $conexion->prepare('SELECT * FROM productos WHERE codigo_producto = ?');
     $stmt->bind_param('s', $codigo);
 
     if (!$stmt->execute()) {
@@ -18,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $resultado = $stmt->get_result();
     $data = $resultado->fetch_assoc();
-
     echo json_encode($data);
 
     $stmt->close();
