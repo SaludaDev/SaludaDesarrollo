@@ -19,7 +19,7 @@ if (isset($_POST['codigoArticulo'])) {
     $codigoArticulo = $conn->real_escape_string($_POST['codigoArticulo']);
 
     // Realizamos la consulta para obtener los detalles del artículo
-    $sql = "SELECT id, descripcion, cantidad FROM articulos WHERE codigo = '{$codigoArticulo}'";
+    $sql = "SELECT codigo_producto, descripcion_producto, cantidad FROM productos WHERE codigo_producto = '{$codigoArticulo}'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -28,8 +28,8 @@ if (isset($_POST['codigoArticulo'])) {
         $row = $result->fetch_assoc();
         $response = array(
             "codigo" => true,
-            "id" => $row["id"],
-            "descripcion" => $row["descripcion"],
+            "id" => $row["codigo_producto"],
+            "descripcion" => $row["descripcion_producto"],
             "cantidad" => $row["cantidad"]
         );
         echo json_encode($response);
