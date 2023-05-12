@@ -87,51 +87,43 @@ include ("db_connection.php");
    
 <script>
 
-function buscarArticulo(){	
-	var form = $('#formulario-busqueda');
-	$.ajax({
-		url: "Consultas/escaner_articulo.php",
-		type:'POST',
-		data: form.serializeArray(),
-		dataType: 'json',
-		success: function(data) {
-			if (data.length === 0) {
-				msjError('No Encontrado');
-				
-				$('#codigoEscaneado').val('');
-				$('#codigoEscaneado').focus();
-			} else if (data.codigo) {
-				msj('Artículo encontrado');
-				
-				agregarArticulo(data);
-			}
-		},
-		error: function(data) {
-			msjError('Se ha producido un error al intentar buscar el Artículo.');
-		}
-	});
+function buscarArticulo(formulario) {	
+    $.post("Consultas/escaner_articulo.php", formulario.serialize())
+    .done(function(data) {
+        if (data.length === 0) {
+            msjError('No Encontrado');
+            formulario.find('#codigoEscaneado').val('');
+            formulario.find('#codigoEscaneado').focus();
+        } else if (data.codigo) {
+            msj('Artículo encontrado');
+            agregarArticulo(data);
+        }
+    })
+    .fail(function(data) {
+        msjError('Se ha producido un error al intentar buscar el Artículo.');
+    });
 }
 
-function agregarArticulo(articulo){	
-	if ($('#detIdModal' + articulo.id).length) { // si ya esta agregado advierto
-		msjError('El artículo ya se encuentra incluido');
-	} else { // si es nuevo agrego
-		var tr = ''; 
-		var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="glyphicon glyphicon-minus"></i></button>';
-		var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
-		var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
-		
-		tr += '<tr>';
-			tr += '<td>' + articulo.descripcion + '</td>';
-			tr += '<td>' + articulo.cantidad + '</td>';
-			tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
-		tr += '</tr>';
-		
-		$('#tablaAgregarArticulos tbody').append(tr);
-	}
-	
-	$('#codigoEscaneado').val('');
-	$('#codigoEscaneado').focus();
+function agregarArticulo(articulo, formulario){	
+    if (formulario.find('#detIdModal' + articulo.id).length) { // si ya esta agregado advierto
+        msjError('El artículo ya se encuentra incluido');
+    } else { // si es nuevo agrego
+        let tr = ''; 
+        const btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="glyphicon glyphicon-minus"></i></button>';
+        const inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
+        const inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
+        
+        tr += '<tr>';
+        tr += '<td>' + articulo.descripcion + '</td>';
+        tr += '<td>' + articulo.cantidad + '</td>';
+        tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
+        tr += '</tr>';
+        
+        formulario.find('#tablaAgregarArticulos tbody').append(tr);
+    }
+    
+    formulario.find('#codigoEscaneado').val('');
+
 }
 </script>
      <!-- /.content-wrapper -->
