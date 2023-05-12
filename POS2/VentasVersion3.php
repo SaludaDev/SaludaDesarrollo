@@ -41,44 +41,7 @@ include ("db_connection.php");
 </script>
 
 <button class="btn btn-success" type="button" id="btnNuevo" data-toggle="modal" data-target="#modalArticulos" data-keyboard="false" data-backdrop="static"><i class="fa fa-plus"></i> Nuevo Bulto</button>
-<!-- Modal -->
-<div class="modal fade" id="modalArticulos" tabindex="-1" role="dialog" aria-labelledby="modalArticulosLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="modalArticulosLabel">Ingreso de Artículos</h4>
-			</div>
-			<div class="modal-body">
-				<div class="form-group">
-					<label>Escanear Código de Barras</label>
-					<div class="input-group">
-						<div class="input-group-addon"><i class="fa fa-barcode"></i></div>
-						<input type="text" class="form-control producto" name="codigoEscaneado" id="codigoEscaneado" autocomplete="off" onchange="buscarArticulo();">
-					</div>
-				</div>
-				<div>
-					<table class="table table-striped" id="tablaAgregarArticulos">
-						<thead>	
-							<tr>
-								<th>Producto</th>
-								<th>Cantidad</th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-						
-						</tbody>
-					</table>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal" id="btnCerrarModal">Cerrar</button>
-				<button type="button" class="btn btn-primary" id="btnAgregar" onclick="agregarArticulo();">Agregar</button>
-			</div>
-		</div>
-	</div>
-</div>
+
 <!-- FINALIZA DATA DE AGENDA -->
       </div>
       </div>
@@ -119,45 +82,27 @@ function buscarArticulo(){
 }
 
 
-function agregarArticulo(codigo) {	
-    // Hacer la llamada AJAX para obtener los datos del artículo correspondiente al código de barras
-    $.ajax({
-        type: 'POST',
-        url: 'escaner_articulo.php',
-        data: {codigoEscaneado: codigo},
-        dataType: 'json',
-        success: function(data) {
-            if (data.id) { // Si se encontró el artículo, agregarlo a la tabla
-                if ($('#detIdModal' + data.id).length) { // si ya esta agregado advierto
-                    msjError('El artículo ya se encuentra incluido');
-                } else { // si es nuevo agrego
-                    var tr = ''; 
-                    var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="glyphicon glyphicon-minus"></i></button>';
-                    var inputId = '<input type="hidden" name="detIdModal[' + data.id + ']" value="' + data.id + '" />';
-                    var inputCantidad = '<input type="hidden" name="detCantidadModal[' + data.id + ']" value="' + data.cantidad + '" />';
-                    
-                    tr += '<tr>';
-                    tr += '<td>' + data.descripcion + '</td>';
-                    tr += '<td>' + data.cantidad + '</td>';
-                    tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
-                    tr += '</tr>';
-                    
-                    $('#tablaAgregarArticulos tbody').append(tr);
-                }
-            } else { // Si no se encontró el artículo, mostrar un mensaje de error
-                msjError('El artículo no se encuentra registrado');
-            }
-            
-            $('#codigoEscaneado').val('');
-            $('#codigoEscaneado').focus();
-        },
-        error: function(xhr, status, error) {
-            msjError('Ha ocurrido un error al obtener los datos del artículo');
-            console.log(error);
-        }
-    });
+function agregarArticulo(articulo){	
+	if ($('#detIdModal' + articulo.id).length) { // si ya esta agregado advierto
+		msjError('El artículo ya se encuentra incluido');
+	} else { // si es nuevo agrego
+		var tr = ''; 
+		var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="glyphicon glyphicon-minus"></i></button>';
+		var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
+		var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
+		
+		tr += '<tr>';
+			tr += '<td>' + articulo.descripcion + '</td>';
+			tr += '<td>' + articulo.cantidad + '</td>';
+			tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
+		tr += '</tr>';
+		
+		$('#tablaAgregarArticulos tbody').append(tr);
+	}
+	
+	$('#codigoEscaneado').val('');
+	$('#codigoEscaneado').focus();
 }
-
 </script>
      <!-- /.content-wrapper -->
    
