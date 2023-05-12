@@ -1,36 +1,57 @@
 <?php 
-// configuración de la base de datos
-define('DB_HOST', 'localhost');
-define('DB_USER', 'u155356178_CorpoSaluda');
-define('DB_PASS', 'SSalud4Dev2495#$');
-define('DB_NAME', 'u155356178_DesarrolloSalu');
 
-// conexión a la base de datos
-$conexion = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-// verificar si hay errores de conexión
-if ($conexion->connect_error) {
-    die('Error de conexión a la base de datos: ' . $conexion->connect_error);
+class Conexion{
+
+    static public function conectar(){
+        try {
+            $db = new PDO("mysql:host=localhost;dbname=u155356178_DesarrolloSalu","u155356178_CorpoSaluda","SSalud4Dev2495#$",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+            return $db;
+        }
+        catch (PDOException $e) {
+            echo 'Falló la conexión: ' . $e->getMessage();
+        }
+
+    }
 }
 
-// preparar la consulta
-$codigo = $_POST['codigoEscaneado'];
-$stmt = $conexion->prepare('SELECT * FROM articulos WHERE codigo = ?');
-$stmt->bind_param('s', $codigo);
 
-// ejecutar la consulta
-if (!$stmt->execute()) {
-    die('Error al ejecutar la consulta: ' . $stmt->error);
+
+// Aquí va el resto de tu código para obtener el artículo
+
+class Articulo_Controller extends CI_Controller {
+	
+	public function escaner_articulo() {
+		if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+			show_error('Solicitud no válida', 400);
+		}
+		
+		$this->load->model('articulo_model');
+		
+		$codigo = $this->input->post('codigoEscaneado');
+		
+		if (empty($codigo)) {
+			show_error('Código de artículo no válido', 400);
+		}
+		
+		$data = $this->articulo_model->obtener_articulo_codigo($codigo);
+		if (empty($data)) {
+			show_error('No se encontró el artículo', 404);
+		}
+		
+		echo json_encode($data);
+	}
+	
 }
 
-// obtener el resultado
-$resultado = $stmt->get_result();
-$data = $resultado->fetch_assoc();
+class Articulo_Model extends CI_Model {
+	
+	function obtener_articulo_codigo($codigo){
+		$this->db->where('codigo', $codigo);
+		$query = $this->db->get('articulos');
 
-// cerrar la consulta y la conexión
-$stmt->close();
-$conexion->close();
-
-// mostrar el resultado en formato JSON
-echo json_encode($data);
+		return $query->row_array();
+	}
+	
+}
 ?>
