@@ -8,7 +8,7 @@ if (isset($_POST['codigo'])) {
     $username = "u155356178_CorpoSaluda";
     $password = "SSalud4Dev2495#$";
     $dbname = "u155356178_DesarrolloSalu";
-
+ 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     if ($conn->connect_error) {
