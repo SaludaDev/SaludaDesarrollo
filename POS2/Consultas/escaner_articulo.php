@@ -16,7 +16,7 @@ if (isset($_POST['codigo'])) {
     }
 
     // Escapamos el código del artículo para evitar inyecciones SQL
-    $codigo = $conn->real_escape_string($_POST['codigo']);
+    $codigo = $conn->real_escape_string($_POST['codigoEscaneado']);
 
     // Realizamos la consulta para obtener los detalles del artículo
     $sql = "SELECT codigo_producto, descripcion_producto FROM productos WHERE codigo_producto = '{$codigo}'";
