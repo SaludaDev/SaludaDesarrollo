@@ -46,10 +46,6 @@ include ("db_connection.php");
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="modalArticulosLabel">Ingreso de Artículos</h4>
-			</div>
-			<div class="modal-body">
 			<div>
     <input type="text" id="codigoEscaneado" />
     <button onclick="buscarArticulo()">Buscar artículo</button>
@@ -66,6 +62,7 @@ include ("db_connection.php");
     <tbody>
     </tbody>
 </table>
+
 
 				</div>
 			</div>
