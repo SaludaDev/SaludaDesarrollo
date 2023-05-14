@@ -46,94 +46,103 @@ include ("db_connection.php");
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-			<div>
-    <input type="text" id="codigoEscaneado" />
-    <button onclick="buscarArticulo()">Buscar artículo</button>
+		<!-- Código HTML -->
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group">
+      <label for="codigoEscaneado">Código de barras</label>
+      <input type="text" id="codigoEscaneado" name="codigoEscaneado" class="form-control" autofocus>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="buscarArticulo()">Buscar</button>
+  </div>
 </div>
 
-<table id="tablaAgregarArticulos">
-    <thead>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped" id="tablaAgregarArticulos">
+      <thead>
         <tr>
-            <th>Descripción</th>
-            <th>Cantidad</th>
-            <th>Acciones</th>
+          <th>Descripción</th>
+          <th>Cantidad</th>
+          <th>Acciones</th>
         </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
-
-
-				</div>
-			</div>
-			<div class="modal-footer">
-				
-			</div>
-		</div>
-	</div>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
 </div>
-<!-- FINALIZA DATA DE AGENDA -->
-      </div>
-      </div>
-      </div>
-      </div>
-   
+
 <script>
-
-
-function buscarArticulo() {    
+  function buscarArticulo() {
     var codigoEscaneado = $('#codigoEscaneado').val();
     var formData = new FormData();
     formData.append('codigoEscaneado', codigoEscaneado);
-    
-    $.ajax({
-        url: "Consultas/escaner_articulo.php",
-        type: 'POST',
-        data: formData,
-        processData: false,
-        contentType: false,
-        dataType: 'json',
-        success: function(data) {
-            if (data.length === 0) {
-                msjError('No encontrado');
-                
-                $('#codigoEscaneado').val('');
-                $('#codigoEscaneado').focus();
-            } else if (data.codigo) {
-                msj('Artículo encontrado');
-                
-                agregarArticulo(data);
-            }
-        },
-        error: function(data) {
-            msjError('Se ha producido un error al intentar buscar el artículo.');
-        }
-    });
-}
 
-function agregarArticulo(articulo) {
-    if ($('#detIdModal' + articulo.id).length) { // si ya esta agregado advierto
-        msjError('El artículo ya se encuentra incluido');
-    } else { // si es nuevo agrego
-        var tr = ''; 
-        var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="glyphicon glyphicon-minus"></i></button>';
-        var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
-        var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
-        
-        tr += '<tr>';
-        tr += '<td>' + articulo.descripcion + '</td>';
-        tr += '<td>' + articulo.cantidad + '</td>';
-        tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
-        tr += '</tr>';
-        
-        $('#tablaAgregarArticulos tbody').append(tr);
+    $.ajax({
+      url: "Consultas/escaner_articulo.php",
+      type: 'POST',
+      data: formData,
+      processData: false,
+      contentType: false,
+      dataType: 'json',
+      success: function(data) {
+        if (data.length === 0) {
+          msjError('No encontrado');
+        } else if (data.codigo) {
+          msj('Artículo encontrado');
+          agregarArticulo(data);
+        }
+      },
+      error: function(data) {
+        msjError('Se ha producido un error al intentar buscar el Artículo.');
+      }
+    });
+  }
+
+  function agregarArticulo(articulo) {
+    if ($('#detIdModal' + articulo.id).length) {
+      msjError('El artículo ya se encuentra incluido');
+      return;
     }
-    
+
+    var tr = $('<tr>');
+    var btnEliminar = $('<button>', {
+      'type': 'button',
+      'class': 'btn btn-xs btn-danger',
+      'html': '<i class="glyphicon glyphicon-minus"></i>'
+    });
+    btnEliminar.on('click', function() {
+      $(this).parent().parent().remove();
+    });
+
+    var inputId = $('<input>', {
+      'type': 'hidden',
+      'name': 'detIdModal[' + articulo.id + ']',
+      'value': articulo.id
+    });
+
+    var inputCantidad = $('<input>', {
+      'type': 'hidden',
+      'name': 'detCantidadModal[' + articulo.id + ']',
+      'value': articulo.cantidad
+    });
+
+    tr.append($('<td>', {
+      'text': articulo.descripcion
+    }));
+    tr.append($('<td>', {
+      'text': articulo.cantidad
+    }));
+    tr.append($('<td>').append(btnEliminar, inputId, inputCantidad));
+
+    $('#tablaAgregarArticulos tbody').append(tr);
     $('#codigoEscaneado').val('');
     $('#codigoEscaneado').focus();
-}
-
+  }
 </script>
+
      <!-- /.content-wrapper -->
    
      <!-- Control Sidebar -->
