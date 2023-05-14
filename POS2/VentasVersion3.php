@@ -101,46 +101,31 @@ include ("db_connection.php");
     });
   }
 
-  function agregarArticulo(articulo) {
-    if ($('#detIdModal' + articulo.id).length) {
-      msjError('El artículo ya se encuentra incluido');
-      return;
-    }
+  function agregarArticulo(articulo){	
+	if ($('#detIdModal' + articulo.id).length) { // si ya esta agregado advierto
+		msjError('El artículo ya se encuentra incluido');
+	} else { // si es nuevo agrego
+		var tr = ''; 
+		var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="glyphicon glyphicon-minus"></i></button>';
+		var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
+		var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
+		
+		tr += '<tr>';
+			tr += '<td>' + articulo.descripcion + '</td>';
+			tr += '<td>' + articulo.cantidad + '</td>';
+			tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
+		tr += '</tr>';
+		
+		// Mostrar la tabla
+		var tabla = document.getElementById("tablaAgregarArticulos");
+		var tbody = tabla.getElementsByTagName("tbody")[0];
+		tbody.innerHTML += tr;
+	}
+	
+	$('#codigoEscaneado').val('');
+	$('#codigoEscaneado').focus();
+}
 
-    var tr = $('<tr>');
-    var btnEliminar = $('<button>', {
-      'type': 'button',
-      'class': 'btn btn-xs btn-danger',
-      'html': '<i class="glyphicon glyphicon-minus"></i>'
-    });
-    btnEliminar.on('click', function() {
-      $(this).parent().parent().remove();
-    });
-
-    var inputId = $('<input>', {
-      'type': 'hidden',
-      'name': 'detIdModal[' + articulo.id + ']',
-      'value': articulo.id
-    });
-
-    var inputCantidad = $('<input>', {
-      'type': 'hidden',
-      'name': 'detCantidadModal[' + articulo.id + ']',
-      'value': articulo.cantidad
-    });
-
-    tr.append($('<td>', {
-      'text': articulo.descripcion
-    }));
-    tr.append($('<td>', {
-      'text': articulo.cantidad
-    }));
-    tr.append($('<td>').append(btnEliminar, inputId, inputCantidad));
-
-    $('#tablaAgregarArticulos tbody').append(tr);
-    $('#codigoEscaneado').val('');
-    $('#codigoEscaneado').focus();
-  }
 </script>
 
      <!-- /.content-wrapper -->
