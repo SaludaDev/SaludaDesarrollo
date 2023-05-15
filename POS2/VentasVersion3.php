@@ -107,7 +107,7 @@ function buscarArticulo(){
 				$('#codigoEscaneado').val('');
 				$('#codigoEscaneado').focus();
 			} else if (data.codigo) {
-				msj('Artículo encontrado');
+				
 				
 				agregarArticulo(data);
 			}
