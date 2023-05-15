@@ -124,19 +124,28 @@ function agregarArticulo(articulo) {
     msjError('El artículo no es válido');
   } else if ($('#detIdModal' + articulo.id).length) { // si ya está agregado, advertir
     msjError('El artículo ya se encuentra incluido');
-  } else { // si es nuevo, agregar
-    var tr = ''; 
-    var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="glyphicon glyphicon-minus"></i></button>';
-    var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
-    var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
-    
-    tr += '<tr>';
-    tr += '<td>' + articulo.descripcion + '</td>';
-    tr += '<td>' + articulo.cantidad + '</td>';
-    tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
-    tr += '</tr>';
-    
-    $('#tablaAgregarArticulos tbody').append(tr);
+  } else { // si es nuevo, agregar o sumar cantidad
+    var row = $('#tablaAgregarArticulos tbody').find('tr[data-id="' + articulo.id + '"]');
+    if (row.length) {
+      // Si el artículo ya está en la tabla, aumentar la cantidad
+      var cantidadActual = parseInt(row.find('.cantidad').text());
+      var nuevaCantidad = cantidadActual + articulo.cantidad;
+      row.find('.cantidad').text(nuevaCantidad);
+    } else {
+      // Si el artículo no está en la tabla, agregar una nueva fila
+      var tr = ''; 
+      var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="glyphicon glyphicon-minus"></i></button>';
+      var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
+      var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
+      
+      tr += '<tr data-id="' + articulo.id + '">';
+      tr += '<td>' + articulo.descripcion + '</td>';
+      tr += '<td class="cantidad">' + articulo.cantidad + '</td>';
+      tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
+      tr += '</tr>';
+      
+      $('#tablaAgregarArticulos tbody').append(tr);
+    }
   }
   
   $('#codigoEscaneado').val('');
