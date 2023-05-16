@@ -15,8 +15,7 @@ include ("db_connection.php");
   <title>VENTAS | <?echo $row['ID_H_O_D']?> </title>
 
 <?php include "Header.php"?>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
  <style>
         .error {
@@ -57,7 +56,7 @@ include ("db_connection.php");
 					<label>Escanear Código de Barras</label>
 					<div class="input-group">
 						<div class="input-group-addon"><i class="fa fa-barcode"></i></div>
-						<input type="text" class="form-control producto" name="codigoEscaneado" id="codigoEscaneado" autocomplete="off" onchange="buscarArticulo();">
+						<input type="text" class="form-control producto"  name="codigoEscaneado" id="codigoEscaneado" style="position: relative;" onchange="buscarArticulo();">
 					</div>
 				</div>
 				<div>
