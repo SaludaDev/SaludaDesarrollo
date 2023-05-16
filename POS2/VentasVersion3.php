@@ -82,64 +82,65 @@ include ("db_connection.php");
       "searching": false
     });
 
-    function buscarArticulo() {
-      var codigoEscaneado = $('#codigoEscaneado').val();
-      var formData = new FormData();
-      formData.append('codigoEscaneado', codigoEscaneado);
+    
+function buscarArticulo() {
+  var codigoEscaneado = $('#codigoEscaneado').val();
+  var formData = new FormData();
+  formData.append('codigoEscaneado', codigoEscaneado);
 
-      $.ajax({
-        url: "Consultas/escaner_articulo.php",
-        type: 'POST',
-        data: formData,
-        processData: false,
-        contentType: false,
-        dataType: 'json',
-        success: function(data) {
-          if (data.length === 0) {
-            msjError('No Encontrado');
-
-            $('#codigoEscaneado').val('');
-            $('#codigoEscaneado').focus();
-          } else if (data.codigo) {
-            agregarArticulo(data);
-          }
-        },
-        error: function(data) {
-          msjError('Se ha producido un error al intentar buscar el Artículo.');
-        }
-      });
-    }
-
-    function agregarArticulo(articulo) {
-      if (!articulo || !articulo.id) {
-        msjError('El artículo no es válido');
-      } else if ($('#detIdModal' + articulo.id).length) {
-        msjError('El artículo ya se encuentra incluido');
-      } else {
-        var row = tablaAgregarArticulos.row('#tablaAgregarArticulos tbody tr[data-id="' + articulo.id + '"]');
-        if (row.length) {
-          var cantidadActual = parseInt(row.data().cantidad); // Obtener la cantidad actual
-          var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad);
-          row.data().cantidad = nuevaCantidad; // Actualizar la cantidad
-          row.invalidate(); // Marcar la fila como inválida para que se vuelva a dibujar
-        } else {
-          var tr = '<tr data-id="' + articulo.id + '">' +
-            '<td>' + articulo.descripcion + '</td>' +
-            '<td class="cantidad"><input type="number" value="' + articulo.cantidad + '"  /></td>' +
-            '<td><button type="button" class="btn btn-xs btn-danger" onclick="$(this).closest(\'tr\').remove();"><i class="glyphicon glyphicon-minus"></i></button>' +
-            '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />' +
-            '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />' +
-            '</td>' +
-            '</tr>';
-
-          tablaAgregarArticulos.row.add($(tr)).draw();
-        }
+  $.ajax({
+    url: "Consultas/escaner_articulo.php",
+    type: 'POST',
+    data: formData,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    success: function(data) {
+      if (data.length === 0) {
+        msjError('No Encontrado');
+        $('#codigoEscaneado').val('');
+        $('#codigoEscaneado').focus();
+      } else if (data.codigo) {
+        agregarArticulo(data);
       }
-
-      $('#codigoEscaneado').val('');
-      $('#codigoEscaneado').focus();
+    },
+    error: function(data) {
+      msjError('Se ha producido un error al intentar buscar el Artículo.');
     }
   });
+}
+
+function agregarArticulo(articulo) {
+  if (!articulo || !articulo.id) {
+    msjError('El artículo no es válido');
+  } else if ($('#detIdModal' + articulo.id).length) {
+    msjError('El artículo ya se encuentra incluido');
+  } else {
+    var row = $('#tablaAgregarArticulos tbody').find('tr[data-id="' + articulo.id + '"]');
+    if (row.length) {
+      var cantidadActual = parseInt(row.find('.cantidad input').val()); // Obtener el valor del input y convertirlo a número
+      var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad); // Convertir el valor de cantidad a número antes de sumar
+      row.find('.cantidad input').val(nuevaCantidad); // Establecer el nuevo valor en el input
+    } else {
+      var tr = '';
+      var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="glyphicon glyphicon-minus"></i></button>';
+      var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
+      var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
+
+      tr += '<tr data-id="' + articulo.id + '">';
+      tr += '<td>' + articulo.descripcion + '</td>';
+      tr += '<td class="cantidad"><input type="number" value="' + articulo.cantidad + '"  /></td>'; // Cambiar el td por un input con el valor
+      tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
+      tr += '</tr>';
+
+      $('#tablaAgregarArticulos tbody').
+      append(tr);
+}
+}
+
+$('#codigoEscaneado').val('');
+$('#codigoEscaneado').focus();
+}
 </script>
 
      <!-- /.content-wrapper -->
