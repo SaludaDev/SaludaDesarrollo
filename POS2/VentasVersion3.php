@@ -120,19 +120,17 @@ function buscarArticulo(){
 
 
 function agregarArticulo(articulo) {
-  if (!articulo || !articulo.id) { // Verificar si el objeto articulo es undefined o no tiene la propiedad id
+  if (!articulo || !articulo.id) {
     msjError('El artículo no es válido');
-  } else if ($('#detIdModal' + articulo.id).length) { // si ya está agregado, advertir
+  } else if ($('#detIdModal' + articulo.id).length) {
     msjError('El artículo ya se encuentra incluido');
-  } else { // si es nuevo, agregar o sumar cantidad
+  } else {
     var row = $('#tablaAgregarArticulos tbody').find('tr[data-id="' + articulo.id + '"]');
     if (row.length) {
-      // Si el artículo ya está en la tabla, aumentar la cantidad
-      var cantidadActual = parseInt(row.find('.cantidad').text());
+      var cantidadActual = parseInt(row.find('.cantidad input').val()); // Obtener el valor del input en lugar del texto
       var nuevaCantidad = cantidadActual + articulo.cantidad;
-      row.find('.cantidad').text(nuevaCantidad);
+      row.find('.cantidad input').val(nuevaCantidad); // Establecer el nuevo valor en el input
     } else {
-      // Si el artículo no está en la tabla, agregar una nueva fila
       var tr = ''; 
       var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="glyphicon glyphicon-minus"></i></button>';
       var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
@@ -140,7 +138,7 @@ function agregarArticulo(articulo) {
       
       tr += '<tr data-id="' + articulo.id + '">';
       tr += '<td>' + articulo.descripcion + '</td>';
-      tr += '<td class="cantidad">' + articulo.cantidad + '</td>';
+      tr += '<td class="cantidad"><input type="text" value="' + articulo.cantidad + '" readonly /></td>'; // Cambiar el td por un input con el valor
       tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
       tr += '</tr>';
       
