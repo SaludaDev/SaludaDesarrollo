@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
     $data = array(
         "id" => $row["id"],
         "descripcion" => $row["descripcion"],
-        "cantidad" => $row["cantidad"],
+        "cantidad" => $row["1"],
         "codigo" => $row["codigo"]
     );
     header('Content-Type: application/json');
