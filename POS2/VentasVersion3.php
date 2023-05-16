@@ -127,8 +127,8 @@ function agregarArticulo(articulo) {
   } else {
     var row = $('#tablaAgregarArticulos tbody').find('tr[data-id="' + articulo.id + '"]');
     if (row.length) {
-      var cantidadActual = parseInt(row.find('.cantidad input').val()); // Obtener el valor del input en lugar del texto
-      var nuevaCantidad = cantidadActual + articulo.cantidad;
+      var cantidadActual = parseInt(row.find('.cantidad input').val()); // Obtener el valor del input y convertirlo a número
+      var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad); // Convertir el valor de cantidad a número antes de sumar
       row.find('.cantidad input').val(nuevaCantidad); // Establecer el nuevo valor en el input
     } else {
       var tr = ''; 
