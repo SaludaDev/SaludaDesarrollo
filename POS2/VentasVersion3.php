@@ -63,7 +63,7 @@ include ("db_connection.php");
 							<tr>
 								<th>Producto</th>
 								<th>Cantidad</th>
-								<th></th>
+								<th>Eliminar</th>
 							</tr>
 						</thead>
 						<tbody>
