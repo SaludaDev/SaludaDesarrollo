@@ -58,57 +58,66 @@ include ("db_connection.php");
 					</div>
 				</div>
 				<div>
-				<table class="table table-striped" id="tablaAgregarArticulos">
-  <thead>
-    <tr>
-      <th>Producto</th>
-      <th>Cantidad</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-
-  </tbody>
-</table>
-
-<!-- Resto del código HTML -->
-
+					<table class="table table-striped" id="tablaAgregarArticulos">
+						<thead>	
+							<tr>
+								<th>Producto</th>
+								<th>Cantidad</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+						
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="btnCerrarModal">Cerrar</button>
+				<button type="button" class="btn btn-primary" id="btnAgregar" onclick="agregarArticulo();">Agregar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- FINALIZA DATA DE AGENDA -->
+      </div>
+      </div>
+      </div>
+      </div>
+   
 <script>
-  $(document).ready(function() {
-    var tablaAgregarArticulos = $('#tablaAgregarArticulos').DataTable({
-      "paging": false,
-      "ordering": false,
-      "info": false,
-      "searching": false
-    });
 
-    
-function buscarArticulo() {
-  var codigoEscaneado = $('#codigoEscaneado').val();
-  var formData = new FormData();
-  formData.append('codigoEscaneado', codigoEscaneado);
 
-  $.ajax({
-    url: "Consultas/escaner_articulo.php",
-    type: 'POST',
-    data: formData,
-    processData: false,
-    contentType: false,
-    dataType: 'json',
-    success: function(data) {
-      if (data.length === 0) {
-        msjError('No Encontrado');
-        $('#codigoEscaneado').val('');
-        $('#codigoEscaneado').focus();
-      } else if (data.codigo) {
-        agregarArticulo(data);
-      }
-    },
-    error: function(data) {
-      msjError('Se ha producido un error al intentar buscar el Artículo.');
-    }
-  });
+function buscarArticulo(){	
+	var codigoEscaneado = $('#codigoEscaneado').val();
+	var formData = new FormData();
+	formData.append('codigoEscaneado', codigoEscaneado);
+	
+	$.ajax({
+		url: "Consultas/escaner_articulo.php",
+		type: 'POST',
+		data: formData,
+		processData: false,
+		contentType: false,
+		dataType: 'json',
+		success: function(data) {
+			if (data.length === 0) {
+				msjError('No Encontrado');
+				
+				$('#codigoEscaneado').val('');
+				$('#codigoEscaneado').focus();
+			} else if (data.codigo) {
+				
+				
+				agregarArticulo(data);
+			}
+		},
+		error: function(data) {
+			msjError('Se ha producido un error al intentar buscar el Artículo.');
+		}
+	});
 }
+
 
 function agregarArticulo(articulo) {
   if (!articulo || !articulo.id) {
@@ -122,27 +131,26 @@ function agregarArticulo(articulo) {
       var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad); // Convertir el valor de cantidad a número antes de sumar
       row.find('.cantidad input').val(nuevaCantidad); // Establecer el nuevo valor en el input
     } else {
-      var tr = '';
+      var tr = ''; 
       var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="glyphicon glyphicon-minus"></i></button>';
       var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
       var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
-
+      
       tr += '<tr data-id="' + articulo.id + '">';
       tr += '<td>' + articulo.descripcion + '</td>';
       tr += '<td class="cantidad"><input type="number" value="' + articulo.cantidad + '"  /></td>'; // Cambiar el td por un input con el valor
       tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
       tr += '</tr>';
+      
+      $('#tablaAgregarArticulos tbody').append(tr);
+    }
+  }
+  
+  $('#codigoEscaneado').val('');
+  $('#codigoEscaneado').focus();
+}
 
-      $('#tablaAgregarArticulos tbody').
-      append(tr);
-}
-}
-
-$('#codigoEscaneado').val('');
-$('#codigoEscaneado').focus();
-}
 </script>
-
      <!-- /.content-wrapper -->
    
      <!-- Control Sidebar -->
