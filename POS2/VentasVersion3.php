@@ -86,7 +86,30 @@ include ("db_connection.php");
       </div>
    
 <script>
-
+ table = $('#tablaAgregarArticulos').DataTable({
+        "columns": [{
+                "data": "producto"
+            },
+            {
+                "data": "cantidad"
+            },
+            {
+                "data": "id_categoria"
+            },
+           
+            {
+                "data": "eliminar"
+            },
+          
+        ],
+       
+        "order": [
+            [0, 'desc']
+        ],
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+        }
+    });
 
 function buscarArticulo(){	
 	var codigoEscaneado = $('#codigoEscaneado').val();
