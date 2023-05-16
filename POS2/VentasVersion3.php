@@ -86,6 +86,7 @@ include ("db_connection.php");
       </div>
    
 <script>
+  var table;
  table = $('#tablaAgregarArticulos').DataTable({
         "columns": [{
                 "data": "producto"
