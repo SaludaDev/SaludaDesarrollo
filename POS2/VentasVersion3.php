@@ -42,7 +42,7 @@ include ("db_connection.php");
 
 <button class="btn btn-success" type="button" id="btnNuevo" data-toggle="modal" data-target="#modalArticulos" data-keyboard="false" data-backdrop="static"><i class="fa fa-plus"></i>Iniciar captura</button>
 <!-- Modal -->
-<div class="modal fade" id="modalArticulos" tabindex="-1" role="dialog" aria-labelledby="modalArticulosLabel">
+<div class="modal fade bd-example-modal-lg" id="modalArticulos" tabindex="-1" role="dialog" aria-labelledby="modalArticulosLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
