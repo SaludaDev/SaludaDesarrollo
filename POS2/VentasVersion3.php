@@ -63,7 +63,7 @@ include ("db_connection.php");
 							<tr>
 								<th>Producto</th>
 								<th>Cantidad</th>
-								<th>Eliminar</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -86,7 +86,6 @@ include ("db_connection.php");
       </div>
    
 <script>
-  var table;
  table = $('#tablaAgregarArticulos').DataTable({
         "columns": [{
                 "data": "producto"
