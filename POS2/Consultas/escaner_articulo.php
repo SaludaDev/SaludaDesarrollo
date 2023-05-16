@@ -29,7 +29,8 @@ if ($result->num_rows > 0) {
         "id" => $row["id"],
         "descripcion" => $row["descripcion"],
         "cantidad" => [1],
-        "codigo" => $row["codigo"]
+        "codigo" => $row["codigo"],
+        "eliminar" => ""
     );
     header('Content-Type: application/json');
     echo json_encode($data);
