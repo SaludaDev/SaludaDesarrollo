@@ -150,7 +150,7 @@ $('#codigoEscaneado').autocomplete({
   source: function (request, response) {
     // Realiza una solicitud AJAX para obtener los resultados de autocompletado
     $.ajax({
-      url: 'Consultas/escaner_articulo.php',
+      url: 'Consultas/autocompletado.php',
       type: 'GET',
       dataType: 'json',
       data: {
