@@ -15,6 +15,9 @@ include ("db_connection.php");
   <title>VENTAS | <?echo $row['ID_H_O_D']?> </title>
 
 <?php include "Header.php"?>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
  <style>
         .error {
   color: red;
@@ -88,6 +91,9 @@ include ("db_connection.php");
 <script>
  table = $('#tablaAgregarArticulos').DataTable({
         "columns": [{
+                "data": "id"
+            },
+          {
                 "data": "producto"
             },
             {
@@ -111,35 +117,57 @@ include ("db_connection.php");
         }
     });
 
-function buscarArticulo(){	
-	var codigoEscaneado = $('#codigoEscaneado').val();
-	var formData = new FormData();
-	formData.append('codigoEscaneado', codigoEscaneado);
-	
-	$.ajax({
-		url: "Consultas/escaner_articulo.php",
-		type: 'POST',
-		data: formData,
-		processData: false,
-		contentType: false,
-		dataType: 'json',
-		success: function(data) {
-			if (data.length === 0) {
-				msjError('No Encontrado');
-				
-				$('#codigoEscaneado').val('');
-				$('#codigoEscaneado').focus();
-			} else if (data.codigo) {
-				
-				
-				agregarArticulo(data);
-			}
-		},
-		error: function(data) {
-			msjError('Se ha producido un error al intentar buscar el Artículo.');
-		}
-	});
+    function buscarArticulo() {
+  var codigoEscaneado = $('#codigoEscaneado').val();
+  var formData = new FormData();
+  formData.append('codigoEscaneado', codigoEscaneado);
+
+  $.ajax({
+    url: "Consultas/escaner_articulo.php",
+    type: 'POST',
+    data: formData,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    success: function (data) {
+      if (data.length === 0) {
+        msjError('No Encontrado');
+
+        $('#codigoEscaneado').val('');
+        $('#codigoEscaneado').focus();
+      } else if (data.codigo) {
+        agregarArticulo(data);
+      }
+    },
+    error: function (data) {
+      msjError('Se ha producido un error al intentar buscar el Artículo.');
+    }
+  });
 }
+
+// Agrega el autocompletado al campo de búsqueda
+$('#codigoEscaneado').autocomplete({
+  source: function (request, response) {
+    // Realiza una solicitud AJAX para obtener los resultados de autocompletado
+    $.ajax({
+      url: 'Consultas/autocompletado.php',
+      type: 'GET',
+      dataType: 'json',
+      data: {
+        term: request.term
+      },
+      success: function (data) {
+        response(data);
+      }
+    });
+  },
+  minLength: 2, // Especifica la cantidad mínima de caracteres para activar el autocompletado
+  select: function (event, ui) {
+    // Cuando se selecciona un resultado del autocompletado, llamar a la función buscarArticulo() con el código seleccionado
+    $('#codigoEscaneado').val(ui.item.value);
+    buscarArticulo();
+  }
+});
 
 
 function agregarArticulo(articulo) {
