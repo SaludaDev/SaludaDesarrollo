@@ -140,9 +140,12 @@ include ("db_connection.php");
                         <table class="table table-striped" id="tablaAgregarArticulos">
 						<thead>	
 							<tr>
+                            <th>Codigo</th>
 								<th>Producto</th>
 								<th>Cantidad</th>
-								<th></th>
+                                <th>Precio</th>
+                                <th>Importe</th>
+								<th>Eliminar</th>
 							</tr>
 						</thead>
 						<tbody>
