@@ -114,7 +114,7 @@ include ("db_connection.php");
                                 </label>
 
                                 <div class="input-group">
-						<div class="input-group-addon"><i class="fa fa-barcode"></i></div>
+						
 						<input type="text" class="form-control producto"  name="codigoEscaneado" id="codigoEscaneado" style="position: relative;" onchange="buscarArticulo();">
 					</div>
                             </div>
