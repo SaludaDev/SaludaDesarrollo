@@ -137,26 +137,23 @@ include ("db_connection.php");
                         <!-- LISTADO QUE CONTIENE LOS PRODUCTOS QUE SE VAN AGREGANDO PARA LA COMPRA -->
                         <div class="col-md-12">
 
-                            <table id="lstProductosVenta" class="display nowrap table-striped w-100 shadow ">
-                                <thead class="bg-gray text-left fs-6">
-                                    <tr>
-                                        <th>Item</th>
-                                        <th>Codigo</th>
-                                        <th>Id Categoria</th>
-                                        <th>Categoria</th>
-                                        <th>Producto</th>
-                                        <th>Cantidad</th>
-                                        <th>Precio</th>
-                                        <th>Total</th>
-                                        <th class="text-center">Opciones</th>
-                                        <th>Aplica Peso</th>
-                                        <th>Precio Por Mayor</th>
-                                        <th>Precio Oferta</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="small text-left fs-6">
-                                </tbody>
-                            </table>
+                        <table class="table table-striped" id="tablaAgregarArticulos">
+						<thead>	
+							<tr>
+								<th>Producto</th>
+								<th>Cantidad</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+						
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+		
+				<button type="button" class="btn btn-primary" id="btnAgregar" onclick="agregarArticulo();">Agregar</button>
                             <!-- / table -->
                         </div>
                         <!-- /.col -->
