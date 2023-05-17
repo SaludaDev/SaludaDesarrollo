@@ -11,23 +11,25 @@ if (!$conn) {
   die('Error de conexión: ' . mysqli_connect_error());
 }
 
+// Obtén el término de búsqueda enviado desde el campo de autocompletado
 $term = $_GET['term'];
 
-// Define y asigna el valor de Fk_sucursal
-$fk_sucursal = $row['21']; // Cambia esto por el valor deseado
-
-$query = "SELECT Cod_Barra, Nombre_Prod FROM Stock_POS WHERE (Cod_Barra LIKE '%{$term}%' OR Nombre_Prod LIKE '%{$term}%') AND Fk_sucursal ='".$fk_sucursal."'";
+// Realiza la consulta utilizando el término de búsqueda
+$query = "SELECT Cod_Barra, Nombre_Prod FROM Stock_POS WHERE Cod_Barra LIKE '%{$term}%' OR Nombre_Prod LIKE '%{$term}%'";
 $result = mysqli_query($conn, $query);
 
+// Genera un array con los resultados de autocompletado
 $autocompletado = array();
 while ($row = mysqli_fetch_assoc($result)) {
   $autocompletado[] = array(
-    'label' => $row['Cod_Barra'] . ' - ' . $row['Nombre_Prod'],
-    'value' => $row['Cod_Barra']
+    'label' => $row['Cod_Barra'] . ' - ' . $row['Nombre_Prod'], // Texto que se muestra en el autocompletado
+    'value' => $row['Cod_Barra'] // Valor que se selecciona al elegir un resultado del autocompletado
   );
 }
 
+// Devuelve los resultados de autocompletado como JSON
 echo json_encode($autocompletado);
 
+// Cierra la conexión a la base de datos
 mysqli_close($conn);
 ?>
