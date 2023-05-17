@@ -379,6 +379,9 @@ Aqui va el corte de caja
             {
                 "data": "id_categoria"
             },
+            {
+                "data": "precio"
+            },
            
             {
                 "data": "eliminar"
