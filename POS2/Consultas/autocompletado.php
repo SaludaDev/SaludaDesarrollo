@@ -16,7 +16,7 @@ $term = $_GET['term'];
 // Asigna el valor de Fk_sucursal antes de la consulta
 $sucursal =21;
 
-$query = "SELECT Cod_Barra, Nombre_Prod FROM Stock_POS WHERE  Cod_Barra LIKE '%{$term}%' OR Nombre_Prod LIKE '%{$term}%' AND Fk_sucursal ='".$sucursal."'";
+$query = "SELECT Cod_Barra, Nombre_Prod,Fk_sucursal FROM Stock_POS WHERE  Cod_Barra LIKE '%{$term}%' OR Nombre_Prod LIKE '%{$term}%' AND Fk_sucursal ='".$sucursal."'";
 $result = mysqli_query($conn, $query);
 
 $autocompletado = array();
