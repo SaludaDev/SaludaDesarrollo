@@ -382,7 +382,9 @@ Aqui va el corte de caja
             {
                 "data": "precio"
             },
-           
+            {
+                "data": "preci2"
+            },
             {
                 "data": "eliminar"
             },
