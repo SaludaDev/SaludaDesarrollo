@@ -15,15 +15,15 @@ if (!$conn) {
 $term = $_GET['term'];
 
 // Realiza la consulta utilizando el término de búsqueda
-$query = "SELECT codigo, descripcion FROM articulos WHERE codigo LIKE '%{$term}%' OR descripcion LIKE '%{$term}%'";
+$query = "SELECT Cod_Barra, Nombre_Prod FROM Stock_POS WHERE Cod_Barra LIKE '%{$term}%' OR Nombre_Prod LIKE '%{$term}%'";
 $result = mysqli_query($conn, $query);
 
 // Genera un array con los resultados de autocompletado
 $autocompletado = array();
 while ($row = mysqli_fetch_assoc($result)) {
   $autocompletado[] = array(
-    'label' => $row['codigo'] . ' - ' . $row['descripcion'], // Texto que se muestra en el autocompletado
-    'value' => $row['codigo'] // Valor que se selecciona al elegir un resultado del autocompletado
+    'label' => $row['Cod_Barra'] . ' - ' . $row['Nombre_Prod'], // Texto que se muestra en el autocompletado
+    'value' => $row['Cod_Barra'] // Valor que se selecciona al elegir un resultado del autocompletado
   );
 }
 

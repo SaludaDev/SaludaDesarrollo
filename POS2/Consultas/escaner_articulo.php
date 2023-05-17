@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 $codigo = $_POST['codigoEscaneado'];
 
 // Consultar la base de datos para obtener el artículo correspondiente al código de barras
-$sql = "SELECT * FROM articulos WHERE codigo = ?";
+$sql = "SELECT * FROM Stock_POS WHERE Cod_Barra = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $codigo);
 $stmt->execute();
@@ -26,10 +26,10 @@ if ($result->num_rows > 0) {
     // Si se encontró el artículo, devolver sus datos en formato JSON
     $row = $result->fetch_assoc();
     $data = array(
-        "id" => $row["id"],
-        "descripcion" => $row["descripcion"],
+        "id" => $row["ID_Prod_POS"],
+        "descripcion" => $row["Nombre_Prod"],
         "cantidad" => [1],
-        "codigo" => $row["codigo"],
+        "codigo" => $row["Cod_Barra"],
         "eliminar" => ""
     );
     header('Content-Type: application/json');
