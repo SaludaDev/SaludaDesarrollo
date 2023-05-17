@@ -465,7 +465,7 @@ function agregarArticulo(articulo) {
       row.find('.cantidad input').val(nuevaCantidad); // Establecer el nuevo valor en el input
     } else {
       var tr = ''; 
-      var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="fas fa-minus-circle"></i></button>';
+      var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="fas fa-minus-circle fa-xs"></i></button>';
       var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
       var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
       
