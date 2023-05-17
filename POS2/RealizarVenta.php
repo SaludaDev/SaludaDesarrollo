@@ -470,7 +470,8 @@ function agregarArticulo(articulo) {
       var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
       
       tr += '<tr data-id="' + articulo.id + '">';
-      tr += '<td>' + articulo.descripcion + '</td>';
+     
+      tr += '<td class="cantidad"><input type="text" value="' + articulo.descripcion + '"  /></td>';
       tr += '<td class="cantidad"><input type="number" value="' + articulo.cantidad + '"  /></td>'; // Cambiar el td por un input con el valor
       tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
       tr += '</tr>';
