@@ -74,8 +74,8 @@ include ("db_connection.php");
 					</table>
 				</div>
 			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal" id="btnCerrarModal">Cerrar</button>
+			
+		
 				<button type="button" class="btn btn-primary" id="btnAgregar" onclick="agregarArticulo();">Agregar</button>
 			</div>
 		</div>
