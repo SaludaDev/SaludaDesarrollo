@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 $codigo = $_POST['codigoEscaneado'];
 
 // Consultar la base de datos para obtener el artículo correspondiente al código de barras
-$sql = "SELECT * FROM Stock_POS WHERE Cod_Barra = ?";
+$sql = "SELECT * FROM Stock_POS WHERE Cod_Barra = ? AND Fk_sucursal ='".$row['Fk_sucursal']."'";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $codigo);
 $stmt->execute();

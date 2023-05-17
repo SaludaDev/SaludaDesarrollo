@@ -15,7 +15,7 @@ if (!$conn) {
 $term = $_GET['term'];
 
 // Realiza la consulta utilizando el término de búsqueda
-$query = "SELECT Cod_Barra, Nombre_Prod FROM Stock_POS WHERE Cod_Barra LIKE '%{$term}%' OR Nombre_Prod LIKE '%{$term}%'";
+$query = "SELECT Cod_Barra, Nombre_Prod FROM Stock_POS WHERE Fk_sucursal =".$row['Fk_sucursal']." AND Cod_Barra LIKE '%{$term}%' OR Nombre_Prod LIKE '%{$term}%'";
 $result = mysqli_query($conn, $query);
 
 // Genera un array con los resultados de autocompletado
