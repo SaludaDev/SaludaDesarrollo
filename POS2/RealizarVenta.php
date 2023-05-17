@@ -113,7 +113,10 @@ include ("db_connection.php");
                                     <span class="small">Productos</span>
                                 </label>
 
-                                <input type="text" class="form-control form-control" id="iptCodigoVenta" placeholder="Ingrese el código de barras o el nombre del producto">
+                                <div class="input-group">
+						<div class="input-group-addon"><i class="fa fa-barcode"></i></div>
+						<input type="text" class="form-control producto"  name="codigoEscaneado" id="codigoEscaneado" style="position: relative;" onchange="buscarArticulo();">
+					</div>
                             </div>
 
                         </div>
