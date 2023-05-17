@@ -13,10 +13,10 @@ if (!$conn) {
 
 $term = $_GET['term'];
 
-// Asigna el valor de Fk_sucursal antes de la consulta
-$sucursal =21;
+// Define y asigna el valor de Fk_sucursal
+$fk_sucursal = $row['21']; // Cambia esto por el valor deseado
 
-$query = "SELECT Cod_Barra, Nombre_Prod,Fk_sucursal FROM Stock_POS WHERE  Cod_Barra LIKE '%{$term}%' OR Nombre_Prod LIKE '%{$term}%' AND Fk_sucursal ='".$sucursal."'";
+$query = "SELECT Cod_Barra, Nombre_Prod FROM Stock_POS WHERE (Cod_Barra LIKE '%{$term}%' OR Nombre_Prod LIKE '%{$term}%') AND Fk_sucursal ='".$fk_sucursal."'";
 $result = mysqli_query($conn, $query);
 
 $autocompletado = array();
