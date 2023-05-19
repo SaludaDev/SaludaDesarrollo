@@ -387,7 +387,9 @@ Aqui va el corte de caja
             {
                 "data": "eliminar"
             },
-          
+            {
+                "data": "descuentos"
+            },
         ],
        
         "order": [
