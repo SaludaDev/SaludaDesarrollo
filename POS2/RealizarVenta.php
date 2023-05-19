@@ -58,7 +58,7 @@ include ("db_connection.php");
 
             <div class="card card-gray shadow">
 
-            <div class="card-body mt-0 pt-0">
+                <div class="card-body p-3">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true" style="font-weight: 600;">Ventas</a>
@@ -137,8 +137,21 @@ include ("db_connection.php");
                         <!-- LISTADO QUE CONTIENE LOS PRODUCTOS QUE SE VAN AGREGANDO PARA LA COMPRA -->
                              <div class="table-responsive">
                         <div class="col-md-12">
+                          <style>
+                            #tablaAgregarArticulos {
+  width: 100%;
+  table-layout: fixed;
+}
+
+#tablaAgregarArticulos td, #tablaAgregarArticulos th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+                          </style>
                   
-                        <table class="table table-striped" id="tablaAgregarArticulos">
+                        <table class="table table-striped" id="tablaAgregarArticulos" class="display">
 						<thead>	
 							<tr>
                 <th>Codigo</th>
