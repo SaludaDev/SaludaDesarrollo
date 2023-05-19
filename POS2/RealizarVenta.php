@@ -138,7 +138,7 @@ include ("db_connection.php");
                         <div class="table-responsive">
                         <div class="col-md-12">
                   
-                        <table class="table table-striped" id="tablaAgregarArticulos">
+                        <table class="table table-striped" id="tablaAgregarArticulos" style="width: 100%;">
 						<thead>	
 							<tr>
                 <th>Codigo</th>
