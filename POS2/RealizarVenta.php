@@ -442,7 +442,7 @@ $('#codigoEscaneado').autocomplete({
       }
     });
   },
-  minLength: 5, // Especifica la cantidad mínima de caracteres para activar el autocompletado
+  minLength: 3, // Especifica la cantidad mínima de caracteres para activar el autocompletado
   select: function (event, ui) {
     // Cuando se selecciona un resultado del autocompletado, llamar a la función buscarArticulo() con el código seleccionado
     $('#codigoEscaneado').val(ui.item.value);
