@@ -394,10 +394,14 @@ Aqui va el corte de caja
        
         "order": [
             [0, 'desc']
+            
         ],
         "language": {
             "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
-        }
+        },
+         //para usar los botones   
+         responsive: "true",
+       
     });
 
     function buscarArticulo() {
