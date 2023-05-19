@@ -135,8 +135,9 @@ include ("db_connection.php");
                         </div>
 
                         <!-- LISTADO QUE CONTIENE LOS PRODUCTOS QUE SE VAN AGREGANDO PARA LA COMPRA -->
-                        <div class="col-md-12">
                         <div class="table-responsive">
+                        <div class="col-md-12">
+                  
                         <table class="table table-striped" id="tablaAgregarArticulos">
 						<thead>	
 							<tr>
