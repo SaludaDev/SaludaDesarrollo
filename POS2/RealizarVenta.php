@@ -30,7 +30,7 @@ include ("db_connection.php");
  
   
 </head>
-
+<?php include_once ("Menu.php")?>
 
    <!-- <div class="text-center">
 <button data-toggle="modal" data-target="#ConsultaProductos" class="btn btn-primary btn-sm"  >Consulta productos <i class="fas fa-search"></i></button>
