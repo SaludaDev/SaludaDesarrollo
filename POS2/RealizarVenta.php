@@ -58,7 +58,7 @@ include ("db_connection.php");
 
             <div class="card card-gray shadow">
 
-                <div class="card-body p-3">
+            <div class="card-body mt-0 pt-0">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true" style="font-weight: 600;">Ventas</a>
