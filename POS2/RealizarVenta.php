@@ -136,7 +136,7 @@ include ("db_connection.php");
 
                         <!-- LISTADO QUE CONTIENE LOS PRODUCTOS QUE SE VAN AGREGANDO PARA LA COMPRA -->
                         <div class="col-md-12">
-
+                        <div class="table-responsive">
                         <table class="table table-striped" id="tablaAgregarArticulos">
 						<thead>	
 							<tr>
@@ -153,7 +153,7 @@ include ("db_connection.php");
 						</tbody>
 					</table>
                             <!-- / table -->
-                        </div>
+                        </div>    </div>
                         <!-- /.col -->
                     </div>
   </div>
