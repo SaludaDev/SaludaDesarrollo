@@ -139,6 +139,14 @@ include ("db_connection.php");
                         <div class="col-md-12">
                   
                         <table class="table table-striped" id="tablaAgregarArticulos" style="width: 100%;">
+                        <colgroup>
+        <col style="width: 10%;">
+        <col style="width: 30%;">
+        <col style="width: 15%;">
+        <col style="width: 15%;">
+        <col style="width: 15%;">
+        <col style="width: 15%;">
+      </colgroup>
 						<thead>	
 							<tr>
                 <th>Codigo</th>
