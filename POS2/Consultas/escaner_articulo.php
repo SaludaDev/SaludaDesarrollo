@@ -27,10 +27,11 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $data = array(
         "id" => $row["ID_Prod_POS"],
+        "codigo" => $row["Cod_Barra"],
         "descripcion" => $row["Nombre_Prod"],
         "cantidad" => [1],
-        "codigo" => $row["Cod_Barra"],
-        "eliminar" => ""
+        "precio" => $row["Precio_Venta"],
+      "eliminar" => ""
     );
     header('Content-Type: application/json');
     echo json_encode($data);

@@ -140,11 +140,11 @@ include ("db_connection.php");
                         <table class="table table-striped" id="tablaAgregarArticulos">
 						<thead>	
 							<tr>
-                            <th>Codigo</th>
+                <th>Codigo</th>
 								<th>Producto</th>
 								<th>Cantidad</th>
-                                <th>Precio</th>
-                                <th>Importe</th>
+                <th>Precio</th>
+                <th>Importe</th>
 								<th>Eliminar</th>
 							</tr>
 						</thead>
@@ -370,21 +370,20 @@ Aqui va el corte de caja
         "columns": [{
                 "data": "id"
             },
+            {
+                "data": "codigo"
+            },
           {
-                "data": "producto"
+                "data": "descripcion"
             },
             {
                 "data": "cantidad"
             },
-            {
-                "data": "id_categoria"
-            },
+        
             {
                 "data": "precio"
             },
-            {
-                "data": "preci2"
-            },
+           
             {
                 "data": "eliminar"
             },
