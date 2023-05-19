@@ -476,9 +476,9 @@ function agregarArticulo(articulo) {
       
       tr += '<tr data-id="' + articulo.id + '">';
      
-      tr += '<td class="cantidad"><input type="text" value="' + articulo.descripcion + '"  /></td>';
+      tr += '<td class="descripcion"><input type="text" value="' + articulo.descripcion + '"  /></td>';
       tr += '<td class="cantidad"><input type="number" value="' + articulo.cantidad + '"  /></td>'; // Cambiar el td por un input con el valor
-      tr += '<td class="cantidad"><input type="number" value="' + articulo.precio + '"  /></td>'; // Cambiar el td por un input con el valor
+      tr += '<td class="precio"><input type="number" value="' + articulo.precio + '"  /></td>'; // Cambiar el td por un input con el valor
       tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
       tr += '</tr>';
       
