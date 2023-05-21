@@ -479,11 +479,12 @@ function agregarArticulo(articulo) {
   } else {
     var row = $('#tablaAgregarArticulos tbody').find('tr[data-id="' + articulo.id + '"]');
     if (row.length) {
-      var cantidadActual = parseInt(row.find('.cantidad input').val()); // Obtener el valor del input y convertirlo a número
-      var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad); // Convertir el valor de cantidad a número antes de sumar
-      row.find('.cantidad input').val(nuevaCantidad); // Establecer el nuevo valor en el input
+      var cantidadActual = parseInt(row.find('.cantidad input').val());
+      var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad);
+      row.find('.cantidad input').val(nuevaCantidad);
+      actualizarImporte(row); // Actualizar el importe de la fila modificada
     } else {
-      var tr = ''; 
+      var tr = '';
       var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="fas fa-minus-circle fa-xs"></i></button>';
       var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
       var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
@@ -491,18 +492,28 @@ function agregarArticulo(articulo) {
       tr += '<tr data-id="' + articulo.id + '">';
       tr += '<td class="codigo"><input type="text" value="' + articulo.codigo + '"  /></td>';
       tr += '<td class="descripcion"><input type="text" value="' + articulo.descripcion + '"  /></td>';
-      tr += '<td class="cantidad"><input type="number" value="' + articulo.cantidad + '"  /></td>'; // Cambiar el td por un input con el valor
-      tr += '<td class="precio"><input type="number" value="' + articulo.precio + '"  /></td>'; // Cambiar el td por un input con el valor
+      tr += '<td class="cantidad"><input type="number" value="' + articulo.cantidad + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
+      tr += '<td class="precio"><input type="number" value="' + articulo.precio + '"  /></td>';
+      tr += '<td class="importe"></td>'; // Agregar la columna importe sin valor inicial
       tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
       tr += '</tr>';
       
       $('#tablaAgregarArticulos tbody').append(tr);
+      actualizarImporte($('#tablaAgregarArticulos tbody tr:last-child')); // Actualizar el importe de la nueva fila
     }
   }
   
   $('#codigoEscaneado').val('');
   $('#codigoEscaneado').focus();
 }
+
+function actualizarImporte(row) {
+  var cantidad = parseInt(row.find('.cantidad input').val());
+  var precio = parseFloat(row.find('.precio input').val());
+  var importe = cantidad * precio;
+  row.find('.importe').text(importe.toFixed(2)); // Establecer el valor del importe con dos decimales
+}
+
 
 </script>
      <!-- Control Sidebar -->
