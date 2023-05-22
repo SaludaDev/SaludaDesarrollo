@@ -489,34 +489,40 @@ function agregarArticulo(articulo) {
   } else if ($('#detIdModal' + articulo.id).length) {
     mostrarMensaje('El artículo ya se encuentra incluido');
   } else {
-    var tr = $('<tr data-id="' + articulo.id + '"></tr>');
-    var btnEliminar = $('<button type="button" class="btn btn-xs btn-danger"><i class="fas fa-minus-circle fa-xs"></i></button>');
-    var inputId = $('<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />');
-    var inputCantidad = $('<input class="form-control" type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />');
-
-    tr.append('<td class="codigo"><input class="form-control" type="text" value="' + articulo.codigo + '"  /></td>');
-    tr.append('<td class="descripcion"><input class="form-control" type="text" value="' + articulo.descripcion + '"  /></td>');
-    tr.append('<td class="cantidad"><input class="form-control" type="number" value="' + articulo.cantidad + '" /></td>');
-    tr.append('<td class="precio"><input class="form-control" type="number" value="' + articulo.precio + '" /></td>');
-    tr.append('<td class="importe"><input class="form-control" type="number" readonly /></td>');
-    tr.append('<td class="importe_siniva"><input class="form-control" type="number" readonly /></td>');
-    tr.append('<td class="valordelniva"><input class="form-control" type="number" readonly /></td>');
-    tr.append($('<td></td>').append(btnEliminar).append(inputId).append(inputCantidad));
-
-    $('#tablaAgregarArticulos tbody').append(tr);
-    actualizarImporte(tr);
-    calcularIVA(tr);
-
-    btnEliminar.on('click', function() {
-      tr.remove();
-      actualizarSuma();
-    });
-
-    tr.find('.cantidad input').on('change', function() {
-      actualizarImporte(tr);
-    });
+    var row = $('#tablaAgregarArticulos tbody').find('tr[data-id="' + articulo.id + '"]');
+    if (row.length) {
+      var cantidadActual = parseInt(row.find('.cantidad input').val());
+      var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad);
+      if (nuevaCantidad < 0) {
+        mostrarMensaje('La cantidad no puede ser negativa');
+        return;
+      }
+      row.find('.cantidad input').val(nuevaCantidad);
+      actualizarImporte(row);
+      calcularIVA(row);
+    } else {
+      var tr = '';
+      var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="fas fa-minus-circle fa-xs"></i></button>';
+      var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
+      var inputCantidad = '<input class="form-control" type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
+      
+      tr += '<tr data-id="' + articulo.id + '">';
+      tr += '<td class="codigo"><input class="form-control" type="text" value="' + articulo.codigo + '"  /></td>';
+      tr += '<td class="descripcion"><input class="form-control" type="text" value="' + articulo.descripcion + '"  /></td>';
+      tr += '<td class="cantidad"><input class="form-control" type="number" value="' + articulo.cantidad + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
+      tr += '<td class="precio"><input class="form-control" type="number" value="' + articulo.precio + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
+      tr += '<td><input class="form-control importe" type="number" readonly /></td>';
+      tr += '<td><input class="form-control importe_siniva" type="number" readonly /></td>';
+      tr += '<td><input class="form-control valordelniva" type="nub" readonly /></td>';
+      tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
+      tr += '</tr>';
+      
+      $('#tablaAgregarArticulos tbody').append(tr);
+      actualizarImporte($('#tablaAgregarArticulos tbody tr:last-child'));
+      calcularIVA($('#tablaAgregarArticulos tbody tr:last-child'));
+    }
   }
-
+  
   $('#codigoEscaneado').val('');
   $('#codigoEscaneado').focus();
 }
@@ -534,21 +540,22 @@ function actualizarImporte(row) {
     return;
   }
   var importe = cantidad * precio;
-  var iva = importe * 0.16;
-  var importeSinIVA = importe - iva;
   row.find('.importe input').val(importe.toFixed(2));
-  row.find('.importe_siniva input').val(importeSinIVA.toFixed(2));
-  row.find('.valordelniva input').val(iva.toFixed(2));
-  
   calcularIVA(row);
 }
+
 // Función para calcular el IVA
 function calcularIVA(row) {
   var precio = parseFloat(row.find('.precio input').val());
-  var iva = precio * 0.16;
+  var iva = precio / 1.16 * 0.16;
   var importeSinIVA = precio - iva;
   row.find('.importe_siniva input').val(importeSinIVA.toFixed(2));
   row.find('.valordelniva input').val(iva.toFixed(2));
+
+  // Actualizar el valor total del IVA
+  var cantidad = parseInt(row.find('.cantidad input').val());
+  totalIVA += iva * cantidad;
+  $('#totalIVA').text(totalIVA.toFixed(2));
 
   actualizarSuma();
 }
@@ -559,8 +566,8 @@ function actualizarSuma() {
   var sumaDiferenciaIVA = 0;
 
   $('#tablaAgregarArticulos tbody tr').each(function() {
-    var importeSinIVA = parseFloat($(this).find('.importe_siniva input').val());
-    var diferenciaIVA = parseFloat($(this).find('.valordelniva input').val());
+    var importeSinIVA = parseFloat($(this).find('.importe_siniva').text());
+    var diferenciaIVA = parseFloat($(this).find('.valordelniva').text());
 
     sumaImporteSinIVA += importeSinIVA;
     sumaDiferenciaIVA += diferenciaIVA;
@@ -575,6 +582,7 @@ function mostrarMensaje(mensaje) {
   // Mostrar el mensaje en una ventana emergente de alerta
   alert(mensaje);
 }
+
 
 
 </script>
