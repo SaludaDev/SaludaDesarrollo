@@ -472,6 +472,8 @@ $('#codigoEscaneado').autocomplete({
 });
 
 
+var totalIVA = 0; // Variable para almacenar el total del IVA
+
 function agregarArticulo(articulo) {
   if (!articulo || !articulo.id) {
     mostrarMensaje('El artículo no es válido');
@@ -488,6 +490,7 @@ function agregarArticulo(articulo) {
       }
       row.find('.cantidad input').val(nuevaCantidad);
       actualizarImporte(row);
+      calcularIVA(row);
     } else {
       var tr = '';
       var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="fas fa-minus-circle fa-xs"></i></button>';
@@ -527,20 +530,25 @@ function actualizarImporte(row) {
   }
   var importe = cantidad * precio;
   row.find('.importe').text(importe.toFixed(2));
+  calcularIVA(row);
 }
 
 function calcularIVA(row) {
-  var precio = parseInt(row.find('.precio input').val());
-  var iva = precio * .16;
+  var precio = parseFloat(row.find('.precio input').val());
+  var iva = precio / 1.16 * 0.16;
   var importeSinIVA = precio - iva;
   row.find('.importe_siniva').text(importeSinIVA.toFixed(2));
+
+  // Actualizar el valor total del IVA
+  var cantidad = parseInt(row.find('.cantidad input').val());
+  totalIVA += iva * cantidad;
+  $('#totalIVA').text(totalIVA.toFixed(2));
 }
 
 function mostrarMensaje(mensaje) {
   // Mostrar el mensaje en una ventana emergente de alerta
   alert(mensaje);
 }
-
 
 </script>
      <!-- Control Sidebar -->
