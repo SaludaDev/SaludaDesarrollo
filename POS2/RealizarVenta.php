@@ -530,7 +530,7 @@ function actualizarImporte(row) {
 }
 
 function calcularIVA(row) {
-  var precio = parseFloat(row.find('.precio input').val());
+  var precio = parseInt(row.find('.precio input').val());
   var iva = precio * .16;
   var importeSinIVA = precio - iva;
   row.find('.importe_siniva').text(importeSinIVA.toFixed(2));
