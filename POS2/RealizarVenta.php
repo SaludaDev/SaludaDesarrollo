@@ -513,9 +513,9 @@ function agregarArticulo(articulo) {
       tr += '<td class="descripcion"><input class="form-control" type="text" value="' + articulo.descripcion + '"  /></td>';
       tr += '<td class="cantidad"><input class="form-control" type="number" value="' + articulo.cantidad + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
       tr += '<td class="precio"><input class="form-control" type="number" value="' + articulo.precio + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
-      tr += '<td><input class="form-control importe" type="number" readonly /></td>';
-      tr += '<td><input class="form-control importe_siniva" type="number" readonly /></td>';
-      tr += '<td><input class="form-control valordelniva" type="number" readonly /></td>';
+      tr += '<td><input id="importe_' + articulo.id + '" class="form-control importe" type="number" readonly /></td>';
+      tr += '<td><input id="importe_siniva_' + articulo.id + '" class="form-control importe_siniva" type="number" readonly /></td>';
+      tr += '<td><input id="valordelniva_' + articulo.id + '" class="form-control valordelniva" type="number" readonly /></td>';
       tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
       tr += '</tr>';
       
