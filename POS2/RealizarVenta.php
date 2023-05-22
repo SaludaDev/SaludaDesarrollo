@@ -529,7 +529,6 @@ function agregarArticulo(articulo) {
   $('#codigoEscaneado').val('');
   $('#codigoEscaneado').focus();
 }
-
 // Función para actualizar el importe
 function actualizarImporte(row) {
   var cantidad = parseInt(row.find('.cantidad input').val());
@@ -545,10 +544,11 @@ function actualizarImporte(row) {
   var importe = cantidad * precio;
   var iva = importe * 0.16;
   var importeSinIVA = importe - iva;
-  row.find('.importe input').val(importe.toFixed(2));
-  row.find('.importe_siniva input').val(importeSinIVA.toFixed(2));
-  row.find('.valordelniva input').val(iva.toFixed(2));
+  row.find('input.importe').val(importe.toFixed(2));
+  row.find('input.importe_siniva').val(importeSinIVA.toFixed(2));
+  row.find('input.valordelniva').val(iva.toFixed(2));
 }
+
 
 // Función para calcular el IVA
 function calcularIVA() {
