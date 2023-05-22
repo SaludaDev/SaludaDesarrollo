@@ -482,6 +482,9 @@ $('#codigoEscaneado').autocomplete({
 // Variable para almacenar el total del IVA
 var totalIVA = 0;
 
+// Variable para almacenar el total del IVA
+var totalIVA = 0;
+
 // Función para agregar un artículo
 function agregarArticulo(articulo) {
   if (!articulo || !articulo.id) {
@@ -547,6 +550,9 @@ function actualizarImporte(row) {
   row.find('.importe input').val(importe.toFixed(2));
   row.find('.importe_siniva input').val(importeSinIVA.toFixed(2));
   row.find('.valordelniva input').val(iva.toFixed(2));
+
+  calcularIVA();
+  actualizarSuma();
 }
 
 // Función para calcular el IVA
