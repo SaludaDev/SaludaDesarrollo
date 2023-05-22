@@ -554,8 +554,7 @@ function calcularIVA() {
   totalIVA = 0;
 
   $('#tablaAgregarArticulos tbody tr').each(function() {
-    var importe = parseFloat($(this).find('.importe input').val());
-    var iva = importe * 0.16;
+    var iva = parseFloat($(this).find('.valordelniva input').val());
     totalIVA += iva;
   });
 
