@@ -534,10 +534,14 @@ function actualizarImporte(row) {
     return;
   }
   var importe = cantidad * precio;
+  var iva = importe * 0.16;
+  var importeSinIVA = importe - iva;
   row.find('.importe input').val(importe.toFixed(2));
+  row.find('.importe_siniva input').val(importeSinIVA.toFixed(2));
+  row.find('.valordelniva input').val(iva.toFixed(2));
+  
   calcularIVA(row);
 }
-
 // Función para calcular el IVA
 function calcularIVA(row) {
   var precio = parseFloat(row.find('.precio input').val());
