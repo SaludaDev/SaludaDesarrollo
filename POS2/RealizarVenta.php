@@ -566,8 +566,8 @@ function actualizarSuma() {
   var sumaDiferenciaIVA = 0;
 
   $('#tablaAgregarArticulos tbody tr').each(function() {
-    var importeSinIVA = parseFloat($(this).find('.importe_siniva input').val());
-    var diferenciaIVA = parseFloat($(this).find('.valordelniva input').val());
+    var importeSinIVA = parseFloat($(this).find('.importe_siniva').text());
+    var diferenciaIVA = parseFloat($(this).find('.valordelniva').text());
 
     sumaImporteSinIVA += importeSinIVA;
     sumaDiferenciaIVA += diferenciaIVA;
