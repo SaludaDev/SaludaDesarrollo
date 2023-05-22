@@ -511,9 +511,9 @@ function agregarArticulo(articulo) {
       tr += '<td class="descripcion"><input class="form-control" type="text" value="' + articulo.descripcion + '"  /></td>';
       tr += '<td class="cantidad"><input class="form-control" type="number" value="' + articulo.cantidad + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
       tr += '<td class="precio"><input class="form-control" type="number" value="' + articulo.precio + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
-      tr += '<td><input class="form-control importe" type="text" readonly /></td>';
-      tr += '<td><input class="form-control importe_siniva" type="text" readonly /></td>';
-      tr += '<td><input class="form-control valordelniva" type="text" readonly /></td>';
+      tr += '<td><input class="form-control importe" type="number" readonly /></td>';
+      tr += '<td><input class="form-control importe_siniva" type="number" readonly /></td>';
+      tr += '<td><input class="form-control valordelniva" type="number" readonly /></td>';
       tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
       tr += '</tr>';
       
@@ -540,8 +540,7 @@ function actualizarImporte(row) {
     return;
   }
   var importe = cantidad * precio;
-  row.find('.importe input').val(importe.toFixed(2));
-  calcularIVA(row);
+  row.find('.importe input').val(importe.toFixed(2)).trigger('change');
 }
 
 // Función para calcular el IVA
@@ -566,8 +565,8 @@ function actualizarSuma() {
   var sumaDiferenciaIVA = 0;
 
   $('#tablaAgregarArticulos tbody tr').each(function() {
-    var importeSinIVA = parseFloat($(this).find('.importe_siniva').text());
-    var diferenciaIVA = parseFloat($(this).find('.valordelniva').text());
+    var importeSinIVA = parseFloat($(this).find('.importe_siniva input').val());
+    var diferenciaIVA = parseFloat($(this).find('.valordelniva input').val());
 
     sumaImporteSinIVA += importeSinIVA;
     sumaDiferenciaIVA += diferenciaIVA;
@@ -582,8 +581,6 @@ function mostrarMensaje(mensaje) {
   // Mostrar el mensaje en una ventana emergente de alerta
   alert(mensaje);
 }
-
-
 
 </script>
      <!-- Control Sidebar -->
