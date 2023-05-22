@@ -496,7 +496,9 @@ function agregarArticulo(articulo) {
       tr += '<tr data-id="' + articulo.id + '">';
       tr += '<td class="codigo"><input type="text" value="' + articulo.codigo + '"  /></td>';
       tr += '<td class="descripcion"><input type="text" value="' + articulo.descripcion + '"  /></td>';
-      tr += '<td class="cantidad"><input type="number" value="' + articulo.cantidad + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
+      tr += '<button type="button" class="btn btn-sm btn-secondary" onclick="aumentarCantidad($(this));"><i class="fas fa-plus"></i></button>';
+tr += '<input type="number" value="' + articulo.cantidad + '" min="0" onchange="actualizarImporte($(this).parent().parent());" />';
+tr += '<button type="button" class="btn btn-sm btn-secondary" onclick="disminuirCantidad($(this));"><i class="fas fa-minus"></i></button>';
       tr += '<td class="precio"><input type="number" value="' + articulo.precio + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
       tr += '<td class="importe"></td>';
       tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
