@@ -398,6 +398,12 @@ Aqui va el corte de caja
             {
                 "data": "precio"
             },
+            {
+                "data": "importesiniva"
+            },
+            {
+                "data": "ivatotal"
+            },
            
             {
                 "data": "eliminar"
