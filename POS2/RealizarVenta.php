@@ -541,7 +541,21 @@ function mostrarMensaje(mensaje) {
   alert(mensaje);
 }
 
+unction aumentarCantidad(btn) {
+  var inputCantidad = btn.next('input[type="number"]');
+  var cantidadActual = parseInt(inputCantidad.val());
+  inputCantidad.val(cantidadActual + 1);
+  actualizarImporte(btn.closest('tr'));
+}
 
+function disminuirCantidad(btn) {
+  var inputCantidad = btn.prev('input[type="number"]');
+  var cantidadActual = parseInt(inputCantidad.val());
+  if (cantidadActual > 0) {
+    inputCantidad.val(cantidadActual - 1);
+    actualizarImporte(btn.closest('tr'));
+  }
+}
 </script>
      <!-- Control Sidebar -->
     
