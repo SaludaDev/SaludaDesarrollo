@@ -159,7 +159,7 @@ include ("db_connection.php");
             <th>Cantidad</th>
             <th>Precio</th>
             <th>Importe</th>
-            <th>Iva</th>
+            <th>importe_Sin_Iva</th>
             <th>Iva</th>
             <th>Eliminar</th>
 							</tr>
