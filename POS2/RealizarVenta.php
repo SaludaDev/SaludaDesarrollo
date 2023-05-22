@@ -540,7 +540,8 @@ function actualizarImporte(row) {
     return;
   }
   var importe = cantidad * precio;
-  row.find('.importe input').val(importe.toFixed(2)).trigger('change');
+  row.find('.importe input').val(importe.toFixed(2));
+  calcularIVA(row);
 }
 
 // Función para calcular el IVA
