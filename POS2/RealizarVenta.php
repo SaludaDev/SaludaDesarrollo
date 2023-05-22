@@ -473,59 +473,16 @@ $('#codigoEscaneado').autocomplete({
 
 function agregarArticulo(articulo) {
   if (!articulo || !articulo.id) {
-    msjError('El artículo no es válido');
+    mostrarMensaje('El artículo no es válido');
   } else if ($('#detIdModal' + articulo.id).length) {
-    msjError('El artículo ya se encuentra incluido');
-  } else {
-    var row = $('#tablaAgregarArticulos tbody').find('tr[data-id="' + articulo.id + '"]');
-    if (row.length) {
-      var cantidadActual = parseInt(row.find('.cantidad input').val());
-      var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad);
-      row.find('.cantidad input').val(nuevaCantidad);
-      actualizarImporte(row);
-    } else {
-      var tr = '';
-      var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="fas fa-minus-circle fa-xs"></i></button>';
-      var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
-      var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
-      
-      tr += '<tr data-id="' + articulo.id + '">';
-      tr += '<td class="codigo"><input type="text" value="' + articulo.codigo + '"  /></td>';
-      tr += '<td class="descripcion"><input type="text" value="' + articulo.descripcion + '"  /></td>';
-      tr += '<td class="cantidad"><input type="number" value="' + articulo.cantidad + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
-      tr += '<td class="precio"><input type="number" value="' + articulo.precio + '"  /></td>';
-      tr += '<td class="importe"><input type="number" value="' + articulo.importe + '"  /></td>';
-      tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
-      tr += '</tr>';
-      
-      $('#tablaAgregarArticulos tbody').append(tr);
-      actualizarImporte($('#tablaAgregarArticulos tbody tr:last-child'));
-    }
-  }
-  
-  $('#codigoEscaneado').val('');
-  $('#codigoEscaneado').focus();
-}
-
-function actualizarImporte(row) {
-  var cantidad = parseInt(row.find('.cantidad input').val());
-  var precio = parseFloat(row.find('.precio input').val());
-  var importe = cantidad * precio;
-  row.find('.importe').text(importe.toFixed(2));
-}
-
-function agregarArticulo(articulo) {
-  if (!articulo || !articulo.id) {
-    msjError('El artículo no es válido');
-  } else if ($('#detIdModal' + articulo.id).length) {
-    msjError('El artículo ya se encuentra incluido');
+    mostrarMensaje('El artículo ya se encuentra incluido');
   } else {
     var row = $('#tablaAgregarArticulos tbody').find('tr[data-id="' + articulo.id + '"]');
     if (row.length) {
       var cantidadActual = parseInt(row.find('.cantidad input').val());
       var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad);
       if (nuevaCantidad < 0) {
-        msjError('La cantidad no puede ser negativa');
+        mostrarMensaje('La cantidad no puede ser negativa');
         return;
       }
       row.find('.cantidad input').val(nuevaCantidad);
@@ -558,16 +515,22 @@ function actualizarImporte(row) {
   var cantidad = parseInt(row.find('.cantidad input').val());
   var precio = parseFloat(row.find('.precio input').val());
   if (cantidad < 0) {
-    msjError('La cantidad no puede ser negativa');
+    mostrarMensaje('La cantidad no puede ser negativa');
     return;
   }
   if (precio < 0) {
-    msjError('El precio no puede ser negativo');
+    mostrarMensaje('El precio no puede ser negativo');
     return;
   }
   var importe = cantidad * precio;
   row.find('.importe').text(importe.toFixed(2));
 }
+
+function mostrarMensaje(mensaje) {
+  // Mostrar el mensaje en una ventana emergente de alerta
+  alert(mensaje);
+}
+
 
 </script>
      <!-- Control Sidebar -->
