@@ -472,80 +472,66 @@ $('#codigoEscaneado').autocomplete({
 
 
 function agregarArticulo(articulo) {
-        if (!articulo || !articulo.id) {
-            mostrarMensaje('El artículo no es válido');
-        } else if ($('#detIdModal' + articulo.id).length) {
-            mostrarMensaje('El artículo ya se encuentra incluido');
-        } else {
-            var row = $('#tablaAgregarArticulos tbody').find('tr[data-id="' + articulo.id + '"]');
-            if (row.length) {
-                var cantidadActual = parseInt(row.find('.cantidad input').val());
-                var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad);
-                if (nuevaCantidad < 0) {
-                    mostrarMensaje('La cantidad no puede ser negativa');
-                    return;
-                }
-                row.find('.cantidad input').val(nuevaCantidad);
-                actualizarImporte(row);
-            } else {
-                var tr = '';
-                var btnEliminar = '<button type="button" class="btn btn-danger btn-sm" onclick="eliminarArticulo($(this).closest(\'tr\'));">Eliminar</button>';
-                var btnMas = '<button class="btn btn-outline-secondary" type="button" onclick="aumentarCantidad($(this).parent().parent());"><i class="fas fa-plus"></i></button>';
-                var btnMenos = '<button class="btn btn-outline-secondary" type="button" onclick="disminuirCantidad($(this).parent().parent());"><i class="fas fa-minus"></i></button>';
-
-                tr += '<tr data-id="' + articulo.id + '">';
-                tr += '<td>' + articulo.codigo + '</td>';
-                tr += '<td>' + articulo.descripcion + '</td>';
-                tr += '<td class="cantidad"><div class="input-group">' + btnMas + '<input type="number" value="' + articulo.cantidad + '" onchange="actualizarImporte($(this).parent().parent());" />' + btnMenos + '</div></td>';
-                tr += '<td>' + articulo.precio + '</td>';
-                tr += '<td class="importe">' + articulo.importe + '</td>';
-                tr += '<td>' + btnEliminar + '</td>';
-                tr += '</tr>';
-
-                $('#tablaAgregarArticulos tbody').prepend(tr);
-            }
-            calcularTotal();
-        }
+  if (!articulo || !articulo.id) {
+    mostrarMensaje('El artículo no es válido');
+  } else if ($('#detIdModal' + articulo.id).length) {
+    mostrarMensaje('El artículo ya se encuentra incluido');
+  } else {
+    var row = $('#tablaAgregarArticulos tbody').find('tr[data-id="' + articulo.id + '"]');
+    if (row.length) {
+      var cantidadActual = parseInt(row.find('.cantidad input').val());
+      var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad);
+      if (nuevaCantidad < 0) {
+        mostrarMensaje('La cantidad no puede ser negativa');
+        return;
+      }
+      row.find('.cantidad input').val(nuevaCantidad);
+      actualizarImporte(row);
+    } else {
+      var tr = '';
+      var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="fas fa-minus-circle fa-xs"></i></button>';
+      var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
+      var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
+      
+      tr += '<tr data-id="' + articulo.id + '">';
+      tr += '<td class="codigo"><input type="text" value="' + articulo.codigo + '"  /></td>';
+      tr += '<td class="descripcion"><input type="text" value="' + articulo.descripcion + '"  /></td>';
+      tr += '<td class="cantidad"><input type="number" value="' + articulo.cantidad + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
+      tr += '<td class="precio"><input type="number" value="' + articulo.precio + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
+      tr += '<td class="importe"></td>';
+      tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
+      tr += '</tr>';
+      
+      $('#tablaAgregarArticulos tbody').append(tr);
+      actualizarImporte($('#tablaAgregarArticulos tbody tr:last-child'));
     }
+  }
+  
+  $('#codigoEscaneado').val('');
+  $('#codigoEscaneado').focus();
+}
 
-    function eliminarArticulo(row) {
-        row.remove();
-        calcularTotal();
-    }
+function actualizarImporte(row) {
+  var cantidad = parseInt(row.find('.cantidad input').val());
+  var precio = parseFloat(row.find('.precio input').val());
+  if (cantidad < 0) {
+    mostrarMensaje('La cantidad no puede ser negativa');
+    return;
+  }
+  if (precio < 0) {
+    mostrarMensaje('El precio no puede ser negativo');
+    return;
+  }
+  var importe = cantidad * precio;
+  row.find('.importe').text(importe.toFixed(2));
+}
 
-    function actualizarImporte(row) {
-        var inputCantidad = row.find('.cantidad input');
-        var cantidad = parseInt(inputCantidad.val()) || 0;
-        var precio = parseFloat(row.find('td:nth-child(4)').text());
-        var importe = cantidad * precio;
-        row.find('.importe').text(importe.toFixed(2));
-        calcularTotal();
-    }
+function mostrarMensaje(mensaje) {
+  // Mostrar el mensaje en una ventana emergente de alerta
+  alert(mensaje);
+}
 
-    function calcularTotal() {
-        var total = 0;
-        $('#tablaAgregarArticulos tbody tr').each(function () {
-            var importe = parseFloat($(this).find('.importe').text());
-            total += importe;
-        });
-        $('#total').text(total.toFixed(2));
-    }
 
-    function aumentarCantidad(row) {
-        var inputCantidad = row.find('.cantidad input');
-        var cantidad = parseInt(inputCantidad.val()) || 0;
-        inputCantidad.val(cantidad + 1);
-        actualizarImporte(row);
-    }
-
-    function disminuirCantidad(row) {
-        var inputCantidad = row.find('.cantidad input');
-        var cantidad = parseInt(inputCantidad.val()) || 0;
-        if (cantidad > 0) {
-            inputCantidad.val(cantidad - 1);
-            actualizarImporte(row);
-        }
-    }
 </script>
      <!-- Control Sidebar -->
     
