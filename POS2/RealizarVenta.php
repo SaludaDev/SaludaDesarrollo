@@ -489,43 +489,34 @@ function agregarArticulo(articulo) {
   } else if ($('#detIdModal' + articulo.id).length) {
     mostrarMensaje('El artículo ya se encuentra incluido');
   } else {
-    var row = $('#tablaAgregarArticulos tbody').find('tr[data-id="' + articulo.id + '"]');
-    if (row.length) {
-      var cantidadActual = parseInt(row.find('.cantidad input').val());
-      var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad);
-      if (nuevaCantidad < 0) {
-        mostrarMensaje('La cantidad no puede ser negativa');
-        return;
-      }
-      row.find('.cantidad input').val(nuevaCantidad);
-      actualizarImporte(row);
-      calcularIVA(row);
-    } else {
-      var tr = $('<tr data-id="' + articulo.id + '"></tr>');
-      var btnEliminar = $('<button type="button" class="btn btn-xs btn-danger"><i class="fas fa-minus-circle fa-xs"></i></button>');
-      var inputId = $('<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />');
-      var inputCantidad = $('<input class="form-control" type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />');
-      
-      tr.append('<td class="codigo"><input class="form-control" type="text" value="' + articulo.codigo + '"  /></td>');
-      tr.append('<td class="descripcion"><input class="form-control" type="text" value="' + articulo.descripcion + '"  /></td>');
-      tr.append('<td class="cantidad"><input class="form-control" type="number" value="' + articulo.cantidad + '" /></td>');
-      tr.append('<td class="precio"><input class="form-control" type="number" value="' + articulo.precio + '" /></td>');
-      tr.append('<td class="importe"><input class="form-control" type="number" readonly /></td>');
-      tr.append('<td class="importe_siniva"><input class="form-control" type="number" readonly /></td>');
-      tr.append('<td class="valordelniva"><input class="form-control" type="number" readonly /></td>');
-      tr.append($('<td></td>').append(btnEliminar).append(inputId).append(inputCantidad));
-      
-      $('#tablaAgregarArticulos tbody').append(tr);
-      actualizarImporte(tr);
-      calcularIVA(tr);
+    var tr = $('<tr data-id="' + articulo.id + '"></tr>');
+    var btnEliminar = $('<button type="button" class="btn btn-xs btn-danger"><i class="fas fa-minus-circle fa-xs"></i></button>');
+    var inputId = $('<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />');
+    var inputCantidad = $('<input class="form-control" type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />');
 
-      btnEliminar.on('click', function() {
-        tr.remove();
-        actualizarSuma();
-      });
-    }
+    tr.append('<td class="codigo"><input class="form-control" type="text" value="' + articulo.codigo + '"  /></td>');
+    tr.append('<td class="descripcion"><input class="form-control" type="text" value="' + articulo.descripcion + '"  /></td>');
+    tr.append('<td class="cantidad"><input class="form-control" type="number" value="' + articulo.cantidad + '" /></td>');
+    tr.append('<td class="precio"><input class="form-control" type="number" value="' + articulo.precio + '" /></td>');
+    tr.append('<td class="importe"><input class="form-control" type="number" readonly /></td>');
+    tr.append('<td class="importe_siniva"><input class="form-control" type="number" readonly /></td>');
+    tr.append('<td class="valordelniva"><input class="form-control" type="number" readonly /></td>');
+    tr.append($('<td></td>').append(btnEliminar).append(inputId).append(inputCantidad));
+
+    $('#tablaAgregarArticulos tbody').append(tr);
+    actualizarImporte(tr);
+    calcularIVA(tr);
+
+    btnEliminar.on('click', function() {
+      tr.remove();
+      actualizarSuma();
+    });
+
+    tr.find('.cantidad input').on('change', function() {
+      actualizarImporte(tr);
+    });
   }
-  
+
   $('#codigoEscaneado').val('');
   $('#codigoEscaneado').focus();
 }
