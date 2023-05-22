@@ -482,16 +482,20 @@ $('#codigoEscaneado').autocomplete({
 // Variable para almacenar el total del IVA
 var totalIVA = 0;
 
-// Función para agregar un artículo
 function agregarArticulo(articulo) {
-  if (!articulo || !articulo.id) {
-    mostrarMensaje('El artículo no es válido');
-  } else if ($('#detIdModal' + articulo.id).length) {
-    mostrarMensaje('El artículo ya se encuentra incluido');
+  var articuloExistente = $('#tablaAgregarArticulos').find('.id-articulo[value="' + articulo.id + '"]').closest('tr');
+  if (articuloExistente.length) {
+    // El artículo ya existe en la tabla, actualizar la fila existente
+    var cantidadActual = parseInt(articuloExistente.find('.cantidad input').val());
+    var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad);
+    articuloExistente.find('.cantidad input').val(nuevaCantidad);
+    actualizarImporte(articuloExistente);
+    calcularIVA(articuloExistente);
   } else {
+    // El artículo no existe en la tabla, agregar nueva fila
     var tr = $('<tr data-id="' + articulo.id + '"></tr>');
     var btnEliminar = $('<button type="button" class="btn btn-xs btn-danger"><i class="fas fa-minus-circle fa-xs"></i></button>');
-    var inputId = $('<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />');
+    var inputId = $('<input type="hidden" class="id-articulo" value="' + articulo.id + '" />');
     var inputCantidad = $('<input class="form-control" type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />');
 
     tr.append('<td class="codigo"><input class="form-control" type="text" value="' + articulo.codigo + '"  /></td>');
@@ -520,7 +524,6 @@ function agregarArticulo(articulo) {
   $('#codigoEscaneado').val('');
   $('#codigoEscaneado').focus();
 }
-
 // Función para actualizar el importe
 function actualizarImporte(row) {
   var cantidad = parseInt(row.find('.cantidad input').val());
