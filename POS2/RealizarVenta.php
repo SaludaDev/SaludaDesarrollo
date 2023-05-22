@@ -479,8 +479,7 @@ $('#codigoEscaneado').autocomplete({
 });
 
 
-// Variable para almacenar el total del IVA
-var totalIVA = 0;
+
 
 // Variable para almacenar el total del IVA
 var totalIVA = 0;
