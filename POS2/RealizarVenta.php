@@ -156,7 +156,9 @@ include ("db_connection.php");
 							<tr>
                 <th>Codigo</th>
 								<th>Producto</th>
-								<th>Cantidad</th>
+								<th>aumenta</th>
+                <th>Cantidad</th>
+                <th>disminuye</th>
                 <th>Precio</th>
                 <th>Importe</th>
 								<th>Eliminar</th>
@@ -391,7 +393,13 @@ Aqui va el corte de caja
                 "data": "descripcion"
             },
             {
+                "data": "aumentar"
+            },
+            {
                 "data": "cantidad"
+            },
+            {
+                "data": "disminuir"
             },
         
             {
