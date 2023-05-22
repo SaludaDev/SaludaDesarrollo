@@ -494,10 +494,10 @@ function agregarArticulo(articulo) {
       var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
       
       tr += '<tr data-id="' + articulo.id + '">';
-      tr += '<td class="codigo"><input type="text" value="' + articulo.codigo + '"  /></td>';
-      tr += '<td class="descripcion"><input type="text" value="' + articulo.descripcion + '"  /></td>';
-      tr += '<td class="cantidad"><input type="number" value="' + articulo.cantidad + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
-      tr += '<td class="precio"><input type="number" value="' + articulo.precio + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
+      tr += '<td class="codigo"><input class="form-control" type="text" value="' + articulo.codigo + '"  /></td>';
+      tr += '<td class="descripcion"><input class="form-control" type="text" value="' + articulo.descripcion + '"  /></td>';
+      tr += '<td class="cantidad"><input class="form-control" type="number" value="' + articulo.cantidad + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
+      tr += '<td class="precio"><input class="form-control" type="number" value="' + articulo.precio + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
       tr += '<td class="importe"></td>';
       tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
       tr += '</tr>';
