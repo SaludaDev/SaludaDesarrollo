@@ -530,7 +530,7 @@ function actualizarImporte(row) {
   }
   var importe = cantidad * precio;
   row.find('.importe').text(importe.toFixed(2));
-  calcularIVA(row);
+  calcularIVA(row); // Calcular el IVA y actualizar el importe sin IVA
 }
 
 function calcularIVA(row) {
