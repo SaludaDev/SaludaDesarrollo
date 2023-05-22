@@ -510,9 +510,9 @@ function agregarArticulo(articulo) {
       tr.append('<td class="descripcion"><input class="form-control" type="text" value="' + articulo.descripcion + '"  /></td>');
       tr.append('<td class="cantidad"><input class="form-control" type="number" value="' + articulo.cantidad + '" /></td>');
       tr.append('<td class="precio"><input class="form-control" type="number" value="' + articulo.precio + '" /></td>');
-      tr.append('<td><input class="form-control importe" type="number" readonly /></td>');
-      tr.append('<td><input class="form-control importe_siniva" type="number" readonly /></td>');
-      tr.append('<td><input class="form-control valordelniva" type="number" readonly /></td>');
+      tr.append('<td class="importe"><input class="form-control" type="number" readonly /></td>');
+      tr.append('<td class="importe_siniva"><input class="form-control" type="number" readonly /></td>');
+      tr.append('<td class="valordelniva"><input class="form-control" type="number" readonly /></td>');
       tr.append($('<td></td>').append(btnEliminar).append(inputId).append(inputCantidad));
       
       $('#tablaAgregarArticulos tbody').append(tr);
@@ -550,15 +550,10 @@ function actualizarImporte(row) {
 // Función para calcular el IVA
 function calcularIVA(row) {
   var precio = parseFloat(row.find('.precio input').val());
-  var iva = precio / 1.16 * 0.16;
+  var iva = precio * 0.16;
   var importeSinIVA = precio - iva;
   row.find('.importe_siniva input').val(importeSinIVA.toFixed(2));
   row.find('.valordelniva input').val(iva.toFixed(2));
-
-  // Actualizar el valor total del IVA
-  var cantidad = parseInt(row.find('.cantidad input').val());
-  totalIVA += iva * cantidad;
-  $('#totalIVA').text(totalIVA.toFixed(2));
 
   actualizarSuma();
 }
