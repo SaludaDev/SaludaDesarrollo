@@ -482,48 +482,53 @@ $('#codigoEscaneado').autocomplete({
 // Variable para almacenar el total del IVA
 var totalIVA = 0;
 
+// Función para agregar un artículo
 function agregarArticulo(articulo) {
-  var articuloExistente = $('#tablaAgregarArticulos').find('.id-articulo[value="' + articulo.id + '"]').closest('tr');
-  if (articuloExistente.length) {
-    // El artículo ya existe en la tabla, actualizar la fila existente
-    var cantidadActual = parseInt(articuloExistente.find('.cantidad input').val());
-    var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad);
-    articuloExistente.find('.cantidad input').val(nuevaCantidad);
-    actualizarImporte(articuloExistente);
-    calcularIVA(articuloExistente);
+  if (!articulo || !articulo.id) {
+    mostrarMensaje('El artículo no es válido');
+  } else if ($('#detIdModal' + articulo.id).length) {
+    mostrarMensaje('El artículo ya se encuentra incluido');
   } else {
-    // El artículo no existe en la tabla, agregar nueva fila
-    var tr = $('<tr data-id="' + articulo.id + '"></tr>');
-    var btnEliminar = $('<button type="button" class="btn btn-xs btn-danger"><i class="fas fa-minus-circle fa-xs"></i></button>');
-    var inputId = $('<input type="hidden" class="id-articulo" value="' + articulo.id + '" />');
-    var inputCantidad = $('<input class="form-control" type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />');
-
-    tr.append('<td class="codigo"><input class="form-control" type="text" value="' + articulo.codigo + '"  /></td>');
-    tr.append('<td class="descripcion"><input class="form-control" type="text" value="' + articulo.descripcion + '"  /></td>');
-    tr.append('<td class="cantidad"><input class="form-control" type="number" value="' + articulo.cantidad + '" /></td>');
-    tr.append('<td class="precio"><input class="form-control" type="number" value="' + articulo.precio + '" /></td>');
-    tr.append('<td class="importe"><input class="form-control" type="number" readonly /></td>');
-    tr.append('<td class="importe_siniva"><input class="form-control" type="number" readonly /></td>');
-    tr.append('<td class="valordelniva"><input class="form-control" type="number" readonly /></td>');
-    tr.append($('<td></td>').append(btnEliminar).append(inputId).append(inputCantidad));
-
-    $('#tablaAgregarArticulos tbody').append(tr);
-    actualizarImporte(tr);
-    calcularIVA(tr);
-
-    btnEliminar.on('click', function() {
-      tr.remove();
+    var row = $('#tablaAgregarArticulos tbody').find('tr[data-id="' + articulo.id + '"]');
+    if (row.length) {
+      var cantidadActual = parseInt(row.find('.cantidad input').val());
+      var nuevaCantidad = cantidadActual + parseInt(articulo.cantidad);
+      if (nuevaCantidad < 0) {
+        mostrarMensaje('La cantidad no puede ser negativa');
+        return;
+      }
+      row.find('.cantidad input').val(nuevaCantidad);
+      actualizarImporte(row);
+      calcularIVA();
       actualizarSuma();
-    });
-
-    tr.find('.cantidad input').on('change', function() {
-      actualizarImporte(tr);
-    });
+    } else {
+      var tr = '';
+      var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="fas fa-minus-circle fa-xs"></i></button>';
+      var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
+      var inputCantidad = '<input class="form-control" type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
+      
+      tr += '<tr data-id="' + articulo.id + '">';
+      tr += '<td class="codigo"><input class="form-control" type="text" value="' + articulo.codigo + '"  /></td>';
+      tr += '<td class="descripcion"><input class="form-control" type="text" value="' + articulo.descripcion + '"  /></td>';
+      tr += '<td class="cantidad"><input class="form-control" type="number" value="' + articulo.cantidad + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
+      tr += '<td class="precio"><input class="form-control" type="number" value="' + articulo.precio + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
+      tr += '<td><input class="form-control importe" type="number" readonly /></td>';
+      tr += '<td><input class="form-control importe_siniva" type="number" readonly /></td>';
+      tr += '<td><input class="form-control valordelniva" type="number" readonly /></td>';
+      tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
+      tr += '</tr>';
+      
+      $('#tablaAgregarArticulos tbody').append(tr);
+      actualizarImporte($('#tablaAgregarArticulos tbody tr:last-child'));
+      calcularIVA();
+      actualizarSuma();
+    }
   }
-
+  
   $('#codigoEscaneado').val('');
   $('#codigoEscaneado').focus();
 }
+
 // Función para actualizar el importe
 function actualizarImporte(row) {
   var cantidad = parseInt(row.find('.cantidad input').val());
@@ -542,37 +547,31 @@ function actualizarImporte(row) {
   row.find('.importe input').val(importe.toFixed(2));
   row.find('.importe_siniva input').val(importeSinIVA.toFixed(2));
   row.find('.valordelniva input').val(iva.toFixed(2));
-
-  calcularIVA(row);
 }
 
-
 // Función para calcular el IVA
-function calcularIVA(row) {
-  var precio = parseFloat(row.find('.precio input').val());
-  var iva = precio * 0.16;
-  var importeSinIVA = precio - iva;
-  row.find('.importe_siniva input').val(importeSinIVA.toFixed(2));
-  row.find('.valordelniva input').val(iva.toFixed(2));
+function calcularIVA() {
+  totalIVA = 0;
 
-  actualizarSuma();
+  $('#tablaAgregarArticulos tbody tr').each(function() {
+    var importe = parseFloat($(this).find('.importe input').val());
+    var iva = importe * 0.16;
+    totalIVA += iva;
+  });
+
+  $('#totalIVA').text(totalIVA.toFixed(2));
 }
 
 // Función para actualizar la suma de importe sin IVA y diferencia de IVA
 function actualizarSuma() {
   var sumaImporteSinIVA = 0;
-  var sumaDiferenciaIVA = 0;
 
   $('#tablaAgregarArticulos tbody tr').each(function() {
     var importeSinIVA = parseFloat($(this).find('.importe_siniva input').val());
-    var diferenciaIVA = parseFloat($(this).find('.valordelniva input').val());
-
     sumaImporteSinIVA += importeSinIVA;
-    sumaDiferenciaIVA += diferenciaIVA;
   });
 
   $('#sumaImporteSinIVA').text(sumaImporteSinIVA.toFixed(2));
-  $('#sumaDiferenciaIVA').text(sumaDiferenciaIVA.toFixed(2));
 }
 
 // Función para mostrar un mensaje
