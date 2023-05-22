@@ -504,16 +504,16 @@ function agregarArticulo(articulo) {
       var tr = '';
       var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="fas fa-minus-circle fa-xs"></i></button>';
       var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
-      var inputCantidad = '<input type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
+      var inputCantidad = '<input class="form-control" type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
       
       tr += '<tr data-id="' + articulo.id + '">';
       tr += '<td class="codigo"><input class="form-control" type="text" value="' + articulo.codigo + '"  /></td>';
       tr += '<td class="descripcion"><input class="form-control" type="text" value="' + articulo.descripcion + '"  /></td>';
       tr += '<td class="cantidad"><input class="form-control" type="number" value="' + articulo.cantidad + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
       tr += '<td class="precio"><input class="form-control" type="number" value="' + articulo.precio + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
-      tr += '<td class="importe"></td>';
-      tr += '<td class="importe_siniva"></td>';
-      tr += '<td class="valordelniva"></td>';
+      tr += '<td><input class="form-control importe" type="text" readonly /></td>';
+      tr += '<td><input class="form-control importe_siniva" type="text" readonly /></td>';
+      tr += '<td><input class="form-control valordelniva" type="text" readonly /></td>';
       tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
       tr += '</tr>';
       
@@ -540,7 +540,7 @@ function actualizarImporte(row) {
     return;
   }
   var importe = cantidad * precio;
-  row.find('.importe').text(importe.toFixed(2));
+  row.find('.importe input').val(importe.toFixed(2));
   calcularIVA(row);
 }
 
@@ -549,8 +549,8 @@ function calcularIVA(row) {
   var precio = parseFloat(row.find('.precio input').val());
   var iva = precio / 1.16 * 0.16;
   var importeSinIVA = precio - iva;
-  row.find('.importe_siniva').text(importeSinIVA.toFixed(2));
-  row.find('.valordelniva').text(iva.toFixed(2));
+  row.find('.importe_siniva input').val(importeSinIVA.toFixed(2));
+  row.find('.valordelniva input').val(iva.toFixed(2));
 
   // Actualizar el valor total del IVA
   var cantidad = parseInt(row.find('.cantidad input').val());
@@ -566,8 +566,8 @@ function actualizarSuma() {
   var sumaDiferenciaIVA = 0;
 
   $('#tablaAgregarArticulos tbody tr').each(function() {
-    var importeSinIVA = parseFloat($(this).find('.importe_siniva').text());
-    var diferenciaIVA = parseFloat($(this).find('.valordelniva').text());
+    var importeSinIVA = parseFloat($(this).find('.importe_siniva input').val());
+    var diferenciaIVA = parseFloat($(this).find('.valordelniva input').val());
 
     sumaImporteSinIVA += importeSinIVA;
     sumaDiferenciaIVA += diferenciaIVA;
