@@ -545,6 +545,7 @@ function actualizarImporte(row) {
   
   calcularIVA(row);
 }
+
 // Función para calcular el IVA
 function calcularIVA(row) {
   var precio = parseFloat(row.find('.precio input').val());
