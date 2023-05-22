@@ -541,7 +541,11 @@ function mostrarMensaje(mensaje) {
   alert(mensaje);
 }
 
-unction aumentarCantidad(btn) {
+
+</script>
+<script>
+
+function aumentarCantidad(btn) {
   var inputCantidad = btn.next('input[type="number"]');
   var cantidadActual = parseInt(inputCantidad.val());
   inputCantidad.val(cantidadActual + 1);
@@ -556,6 +560,7 @@ function disminuirCantidad(btn) {
     actualizarImporte(btn.closest('tr'));
   }
 }
+
 </script>
      <!-- Control Sidebar -->
     
