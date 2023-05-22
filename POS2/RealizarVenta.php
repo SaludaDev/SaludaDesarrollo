@@ -146,7 +146,7 @@ include ("db_connection.php");
 #tablaAgregarArticulos td, #tablaAgregarArticulos th {
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow:visible;
 }
 
                           </style>
