@@ -499,11 +499,13 @@ function agregarArticulo(articulo) {
       tr += '<td class="cantidad"><input class="form-control" type="number" value="' + articulo.cantidad + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
       tr += '<td class="precio"><input class="form-control" type="number" value="' + articulo.precio + '" onchange="actualizarImporte($(this).parent().parent());" /></td>';
       tr += '<td class="importe"></td>';
+      tr += '<td class="importe_siniva"></td>';
       tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
       tr += '</tr>';
       
       $('#tablaAgregarArticulos tbody').append(tr);
       actualizarImporte($('#tablaAgregarArticulos tbody tr:last-child'));
+      calcularIVA($('#tablaAgregarArticulos tbody tr:last-child'));
     }
   }
   
@@ -524,6 +526,13 @@ function actualizarImporte(row) {
   }
   var importe = cantidad * precio;
   row.find('.importe').text(importe.toFixed(2));
+}
+
+function calcularIVA(row) {
+  var precio = parseFloat(row.find('.precio input').val());
+  var iva = precio / 1.16 * 0.16;
+  var importeSinIVA = precio - iva;
+  row.find('.importe_siniva').text(importeSinIVA.toFixed(2));
 }
 
 function mostrarMensaje(mensaje) {
