@@ -542,9 +542,10 @@ function actualizarImporte(row) {
   row.find('.importe input').val(importe.toFixed(2));
   row.find('.importe_siniva input').val(importeSinIVA.toFixed(2));
   row.find('.valordelniva input').val(iva.toFixed(2));
-  
+
   calcularIVA(row);
 }
+
 
 // Función para calcular el IVA
 function calcularIVA(row) {
