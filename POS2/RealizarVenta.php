@@ -479,7 +479,6 @@ $('#codigoEscaneado').autocomplete({
 });
 
 
-
 // Variable para almacenar el total del IVA y IEPS
 var totalIVA = 0;
 var totalIEPS = 0;
@@ -604,6 +603,7 @@ function mostrarMensaje(mensaje) {
   // Mostrar el mensaje en una ventana emergente de alerta
   alert(mensaje);
 }
+
 
 </script>
      <!-- Control Sidebar -->
