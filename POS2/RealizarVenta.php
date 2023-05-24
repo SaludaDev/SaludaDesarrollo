@@ -551,12 +551,9 @@ function agregarArticulo(articulo) {
 
 
 //Eliminar fila
-  function eliminarFila(element) {
-    $(element).parent().parent().remove();
-    actualizarImporte($('#tablaAgregarArticulos tbody tr:last-child'));
-      calcularIVA();
-      actualizarSuma();
-      mostrarTotalVenta();
+function eliminarFila(element) {
+    $(element).closest('tr').remove();
+    mostrarTotalVenta();
   }
 // Función para actualizar el importe
 function actualizarImporte(row) {
