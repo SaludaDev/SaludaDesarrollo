@@ -444,6 +444,20 @@ Aqui va el corte de caja
 
     
 }
+
+
+function mostrarSubTotal() {
+  var subtotal = 0;
+  $('#tablaAgregarArticulos tbody tr').each(function() {
+    var importeSinIVA = parseFloat($(this).find('.importe_siniva').val().replace(/[^\d.-]/g, ''));
+    if (!isNaN(importeSinIVA)) {
+      subtotal += importeSinIVA;
+    }
+  });
+
+  $('#boleta_subtotal').text(subtotal.toFixed(2));
+}
+
     function buscarArticulo() {
   var codigoEscaneado = $('#codigoEscaneado').val();
   var formData = new FormData();
@@ -522,6 +536,7 @@ function agregarArticulo(articulo) {
       calcularIVA();
       actualizarSuma();
       mostrarTotalVenta();
+      mostrarSubTotal();
     } else {
       var tr = '';
       var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="eliminarFila(this).parent().parent().remove();"><i class="fas fa-minus-circle fa-xs"></i></button>';
@@ -545,6 +560,7 @@ function agregarArticulo(articulo) {
       calcularIVA();
       actualizarSuma();
       mostrarTotalVenta();
+      mostrarSubTotal();
     }
   }
   
@@ -560,6 +576,7 @@ function agregarArticulo(articulo) {
       calcularIVA();
       actualizarSuma();
       mostrarTotalVenta();
+      mostrarSubTotal();
   }
 // Función para actualizar el importe
 function actualizarImporte(row) {
@@ -583,6 +600,7 @@ function actualizarImporte(row) {
   row.find('input.ieps').val(ieps.toFixed(2));
   // Llamar a la función para recalcular la suma de importes
   mostrarTotalVenta();
+  mostrarSubTotal();
 }
 
 // Función para calcular el IVA
