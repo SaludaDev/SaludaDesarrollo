@@ -429,18 +429,16 @@ Aqui va el corte de caja
        
     });
 
-// Función para mostrar la suma total de los productos agregados al listado
-function mostrarTotalVenta() {
-        var totalVenta = 0;
-        $('#tablaAgregarArticulos tbody tr').each(function() {
-            var importe = parseFloat($(this).find('.importe').text());
-            if (!isNaN(importe)) {
-                totalVenta += importe;
-            }
-        });
-        $('#totalVenta').text(totalVenta.toFixed(2));
-    }
-
+    function mostrarTotalVenta() {
+    var totalVenta = 0;
+    $('#tablaAgregarArticulos tbody tr').each(function() {
+        var importe = parseFloat($(this).find('.importe').text().replace(/[^\d.-]/g, ''));
+        if (!isNaN(importe)) {
+            totalVenta += importe;
+        }
+    });
+    $('#totalVenta').text(totalVenta.toFixed(2));
+}
     function buscarArticulo() {
   var codigoEscaneado = $('#codigoEscaneado').val();
   var formData = new FormData();
