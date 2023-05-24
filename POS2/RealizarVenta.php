@@ -480,6 +480,7 @@ $('#codigoEscaneado').autocomplete({
 
 
 
+
 // Variable para almacenar el total del IVA
 var totalIVA = 0;
 
@@ -530,6 +531,7 @@ function agregarArticulo(articulo) {
   $('#codigoEscaneado').val('');
   $('#codigoEscaneado').focus();
 }
+
 // Función para actualizar el importe
 function actualizarImporte(row) {
   var cantidad = parseInt(row.find('.cantidad input').val());
@@ -545,11 +547,12 @@ function actualizarImporte(row) {
   var importe = cantidad * precio;
   var iva = importe * 0.16;
   var importeSinIVA = importe - iva;
+  var ieps = importe * 0.8;
   row.find('input.importe').val(importe.toFixed(2));
   row.find('input.importe_siniva').val(importeSinIVA.toFixed(2));
   row.find('input.valordelniva').val(iva.toFixed(2));
+  row.find('input.ieps').val(ieps.toFixed(2));
 }
-
 
 // Función para calcular el IVA
 function calcularIVA() {
@@ -563,13 +566,7 @@ function calcularIVA() {
   $('#totalIVA').text(totalIVA.toFixed(2));
 }
 
-function calcularIEPS(row) {
-  var cantidad = parseInt(row.find('.cantidad input').val());
-  var ieps = cantidad * 0.8;
-  row.find('input.ieps').val(ieps.toFixed(2));
-}
-
-// Función para actualizar la suma de importe sin IVA y diferencia de IVA
+// Función para actualizar la suma de importe sin IVA, IEPS y diferencia de IVA
 function actualizarSuma() {
   var sumaImporteSinIVA = 0;
   var totalIEPS = 0;
@@ -591,6 +588,8 @@ function mostrarMensaje(mensaje) {
   // Mostrar el mensaje en una ventana emergente de alerta
   alert(mensaje);
 }
+</script>
+
 
 </script>
      <!-- Control Sidebar -->
