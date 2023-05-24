@@ -432,7 +432,7 @@ Aqui va el corte de caja
     function mostrarTotalVenta() {
     var totalVenta = 0;
     $('#tablaAgregarArticulos tbody tr').each(function() {
-        var importe = parseFloat($(this).find('.importe').text().replace(/[^\d.-]/g, ''));
+        var importe = parseFloat($(this).find('.importe').val().replace(/[^\d.-]/g, ''));
         if (!isNaN(importe)) {
             totalVenta += importe;
         }
