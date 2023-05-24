@@ -539,6 +539,7 @@ function agregarArticulo(articulo) {
       actualizarImporte($('#tablaAgregarArticulos tbody tr:last-child'));
       calcularIVA();
       actualizarSuma();
+      mostrarTotalVenta();
     }
   }
   
