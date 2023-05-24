@@ -591,6 +591,23 @@ function mostrarMensaje(mensaje) {
   // Mostrar el mensaje en una ventana emergente de alerta
   alert(mensaje);
 }
+
+
+// Función para calcular la suma de los importes y actualizar el total de venta
+function calcularSumaImportes() {
+  var sumaImportes = 0;
+
+  $('#tablaAgregarArticulos tbody tr').each(function() {
+    var importe = parseFloat($(this).find('.importe input').val());
+    sumaImportes += importe;
+  });
+
+  $('#totalVenta').text(sumaImportes.toFixed(2));
+}
+
+// Llamar a la función para calcular la suma de importes al cargar la página
+calcularSumaImportes();
+
 </script>
 
 
