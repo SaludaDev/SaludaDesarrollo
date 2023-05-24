@@ -494,7 +494,12 @@ $('#codigoEscaneado').autocomplete({
 });
 
 
-
+function generarBotonEliminar(articuloId) {
+    var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="eliminarFila(this);"><i class="fas fa-minus-circle fa-xs"></i></button>';
+    var inputId = '<input type="hidden" name="detIdModal[' + articuloId + ']" value="' + articuloId + '" />';
+    var inputCantidad = '<input class="form-control" type="hidden" name="detCantidadModal[' + articuloId + ']" value="' + articulo.cantidad + '" />';
+    return btnEliminar + inputId + inputCantidad;
+  }
 
 // Variable para almacenar el total del IVA
 var totalIVA = 0;
@@ -521,10 +526,7 @@ function agregarArticulo(articulo) {
       mostrarTotalVenta();
     } else {
       var tr = '';
-      var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="eliminarfila();"><i class="fas fa-minus-circle fa-xs"></i></button>';
-      var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
-      var inputCantidad = '<input class="form-control" type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
-      
+     
       tr += '<tr data-id="' + articulo.id + '">';
       tr += '<td class="codigo"><input class="form-control" type="text" value="' + articulo.codigo + '"  /></td>';
       tr += '<td class="descripcion"><input class="form-control" type="text" value="' + articulo.descripcion + '"  /></td>';
@@ -550,11 +552,6 @@ function agregarArticulo(articulo) {
 }
 
 
-//Eliminar fila
-function eliminarFila(element) {
-    $(element).closest('tr').remove();
-    mostrarTotalVenta();
-  }
 // Función para actualizar el importe
 function actualizarImporte(row) {
   var cantidad = parseInt(row.find('.cantidad input').val());
