@@ -123,7 +123,7 @@ include ("db_connection.php");
 
                         <!-- ETIQUETA QUE MUESTRA LA SUMA TOTAL DE LOS PRODUCTOS AGREGADOS AL LISTADO -->
                         <div class="col-md-7 mb-3 rounded-3" style="background-color:#C80096;color: white;text-align:center;border:1px solid #C80096;">
-                            <h2 class="fw-bold m-0">MXN <span class="fw-bold" id="totalVenta">0.00</span></h2>
+                            <h2 class="fw-bold m-0">MXN <span class="fw-bold" id="totalVenta"></span></h2>
                         </div>
 
                         <!-- BOTONES PARA VACIAR LISTADO Y COMPLETAR LA VENTA -->
@@ -428,6 +428,18 @@ Aqui va el corte de caja
          responsive: "true",
        
     });
+
+// Función para mostrar la suma total de los productos agregados al listado
+function mostrarTotalVenta() {
+        var totalVenta = 0;
+        $('#tablaAgregarArticulos tbody tr').each(function() {
+            var importe = parseFloat($(this).find('.importe').text());
+            if (!isNaN(importe)) {
+                totalVenta += importe;
+            }
+        });
+        $('#totalVenta').text(totalVenta.toFixed(2));
+    }
 
     function buscarArticulo() {
   var codigoEscaneado = $('#codigoEscaneado').val();
