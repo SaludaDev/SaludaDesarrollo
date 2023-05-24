@@ -381,32 +381,53 @@ Aqui va el corte de caja
 </div>
 
 </div>
-<!-- SCRIPTS -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
 <script>
-  $(document).ready(function () {
-        $('#tablaAgregarArticulos').DataTable({
-            paging: false,
-            searching: false,
-            info: false,
-            columnDefs: [
-                { width: '10%', targets: [0, 1, 2, 3, 4, 5, 6, 7, 8] }
-            ]
-        });
-
-        // Función para actualizar el valor total de la venta
-        function actualizarSuma() {
-            var suma = 0;
-            $('#tablaAgregarArticulos tbody tr').each(function () {
-                var importe = $(this).find('.importe').text();
-                suma += parseFloat(importe);
-            });
-            $('#totalVenta').text(suma.toFixed(2));
-        }
-
-    
+ table = $('#tablaAgregarArticulos').DataTable({
+        "columns": [{
+                "data": "id"
+            },
+            {
+                "data": "codigo"
+            },
+          {
+                "data": "descripcion"
+            },
+            {
+                "data": "cantidad"
+            },
+        
+            {
+                "data": "precio"
+            },
+            {
+                "data": "importesiniva"
+            },
+            {
+                "data": "ivatotal"
+            },
+            {
+                "data": "ieps"
+            },
+            {
+                "data": "eliminar"
+            },
+            {
+                "data": "descuentos"
+            },
+        ],
+       
+        "order": [
+            [0, 'desc']
+            
+        ],
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+        },
+         //para usar los botones   
+         responsive: "true",
+       
+    });
 
     function buscarArticulo() {
   var codigoEscaneado = $('#codigoEscaneado').val();
@@ -592,7 +613,7 @@ function calcularSumaImportes() {
 $(document).ready(function() {
   calcularSumaImportes();
 });
-});
+
 
 </script>
 
