@@ -521,7 +521,7 @@ function agregarArticulo(articulo) {
       mostrarTotalVenta();
     } else {
       var tr = '';
-      var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="fas fa-minus-circle fa-xs"></i></button>';
+      var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="eliminarfila();"><i class="fas fa-minus-circle fa-xs"></i></button>';
       var inputId = '<input type="hidden" name="detIdModal[' + articulo.id + ']" value="' + articulo.id + '" />';
       var inputCantidad = '<input class="form-control" type="hidden" name="detCantidadModal[' + articulo.id + ']" value="' + articulo.cantidad + '" />';
       
@@ -549,6 +549,15 @@ function agregarArticulo(articulo) {
   $('#codigoEscaneado').focus();
 }
 
+
+//Eliminar fila
+  function eliminarFila(element) {
+    $(element).parent().parent().remove();
+    actualizarImporte($('#tablaAgregarArticulos tbody tr:last-child'));
+      calcularIVA();
+      actualizarSuma();
+      mostrarTotalVenta();
+  }
 // Función para actualizar el importe
 function actualizarImporte(row) {
   var cantidad = parseInt(row.find('.cantidad input').val());
