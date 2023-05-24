@@ -327,7 +327,7 @@ Aqui va el corte de caja
                             <span>IVA</span>
                         </div>
                         <div class="col-md-5 text-right">
-                            MXN <span class="" id="">0.00</span>
+                            MXN <span class="" id="ImporteTotal">0.00</span>
                         </div>
 <!-- 
                         <div class="col-md-7">
@@ -591,6 +591,34 @@ function mostrarMensaje(mensaje) {
   // Mostrar el mensaje en una ventana emergente de alerta
   alert(mensaje);
 }
+
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+            const importes = document.querySelectorAll('#importe');
+
+            // Obtener el elemento del total
+            const importeTotalElement = document.getElementById('totalVenta');
+
+            // Inicializar el total
+            let importeTotal = 0;
+
+            // Función para actualizar el total
+            const actualizarImporteTotal = () => {
+                importeTotal = Array.from(importes).reduce((total, input) => {
+                    const importe = parseFloat(input.value) || 0;
+                    return total + importe;
+                }, 0);
+
+                importeTotalElement.textContent = importeTotal.toFixed(2);
+            };
+
+            // Escuchar cambios en los inputs de importe
+            importes.forEach((input) => {
+                input.addEventListener('input', actualizarImporteTotal);
+            });
+        });
 </script>
 
 
