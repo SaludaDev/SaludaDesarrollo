@@ -155,7 +155,7 @@ include ("db_connection.php");
 						<thead>	
 							<tr>
               <th>Codigo</th>
-            <th style="width: 20%; height: 100%;">Producto</th>
+            <th>Producto</th>
             <th>Cantidad</th>
             <th>Precio</th>
             <th>Importe</th>
