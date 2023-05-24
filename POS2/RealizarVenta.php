@@ -382,11 +382,8 @@ Aqui va el corte de caja
 
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 <script>
-    $(document).ready(function () {
+  $(document).ready(function () {
         $('#tablaAgregarArticulos').DataTable({
             paging: false,
             searching: false,
@@ -404,8 +401,9 @@ Aqui va el corte de caja
                 suma += parseFloat(importe);
             });
             $('#totalVenta').text(suma.toFixed(2));
-          } }
+        }
 
+    
 
     function buscarArticulo() {
   var codigoEscaneado = $('#codigoEscaneado').val();
@@ -591,7 +589,7 @@ function calcularSumaImportes() {
 $(document).ready(function() {
   calcularSumaImportes();
 });
-
+});
 
 </script>
 
