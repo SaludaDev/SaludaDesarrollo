@@ -437,6 +437,8 @@ Aqui va el corte de caja
             totalVenta += importe;
         }
     });
+
+    console.log("Total de venta:", totalVenta);
     $('#totalVenta').text(totalVenta.toFixed(2));
 }
     function buscarArticulo() {
