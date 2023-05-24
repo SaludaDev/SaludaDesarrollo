@@ -161,6 +161,7 @@ include ("db_connection.php");
             <th>Importe</th>
             <th>importe_Sin_Iva</th>
             <th>Iva</th>
+            <th>valorieps</th>
             <th>Eliminar</th>
 							</tr>
 						</thead>
@@ -405,7 +406,9 @@ Aqui va el corte de caja
             {
                 "data": "ivatotal"
             },
-           
+            {
+                "data": "ieps"
+            },
             {
                 "data": "eliminar"
             },
