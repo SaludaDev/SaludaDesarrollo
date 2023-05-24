@@ -547,7 +547,7 @@ function actualizarImporte(row) {
   var importe = cantidad * precio;
   var iva = importe * 0.16;
   var importeSinIVA = importe - iva;
-  var ieps = importe * 0.8;
+  var ieps = importe * 0.08;
   row.find('input.importe').val(importe.toFixed(2));
   row.find('input.importe_siniva').val(importeSinIVA.toFixed(2));
   row.find('input.valordelniva').val(iva.toFixed(2));
@@ -591,7 +591,7 @@ function mostrarMensaje(mensaje) {
 </script>
 
 
-</script>
+
      <!-- Control Sidebar -->
     
      <!-- Main Footer -->
