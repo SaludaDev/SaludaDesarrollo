@@ -516,6 +516,7 @@ function agregarArticulo(articulo) {
       actualizarImporte(row);
       calcularIVA();
       actualizarSuma();
+      mostrarTotalVenta();
     } else {
       var tr = '';
       var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="$(this).parent().parent().remove();"><i class="fas fa-minus-circle fa-xs"></i></button>';
@@ -605,24 +606,6 @@ function mostrarMensaje(mensaje) {
 }
 
 
-// Función para calcular la suma de los importes y actualizar el total de venta
-function calcularSumaImportes() {
-  var sumaImportes = 0;
-
-  $('#tablaAgregarArticulos tbody tr').each(function() {
-    var importe = parseFloat($(this).find('.importe input').val());
-    if (!isNaN(importe)) {
-      sumaImportes += importe;
-    }
-  });
-
-  $('#totalVenta').text(sumaImportes.toFixed(2));
-}
-
-// Llamar a la función para calcular la suma de importes al cargar la página
-$(document).ready(function() {
-  calcularSumaImportes();
-});
 
 
 </script>
