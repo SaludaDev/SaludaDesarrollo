@@ -599,14 +599,19 @@ function calcularSumaImportes() {
 
   $('#tablaAgregarArticulos tbody tr').each(function() {
     var importe = parseFloat($(this).find('.importe input').val());
-    sumaImportes += importe;
+    if (!isNaN(importe)) {
+      sumaImportes += importe;
+    }
   });
 
   $('#totalVenta').text(sumaImportes.toFixed(2));
 }
 
 // Llamar a la función para calcular la suma de importes al cargar la página
-calcularSumaImportes();
+$(document).ready(function() {
+  calcularSumaImportes();
+});
+
 
 </script>
 
