@@ -570,7 +570,7 @@ function actualizarImporte(row) {
   row.find('input.valordelniva').val(iva.toFixed(2));
   row.find('input.ieps').val(ieps.toFixed(2));
   // Llamar a la función para recalcular la suma de importes
-  calcularSumaImportes();
+  mostrarTotalVenta();
 }
 
 // Función para calcular el IVA
