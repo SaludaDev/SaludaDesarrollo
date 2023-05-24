@@ -47,31 +47,6 @@ include ("db_connection.php");
   </div> -->
  
 <!-- Main content -->
-
-
-<script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const importes = document.querySelectorAll('#importe');
-
-            // Obtener el elemento del total de venta
-            const totalVentaElement = document.getElementById('totalVenta');
-
-            // Función para actualizar el total de venta
-            const actualizarTotalVenta = () => {
-                let totalVenta = Array.from(importes).reduce((total, input) => {
-                    const importe = parseFloat(input.value) || 0;
-                    return total + importe;
-                }, 0);
-
-                totalVentaElement.value = totalVenta.toFixed(2);
-            };
-
-            // Escuchar cambios en los inputs de importe
-            importes.forEach((input) => {
-                input.addEventListener('input', actualizarTotalVenta);
-            });
-        });
-    </script>
 <div class="content">
     
 
@@ -148,9 +123,8 @@ include ("db_connection.php");
 
                         <!-- ETIQUETA QUE MUESTRA LA SUMA TOTAL DE LOS PRODUCTOS AGREGADOS AL LISTADO -->
                         <div class="col-md-7 mb-3 rounded-3" style="background-color:#C80096;color: white;text-align:center;border:1px solid #C80096;">
-        <h2 class="fw-bold m-0">MXN</h2>
-        <input class="fw-bold" type="text" id="totalVenta" value="0.00" readonly>
-    </div>
+                            <h2 class="fw-bold m-0">MXN <span class="fw-bold" id="totalVenta">0.00</span></h2>
+                        </div>
 
                         <!-- BOTONES PARA VACIAR LISTADO Y COMPLETAR LA VENTA -->
                         <div class="col-md-5 text-right">
@@ -353,7 +327,7 @@ Aqui va el corte de caja
                             <span>IVA</span>
                         </div>
                         <div class="col-md-5 text-right">
-                            MXN <span class="" id="ImporteTotal">0.00</span>
+                            MXN <span class="" id="">0.00</span>
                         </div>
 <!-- 
                         <div class="col-md-7">
@@ -617,11 +591,6 @@ function mostrarMensaje(mensaje) {
   // Mostrar el mensaje en una ventana emergente de alerta
   alert(mensaje);
 }
-
-
-
-
-
 </script>
 
 
