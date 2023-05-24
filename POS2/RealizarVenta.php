@@ -438,8 +438,11 @@ Aqui va el corte de caja
         }
     });
 
-    console.log("Total de venta:", totalVenta);
+ 
     $('#totalVenta').text(totalVenta.toFixed(2));
+    $('#boleta_total').text(totalVenta.toFixed(2));
+
+    
 }
     function buscarArticulo() {
   var codigoEscaneado = $('#codigoEscaneado').val();
