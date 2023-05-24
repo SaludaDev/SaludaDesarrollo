@@ -516,6 +516,7 @@ function agregarArticulo(articulo) {
       tr += '<td><input id="importe_' + articulo.id + '" class="form-control importe" type="number" readonly /></td>';
       tr += '<td><input id="importe_siniva_' + articulo.id + '" class="form-control importe_siniva" type="number" readonly /></td>';
       tr += '<td><input id="valordelniva_' + articulo.id + '" class="form-control valordelniva" type="number" readonly /></td>';
+      tr += '<td><input id="ieps_' + articulo.id + '" class="form-control ieps" type="number" readonly /></td>';
       tr += '<td>' + btnEliminar + inputId + inputCantidad + '</td>';
       tr += '</tr>';
       
@@ -562,16 +563,27 @@ function calcularIVA() {
   $('#totalIVA').text(totalIVA.toFixed(2));
 }
 
+function calcularIEPS(row) {
+  var cantidad = parseInt(row.find('.cantidad input').val());
+  var ieps = cantidad * 0.8;
+  row.find('input.ieps').val(ieps.toFixed(2));
+}
+
 // Función para actualizar la suma de importe sin IVA y diferencia de IVA
 function actualizarSuma() {
   var sumaImporteSinIVA = 0;
+  var totalIEPS = 0;
 
   $('#tablaAgregarArticulos tbody tr').each(function() {
     var importeSinIVA = parseFloat($(this).find('.importe_siniva input').val());
     sumaImporteSinIVA += importeSinIVA;
+
+    var ieps = parseFloat($(this).find('.ieps input').val());
+    totalIEPS += ieps;
   });
 
   $('#sumaImporteSinIVA').text(sumaImporteSinIVA.toFixed(2));
+  $('#totalIEPS').text(totalIEPS.toFixed(2));
 }
 
 // Función para mostrar un mensaje
