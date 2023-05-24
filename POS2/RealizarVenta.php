@@ -595,33 +595,35 @@ function mostrarMensaje(mensaje) {
 
 
 
-window.addEventListener('DOMContentLoaded', () => {
+
+</script>
+
+<script>
+        window.addEventListener('DOMContentLoaded', () => {
             const importes = document.querySelectorAll('#importe');
 
-            // Obtener el elemento del total
-            const importeTotalElement = document.getElementById('totalVenta');
+            // Obtener el elemento del total de venta
+            const totalVentaElement = document.getElementById('totalVenta');
 
-            // Inicializar el total
-            let importeTotal = 0;
+            // Inicializar el total de venta
+            let totalVenta = 0;
 
-            // Función para actualizar el total
-            const actualizarImporteTotal = () => {
-                importeTotal = Array.from(importes).reduce((total, input) => {
+            // Función para actualizar el total de venta
+            const actualizarTotalVenta = () => {
+                totalVenta = Array.from(importes).reduce((total, input) => {
                     const importe = parseFloat(input.value) || 0;
                     return total + importe;
                 }, 0);
 
-                importeTotalElement.textContent = importeTotal.toFixed(2);
+                totalVentaElement.textContent = totalVenta.toFixed(2);
             };
 
             // Escuchar cambios en los inputs de importe
             importes.forEach((input) => {
-                input.addEventListener('input', actualizarImporteTotal);
+                input.addEventListener('input', actualizarTotalVenta);
             });
         });
-</script>
-
-
+    </script>
 
      <!-- Control Sidebar -->
     
