@@ -608,7 +608,7 @@ function actualizarImporte(row) {
     return;
   }
   var importe = cantidad * precio;
-  var iva = importe * 0.16;
+  var iva = importe / 1.16 * 0.16;
   var importeSinIVA = importe - iva;
   var ieps = importe * 0.08;
   row.find('input.importe').val(importe.toFixed(2));
