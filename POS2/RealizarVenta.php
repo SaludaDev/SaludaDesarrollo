@@ -327,7 +327,7 @@ Aqui va el corte de caja
                             <span>IVA</span>
                         </div>
                         <div class="col-md-5 text-right">
-                            MXN <span class="" id="">0.00</span>
+                            MXN <span class="" id="ivatotal">0.00</span>
                         </div>
 <!-- 
                         <div class="col-md-7">
@@ -458,6 +458,20 @@ function mostrarSubTotal() {
   $('#boleta_subtotal').text(subtotal.toFixed(2));
 }
 
+
+function mostrarIvaTotal() {
+  var subtotal = 0;
+  $('#tablaAgregarArticulos tbody tr').each(function() {
+    var importeSinIVA = parseFloat($(this).find('.valordelniva').val().replace(/[^\d.-]/g, ''));
+    if (!isNaN(importeSinIVA)) {
+      subtotal += importeSinIVA;
+    }
+  });
+
+  $('#ivatotal').text(subtotal.toFixed(2));
+}
+
+
     function buscarArticulo() {
   var codigoEscaneado = $('#codigoEscaneado').val();
   var formData = new FormData();
@@ -537,6 +551,7 @@ function agregarArticulo(articulo) {
       actualizarSuma();
       mostrarTotalVenta();
       mostrarSubTotal();
+      mostrarIvaTotal()
     } else {
       var tr = '';
       var btnEliminar = '<button type="button" class="btn btn-xs btn-danger" onclick="eliminarFila(this).parent().parent().remove();"><i class="fas fa-minus-circle fa-xs"></i></button>';
@@ -561,6 +576,7 @@ function agregarArticulo(articulo) {
       actualizarSuma();
       mostrarTotalVenta();
       mostrarSubTotal();
+      mostrarIvaTotal()
     }
   }
   
@@ -577,6 +593,7 @@ function agregarArticulo(articulo) {
       actualizarSuma();
       mostrarTotalVenta();
       mostrarSubTotal();
+      mostrarIvaTotal()
   }
 // Función para actualizar el importe
 function actualizarImporte(row) {
@@ -601,6 +618,7 @@ function actualizarImporte(row) {
   // Llamar a la función para recalcular la suma de importes
   mostrarTotalVenta();
   mostrarSubTotal();
+  mostrarIvaTotal()
 }
 
 // Función para calcular el IVA
