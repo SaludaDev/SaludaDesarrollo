@@ -230,6 +230,8 @@ Aqui va el corte de caja
           <select class="form-control form-select form-select-sm" aria-label=".form-select-sm example" id="selTipoPago">
                             <option value="0">Seleccione el Tipo de Pago</option>
                             <option value="1" selected="true">Efectivo</option>
+                            <option value="2">Efectivo y tarjeta de debito</option>
+                            <option value="2">Efectivo y tarjeta de crédito</option>
                             <option value="2">Tarjeta de crédito</option>
                             <option value="2">Tarjeta de debito</option>
                             <option value="4">Transferencia</option>
